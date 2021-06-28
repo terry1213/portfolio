@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/templatePage.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 void main() {
@@ -13,30 +14,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Color(0xFFF242424),
+        textTheme: TextTheme(
+          headline1: TextStyle(fontSize: 72.0),
+          headline6: TextStyle(fontSize: 36.0),
+          bodyText2: TextStyle(fontSize: 14.0),
+        ).apply(displayColor: Colors.white),
       ),
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('test'),
-      ),
-      body: Center(
-        child: Text('test'),
-      ),
+      home: TemplatePage(),
     );
   }
 }
