@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/pages/templatePage.dart';
 import 'package:url_strategy/url_strategy.dart';
 
@@ -16,10 +17,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Color(0xFFF242424),
         textTheme: TextTheme(
-          headline1: TextStyle(fontSize: 72.0),
-          headline6: TextStyle(fontSize: 36.0),
-          bodyText2: TextStyle(fontSize: 14.0),
-        ).apply(displayColor: Colors.white),
+          headline1: GoogleFonts.castoro(),
+          headline6: GoogleFonts.castoro(fontWeight: FontWeight.bold),
+          bodyText1: GoogleFonts.notoSans(),
+        ).apply(displayColor: Colors.white, bodyColor: Colors.white),
       ),
       home: TemplatePage(),
     );

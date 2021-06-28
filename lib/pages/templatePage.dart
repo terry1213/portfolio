@@ -65,12 +65,9 @@ class _TemplatePageState extends State<TemplatePage> {
           toggleTitle: 'Close',
           backgroundColor: Colors.black,
           selectedTextColor: Colors.limeAccent,
-          textStyle: TextStyle(fontSize: 15, fontStyle: FontStyle.italic),
-          titleStyle: TextStyle(
-              fontSize: 20,
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold),
-          toggleTitleStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          textStyle: Theme.of(context).textTheme.headline6,
+          titleStyle: Theme.of(context).textTheme.headline6,
+          toggleTitleStyle: Theme.of(context).textTheme.headline6,
         ),
       ),
     );
@@ -80,7 +77,7 @@ class _TemplatePageState extends State<TemplatePage> {
     return Center(
       child: Text(
         currentPage,
-        style: Theme.of(context).textTheme.headline1,
+        style: Theme.of(context).textTheme.bodyText1,
       ),
     );
   }
