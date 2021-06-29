@@ -1,5 +1,6 @@
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 
 import 'homePage.dart';
 
@@ -45,12 +46,12 @@ class _TemplatePageState extends State<TemplatePage> {
       ),
       CollapsibleItem(
         text: 'Project',
-        icon: Icons.developer_board,
+        icon: LineIcons.projectDiagram,
         onPressed: () => setState(() => _currentPage = 'Project'),
       ),
       CollapsibleItem(
         text: 'Blog',
-        icon: Icons.article,
+        icon: LineIcons.bloggerB,
         onPressed: () => setState(() => _currentPage = 'Blog'),
       ),
     ];
@@ -60,7 +61,9 @@ class _TemplatePageState extends State<TemplatePage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: SafeArea(
+      body: Container(
+        height: size.height,
+        width: size.width,
         child: CollapsibleSidebar(
           items: _items,
           avatarImg: _avatarImg,
@@ -71,7 +74,7 @@ class _TemplatePageState extends State<TemplatePage> {
           selectedTextColor: Colors.white,
           unselectedTextColor: Colors.grey,
           textStyle: Theme.of(context).textTheme.headline6,
-          titleStyle: Theme.of(context).textTheme.headline6,
+          titleStyle: Theme.of(context).textTheme.headline6.copyWith(fontWeight: FontWeight.bold),
           toggleTitleStyle: Theme.of(context).textTheme.headline6,
         ),
       ),
