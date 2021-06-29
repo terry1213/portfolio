@@ -15,11 +15,16 @@ class MyApp extends StatelessWidget {
       title: '임연우 포트폴리오',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
         scaffoldBackgroundColor: Color(0xFFF242424),
         textTheme: TextTheme(
           headline1: GoogleFonts.castoro(),
+          headline2: GoogleFonts.nanumPenScript(),
+          headline3: GoogleFonts.nanumPenScript(),
           headline6: GoogleFonts.castoro(fontWeight: FontWeight.bold),
-          bodyText1: GoogleFonts.notoSans(),
+          bodyText1: GoogleFonts.nanumPenScript(),
         ).apply(displayColor: Colors.white, bodyColor: Colors.white),
       ),
       home: TemplatePage(),
