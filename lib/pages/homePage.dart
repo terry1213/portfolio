@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
+  Map<String, String> _urls = {
+    'Email': 'mailto:1213terry@naver.com',
+    'Phone': 'sms:01047888356',
+    'LinkedIn': 'https://www.linkedin.com/in/%EC%97%B0%EC%9A%B0-%EC%9E%84-89291320b/',
+    'Blog': 'https://terry1213.github.io/categories/',
+    'Github': 'https://github.com/terry1213',
+  };
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -40,35 +49,35 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => _launchURL('Email'),
                       icon: Icon(LineIcons.envelopeSquare),
                       tooltip: 'Email',
                       splashRadius: 15,
                       iconSize: 30,
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => _launchURL('Phone'),
                       icon: Icon(LineIcons.phoneSquare),
                       tooltip: 'Phone',
                       splashRadius: 15,
                       iconSize: 30,
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => _launchURL('LinkedIn'),
                       icon: Icon(LineIcons.linkedin),
                       tooltip: 'LinkedIn',
                       splashRadius: 15,
                       iconSize: 30,
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => _launchURL('Blog'),
                       icon: Icon(LineIcons.blogger),
                       tooltip: 'Blog',
                       splashRadius: 15,
                       iconSize: 30,
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => _launchURL('Github'),
                       icon: Icon(LineIcons.githubSquare),
                       tooltip: 'Github',
                       splashRadius: 15,
@@ -85,4 +94,8 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+
+  void _launchURL(String key) async => await canLaunch(_urls[key])
+      ? await launch(_urls[key])
+      : throw 'Could not launch $_urls';
 }
