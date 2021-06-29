@@ -1,6 +1,8 @@
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
 import 'package:flutter/material.dart';
 
+import 'homePage.dart';
+
 class TemplatePage extends StatefulWidget {
   @override
   _TemplatePageState createState() => _TemplatePageState();
@@ -9,8 +11,10 @@ class TemplatePage extends StatefulWidget {
 class _TemplatePageState extends State<TemplatePage> {
 
   List<CollapsibleItem> _items;
-  Map<String, Widget> _detailPages;
-  String currentPage;
+  Map<String, Widget> _detailPages = {
+    'Home': HomePage(),
+  };
+  String _currentPage;
   AssetImage _avatarImg =
   AssetImage('assets/profile_sidebar.jpg');
 
@@ -18,7 +22,7 @@ class _TemplatePageState extends State<TemplatePage> {
   void initState() {
     super.initState();
     _items = _generateItems;
-    currentPage = _items.firstWhere((item) => item.isSelected).text;
+    _currentPage = _items.firstWhere((item) => item.isSelected).text;
   }
 
   List<CollapsibleItem> get _generateItems {
@@ -26,28 +30,28 @@ class _TemplatePageState extends State<TemplatePage> {
       CollapsibleItem(
         text: 'Home',
         icon: Icons.home,
-        onPressed: () => setState(() => currentPage = 'Home'),
+        onPressed: () => setState(() => _currentPage = 'Home'),
         isSelected: true,
       ),
       CollapsibleItem(
         text: 'About',
         icon: Icons.person,
-        onPressed: () => setState(() => currentPage = 'About'),
+        onPressed: () => setState(() => _currentPage = 'About'),
       ),
       CollapsibleItem(
         text: 'Career',
         icon: Icons.work,
-        onPressed: () => setState(() => currentPage = 'Career'),
+        onPressed: () => setState(() => _currentPage = 'Career'),
       ),
       CollapsibleItem(
         text: 'Project',
         icon: Icons.developer_board,
-        onPressed: () => setState(() => currentPage = 'Project'),
+        onPressed: () => setState(() => _currentPage = 'Project'),
       ),
       CollapsibleItem(
         text: 'Blog',
         icon: Icons.article,
-        onPressed: () => setState(() => currentPage = 'Blog'),
+        onPressed: () => setState(() => _currentPage = 'Blog'),
       ),
     ];
   }
@@ -74,11 +78,6 @@ class _TemplatePageState extends State<TemplatePage> {
   }
 
   Widget _body(Size size, BuildContext context) {
-    return Center(
-      child: Text(
-        currentPage,
-        style: Theme.of(context).textTheme.bodyText1,
-      ),
-    );
+    return _detailPages[_currentPage];
   }
 }
