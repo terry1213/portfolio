@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .headline2
-                              .apply(color: Colors.lightBlue)),
+                              .copyWith(color: Colors.lightBlue)),
                       TextSpan(text: '입니다.'),
                     ],
                   ),
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
                   height: 100,
                 ),
                 Text('Contact me',
-                    style: Theme.of(context).textTheme.bodyText1),
+                    style: Theme.of(context).textTheme.bodyText1.copyWith(fontWeight: FontWeight.bold)),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
