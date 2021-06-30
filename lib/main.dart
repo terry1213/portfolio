@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: '임연우 포트폴리오',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        dividerColor: Colors.white24,
         iconTheme: IconThemeData(
           color: Colors.white,
         ),
