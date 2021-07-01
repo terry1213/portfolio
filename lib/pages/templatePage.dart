@@ -1,6 +1,7 @@
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:portfolio/pages/aboutPage.dart';
 
 import 'homePage.dart';
 
@@ -14,6 +15,7 @@ class _TemplatePageState extends State<TemplatePage> {
   List<CollapsibleItem> _items;
   Map<String, Widget> _detailPages = {
     'Home': HomePage(),
+    'About': AboutPage(),
   };
   String _currentPage;
   AssetImage _avatarImg =
@@ -61,22 +63,18 @@ class _TemplatePageState extends State<TemplatePage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        height: size.height,
-        width: size.width,
-        child: CollapsibleSidebar(
-          items: _items,
-          avatarImg: _avatarImg,
-          title: '임연우',
-          body: _body(size, context),
-          toggleTitle: 'Close',
-          backgroundColor: Colors.black,
-          selectedTextColor: Colors.white,
-          unselectedTextColor: Colors.grey,
-          textStyle: Theme.of(context).textTheme.headline6,
-          titleStyle: Theme.of(context).textTheme.headline6.copyWith(fontWeight: FontWeight.bold),
-          toggleTitleStyle: Theme.of(context).textTheme.headline6,
-        ),
+      body: CollapsibleSidebar(
+        items: _items,
+        avatarImg: _avatarImg,
+        title: '임연우',
+        body: _body(size, context),
+        toggleTitle: 'Close',
+        backgroundColor: Colors.black,
+        selectedTextColor: Colors.white,
+        unselectedTextColor: Colors.grey,
+        textStyle: Theme.of(context).textTheme.headline6,
+        titleStyle: Theme.of(context).textTheme.headline6.copyWith(fontWeight: FontWeight.bold),
+        toggleTitleStyle: Theme.of(context).textTheme.headline6,
       ),
     );
   }
