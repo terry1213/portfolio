@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: Color(0xFFF242424),
         textTheme: TextTheme(
-          headline1: GoogleFonts.castoro(),
+          headline1: GoogleFonts.nanumPenScript(),
           headline2: GoogleFonts.nanumPenScript(),
           headline3: GoogleFonts.nanumPenScript(),
           headline4: GoogleFonts.nanumPenScript(),
