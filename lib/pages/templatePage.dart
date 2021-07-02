@@ -11,75 +11,86 @@ class TemplatePage extends StatefulWidget {
 }
 
 class _TemplatePageState extends State<TemplatePage> {
-
-  List<CollapsibleItem> _items;
-  Map<String, Widget> _detailPages = {
-    'Home': HomePage(),
-    'About': AboutPage(),
-  };
-  String _currentPage;
-  AssetImage _avatarImg =
-  AssetImage('assets/profile_sidebar.jpg');
+  final PageController _pageController = PageController();
+  final AssetImage _avatarImg = AssetImage('assets/profile_sidebar.jpg');
+  int _currentPageIndex = 0;
 
   @override
-  void initState() {
-    super.initState();
-    _items = _generateItems;
-    _currentPage = _items.firstWhere((item) => item.isSelected).text;
-  }
-
-  List<CollapsibleItem> get _generateItems {
-    return [
+  Widget build(BuildContext context) {
+    List<CollapsibleItem> _items = [
       CollapsibleItem(
         text: 'Home',
         icon: Icons.home,
-        onPressed: () => setState(() => _currentPage = 'Home'),
-        isSelected: true,
+        onPressed: () => _pageController.animateToPage(0,
+            duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
+        isSelected: _currentPageIndex == 0 ? true : false,
       ),
       CollapsibleItem(
         text: 'About',
         icon: Icons.person,
-        onPressed: () => setState(() => _currentPage = 'About'),
+        onPressed: () => _pageController.animateToPage(1,
+            duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
+        isSelected: _currentPageIndex == 1 ? true : false,
       ),
       CollapsibleItem(
         text: 'Career',
         icon: Icons.work,
-        onPressed: () => setState(() => _currentPage = 'Career'),
+        onPressed: () => _pageController.animateToPage(2,
+            duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
+        isSelected: _currentPageIndex == 2 ? true : false,
       ),
       CollapsibleItem(
         text: 'Project',
         icon: LineIcons.projectDiagram,
-        onPressed: () => setState(() => _currentPage = 'Project'),
+        onPressed: () => _pageController.animateToPage(3,
+            duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
+        isSelected: _currentPageIndex == 3 ? true : false,
       ),
       CollapsibleItem(
         text: 'Blog',
         icon: LineIcons.bloggerB,
-        onPressed: () => setState(() => _currentPage = 'Blog'),
+        onPressed: () => _pageController.animateToPage(4,
+            duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
+        isSelected: _currentPageIndex == 4 ? true : false,
       ),
     ];
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       body: CollapsibleSidebar(
         items: _items,
         avatarImg: _avatarImg,
         title: '임연우',
-        body: _body(size, context),
+        body: PageView(
+          controller: _pageController,
+          scrollDirection: Axis.vertical,
+          children: [
+            HomePage(),
+            AboutPage(),
+          ],
+          onPageChanged: (index) {
+            setState(() {
+              _currentPageIndex = index;
+            });
+          },
+        ),
         toggleTitle: 'Close',
         backgroundColor: Colors.black,
         selectedTextColor: Colors.white,
+        selectedIconColor: Colors.white,
+        selectedIconBox: Colors.transparent,
         unselectedTextColor: Colors.grey,
+        unselectedIconColor: Colors.grey,
+        iconSize: 30,
+        minWidth: 70,
+        maxWidth: 200,
+        screenPadding: 0,
+        borderRadius: 0,
         textStyle: Theme.of(context).textTheme.headline6,
-        titleStyle: Theme.of(context).textTheme.headline6.copyWith(fontWeight: FontWeight.bold),
+        titleStyle: Theme.of(context)
+            .textTheme
+            .headline6
+            .copyWith(fontWeight: FontWeight.bold, fontSize: 25),
         toggleTitleStyle: Theme.of(context).textTheme.headline6,
       ),
     );
-  }
-
-  Widget _body(Size size, BuildContext context) {
-    return _detailPages[_currentPage];
   }
 }
