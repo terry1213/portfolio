@@ -2,15 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   Map<String, String> _urls = {
     'Email': 'mailto:1213terry@naver.com',
     'Phone': 'sms:01047888356',
     'LinkedIn':
-        'https://www.linkedin.com/in/%EC%97%B0%EC%9A%B0-%EC%9E%84-89291320b/',
+    'https://www.linkedin.com/in/%EC%97%B0%EC%9A%B0-%EC%9E%84-89291320b/',
     'Blog': 'https://terry1213.github.io/categories/',
     'Github': 'https://github.com/terry1213',
   };
+  bool change = false;
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(milliseconds: 100)).then((_) {
+      setState(() {
+        change = true;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +44,12 @@ class HomePage extends StatelessWidget {
                   bottom: -1000,
                   right: -350,
                   child: ClipOval(
-                    child: Container(
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 1500),
                       height: 1900,
-                      width: 1000,
+                      width: change ? 1000 : 0,
                       color: Colors.white10,
+                      curve: Curves.decelerate,
                     ),
                   ),
                 ),
@@ -39,7 +57,7 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: 150,
+                      width: 120,
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -65,7 +83,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 250,
+                          height: 300,
                         ),
                         Text('Contact me',
                             style: Theme.of(context)
@@ -113,6 +131,9 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                       ],
+                    ),
+                    SizedBox(
+                      width: 45,
                     ),
                     Image.asset('assets/profile.png', width: 600),
                   ],
