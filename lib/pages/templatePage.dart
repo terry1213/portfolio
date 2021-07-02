@@ -1,4 +1,6 @@
+import 'dart:math' as math;
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/pages/aboutPage.dart';
@@ -59,18 +61,32 @@ class _TemplatePageState extends State<TemplatePage> {
         items: _items,
         avatarImg: _avatarImg,
         title: '임연우',
-        body: PageView(
-          controller: _pageController,
-          scrollDirection: Axis.vertical,
-          children: [
-            HomePage(),
-            AboutPage(),
-          ],
-          onPageChanged: (index) {
-            setState(() {
-              _currentPageIndex = index;
-            });
+        body: Listener(
+          onPointerSignal: (ps) {
+            if (ps is PointerScrollEvent) {
+              final newOffset = _pageController.offset + ps.scrollDelta.dy;
+              if (ps.scrollDelta.dy.isNegative) {
+                _pageController.jumpTo(math.max(0, newOffset));
+              } else {
+                _pageController.jumpTo(math.min(
+                    _pageController.position.maxScrollExtent, newOffset));
+              }
+            }
           },
+          child: PageView(
+            controller: _pageController,
+            scrollDirection: Axis.vertical,
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              HomePage(),
+              AboutPage(),
+            ],
+            onPageChanged: (index) {
+              setState(() {
+                _currentPageIndex = index;
+              });
+            },
+          ),
         ),
         toggleTitle: 'Close',
         backgroundColor: Colors.black,
