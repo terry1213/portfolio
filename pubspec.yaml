@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  animated_text_kit: ^4.2.1
   collapsible_sidebar: ^2.0.0
   cupertino_icons: ^1.0.2
   google_fonts: ^2.1.0
