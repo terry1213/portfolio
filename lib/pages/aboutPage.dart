@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/widgets/dashedHorizontalDivider.dart';
@@ -37,32 +38,66 @@ class AboutPage extends StatelessWidget {
                               SizedBox(
                                 width: 30,
                               ),
-                              RichText(
-                                text: TextSpan(
-                                  text: '기록',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .headline3
-                                      .copyWith(color: Colors.lightBlue),
-                                  children: [
-                                    TextSpan(
-                                        text: '하는\n개발자\n',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline3),
-                                    TextSpan(
-                                        text: '임연우',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline2
-                                            .copyWith(color: Colors.lightBlue)),
-                                    TextSpan(
-                                        text: '입니다.',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline3),
-                                  ],
-                                ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        alignment: Alignment.center,
+                                        width: 55,
+                                        child: AnimatedTextKit(
+                                          animatedTexts: [
+                                            WavyAnimatedText(
+                                              '기록',
+                                              textStyle: Theme.of(context)
+                                                  .textTheme
+                                                  .headline3
+                                                  .copyWith(
+                                                      color: Colors.lightBlue),
+                                              speed:
+                                                  Duration(milliseconds: 600),
+                                            ),
+                                            WavyAnimatedText(
+                                              '성장',
+                                              textStyle: Theme.of(context)
+                                                  .textTheme
+                                                  .headline3
+                                                  .copyWith(
+                                                      color: Colors.lightBlue),
+                                              speed:
+                                                  Duration(milliseconds: 600),
+                                            ),
+                                          ],
+                                          repeatForever: true,
+                                          pause: Duration(milliseconds: 3000),
+                                        ),
+                                      ),
+                                      Text('하는',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headline3),
+                                    ],
+                                  ),
+                                  RichText(
+                                    text: TextSpan(
+                                      text: '개발자\n',
+                                      style:
+                                          Theme.of(context).textTheme.headline3,
+                                      children: [
+                                        TextSpan(
+                                          text: '임연우',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headline2
+                                              .copyWith(
+                                                  color: Colors.lightBlue),
+                                        ),
+                                        TextSpan(text: '입니다.'),
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
