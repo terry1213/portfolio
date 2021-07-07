@@ -7,7 +7,7 @@ class DashedHorizontalDivider extends StatelessWidget {
   final Color color;
   final EdgeInsets padding;
 
-  const DashedHorizontalDivider({this.length = 5.0, this.thickness = 1.0, this.color, this.padding = EdgeInsets.zero});
+  const DashedHorizontalDivider({this.length = 5.0, this.thickness = 1.0, this.color = Colors.black, this.padding = EdgeInsets.zero});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class DashedHorizontalDivider extends StatelessWidget {
                 width: dashWidth,
                 height: dashHeight,
                 child: DecoratedBox(
-                  decoration: BoxDecoration(color: color == null ? Theme.of(context).dividerColor : color),
+                  decoration: BoxDecoration(color: color),
                 ),
               );
             }),

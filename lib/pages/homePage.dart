@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                                   text: '임연우',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headline1
+                                      .headline1!
                                       .copyWith(color: Colors.lightBlue)),
                               TextSpan(text: '입니다.'),
                             ],
@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                         Text('Contact me',
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyText2
+                                .bodyText2!
                                 .copyWith(fontWeight: FontWeight.bold)),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void _launchURL(String key) async => await canLaunch(_urls[key])
-      ? await launch(_urls[key])
+  void _launchURL(String key) async => await canLaunch(_urls[key] ?? '')
+      ? await launch(_urls![key] ?? '')
       : throw 'Could not launch $_urls';
 }

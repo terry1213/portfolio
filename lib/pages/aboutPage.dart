@@ -17,7 +17,7 @@ class AboutPage extends StatelessWidget {
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: DefaultTextStyle(
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context).textTheme.bodyText2!,
                 child: Row(
                   children: [
                     Container(
@@ -52,7 +52,7 @@ class AboutPage extends StatelessWidget {
                                               '기록',
                                               textStyle: Theme.of(context)
                                                   .textTheme
-                                                  .headline3
+                                                  .headline3!
                                                   .copyWith(
                                                       color: Colors.lightBlue),
                                               speed:
@@ -62,7 +62,7 @@ class AboutPage extends StatelessWidget {
                                               '성장',
                                               textStyle: Theme.of(context)
                                                   .textTheme
-                                                  .headline3
+                                                  .headline3!
                                                   .copyWith(
                                                       color: Colors.lightBlue),
                                               speed:
@@ -89,7 +89,7 @@ class AboutPage extends StatelessWidget {
                                           text: '임연우',
                                           style: Theme.of(context)
                                               .textTheme
-                                              .headline2
+                                              .headline2!
                                               .copyWith(
                                                   color: Colors.lightBlue),
                                         ),
@@ -118,7 +118,7 @@ class AboutPage extends StatelessWidget {
                             '임연우 / Yeonwoo Lim',
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyText1
+                                .bodyText1!
                                 .copyWith(
                                     color: Colors.lightBlue,
                                     fontWeight: FontWeight.bold),
@@ -185,7 +185,7 @@ class AboutPage extends StatelessWidget {
                             'Education',
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyText1
+                                .bodyText1!
                                 .copyWith(
                                     color: Colors.lightBlue,
                                     fontWeight: FontWeight.bold),
@@ -219,7 +219,7 @@ class AboutPage extends StatelessWidget {
                             'Career',
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyText1
+                                .bodyText1!
                                 .copyWith(
                                     color: Colors.lightBlue,
                                     fontWeight: FontWeight.bold),
@@ -267,7 +267,7 @@ class AboutPage extends StatelessWidget {
                             'Project',
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyText1
+                                .bodyText1!
                                 .copyWith(
                                     color: Colors.lightBlue,
                                     fontWeight: FontWeight.bold),
@@ -305,7 +305,7 @@ class AboutPage extends StatelessWidget {
                             'Certificate',
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyText1
+                                .bodyText1!
                                 .copyWith(
                                     color: Colors.lightBlue,
                                     fontWeight: FontWeight.bold),
