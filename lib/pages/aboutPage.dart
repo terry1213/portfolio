@@ -1,8 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:portfolio/widgets/dashedHorizontalDivider.dart';
-import 'package:portfolio/widgets/dashedVerticalDivider.dart';
+import 'package:portfolio/widgets/horizontalDashedDivider.dart';
+import 'package:portfolio/widgets/verticalDashedDivider.dart';
 
 class AboutPage extends StatelessWidget {
   @override
@@ -104,10 +104,7 @@ class AboutPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    DashedVerticalDivider(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 30, horizontal: 30),
-                    ),
+                    VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
                     Container(
                       width: 300,
                       child: Column(
@@ -178,9 +175,7 @@ class AboutPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          DashedHorizontalDivider(
-                            padding: EdgeInsets.symmetric(vertical: 40),
-                          ),
+                          HorizontalDashedDivider(space: 80),
                           Text(
                             'Education',
                             style: Theme.of(context)
@@ -212,9 +207,7 @@ class AboutPage extends StatelessWidget {
                               Text('한동대학교 컴퓨터공학과'),
                             ],
                           ),
-                          DashedHorizontalDivider(
-                            padding: EdgeInsets.symmetric(vertical: 40),
-                          ),
+                          HorizontalDashedDivider(space: 80),
                           Text(
                             'Career',
                             style: Theme.of(context)
@@ -253,10 +246,7 @@ class AboutPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    DashedVerticalDivider(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 30, horizontal: 30),
-                    ),
+                    VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
                     Container(
                       width: 300,
                       child: Column(
@@ -298,9 +288,7 @@ class AboutPage extends StatelessWidget {
                               )
                             ],
                           ),
-                          DashedHorizontalDivider(
-                            padding: EdgeInsets.symmetric(vertical: 40),
-                          ),
+                          HorizontalDashedDivider(space: 80),
                           Text(
                             'Certificate',
                             style: Theme.of(context)
@@ -349,9 +337,7 @@ class AboutPage extends StatelessWidget {
                               )
                             ],
                           ),
-                          DashedHorizontalDivider(
-                            padding: EdgeInsets.symmetric(vertical: 50),
-                          ),
+                          HorizontalDashedDivider(space: 100),
                         ],
                       ),
                     ),
