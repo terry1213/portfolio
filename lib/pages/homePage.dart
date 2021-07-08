@@ -147,6 +147,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _launchURL(String key) async => await canLaunch(_urls[key] ?? '')
-      ? await launch(_urls![key] ?? '')
+      ? await launch(_urls[key] ?? '')
       : throw 'Could not launch $_urls';
 }

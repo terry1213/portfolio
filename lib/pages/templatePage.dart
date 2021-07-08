@@ -103,7 +103,7 @@ class _TemplatePageState extends State<TemplatePage> {
         textStyle: Theme.of(context).textTheme.headline6,
         titleStyle: Theme.of(context)
             .textTheme
-            .headline6
+            .headline6!
             .copyWith(fontWeight: FontWeight.bold, fontSize: 25),
         toggleTitleStyle: Theme.of(context).textTheme.headline6,
       ),
