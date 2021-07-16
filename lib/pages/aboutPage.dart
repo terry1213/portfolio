@@ -5,6 +5,10 @@ import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 import 'package:portfolio/widgets/verticalDashedDivider.dart';
 
 class AboutPage extends StatelessWidget {
+  final ScrollController _scrollController;
+
+  AboutPage(this._scrollController);
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -12,6 +16,7 @@ class AboutPage extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(30, 30, 0, 30),
       child: Center(
         child: SingleChildScrollView(
+          controller: _scrollController,
           child: Container(
             height: 750,
             child: SingleChildScrollView(

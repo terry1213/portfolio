@@ -16,6 +16,10 @@ class _TemplatePageState extends State<TemplatePage> {
   final PageController _pageController = PageController();
   final AssetImage _avatarImg = AssetImage('assets/profile_sidebar.jpg');
   int _currentPageIndex = 0;
+  List<ScrollController> _scrollControllers = [
+    ScrollController(),
+    ScrollController(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -37,23 +41,23 @@ class _TemplatePageState extends State<TemplatePage> {
       CollapsibleItem(
         text: 'Career',
         icon: Icons.work,
-        onPressed: () => _pageController.animateToPage(2,
-            duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
-        isSelected: _currentPageIndex == 2 ? true : false,
-      ),
-      CollapsibleItem(
-        text: 'Project',
-        icon: LineIcons.projectDiagram,
         onPressed: () => _pageController.animateToPage(3,
             duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
         isSelected: _currentPageIndex == 3 ? true : false,
       ),
       CollapsibleItem(
-        text: 'Blog',
-        icon: LineIcons.bloggerB,
+        text: 'Project',
+        icon: LineIcons.projectDiagram,
         onPressed: () => _pageController.animateToPage(4,
             duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
         isSelected: _currentPageIndex == 4 ? true : false,
+      ),
+      CollapsibleItem(
+        text: 'Blog',
+        icon: LineIcons.bloggerB,
+        onPressed: () => _pageController.animateToPage(5,
+            duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
+        isSelected: _currentPageIndex == 5 ? true : false,
       ),
     ];
     return Scaffold(
@@ -63,7 +67,12 @@ class _TemplatePageState extends State<TemplatePage> {
         title: '임연우',
         body: Listener(
           onPointerSignal: (ps) {
-            if (ps is PointerScrollEvent) {
+            if (ps is PointerScrollEvent &&
+                (_scrollControllers[_currentPageIndex].offset ==
+                        _scrollControllers[_currentPageIndex]
+                            .position
+                            .maxScrollExtent ||
+                    _scrollControllers[_currentPageIndex].offset == 0)) {
               final newOffset = _pageController.offset + ps.scrollDelta.dy;
               if (ps.scrollDelta.dy.isNegative) {
                 _pageController.jumpTo(math.max(0, newOffset));
@@ -78,8 +87,8 @@ class _TemplatePageState extends State<TemplatePage> {
             scrollDirection: Axis.vertical,
             physics: NeverScrollableScrollPhysics(),
             children: [
-              HomePage(),
-              AboutPage(),
+              HomePage(_scrollControllers[0]),
+              AboutPage(_scrollControllers[1]),
             ],
             onPageChanged: (index) {
               setState(() {
