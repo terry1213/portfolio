@@ -13,6 +13,7 @@ dependencies:
   animated_text_kit: ^4.2.1
   collapsible_sidebar: ^2.0.0
   cupertino_icons: ^1.0.2
+  fl_chart: ^0.36.2
   google_fonts: ^2.1.0
   line_icons: ^2.0.1
   url_launcher: ^6.0.7
