@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           headline5: GoogleFonts.nanumPenScript(),
           headline6: GoogleFonts.castoro(),
           bodyText1: GoogleFonts.notoSans(fontSize: 20),
-          bodyText2: GoogleFonts.notoSans(fontSize: 13, letterSpacing: 2),
+          bodyText2: GoogleFonts.notoSans(fontSize: 13, letterSpacing: 2, height: 2),
         ).apply(displayColor: Colors.white, bodyColor: Colors.white),
       ),
       home: TemplatePage(),
