@@ -38,6 +38,7 @@ class AboutPage extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            SizedBox(height: 15),
                             Expanded(
                               flex: 20,
                               child: AboutSection(context),
@@ -49,12 +50,12 @@ class AboutPage extends StatelessWidget {
                             ),
                             HorizontalDashedDivider(space: 80),
                             Expanded(
-                              flex: 14,
+                              flex: 15,
                               child: CareerSection(context),
                             ),
                             HorizontalDashedDivider(space: 80),
                             Expanded(
-                              flex: 6,
+                              flex: 1,
                               child: Container(),
                             ),
                           ],
@@ -67,16 +68,19 @@ class AboutPage extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            SizedBox(height: 15),
                             Expanded(
+                              flex: 11,
                               child: ProjectSection(context),
                             ),
                             HorizontalDashedDivider(space: 80),
                             Expanded(
+                              flex: 12,
                               child: CertificateSection(context),
                             ),
                             HorizontalDashedDivider(space: 100),
                             Expanded(
-                              flex: 2,
+                              flex: 19,
                               child: Container(),
                             ),
                           ],
@@ -173,7 +177,6 @@ class AboutPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 20),
         Text(
           '임연우 / Yeonwoo Lim',
           style: Theme.of(context)
@@ -181,7 +184,6 @@ class AboutPage extends StatelessWidget {
               .bodyText1!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 5),
         Text('1996.12.13 / 경기도 구리시'),
         SizedBox(height: 30),
         Row(
@@ -196,7 +198,6 @@ class AboutPage extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 5),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -209,7 +210,6 @@ class AboutPage extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 5),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -222,7 +222,6 @@ class AboutPage extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 5),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -262,7 +261,6 @@ class AboutPage extends StatelessWidget {
             Text('새음 기독 대안학교'),
           ],
         ),
-        SizedBox(height: 5),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -302,7 +300,6 @@ class AboutPage extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 5),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -324,7 +321,6 @@ class AboutPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 20),
         Text(
           'Project',
           style: Theme.of(context)
@@ -345,7 +341,6 @@ class AboutPage extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 5),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -387,7 +382,6 @@ class AboutPage extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 5),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -400,7 +394,6 @@ class AboutPage extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 5),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
