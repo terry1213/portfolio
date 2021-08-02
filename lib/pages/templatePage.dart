@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/pages/aboutPage.dart';
+import 'package:portfolio/pages/skillPage.dart';
 
 import 'homePage.dart';
 
@@ -17,6 +18,7 @@ class _TemplatePageState extends State<TemplatePage> {
   final AssetImage _avatarImg = AssetImage('assets/profile_sidebar.jpg');
   int _currentPageIndex = 0;
   List<ScrollController> _scrollControllers = [
+    ScrollController(),
     ScrollController(),
     ScrollController(),
   ];
@@ -37,6 +39,13 @@ class _TemplatePageState extends State<TemplatePage> {
         onPressed: () => _pageController.animateToPage(1,
             duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
         isSelected: _currentPageIndex == 1 ? true : false,
+      ),
+      CollapsibleItem(
+        text: 'Skill',
+        icon: LineIcons.barChartAlt,
+        onPressed: () => _pageController.animateToPage(2,
+            duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
+        isSelected: _currentPageIndex == 2 ? true : false,
       ),
       CollapsibleItem(
         text: 'Career',
@@ -89,6 +98,7 @@ class _TemplatePageState extends State<TemplatePage> {
             children: [
               HomePage(_scrollControllers[0]),
               AboutPage(_scrollControllers[1]),
+              SkillPage(_scrollControllers[2]),
             ],
             onPageChanged: (index) {
               setState(() {
