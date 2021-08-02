@@ -35,11 +35,11 @@ class SkillPageState extends State<SkillPage> {
   @override
   void initState() {
     super.initState();
-    final barGroup1 = makeGroupData(0, 75);
-    final barGroup2 = makeGroupData(1, 65);
+    final barGroup1 = makeGroupData(0, 80);
+    final barGroup2 = makeGroupData(1, 75);
     final barGroup3 = makeGroupData(2, 30);
     final barGroup4 = makeGroupData(3, 55);
-    final barGroup5 = makeGroupData(4, 40);
+    final barGroup5 = makeGroupData(4, 45);
     final barGroup6 = makeGroupData(5, 45);
     final barGroup7 = makeGroupData(6, 50);
 
