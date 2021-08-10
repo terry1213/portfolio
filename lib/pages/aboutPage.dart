@@ -189,7 +189,7 @@ class AboutPage extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(LineIcons.phone, size: 20),
+            Icon(LineIcons.phone, size: 23),
             SizedBox(
               width: 5,
             ),
@@ -201,7 +201,7 @@ class AboutPage extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(LineIcons.envelope, size: 20),
+            Icon(LineIcons.envelope, size: 23),
             SizedBox(
               width: 5,
             ),
@@ -213,7 +213,7 @@ class AboutPage extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(LineIcons.github, size: 20),
+            Icon(LineIcons.github, size: 23),
             SizedBox(
               width: 5,
             ),
@@ -225,7 +225,7 @@ class AboutPage extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(LineIcons.bloggerB, size: 20),
+            Icon(LineIcons.bloggerB, size: 23),
             SizedBox(
               width: 5,
             ),
