@@ -60,7 +60,7 @@ class SkillPageState extends State<SkillPage> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     return Center(
       child: SingleChildScrollView(
         controller: widget._scrollController,
