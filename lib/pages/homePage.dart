@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:portfolio/utils/screenUtilMinimum.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     'Email': 'mailto:1213terry@naver.com',
     'Phone': 'sms:01047888356',
     'LinkedIn':
-    'https://www.linkedin.com/in/%EC%97%B0%EC%9A%B0-%EC%9E%84-89291320b/',
+        'https://www.linkedin.com/in/%EC%97%B0%EC%9A%B0-%EC%9E%84-89291320b/',
     'Blog': 'https://terry1213.github.io/categories/',
     'Github': 'https://github.com/terry1213',
   };
@@ -43,18 +44,18 @@ class _HomePageState extends State<HomePage> {
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Container(
-              width: size.width - 80 > 1361 ? size.width - 80 : 1361,
+              width: size.width - 80 > 1360 ? size.width - 80 : 1360,
               child: Stack(
                 alignment: Alignment.bottomRight,
                 children: [
                   Positioned(
-                    bottom: -1000,
-                    right: -350,
+                    bottom: ScreenUtilMinimum(-1000).sp,
+                    right: ScreenUtilMinimum(-350).sp,
                     child: ClipOval(
                       child: AnimatedContainer(
                         duration: Duration(milliseconds: 1500),
-                        height: 1900,
-                        width: change ? 1000 : 0,
+                        height: ScreenUtilMinimum(1900).sp,
+                        width: change ? ScreenUtilMinimum(1000).sp : 0,
                         color: Colors.white10,
                         curve: Curves.decelerate,
                       ),
@@ -63,16 +64,12 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(
-                        width: 120,
-                      ),
+                      SizedBox(width: ScreenUtilMinimum(120).w),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            height: 200,
-                          ),
+                          SizedBox(height: ScreenUtilMinimum(200).h),
                           RichText(
                             text: TextSpan(
                               text: '안녕하세요,\n',
@@ -89,9 +86,7 @@ class _HomePageState extends State<HomePage> {
                               ],
                             ),
                           ),
-                          SizedBox(
-                            height: 300,
-                          ),
+                          SizedBox(height: ScreenUtilMinimum(300).h),
                           Text('Contact me',
                               style: Theme.of(context)
                                   .textTheme
@@ -105,44 +100,43 @@ class _HomePageState extends State<HomePage> {
                                 icon: Icon(LineIcons.envelopeSquare),
                                 tooltip: 'Email',
                                 splashRadius: 15,
-                                iconSize: 30,
+                                iconSize: ScreenUtilMinimum(30).sp,
                               ),
                               IconButton(
                                 onPressed: () => _launchURL('Phone'),
                                 icon: Icon(LineIcons.phoneSquare),
                                 tooltip: 'Phone',
                                 splashRadius: 15,
-                                iconSize: 30,
+                                iconSize: ScreenUtilMinimum(30).sp,
                               ),
                               IconButton(
                                 onPressed: () => _launchURL('LinkedIn'),
                                 icon: Icon(LineIcons.linkedin),
                                 tooltip: 'LinkedIn',
                                 splashRadius: 15,
-                                iconSize: 30,
+                                iconSize: ScreenUtilMinimum(30).sp,
                               ),
                               IconButton(
                                 onPressed: () => _launchURL('Blog'),
                                 icon: Icon(LineIcons.blogger),
                                 tooltip: 'Blog',
                                 splashRadius: 15,
-                                iconSize: 30,
+                                iconSize: ScreenUtilMinimum(30).sp,
                               ),
                               IconButton(
                                 onPressed: () => _launchURL('Github'),
                                 icon: Icon(LineIcons.githubSquare),
                                 tooltip: 'Github',
                                 splashRadius: 15,
-                                iconSize: 30,
+                                iconSize: ScreenUtilMinimum(30).sp,
                               ),
                             ],
                           ),
                         ],
                       ),
-                      SizedBox(
-                        width: 45,
-                      ),
-                      Image.asset('assets/profile.png', width: 600),
+                      SizedBox(width: ScreenUtilMinimum(45).w),
+                      Image.asset('assets/profile.png',
+                          width: ScreenUtilMinimum(600).sp),
                     ],
                   ),
                 ],

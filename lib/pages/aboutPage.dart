@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:portfolio/utils/screenUtilMinimum.dart';
 import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 import 'package:portfolio/widgets/verticalDashedDivider.dart';
 
@@ -21,7 +21,7 @@ class AboutPage extends StatelessWidget {
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Container(
-              width: size.width - 80 > 1361 ? size.width - 80 : 1361,
+              width: size.width - 80 > 1360 ? size.width - 80 : 1360,
               child: DefaultTextStyle(
                 style: Theme.of(context).textTheme.bodyText2!,
                 child: Padding(
@@ -29,32 +29,35 @@ class AboutPage extends StatelessWidget {
                   child: Row(
                     children: [
                       Expanded(
-                        flex: 2,
+                        flex: 5,
                         child: PhotoSection(context),
                       ),
                       VerticalDashedDivider(
                           indent: 30, endIndent: 30, space: 60),
                       Expanded(
-                        flex: 1,
+                        flex: 4,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 15),
+                            SizedBox(height: ScreenUtilMinimum(15).h),
                             Expanded(
                               flex: 20,
                               child: AboutSection(context),
                             ),
-                            HorizontalDashedDivider(space: 80),
+                            HorizontalDashedDivider(
+                                space: ScreenUtilMinimum(40).h),
                             Expanded(
                               flex: 10,
                               child: EducationSection(context),
                             ),
-                            HorizontalDashedDivider(space: 80),
+                            HorizontalDashedDivider(
+                                space: ScreenUtilMinimum(40).h),
                             Expanded(
                               flex: 15,
                               child: CareerSection(context),
                             ),
-                            HorizontalDashedDivider(space: 80),
+                            HorizontalDashedDivider(
+                                space: ScreenUtilMinimum(40).h),
                             Expanded(
                               flex: 1,
                               child: Container(),
@@ -65,21 +68,23 @@ class AboutPage extends StatelessWidget {
                       VerticalDashedDivider(
                           indent: 30, endIndent: 30, space: 60),
                       Expanded(
-                        flex: 1,
+                        flex: 4,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 15),
+                            SizedBox(height: ScreenUtilMinimum(15).h),
                             Expanded(
                               flex: 11,
                               child: ProjectSection(context),
                             ),
-                            HorizontalDashedDivider(space: 80),
+                            HorizontalDashedDivider(
+                                space: ScreenUtilMinimum(40).h),
                             Expanded(
                               flex: 12,
                               child: CertificateSection(context),
                             ),
-                            HorizontalDashedDivider(space: 100),
+                            HorizontalDashedDivider(
+                                space: ScreenUtilMinimum(40).h),
                             Expanded(
                               flex: 19,
                               child: Container(),
@@ -112,9 +117,7 @@ class AboutPage extends StatelessWidget {
                 width: 200,
               ),
             ),
-            SizedBox(
-              width: 30,
-            ),
+            SizedBox(width: ScreenUtilMinimum(30).w),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -122,7 +125,7 @@ class AboutPage extends StatelessWidget {
                   children: [
                     Container(
                       alignment: Alignment.center,
-                      width: 60.sp,
+                      width: ScreenUtilMinimum(60).sp,
                       child: AnimatedTextKit(
                         animatedTexts: [
                           WavyAnimatedText(
@@ -186,14 +189,12 @@ class AboutPage extends StatelessWidget {
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         Text('1996.12.13 / 경기도 구리시'),
-        SizedBox(height: 30),
+        SizedBox(height: ScreenUtilMinimum(30).h),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(LineIcons.phone, size: 23.sp),
-            SizedBox(
-              width: 5,
-            ),
+            Icon(LineIcons.phone, size: ScreenUtilMinimum(23).sp),
+            SizedBox(width: ScreenUtilMinimum(5).w),
             Flexible(
               child: Text('010-4788-8356'),
             ),
@@ -202,10 +203,8 @@ class AboutPage extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(LineIcons.envelope, size: 23.sp),
-            SizedBox(
-              width: 5,
-            ),
+            Icon(LineIcons.envelope, size: ScreenUtilMinimum(23).sp),
+            SizedBox(width: ScreenUtilMinimum(5).w),
             Flexible(
               child: Text('1213terry@naver.com'),
             ),
@@ -214,10 +213,8 @@ class AboutPage extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(LineIcons.github, size: 23.sp),
-            SizedBox(
-              width: 5,
-            ),
+            Icon(LineIcons.github, size: ScreenUtilMinimum(23).sp),
+            SizedBox(width: ScreenUtilMinimum(5).w),
             Flexible(
               child: Text('https://github.com/terry1213'),
             ),
@@ -226,10 +223,8 @@ class AboutPage extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(LineIcons.bloggerB, size: 23.sp),
-            SizedBox(
-              width: 5,
-            ),
+            Icon(LineIcons.bloggerB, size: ScreenUtilMinimum(23).sp),
+            SizedBox(width: ScreenUtilMinimum(5).w),
             Flexible(
               child: Text('https://terry1213.github.io/categories/'),
             ),
@@ -251,14 +246,12 @@ class AboutPage extends StatelessWidget {
               .bodyText1!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 30),
+        SizedBox(height: ScreenUtilMinimum(30).h),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('2012.02-2015.02'),
-            SizedBox(
-              width: 5,
-            ),
+            SizedBox(width: ScreenUtilMinimum(5).w),
             Text('새음 기독 대안학교'),
           ],
         ),
@@ -266,9 +259,7 @@ class AboutPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('2015.02-2021.02'),
-            SizedBox(
-              width: 5,
-            ),
+            SizedBox(width: ScreenUtilMinimum(5).w),
             Text('한동대학교 컴퓨터공학과'),
           ],
         ),
@@ -288,14 +279,12 @@ class AboutPage extends StatelessWidget {
               .bodyText1!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 30),
+        SizedBox(height: ScreenUtilMinimum(30).h),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('2020.12-2021.02'),
-            SizedBox(
-              width: 5,
-            ),
+            SizedBox(width: ScreenUtilMinimum(5).w),
             Flexible(
               child: Text('홀잡펠이펙티브마이크로브스 Flutter 개발자'),
             )
@@ -305,9 +294,7 @@ class AboutPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('2021.02-           '),
-            SizedBox(
-              width: 5,
-            ),
+            SizedBox(width: ScreenUtilMinimum(5).w),
             Flexible(
               child: Text('소프트웨어팩토리 Flutter 개발자'),
             )
@@ -329,14 +316,12 @@ class AboutPage extends StatelessWidget {
               .bodyText1!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 30),
+        SizedBox(height: ScreenUtilMinimum(30).h),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('2020.07'),
-            SizedBox(
-              width: 5,
-            ),
+            SizedBox(width: ScreenUtilMinimum(5).w),
             Flexible(
               child: Text('음악 공유 어플 \'아지트\' 개발(iOS)'),
             )
@@ -346,9 +331,7 @@ class AboutPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('2020.11'),
-            SizedBox(
-              width: 5,
-            ),
+            SizedBox(width: ScreenUtilMinimum(5).w),
             Flexible(
               child: Text('영어 복습 어플 \'오답노트\' 개발(Flutter)'),
             )
@@ -370,14 +353,12 @@ class AboutPage extends StatelessWidget {
               .bodyText1!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 30),
+        SizedBox(height: ScreenUtilMinimum(30).h),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('2020.05'),
-            SizedBox(
-              width: 5,
-            ),
+            SizedBox(width: ScreenUtilMinimum(5).w),
             Flexible(
               child: Text('토익 875점'),
             )
@@ -387,9 +368,7 @@ class AboutPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('2020.06'),
-            SizedBox(
-              width: 5,
-            ),
+            SizedBox(width: ScreenUtilMinimum(5).w),
             Flexible(
               child: Text('정보처리기사(필기)'),
             )
@@ -399,9 +378,7 @@ class AboutPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('2020.08'),
-            SizedBox(
-              width: 5,
-            ),
+            SizedBox(width: ScreenUtilMinimum(5).w),
             Flexible(
               child: Text('코더스하이 iOS 어플리케이션 캠프 최우수상'),
             )
