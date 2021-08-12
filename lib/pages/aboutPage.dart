@@ -113,8 +113,8 @@ class AboutPage extends StatelessWidget {
             ClipOval(
               child: Image.asset(
                 'assets/profile_sidebar.jpg',
-                height: 200,
-                width: 200,
+                height: ScreenUtilMinimum(200).sp,
+                width: ScreenUtilMinimum(200).sp,
               ),
             ),
             SizedBox(width: ScreenUtilMinimum(30).w),
