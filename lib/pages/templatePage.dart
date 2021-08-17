@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/pages/aboutPage.dart';
+import 'package:portfolio/pages/blogPage.dart';
 import 'package:portfolio/pages/careerPage.dart';
 import 'package:portfolio/pages/projectPage.dart';
 import 'package:portfolio/pages/skillPage.dart';
@@ -20,6 +21,7 @@ class _TemplatePageState extends State<TemplatePage> {
   final AssetImage _avatarImg = AssetImage('assets/profile_sidebar.jpg');
   int _currentPageIndex = 0;
   List<ScrollController> _scrollControllers = [
+    ScrollController(),
     ScrollController(),
     ScrollController(),
     ScrollController(),
@@ -105,6 +107,7 @@ class _TemplatePageState extends State<TemplatePage> {
               SkillPage(_scrollControllers[2]),
               CareerPage(_scrollControllers[3]),
               ProjectPage(_scrollControllers[4]),
+              BlogPage(_scrollControllers[5]),
             ],
             onPageChanged: (index) {
               setState(() {
