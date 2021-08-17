@@ -135,13 +135,13 @@ class BlogPage extends StatelessWidget {
                             return Builder(
                               builder: (BuildContext context) {
                                 return Container(
-                                  width: ScreenUtilMinimum(1000).w,
+                                  // width: ScreenUtilMinimum(1000).w,
                                   margin: EdgeInsets.symmetric(
-                                    horizontal: 10.0,
+                                    horizontal: ScreenUtilMinimum(30).w,
                                   ),
                                   padding: EdgeInsets.symmetric(
-                                    vertical: 20.0,
-                                    horizontal: 20.0,
+                                    vertical: ScreenUtilMinimum(20).h,
+                                    horizontal: ScreenUtilMinimum(20).w,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white10,
