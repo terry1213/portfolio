@@ -5,10 +5,10 @@ class ScreenUtilMinimum {
 
   const ScreenUtilMinimum(this.float);
 
-  double get w => _max(ScreenUtil().setWidth(this.float.abs()), float.abs());
-  double get h => _max(ScreenUtil().setHeight(this.float.abs()), float.abs());
-  double get r => _max(ScreenUtil().radius(this.float.abs()), float.abs());
-  double get sp => _max(ScreenUtil().setSp(this.float.abs()), float.abs());
+  double get w => _max(ScreenUtil().setWidth(this.float), float);
+  double get h => _max(ScreenUtil().setHeight(this.float), float);
+  double get r => _max(ScreenUtil().radius(this.float), float);
+  double get sp => _max(ScreenUtil().setSp(this.float), float);
 
-  double _max(double a, double b) => a > b ? a : b;
+  double _max(double a, double b) => a.abs() > b.abs() ? a : b;
 }
