@@ -48,7 +48,7 @@ class _TemplatePageState extends State<TemplatePage> {
       ),
       CollapsibleItem(
         text: 'Skill',
-        icon: LineIcons.barChartAlt,
+        icon: Icons.bar_chart_rounded,
         onPressed: () => _pageController.animateToPage(2,
             duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
         isSelected: _currentPageIndex == 2 ? true : false,
