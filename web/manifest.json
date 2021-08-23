@@ -19,5 +19,15 @@
             "sizes": "512x512",
             "type": "image/png"
         }
+        {
+            "src": "icons/touch-icon-72×72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        }
+        {
+            "src": "icons/touch-icon-114×114.png",
+            "sizes": "114x114",
+            "type": "image/png"
+        }
     ]
 }
