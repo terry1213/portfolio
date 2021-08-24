@@ -26,7 +26,7 @@ class ProjectPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Project',
+                        'Side&Toy Project',
                         style: Theme.of(context).textTheme.headline2!,
                       ),
                       SizedBox(height: ScreenUtilMinimum(10).h),
