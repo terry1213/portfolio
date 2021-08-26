@@ -18,23 +18,20 @@ class ProjectPage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Container(
               width: size.width - 80 > 1360 ? size.width - 80 : 1360,
-              child: DefaultTextStyle(
-                style: Theme.of(context).textTheme.bodyText2!,
-                child: Padding(
-                  padding: EdgeInsets.all(30),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Side&Toy Project',
-                        style: Theme.of(context).textTheme.headline2!,
-                      ),
-                      SizedBox(height: ScreenUtilMinimum(10).h),
-                      Expanded(
-                        child: Container(),
-                      ),
-                    ],
-                  ),
+              child: Padding(
+                padding: EdgeInsets.all(30),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Side&Toy Project',
+                      style: Theme.of(context).textTheme.headline2!,
+                    ),
+                    SizedBox(height: ScreenUtilMinimum(10).h),
+                    Expanded(
+                      child: Container(),
+                    ),
+                  ],
                 ),
               ),
             ),

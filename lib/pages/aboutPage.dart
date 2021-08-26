@@ -22,78 +22,73 @@ class AboutPage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Container(
               width: size.width - 80 > 1360 ? size.width - 80 : 1360,
-              child: DefaultTextStyle(
-                style: Theme.of(context).textTheme.bodyText2!,
-                child: Padding(
-                  padding: EdgeInsets.all(30),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        flex: 5,
-                        child: PhotoSection(context),
+              child: Padding(
+                padding: EdgeInsets.all(30),
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 5,
+                      child: PhotoSection(context),
+                    ),
+                    VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
+                    Expanded(
+                      flex: 4,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: ScreenUtilMinimum(15).h),
+                          Expanded(
+                            flex: 20,
+                            child: AboutSection(context),
+                          ),
+                          HorizontalDashedDivider(
+                              space: ScreenUtilMinimum(40).h),
+                          Expanded(
+                            flex: 10,
+                            child: EducationSection(context),
+                          ),
+                          HorizontalDashedDivider(
+                              space: ScreenUtilMinimum(40).h),
+                          Expanded(
+                            flex: 15,
+                            child: CareerSection(context),
+                          ),
+                          HorizontalDashedDivider(
+                              space: ScreenUtilMinimum(40).h),
+                          Expanded(
+                            flex: 1,
+                            child: Container(),
+                          ),
+                        ],
                       ),
-                      VerticalDashedDivider(
-                          indent: 30, endIndent: 30, space: 60),
-                      Expanded(
-                        flex: 4,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(height: ScreenUtilMinimum(15).h),
-                            Expanded(
-                              flex: 20,
-                              child: AboutSection(context),
-                            ),
-                            HorizontalDashedDivider(
-                                space: ScreenUtilMinimum(40).h),
-                            Expanded(
-                              flex: 10,
-                              child: EducationSection(context),
-                            ),
-                            HorizontalDashedDivider(
-                                space: ScreenUtilMinimum(40).h),
-                            Expanded(
-                              flex: 15,
-                              child: CareerSection(context),
-                            ),
-                            HorizontalDashedDivider(
-                                space: ScreenUtilMinimum(40).h),
-                            Expanded(
-                              flex: 1,
-                              child: Container(),
-                            ),
-                          ],
-                        ),
+                    ),
+                    VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
+                    Expanded(
+                      flex: 4,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: ScreenUtilMinimum(15).h),
+                          Expanded(
+                            flex: 11,
+                            child: ProjectSection(context),
+                          ),
+                          HorizontalDashedDivider(
+                              space: ScreenUtilMinimum(40).h),
+                          Expanded(
+                            flex: 12,
+                            child: CertificateSection(context),
+                          ),
+                          HorizontalDashedDivider(
+                              space: ScreenUtilMinimum(40).h),
+                          Expanded(
+                            flex: 19,
+                            child: Container(),
+                          ),
+                        ],
                       ),
-                      VerticalDashedDivider(
-                          indent: 30, endIndent: 30, space: 60),
-                      Expanded(
-                        flex: 4,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(height: ScreenUtilMinimum(15).h),
-                            Expanded(
-                              flex: 11,
-                              child: ProjectSection(context),
-                            ),
-                            HorizontalDashedDivider(
-                                space: ScreenUtilMinimum(40).h),
-                            Expanded(
-                              flex: 12,
-                              child: CertificateSection(context),
-                            ),
-                            HorizontalDashedDivider(
-                                space: ScreenUtilMinimum(40).h),
-                            Expanded(
-                              flex: 19,
-                              child: Container(),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
