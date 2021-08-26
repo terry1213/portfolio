@@ -1,10 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:portfolio/controller/carouselIndexController.dart';
 import 'package:portfolio/utils/screenUtilMinimum.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlogPage extends StatelessWidget {
   final ScrollController _scrollController;
+  final CarouselController _carouselController = CarouselController();
   Map<String, String> _urls = {
     'Widget of the Week tag':
         'https://terry1213.github.io/tags/#widgetoftheweek',
@@ -107,55 +110,78 @@ class BlogPage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Container(
               width: size.width - 80 > 1360 ? size.width - 80 : 1360,
-              child: DefaultTextStyle(
-                style: Theme.of(context).textTheme.bodyText2!,
-                child: Padding(
-                  padding: EdgeInsets.all(30),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Blogs',
-                        style: Theme.of(context).textTheme.headline2!,
-                      ),
-                      SizedBox(height: ScreenUtilMinimum(10).h),
-                      Text(
-                        '배운 것을 잊어버리지 않기 위해 기록하기 시작했습니다.\n'
-                        '주로 Flutter에 대한 글을 작성하지만 그외에 다양한 내용도 다루고 있습니다.\n'
-                        '일주일에 2회씩 일년째 꾸준히 기록하고 있으며, 현재까지 약 100개의 게시글을 작성했습니다.',
-                        style: Theme.of(context).textTheme.bodyText2!,
-                      ),
-                      SizedBox(height: ScreenUtilMinimum(20).h),
-                      Expanded(
-                        child: CarouselSlider(
-                          options: CarouselOptions(
-                            height: ScreenUtilMinimum(570).h,
+              child: Padding(
+                padding: EdgeInsets.all(30),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Blogs',
+                      style: Theme.of(context).textTheme.headline2!,
+                    ),
+                    SizedBox(height: ScreenUtilMinimum(10).h),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            '배운 것을 잊어버리지 않기 위해 기록하기 시작했습니다.\n'
+                            '주로 Flutter에 대한 글을 작성하지만 그외에 다양한 내용도 다루고 있습니다.\n'
+                            '일주일에 2회씩 일년째 꾸준히 기록하고 있으며, 현재까지 약 100개의 게시글을 작성했습니다.',
                           ),
-                          items: [0, 1].map((i) {
-                            return Builder(
-                              builder: (BuildContext context) {
-                                return Container(
-                                  // width: ScreenUtilMinimum(1000).w,
-                                  margin: EdgeInsets.symmetric(
-                                    horizontal: ScreenUtilMinimum(30).w,
-                                  ),
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: ScreenUtilMinimum(20).h,
-                                    horizontal: ScreenUtilMinimum(20).w,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white10,
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: _carouselItems[i],
-                                );
-                              },
-                            );
-                          }).toList(),
                         ),
+                        GestureDetector(
+                          child: Icon(Icons.arrow_back),
+                          onTap: () => _carouselController.previousPage(),
+                        ),
+                        GetBuilder<CarouselIndexController>(
+                          init: CarouselIndexController(),
+                          builder: (_) => Text(
+                            ' ${_.index + 1} / 2 ',
+                            style: Theme.of(context).textTheme.bodyText1,
+                          ),
+                        ),
+                        GestureDetector(
+                          child: Icon(Icons.arrow_forward),
+                          onTap: () => _carouselController.nextPage(),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: ScreenUtilMinimum(20).h),
+                    Expanded(
+                      child: CarouselSlider(
+                        options: CarouselOptions(
+                          height: ScreenUtilMinimum(570).h,
+                          viewportFraction: 1.07,
+                          onPageChanged: (int index, CarouselPageChangedReason reason) {
+                            Get.find<CarouselIndexController>().changeIndex(index);
+                          },
+                        ),
+                        carouselController: _carouselController,
+                        items: [0, 1].map((i) {
+                          return Builder(
+                            builder: (BuildContext context) {
+                              return Container(
+                                // width: ScreenUtilMinimum(1000).w,
+                                margin: EdgeInsets.symmetric(
+                                  horizontal: ScreenUtilMinimum(30).w,
+                                ),
+                                padding: EdgeInsets.symmetric(
+                                  vertical: ScreenUtilMinimum(20).h,
+                                  horizontal: ScreenUtilMinimum(20).w,
+                                ),
+                                decoration: BoxDecoration(
+                                  // color: Colors.white10,
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: _carouselItems[i],
+                              );
+                            },
+                          );
+                        }).toList(),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -172,11 +198,11 @@ class BlogPage extends StatelessWidget {
         Expanded(
           child: first,
         ),
-        SizedBox(width: ScreenUtilMinimum(20).w),
+        SizedBox(width: ScreenUtilMinimum(40).w),
         Expanded(
           child: second,
         ),
-        SizedBox(width: ScreenUtilMinimum(20).w),
+        SizedBox(width: ScreenUtilMinimum(40).w),
         Expanded(
           child: third,
         ),
@@ -192,26 +218,20 @@ class BlogPage extends StatelessWidget {
       required String urlKey2,
       required BuildContext context}) {
     return Card(
-      color: Colors.white24,
+      color: Colors.transparent,
+      elevation: 0.0,
+      // color: Color(0xFFF242424),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       child: Padding(
         padding: EdgeInsets.symmetric(
-          vertical: 10.0,
-          horizontal: 10.0,
+          vertical: 0.0,
+          horizontal: 0.0,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              title,
-              style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                    color: Colors.lightBlue,
-                    fontWeight: FontWeight.bold,
-                  ),
-            ),
-            SizedBox(height: ScreenUtilMinimum(10).h),
             Expanded(
-              flex: 14,
+              flex: 20,
               child: Container(
                 clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
@@ -223,12 +243,18 @@ class BlogPage extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: ScreenUtilMinimum(20).h),
+            Text(
+              title,
+              style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                    color: Colors.lightBlue,
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            SizedBox(height: ScreenUtilMinimum(10).h),
             Expanded(
               flex: 20,
-              child: Text(
-                body,
-                style: Theme.of(context).textTheme.bodyText2,
-              ),
+              child: Text(body),
             ),
             Align(
               alignment: Alignment.centerRight,
@@ -237,7 +263,10 @@ class BlogPage extends StatelessWidget {
                 icon: Icon(Icons.launch),
                 label: Text(
                   title != 'State Management' ? '최근 게시글' : 'GetX 게시글',
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold,),
+                  style: TextStyle(
+                    color: Colors.lightBlue,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
@@ -248,7 +277,10 @@ class BlogPage extends StatelessWidget {
                 icon: Icon(Icons.launch),
                 label: Text(
                   title != 'State Management' ? '전체 게시글' : 'Provider 게시글',
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold,),
+                  style: TextStyle(
+                    color: Colors.lightBlue,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
