@@ -6,8 +6,7 @@ import 'package:portfolio/utils/screenUtilMinimum.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlogPage extends StatelessWidget {
-  final ScrollController _scrollController;
-  Map<String, String> _urls = {
+  final Map<String, String> _urls = const {
     'Widget of the Week tag':
         'https://terry1213.github.io/tags/#widgetoftheweek',
     'Widget of the Week last':
@@ -30,12 +29,13 @@ class BlogPage extends StatelessWidget {
         'https://terry1213.github.io/flutter/flutter-a-problem-occurred-evaluating-project-app-path-may-not-be-null-or-empty-string-pathnull/',
   };
 
-  BlogPage(this._scrollController);
+  const BlogPage();
 
   @override
   Widget build(BuildContext context) {
     final CarouselController _carouselController = CarouselController();
-    final CarouselIndexController _carouselIndexController = Get.put(CarouselIndexController());
+    final CarouselIndexController _carouselIndexController =
+        Get.find<CarouselIndexController>(tag: 'blog');
     Size size = MediaQuery.of(context).size;
     List<Widget> _carouselItems = [
       CarouselItem(
@@ -104,7 +104,6 @@ class BlogPage extends StatelessWidget {
     ];
     return Center(
       child: SingleChildScrollView(
-        controller: _scrollController,
         child: Container(
           height: size.height > 820 ? size.height : 820,
           child: SingleChildScrollView(
@@ -136,6 +135,7 @@ class BlogPage extends StatelessWidget {
                           onTap: () => _carouselController.previousPage(),
                         ),
                         GetBuilder<CarouselIndexController>(
+                          tag: 'blog',
                           builder: (_) => Text(
                             ' ${_.index + 1} / 2 ',
                             style: Theme.of(context).textTheme.bodyText1,
@@ -153,7 +153,9 @@ class BlogPage extends StatelessWidget {
                         options: CarouselOptions(
                           height: ScreenUtilMinimum(570).h,
                           viewportFraction: 1.07,
-                          onPageChanged: (int index, CarouselPageChangedReason reason) {
+                          initialPage: _carouselIndexController.index,
+                          onPageChanged:
+                              (int index, CarouselPageChangedReason reason) {
                             _carouselIndexController.changeIndex(index);
                           },
                         ),
@@ -219,7 +221,6 @@ class BlogPage extends StatelessWidget {
     return Card(
       color: Colors.transparent,
       elevation: 0.0,
-      // color: Color(0xFFF242424),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       child: Padding(
         padding: EdgeInsets.symmetric(

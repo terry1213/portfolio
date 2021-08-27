@@ -2,16 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/utils/screenUtilMinimum.dart';
 
 class CareerPage extends StatelessWidget {
-  final ScrollController _scrollController;
-
-  CareerPage(this._scrollController);
+  const CareerPage();
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Center(
       child: SingleChildScrollView(
-        controller: _scrollController,
         child: Container(
           height: size.height > 820 ? size.height : 820,
           child: SingleChildScrollView(

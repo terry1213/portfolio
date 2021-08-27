@@ -20,13 +20,13 @@ class _TemplatePageState extends State<TemplatePage> {
   final PageController _pageController = PageController();
   final AssetImage _avatarImg = AssetImage('assets/profile_sidebar.jpg');
   int _currentPageIndex = 0;
-  List<ScrollController> _scrollControllers = [
-    ScrollController(),
-    ScrollController(),
-    ScrollController(),
-    ScrollController(),
-    ScrollController(),
-    ScrollController(),
+  final List<Widget> pages = const <Widget>[
+    HomePage(),
+    AboutPage(),
+    SkillPage(),
+    CareerPage(),
+    ProjectPage(),
+    BlogPage(),
   ];
 
   @override
@@ -80,41 +80,16 @@ class _TemplatePageState extends State<TemplatePage> {
         items: _items,
         avatarImg: _avatarImg,
         title: '임연우',
-        body: Listener(
-          onPointerSignal: (ps) {
-            if (ps is PointerScrollEvent &&
-                (_scrollControllers[_currentPageIndex].offset ==
-                        _scrollControllers[_currentPageIndex]
-                            .position
-                            .maxScrollExtent ||
-                    _scrollControllers[_currentPageIndex].offset == 0)) {
-              final newOffset = _pageController.offset + ps.scrollDelta.dy;
-              if (ps.scrollDelta.dy.isNegative) {
-                _pageController.jumpTo(math.max(0, newOffset));
-              } else {
-                _pageController.jumpTo(math.min(
-                    _pageController.position.maxScrollExtent, newOffset));
-              }
-            }
+        body: PageView(
+          controller: _pageController,
+          scrollDirection: Axis.vertical,
+          physics: NeverScrollableScrollPhysics(),
+          children: pages,
+          onPageChanged: (index) {
+            setState(() {
+              _currentPageIndex = index;
+            });
           },
-          child: PageView(
-            controller: _pageController,
-            scrollDirection: Axis.vertical,
-            physics: NeverScrollableScrollPhysics(),
-            children: [
-              HomePage(_scrollControllers[0]),
-              AboutPage(_scrollControllers[1]),
-              SkillPage(_scrollControllers[2]),
-              CareerPage(_scrollControllers[3]),
-              ProjectPage(_scrollControllers[4]),
-              BlogPage(_scrollControllers[5]),
-            ],
-            onPageChanged: (index) {
-              setState(() {
-                _currentPageIndex = index;
-              });
-            },
-          ),
         ),
         toggleTitle: 'Close',
         backgroundColor: Colors.black,

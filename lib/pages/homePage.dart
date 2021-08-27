@@ -4,9 +4,7 @@ import 'package:portfolio/utils/screenUtilMinimum.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
-  final ScrollController _scrollController;
-
-  HomePage(this._scrollController);
+  const HomePage();
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -38,7 +36,6 @@ class _HomePageState extends State<HomePage> {
     Size size = MediaQuery.of(context).size;
     return Center(
       child: SingleChildScrollView(
-        controller: widget._scrollController,
         child: Container(
           height: size.height > 820 ? size.height : 820,
           child: SingleChildScrollView(

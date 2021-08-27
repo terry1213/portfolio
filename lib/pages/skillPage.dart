@@ -6,9 +6,7 @@ import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 import 'package:portfolio/widgets/verticalDashedDivider.dart';
 
 class SkillPage extends StatefulWidget {
-  final ScrollController _scrollController;
-
-  SkillPage(this._scrollController);
+  const SkillPage();
 
   @override
   SkillPageState createState() => SkillPageState();
@@ -62,7 +60,6 @@ class SkillPageState extends State<SkillPage> {
     Size size = MediaQuery.of(context).size;
     return Center(
       child: SingleChildScrollView(
-        controller: widget._scrollController,
         child: Container(
           height: size.height > 820 ? size.height : 820,
           child: SingleChildScrollView(
