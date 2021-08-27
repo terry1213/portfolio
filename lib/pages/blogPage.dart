@@ -7,7 +7,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 class BlogPage extends StatelessWidget {
   final ScrollController _scrollController;
-  final CarouselController _carouselController = CarouselController();
   Map<String, String> _urls = {
     'Widget of the Week tag':
         'https://terry1213.github.io/tags/#widgetoftheweek',
@@ -35,6 +34,7 @@ class BlogPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final CarouselController _carouselController = CarouselController();
     final CarouselIndexController _carouselIndexController = Get.put(CarouselIndexController());
     Size size = MediaQuery.of(context).size;
     List<Widget> _carouselItems = [
