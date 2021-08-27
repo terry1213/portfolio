@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(1440, 820),
-      builder: () => MaterialApp(
+      builder: () => GetMaterialApp(
         title: '임연우 Flutter Developer',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
