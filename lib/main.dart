@@ -11,7 +11,7 @@ import 'controller/carouselIndexController.dart';
 
 void main() {
   setPathUrlStrategy();
-  Get.put(CarouselIndexController(), tag: 'blog');
+  Get.put(CarouselIndexController(index: 0), tag: 'blog');
   runApp(MyApp());
 }
 

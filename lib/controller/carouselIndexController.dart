@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
 
 class CarouselIndexController extends GetxController {
-  int index = 0;
+  int index;
+
+  CarouselIndexController({required this.index});
 
   changeIndex(int nextIndex) {
     index = nextIndex;
