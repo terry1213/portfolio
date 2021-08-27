@@ -35,7 +35,6 @@ class BlogPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CarouselController _carouselController = CarouselController();
-    final CarouselIndexController _carouselIndexController = Get.put(CarouselIndexController());
     Size size = MediaQuery.of(context).size;
     List<Widget> _carouselItems = [
       CarouselItem(
@@ -136,6 +135,7 @@ class BlogPage extends StatelessWidget {
                           onTap: () => _carouselController.previousPage(),
                         ),
                         GetBuilder<CarouselIndexController>(
+                          init: CarouselIndexController(),
                           builder: (_) => Text(
                             ' ${_.index + 1} / 2 ',
                             style: Theme.of(context).textTheme.bodyText1,
@@ -154,7 +154,7 @@ class BlogPage extends StatelessWidget {
                           height: ScreenUtilMinimum(570).h,
                           viewportFraction: 1.07,
                           onPageChanged: (int index, CarouselPageChangedReason reason) {
-                            _carouselIndexController.changeIndex(index);
+                            Get.find<CarouselIndexController>().changeIndex(index);
                           },
                         ),
                         carouselController: _carouselController,
@@ -162,7 +162,6 @@ class BlogPage extends StatelessWidget {
                           return Builder(
                             builder: (BuildContext context) {
                               return Container(
-                                // width: ScreenUtilMinimum(1000).w,
                                 margin: EdgeInsets.symmetric(
                                   horizontal: ScreenUtilMinimum(30).w,
                                 ),
