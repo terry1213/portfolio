@@ -8,6 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 class BlogPage extends StatelessWidget {
   final ScrollController _scrollController;
   final CarouselController _carouselController = CarouselController();
+  final CarouselIndexController _carouselIndexController = Get.put(CarouselIndexController());
   Map<String, String> _urls = {
     'Widget of the Week tag':
         'https://terry1213.github.io/tags/#widgetoftheweek',
@@ -153,7 +154,7 @@ class BlogPage extends StatelessWidget {
                           height: ScreenUtilMinimum(570).h,
                           viewportFraction: 1.07,
                           onPageChanged: (int index, CarouselPageChangedReason reason) {
-                            Get.find<CarouselIndexController>().changeIndex(index);
+                            _carouselIndexController.changeIndex(index);
                           },
                         ),
                         carouselController: _carouselController,
