@@ -155,6 +155,7 @@ class BlogPage extends StatelessWidget {
                           viewportFraction: 1.07,
                           onPageChanged: (int index, CarouselPageChangedReason reason) {
                             _carouselIndexController.changeIndex(index);
+                            print(index);
                           },
                         ),
                         carouselController: _carouselController,
