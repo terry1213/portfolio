@@ -28,6 +28,8 @@ class BlogPage extends StatelessWidget {
     'Error last':
         'https://terry1213.github.io/flutter/flutter-a-problem-occurred-evaluating-project-app-path-may-not-be-null-or-empty-string-pathnull/',
   };
+  static Size size = Get.size;
+  static TextTheme textTheme = Get.textTheme;
 
   const BlogPage();
 
@@ -36,7 +38,6 @@ class BlogPage extends StatelessWidget {
     final CarouselController _carouselController = CarouselController();
     final CarouselIndexController _carouselIndexController =
         Get.find<CarouselIndexController>(tag: 'blog');
-    Size size = MediaQuery.of(context).size;
     List<Widget> _carouselItems = [
       CarouselItem(
         CardSection(
@@ -47,7 +48,6 @@ class BlogPage extends StatelessWidget {
           image: 'assets/blog/widget_of_the_week.png',
           urlKey1: 'Widget of the Week last',
           urlKey2: 'Widget of the Week tag',
-          context: context,
         ),
         CardSection(
           title: 'Flutter/Dart Document',
@@ -57,7 +57,6 @@ class BlogPage extends StatelessWidget {
           image: 'assets/blog/flutter_dart.png',
           urlKey1: 'Flutter/Dart Document last',
           urlKey2: 'Flutter/Dart Document tag',
-          context: context,
         ),
         CardSection(
           title: 'Decoding Flutter',
@@ -67,7 +66,6 @@ class BlogPage extends StatelessWidget {
           image: 'assets/blog/decoding_flutter.jpeg',
           urlKey1: 'Decoding Flutter last',
           urlKey2: 'Decoding Flutter tag',
-          context: context,
         ),
       ),
       CarouselItem(
@@ -79,7 +77,6 @@ class BlogPage extends StatelessWidget {
           image: 'assets/blog/state_management.png',
           urlKey1: 'State Management getx',
           urlKey2: 'State Management provider',
-          context: context,
         ),
         CardSection(
           title: 'Algorithm',
@@ -88,7 +85,6 @@ class BlogPage extends StatelessWidget {
           image: 'assets/blog/algorithm.png',
           urlKey1: 'Algorithm last',
           urlKey2: 'Algorithm tag',
-          context: context,
         ),
         CardSection(
           title: 'Error',
@@ -98,7 +94,6 @@ class BlogPage extends StatelessWidget {
           image: 'assets/blog/error.png',
           urlKey1: 'Error last',
           urlKey2: 'Error tag',
-          context: context,
         ),
       ),
     ];
@@ -117,7 +112,7 @@ class BlogPage extends StatelessWidget {
                   children: [
                     Text(
                       'Blogs',
-                      style: Theme.of(context).textTheme.headline2!,
+                      style: textTheme.headline2!,
                     ),
                     SizedBox(height: ScreenUtilMinimum(10).h),
                     Row(
@@ -138,7 +133,7 @@ class BlogPage extends StatelessWidget {
                           tag: 'blog',
                           builder: (_) => Text(
                             ' ${_.index + 1} / 2 ',
-                            style: Theme.of(context).textTheme.bodyText1,
+                            style: textTheme.bodyText1,
                           ),
                         ),
                         GestureDetector(
@@ -211,13 +206,13 @@ class BlogPage extends StatelessWidget {
     );
   }
 
-  Widget CardSection(
-      {required String title,
-      required String body,
-      required String image,
-      required String urlKey1,
-      required String urlKey2,
-      required BuildContext context}) {
+  Widget CardSection({
+    required String title,
+    required String body,
+    required String image,
+    required String urlKey1,
+    required String urlKey2,
+  }) {
     return Card(
       color: Colors.transparent,
       elevation: 0.0,
@@ -246,10 +241,10 @@ class BlogPage extends StatelessWidget {
             SizedBox(height: ScreenUtilMinimum(20).h),
             Text(
               title,
-              style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                    color: Colors.lightBlue,
-                    fontWeight: FontWeight.bold,
-                  ),
+              style: textTheme.bodyText1!.copyWith(
+                color: Colors.lightBlue,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: ScreenUtilMinimum(10).h),
             Expanded(

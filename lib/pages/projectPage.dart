@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:portfolio/utils/screenUtilMinimum.dart';
 
 class ProjectPage extends StatelessWidget {
+  static Size size = Get.size;
+  static TextTheme textTheme = Get.textTheme;
+
   const ProjectPage();
 
   @override
@@ -22,7 +26,7 @@ class ProjectPage extends StatelessWidget {
                   children: [
                     Text(
                       'Side&Toy Project',
-                      style: Theme.of(context).textTheme.headline2!,
+                      style: textTheme.headline2!,
                     ),
                     SizedBox(height: ScreenUtilMinimum(10).h),
                     Expanded(

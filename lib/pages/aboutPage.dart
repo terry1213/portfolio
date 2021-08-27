@@ -1,16 +1,19 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/utils/screenUtilMinimum.dart';
 import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 import 'package:portfolio/widgets/verticalDashedDivider.dart';
 
 class AboutPage extends StatelessWidget {
+  static Size size = Get.size;
+  static TextTheme textTheme = Get.textTheme;
+
   const AboutPage();
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Center(
       child: SingleChildScrollView(
         child: Container(
@@ -25,7 +28,7 @@ class AboutPage extends StatelessWidget {
                   children: [
                     Expanded(
                       flex: 5,
-                      child: PhotoSection(context),
+                      child: PhotoSection(),
                     ),
                     VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
                     Expanded(
@@ -36,19 +39,19 @@ class AboutPage extends StatelessWidget {
                           SizedBox(height: ScreenUtilMinimum(15).h),
                           Expanded(
                             flex: 20,
-                            child: AboutSection(context),
+                            child: AboutSection(),
                           ),
                           HorizontalDashedDivider(
                               space: ScreenUtilMinimum(40).h),
                           Expanded(
                             flex: 10,
-                            child: EducationSection(context),
+                            child: EducationSection(),
                           ),
                           HorizontalDashedDivider(
                               space: ScreenUtilMinimum(40).h),
                           Expanded(
                             flex: 15,
-                            child: CareerSection(context),
+                            child: CareerSection(),
                           ),
                           HorizontalDashedDivider(
                               space: ScreenUtilMinimum(40).h),
@@ -68,13 +71,13 @@ class AboutPage extends StatelessWidget {
                           SizedBox(height: ScreenUtilMinimum(15).h),
                           Expanded(
                             flex: 11,
-                            child: ProjectSection(context),
+                            child: ProjectSection(),
                           ),
                           HorizontalDashedDivider(
                               space: ScreenUtilMinimum(40).h),
                           Expanded(
                             flex: 12,
-                            child: CertificateSection(context),
+                            child: CertificateSection(),
                           ),
                           HorizontalDashedDivider(
                               space: ScreenUtilMinimum(40).h),
@@ -95,7 +98,7 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget PhotoSection(BuildContext context) {
+  Widget PhotoSection() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -122,17 +125,13 @@ class AboutPage extends StatelessWidget {
                         animatedTexts: [
                           WavyAnimatedText(
                             '기록',
-                            textStyle: Theme.of(context)
-                                .textTheme
-                                .headline3!
+                            textStyle: textTheme.headline3!
                                 .copyWith(color: Colors.lightBlue),
                             speed: Duration(milliseconds: 600),
                           ),
                           WavyAnimatedText(
                             '성장',
-                            textStyle: Theme.of(context)
-                                .textTheme
-                                .headline3!
+                            textStyle: textTheme.headline3!
                                 .copyWith(color: Colors.lightBlue),
                             speed: Duration(milliseconds: 600),
                           ),
@@ -141,19 +140,17 @@ class AboutPage extends StatelessWidget {
                         pause: Duration(milliseconds: 3000),
                       ),
                     ),
-                    Text('하는', style: Theme.of(context).textTheme.headline3),
+                    Text('하는', style: textTheme.headline3),
                   ],
                 ),
                 RichText(
                   text: TextSpan(
                     text: '개발자\n',
-                    style: Theme.of(context).textTheme.headline3,
+                    style: textTheme.headline3,
                     children: [
                       TextSpan(
                         text: '임연우',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline2!
+                        style: textTheme.headline2!
                             .copyWith(color: Colors.lightBlue),
                       ),
                       TextSpan(text: '입니다.'),
@@ -168,16 +165,14 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget AboutSection(BuildContext context) {
+  Widget AboutSection() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           '임연우 / Yeonwoo Lim',
-          style: Theme.of(context)
-              .textTheme
-              .bodyText1!
+          style: textTheme.bodyText1!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         Text('1996.12.13 / 경기도 구리시'),
@@ -226,16 +221,14 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget EducationSection(BuildContext context) {
+  Widget EducationSection() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Education',
-          style: Theme.of(context)
-              .textTheme
-              .bodyText1!
+          style: textTheme.bodyText1!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: ScreenUtilMinimum(30).h),
@@ -259,16 +252,14 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget CareerSection(BuildContext context) {
+  Widget CareerSection() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Career',
-          style: Theme.of(context)
-              .textTheme
-              .bodyText1!
+          style: textTheme.bodyText1!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: ScreenUtilMinimum(30).h),
@@ -296,16 +287,14 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget ProjectSection(BuildContext context) {
+  Widget ProjectSection() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Project',
-          style: Theme.of(context)
-              .textTheme
-              .bodyText1!
+          style: textTheme.bodyText1!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: ScreenUtilMinimum(30).h),
@@ -333,16 +322,14 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget CertificateSection(BuildContext context) {
+  Widget CertificateSection() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Certificate',
-          style: Theme.of(context)
-              .textTheme
-              .bodyText1!
+          style: textTheme.bodyText1!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: ScreenUtilMinimum(30).h),

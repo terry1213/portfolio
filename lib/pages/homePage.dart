@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/utils/screenUtilMinimum.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -20,6 +21,8 @@ class _HomePageState extends State<HomePage> {
     'Github': 'https://github.com/terry1213',
   };
   bool change = false;
+  static Size size = Get.size;
+  static TextTheme textTheme = Get.textTheme;
 
   @override
   void initState() {
@@ -33,7 +36,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Center(
       child: SingleChildScrollView(
         child: Container(
@@ -70,14 +72,12 @@ class _HomePageState extends State<HomePage> {
                           RichText(
                             text: TextSpan(
                               text: '안녕하세요,\n',
-                              style: Theme.of(context).textTheme.headline2,
+                              style: textTheme.headline2,
                               children: [
                                 TextSpan(text: 'Flutter 개발자 '),
                                 TextSpan(
                                     text: '임연우',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline1!
+                                    style: textTheme.headline1!
                                         .copyWith(color: Colors.lightBlue)),
                                 TextSpan(text: '입니다.'),
                               ],
@@ -85,9 +85,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           SizedBox(height: ScreenUtilMinimum(300).h),
                           Text('Contact me',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText2!
+                              style: textTheme.bodyText2!
                                   .copyWith(fontWeight: FontWeight.bold)),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:portfolio/utils/screenUtilMinimum.dart';
 
 class CareerPage extends StatelessWidget {
+  static Size size = Get.size;
+  static TextTheme textTheme = Get.textTheme;
+
   const CareerPage();
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Center(
       child: SingleChildScrollView(
         child: Container(
@@ -22,7 +25,7 @@ class CareerPage extends StatelessWidget {
                   children: [
                     Text(
                       'Career',
-                      style: Theme.of(context).textTheme.headline2!,
+                      style: textTheme.headline2!,
                     ),
                     SizedBox(height: ScreenUtilMinimum(10).h),
                     Expanded(

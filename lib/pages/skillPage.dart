@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:portfolio/utils/screenUtilMinimum.dart';
 import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 import 'package:portfolio/widgets/verticalDashedDivider.dart';
@@ -24,6 +25,8 @@ class SkillPageState extends State<SkillPage> {
     'HTML/CSS',
     'C/C++',
   ];
+  static Size size = Get.size;
+  static TextTheme textTheme = Get.textTheme;
 
   late List<BarChartGroupData> rawBarGroups;
   late List<BarChartGroupData> showingBarGroups;
@@ -57,7 +60,6 @@ class SkillPageState extends State<SkillPage> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Center(
       child: SingleChildScrollView(
         child: Container(
@@ -82,7 +84,7 @@ class SkillPageState extends State<SkillPage> {
                               children: [
                                 Text(
                                   'Skills',
-                                  style: Theme.of(context).textTheme.headline2!,
+                                  style: textTheme.headline2!,
                                 ),
                                 Card(
                                   elevation: 0,
@@ -106,18 +108,14 @@ class SkillPageState extends State<SkillPage> {
                                                     skills[group.x.toInt()];
                                                 return BarTooltipItem(
                                                   skill + '\n',
-                                                  Theme.of(context)
-                                                      .textTheme
-                                                      .bodyText2!
-                                                      .copyWith(
-                                                          fontWeight:
-                                                              FontWeight.bold),
+                                                  textTheme.bodyText2!.copyWith(
+                                                      fontWeight:
+                                                          FontWeight.bold),
                                                   children: <TextSpan>[
                                                     TextSpan(
                                                       text: (rod.y - 3)
                                                           .toString(),
-                                                      style: Theme.of(context)
-                                                          .textTheme
+                                                      style: textTheme
                                                           .bodyText2!
                                                           .copyWith(
                                                               color:
@@ -184,9 +182,7 @@ class SkillPageState extends State<SkillPage> {
                                             bottomTitles: SideTitles(
                                               showTitles: true,
                                               getTextStyles: (value) =>
-                                                  Theme.of(context)
-                                                      .textTheme
-                                                      .bodyText2!,
+                                                  textTheme.bodyText2!,
                                               margin: 20,
                                               getTitles: (double value) =>
                                                   skills[value.toInt()],
@@ -194,9 +190,7 @@ class SkillPageState extends State<SkillPage> {
                                             leftTitles: SideTitles(
                                               showTitles: true,
                                               getTextStyles: (value) =>
-                                                  Theme.of(context)
-                                                      .textTheme
-                                                      .bodyText2!,
+                                                  textTheme.bodyText2!,
                                               margin: 32,
                                               reservedSize: 14,
                                               getTitles: (value) {
@@ -238,12 +232,9 @@ class SkillPageState extends State<SkillPage> {
                                     children: [
                                       Text(
                                         'JavaScript',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyText1!
-                                            .copyWith(
-                                                color: Colors.lightBlue,
-                                                fontWeight: FontWeight.bold),
+                                        style: textTheme.bodyText1!.copyWith(
+                                            color: Colors.lightBlue,
+                                            fontWeight: FontWeight.bold),
                                       ),
                                       SizedBox(height: ScreenUtilMinimum(10).h),
                                       Text(
@@ -263,12 +254,9 @@ class SkillPageState extends State<SkillPage> {
                                     children: [
                                       Text(
                                         'Github',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyText1!
-                                            .copyWith(
-                                                color: Colors.lightBlue,
-                                                fontWeight: FontWeight.bold),
+                                        style: textTheme.bodyText1!.copyWith(
+                                            color: Colors.lightBlue,
+                                            fontWeight: FontWeight.bold),
                                       ),
                                       SizedBox(height: ScreenUtilMinimum(10).h),
                                       Text(
@@ -295,12 +283,9 @@ class SkillPageState extends State<SkillPage> {
                               children: [
                                 Text(
                                   'Flutter',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyText1!
-                                      .copyWith(
-                                          color: Colors.lightBlue,
-                                          fontWeight: FontWeight.bold),
+                                  style: textTheme.bodyText1!.copyWith(
+                                      color: Colors.lightBlue,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 SizedBox(height: ScreenUtilMinimum(10).h),
                                 Text(
@@ -321,12 +306,9 @@ class SkillPageState extends State<SkillPage> {
                               children: [
                                 Text(
                                   'Firebase',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyText1!
-                                      .copyWith(
-                                          color: Colors.lightBlue,
-                                          fontWeight: FontWeight.bold),
+                                  style: textTheme.bodyText1!.copyWith(
+                                      color: Colors.lightBlue,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 SizedBox(height: ScreenUtilMinimum(10).h),
                                 Text(
@@ -347,12 +329,9 @@ class SkillPageState extends State<SkillPage> {
                               children: [
                                 Text(
                                   'Swift',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyText1!
-                                      .copyWith(
-                                          color: Colors.lightBlue,
-                                          fontWeight: FontWeight.bold),
+                                  style: textTheme.bodyText1!.copyWith(
+                                      color: Colors.lightBlue,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 SizedBox(height: ScreenUtilMinimum(10).h),
                                 Text(

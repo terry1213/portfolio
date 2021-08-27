@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/pages/aboutPage.dart';
 import 'package:portfolio/pages/blogPage.dart';
@@ -28,6 +29,7 @@ class _TemplatePageState extends State<TemplatePage> {
     ProjectPage(),
     BlogPage(),
   ];
+  static TextTheme textTheme = Get.textTheme;
 
   @override
   Widget build(BuildContext context) {
@@ -103,12 +105,10 @@ class _TemplatePageState extends State<TemplatePage> {
         maxWidth: 200,
         screenPadding: 0,
         borderRadius: 0,
-        textStyle: Theme.of(context).textTheme.headline6,
-        titleStyle: Theme.of(context)
-            .textTheme
-            .headline6!
+        textStyle: textTheme.headline6,
+        titleStyle: textTheme.headline6!
             .copyWith(fontWeight: FontWeight.bold, fontSize: 25),
-        toggleTitleStyle: Theme.of(context).textTheme.headline6,
+        toggleTitleStyle: textTheme.headline6,
       ),
     );
   }
