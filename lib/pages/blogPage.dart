@@ -135,7 +135,6 @@ class BlogPage extends StatelessWidget {
                           onTap: () => _carouselController.previousPage(),
                         ),
                         GetBuilder<CarouselIndexController>(
-                          init: CarouselIndexController(),
                           builder: (_) => Text(
                             ' ${_.index + 1} / 2 ',
                             style: Theme.of(context).textTheme.bodyText1,
