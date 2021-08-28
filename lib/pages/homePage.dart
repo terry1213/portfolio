@@ -4,15 +4,8 @@ import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/utils/screenUtilMinimum.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage();
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  Map<String, String> _urls = {
+class HomePage extends StatelessWidget {
+  static const Map<String, String> _urls = {
     'Email': 'mailto:1213terry@naver.com',
     'Phone': 'sms:01047888356',
     'LinkedIn':
@@ -20,22 +13,14 @@ class _HomePageState extends State<HomePage> {
     'Blog': 'https://terry1213.github.io/categories/',
     'Github': 'https://github.com/terry1213',
   };
-  bool change = false;
   static Size size = Get.size;
   static TextTheme textTheme = Get.textTheme;
 
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration(milliseconds: 100)).then((_) {
-      setState(() {
-        change = true;
-      });
-    });
-  }
+  const HomePage();
 
   @override
   Widget build(BuildContext context) {
+    Future<double> _width = Future<double>.value(1000);
     return Center(
       child: SingleChildScrollView(
         child: Container(
@@ -47,18 +32,25 @@ class _HomePageState extends State<HomePage> {
               child: Stack(
                 alignment: Alignment.bottomRight,
                 children: [
-                  Positioned(
-                    bottom: ScreenUtilMinimum(-1000).sp,
-                    right: ScreenUtilMinimum(-350).sp,
-                    child: ClipOval(
-                      child: AnimatedContainer(
-                        duration: Duration(milliseconds: 1500),
-                        height: ScreenUtilMinimum(1900).sp,
-                        width: change ? ScreenUtilMinimum(1000).sp : 0,
-                        color: Colors.white10,
-                        curve: Curves.decelerate,
-                      ),
-                    ),
+                  FutureBuilder(
+                    future: _width,
+                    initialData: 0.0,
+                    builder: (context, snapshot) {
+                      return Positioned(
+                        bottom: ScreenUtilMinimum(-1000).sp,
+                        right: ScreenUtilMinimum(-350).sp,
+                        child: ClipOval(
+                          child: AnimatedContainer(
+                            duration: Duration(milliseconds: 2000),
+                            height: ScreenUtilMinimum(1900).sp,
+                            width:
+                                ScreenUtilMinimum(snapshot.data as double).sp,
+                            color: Colors.white10,
+                            curve: Curves.decelerate,
+                          ),
+                        ),
+                      );
+                    },
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

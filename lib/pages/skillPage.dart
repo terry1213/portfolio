@@ -6,17 +6,9 @@ import 'package:portfolio/utils/screenUtilMinimum.dart';
 import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 import 'package:portfolio/widgets/verticalDashedDivider.dart';
 
-class SkillPage extends StatefulWidget {
-  const SkillPage();
-
-  @override
-  SkillPageState createState() => SkillPageState();
-}
-
-class SkillPageState extends State<SkillPage> {
-  final Color barColor = Color(0xff53fdd7);
-  final Color highlightColor = Colors.yellowAccent;
-  final List<String> skills = [
+class SkillPage extends StatelessWidget {
+  static const Color barColor = Color(0xff53fdd7);
+  static const List<String> skills = [
     'Flutter',
     'Firebase',
     'Swift',
@@ -28,35 +20,26 @@ class SkillPageState extends State<SkillPage> {
   static Size size = Get.size;
   static TextTheme textTheme = Get.textTheme;
 
-  late List<BarChartGroupData> rawBarGroups;
-  late List<BarChartGroupData> showingBarGroups;
+  static List<BarChartGroupData> rawBarGroups = [
+    makeGroupData(0, 80),
+    makeGroupData(1, 75),
+    makeGroupData(2, 30),
+    makeGroupData(3, 55),
+    makeGroupData(4, 45),
+    makeGroupData(5, 45),
+    makeGroupData(6, 50),
+  ];
+  static List<BarChartGroupData> showingBarGroups = [
+    makeGroupData(0, 80),
+    makeGroupData(1, 75),
+    makeGroupData(2, 30),
+    makeGroupData(3, 55),
+    makeGroupData(4, 45),
+    makeGroupData(5, 45),
+    makeGroupData(6, 50),
+  ];
 
-  int touchedGroupIndex = -1;
-
-  @override
-  void initState() {
-    super.initState();
-    final barGroup1 = makeGroupData(0, 80);
-    final barGroup2 = makeGroupData(1, 75);
-    final barGroup3 = makeGroupData(2, 30);
-    final barGroup4 = makeGroupData(3, 55);
-    final barGroup5 = makeGroupData(4, 45);
-    final barGroup6 = makeGroupData(5, 45);
-    final barGroup7 = makeGroupData(6, 50);
-
-    final items = [
-      barGroup1,
-      barGroup2,
-      barGroup3,
-      barGroup4,
-      barGroup5,
-      barGroup6,
-      barGroup7,
-    ];
-
-    rawBarGroups = items;
-    showingBarGroups = rawBarGroups;
-  }
+  const SkillPage();
 
   @override
   Widget build(BuildContext context) {
@@ -128,54 +111,6 @@ class SkillPageState extends State<SkillPage> {
                                                 );
                                               },
                                             ),
-                                            touchCallback: (response) {
-                                              if (response.spot == null) {
-                                                setState(() {
-                                                  touchedGroupIndex = -1;
-                                                  showingBarGroups =
-                                                      List.of(rawBarGroups);
-                                                });
-                                                return;
-                                              }
-
-                                              touchedGroupIndex = response
-                                                  .spot!.touchedBarGroupIndex;
-
-                                              setState(
-                                                () {
-                                                  if (response.touchInput
-                                                          is PointerExitEvent ||
-                                                      response.touchInput
-                                                          is PointerUpEvent) {
-                                                    touchedGroupIndex = -1;
-                                                    showingBarGroups =
-                                                        List.of(rawBarGroups);
-                                                  } else {
-                                                    showingBarGroups =
-                                                        List.of(rawBarGroups);
-                                                    if (touchedGroupIndex !=
-                                                        -1) {
-                                                      showingBarGroups[
-                                                              touchedGroupIndex] =
-                                                          showingBarGroups[
-                                                                  touchedGroupIndex]
-                                                              .copyWith(
-                                                        barRods: showingBarGroups[
-                                                                touchedGroupIndex]
-                                                            .barRods
-                                                            .map((rod) {
-                                                          return rod.copyWith(
-                                                              y: rod.y + 3,
-                                                              colors: [
-                                                                highlightColor
-                                                              ]);
-                                                        }).toList(),
-                                                      );
-                                                    }
-                                                  }
-                                                },
-                                              );
-                                            },
                                           ),
                                           titlesData: FlTitlesData(
                                             show: true,
@@ -356,7 +291,7 @@ class SkillPageState extends State<SkillPage> {
     );
   }
 
-  BarChartGroupData makeGroupData(int x, double y) {
+  static BarChartGroupData makeGroupData(int x, double y) {
     return BarChartGroupData(x: x, barRods: [
       BarChartRodData(
         y: y,
