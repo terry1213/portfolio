@@ -1,6 +1,5 @@
 import 'dart:math' as math;
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';

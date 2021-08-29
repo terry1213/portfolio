@@ -1,8 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/utils/screenUtilMinimum.dart';
 import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 import 'package:portfolio/widgets/verticalDashedDivider.dart';
 
@@ -17,7 +15,6 @@ class SkillPage extends StatelessWidget {
     'HTML/CSS',
     'C/C++',
   ];
-  static Size size = Get.size;
   static TextTheme textTheme = Get.textTheme;
 
   static List<BarChartGroupData> rawBarGroups = [
@@ -43,14 +40,15 @@ class SkillPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Center(
       child: SingleChildScrollView(
         child: Container(
-          height: size.height > 820 ? size.height : 820,
+          height: 820,
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Container(
-              width: size.width - 80 > 1360 ? size.width - 80 : 1360,
+              width: 1360,
               child: Padding(
                 padding: EdgeInsets.all(30),
                 child: Row(
@@ -77,7 +75,7 @@ class SkillPage extends StatelessWidget {
                                   child: Padding(
                                     padding: EdgeInsets.all(20),
                                     child: Container(
-                                      height: ScreenUtilMinimum(350).h,
+                                      height: 350,
                                       child: BarChart(
                                         BarChartData(
                                           maxY: 100,
@@ -153,8 +151,7 @@ class SkillPage extends StatelessWidget {
                               ],
                             ),
                           ),
-                          HorizontalDashedDivider(
-                              space: ScreenUtilMinimum(40).h),
+                          HorizontalDashedDivider(space: 40),
                           Expanded(
                             flex: 41,
                             child: Row(
@@ -171,7 +168,7 @@ class SkillPage extends StatelessWidget {
                                             color: Colors.lightBlue,
                                             fontWeight: FontWeight.bold),
                                       ),
-                                      SizedBox(height: ScreenUtilMinimum(10).h),
+                                      SizedBox(height: 10),
                                       Text(
                                         '캡스톤 디자인으로 \'코딩 자동 채점 웹 서비스\'와 토이 프로젝트로 \'잃어버린 물건을 찾아주는 웹 서비스\'를 '
                                         '개발한 경험이 있습니다.\nJavaScript의 문법과 사용 방법들을 알고 있으며, jquery를 통한 클라이언트 사이드 '
@@ -193,7 +190,7 @@ class SkillPage extends StatelessWidget {
                                             color: Colors.lightBlue,
                                             fontWeight: FontWeight.bold),
                                       ),
-                                      SizedBox(height: ScreenUtilMinimum(10).h),
+                                      SizedBox(height: 10),
                                       Text(
                                         '경험한 모든 프로젝트에서 Github을 통해 소스 코드 관리 및 협업을 진행했습니다. '
                                         '또한 개인 블로그와 포트폴리오 사이트 또한 Github을 통해 관리하고 있습니다.',
@@ -222,7 +219,7 @@ class SkillPage extends StatelessWidget {
                                       color: Colors.lightBlue,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(height: ScreenUtilMinimum(10).h),
+                                SizedBox(height: 10),
                                 Text(
                                   '3개의 어플(HEM 체험단, Spotale: 스팟테일, BLOC)에 대하여 유지 보수 및 기능 추가 작업들을 경험했습니다. '
                                   '또한 Nepes 회사의 사내 어플(3.3.7 life)을 혼자서 개발했습니다.\n'
@@ -232,8 +229,7 @@ class SkillPage extends StatelessWidget {
                               ],
                             ),
                           ),
-                          HorizontalDashedDivider(
-                              space: ScreenUtilMinimum(40).h),
+                          HorizontalDashedDivider(space: 40),
                           Expanded(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -245,7 +241,7 @@ class SkillPage extends StatelessWidget {
                                       color: Colors.lightBlue,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(height: ScreenUtilMinimum(10).h),
+                                SizedBox(height: 10),
                                 Text(
                                   '모든 어플리케이션 개발에서 Firebase를 사용했습니다. 따라서 Firebase의 Authentication, '
                                   'Cloud Firestore, Cloud Storage, Cloud Messaging을 능숙하고 자유롭게 사용할 수 있습니다. '
@@ -255,8 +251,7 @@ class SkillPage extends StatelessWidget {
                               ],
                             ),
                           ),
-                          HorizontalDashedDivider(
-                              space: ScreenUtilMinimum(40).h),
+                          HorizontalDashedDivider(space: 40),
                           Expanded(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -268,7 +263,7 @@ class SkillPage extends StatelessWidget {
                                       color: Colors.lightBlue,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(height: ScreenUtilMinimum(10).h),
+                                SizedBox(height: 10),
                                 Text(
                                   '코더스하이 iOS 개발자 캠프 과정(40일)을 수료했습니다. 또한 캠프에서 토이 프로젝트로 음악 공유 어플리케이션 '
                                   '\'아지트\'를 개발했고, 아이디어와 완성도를 인정 받아 최우수상을 수상했습니다.\nView와 ViewController를 '
@@ -296,7 +291,7 @@ class SkillPage extends StatelessWidget {
       BarChartRodData(
         y: y,
         colors: [barColor],
-        width: ScreenUtilMinimum(30).w,
+        width: 30,
         borderRadius: BorderRadius.all(Radius.circular(8)),
       ),
     ]);

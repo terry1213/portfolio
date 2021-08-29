@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controller/carouselIndexController.dart';
-import 'package:portfolio/utils/screenUtilMinimum.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlogPage extends StatelessWidget {
@@ -28,7 +27,6 @@ class BlogPage extends StatelessWidget {
     'Error last':
         'https://terry1213.github.io/flutter/flutter-a-problem-occurred-evaluating-project-app-path-may-not-be-null-or-empty-string-pathnull/',
   };
-  static Size size = Get.size;
   static TextTheme textTheme = Get.textTheme;
 
   const BlogPage();
@@ -100,11 +98,11 @@ class BlogPage extends StatelessWidget {
     return Center(
       child: SingleChildScrollView(
         child: Container(
-          height: size.height > 820 ? size.height : 820,
+          height: 820,
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Container(
-              width: size.width - 80 > 1360 ? size.width - 80 : 1360,
+              width: 1360,
               child: Padding(
                 padding: EdgeInsets.all(30),
                 child: Column(
@@ -114,7 +112,7 @@ class BlogPage extends StatelessWidget {
                       'Blogs',
                       style: textTheme.headline2!,
                     ),
-                    SizedBox(height: ScreenUtilMinimum(10).h),
+                    SizedBox(height: 10),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -142,11 +140,11 @@ class BlogPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: ScreenUtilMinimum(20).h),
+                    SizedBox(height: 20),
                     Expanded(
                       child: CarouselSlider(
                         options: CarouselOptions(
-                          height: ScreenUtilMinimum(570).h,
+                          height: 570,
                           viewportFraction: 1.07,
                           initialPage: _carouselIndexController.index,
                           onPageChanged:
@@ -160,11 +158,11 @@ class BlogPage extends StatelessWidget {
                             builder: (BuildContext context) {
                               return Container(
                                 margin: EdgeInsets.symmetric(
-                                  horizontal: ScreenUtilMinimum(30).w,
+                                  horizontal: 30,
                                 ),
                                 padding: EdgeInsets.symmetric(
-                                  vertical: ScreenUtilMinimum(20).h,
-                                  horizontal: ScreenUtilMinimum(20).w,
+                                  vertical: 20,
+                                  horizontal: 20,
                                 ),
                                 decoration: BoxDecoration(
                                   // color: Colors.white10,
@@ -194,11 +192,11 @@ class BlogPage extends StatelessWidget {
         Expanded(
           child: first,
         ),
-        SizedBox(width: ScreenUtilMinimum(40).w),
+        SizedBox(width: 40),
         Expanded(
           child: second,
         ),
-        SizedBox(width: ScreenUtilMinimum(40).w),
+        SizedBox(width: 40),
         Expanded(
           child: third,
         ),
@@ -238,7 +236,7 @@ class BlogPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: ScreenUtilMinimum(20).h),
+            SizedBox(height: 20),
             Text(
               title,
               style: textTheme.bodyText1!.copyWith(
@@ -246,7 +244,7 @@ class BlogPage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: ScreenUtilMinimum(10).h),
+            SizedBox(height: 10),
             Expanded(
               flex: 20,
               child: Text(body),
