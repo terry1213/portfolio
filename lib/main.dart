@@ -35,6 +35,14 @@ class MyApp extends StatelessWidget {
           bodyText1: GoogleFonts.notoSans(fontSize: 20),
           bodyText2: GoogleFonts.notoSans(fontSize: 15, height: 2),
         ).apply(displayColor: Colors.white, bodyColor: Colors.white),
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            foregroundColor: MaterialStateProperty.all(Colors.white),
+            overlayColor: MaterialStateProperty.all(Colors.transparent),
+            textStyle: MaterialStateProperty.all(TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            visualDensity: VisualDensity.compact,
+          ),
+        ),
       ),
       home: InteractiveViewer(
         child: TemplatePage(),
