@@ -8,7 +8,8 @@ class CareerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Align(
+      alignment: Alignment.topCenter,
       child: SingleChildScrollView(
         child: Container(
           height: 820,
@@ -16,21 +17,18 @@ class CareerPage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Container(
               width: 1360,
-              child: Padding(
-                padding: EdgeInsets.all(30),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Career',
-                      style: textTheme.headline2!,
-                    ),
-                    SizedBox(height: 10),
-                    Expanded(
-                      child: Container(),
-                    ),
-                  ],
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Career',
+                    style: textTheme.headline2!,
+                  ),
+                  SizedBox(height: 10),
+                  Expanded(
+                    child: Container(),
+                  ),
+                ],
               ),
             ),
           ),

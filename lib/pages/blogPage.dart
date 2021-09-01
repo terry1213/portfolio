@@ -95,7 +95,8 @@ class BlogPage extends StatelessWidget {
         ),
       ),
     ];
-    return Center(
+    return Align(
+      alignment: Alignment.topCenter,
       child: SingleChildScrollView(
         child: Container(
           height: 820,
@@ -103,80 +104,77 @@ class BlogPage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Container(
               width: 1360,
-              child: Padding(
-                padding: EdgeInsets.all(30),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Blogs',
-                      style: textTheme.headline2!,
-                    ),
-                    SizedBox(height: 10),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            '배운 것을 잊어버리지 않기 위해 기록하기 시작했습니다.\n'
-                            '주로 Flutter에 대한 글을 작성하지만 그외에 다양한 내용도 다루고 있습니다.\n'
-                            '일주일에 2회씩 일년째 꾸준히 기록하고 있으며, 현재까지 약 100개의 게시글을 작성했습니다.',
-                          ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Blog',
+                    style: textTheme.headline2!,
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          '배운 것을 잊어버리지 않기 위해 기록하기 시작했습니다.\n'
+                          '주로 Flutter에 대한 글을 작성하지만 그외에 다양한 내용도 다루고 있습니다.\n'
+                          '일주일에 2회씩 일년째 꾸준히 기록하고 있으며, 현재까지 약 100개의 게시글을 작성했습니다.',
                         ),
-                        GestureDetector(
-                          child: Icon(Icons.arrow_back),
-                          onTap: () => _carouselController.previousPage(),
-                        ),
-                        GetBuilder<CarouselIndexController>(
-                          tag: 'blog',
-                          builder: (_) => Text(
-                            ' ${_.index + 1} / 2 ',
-                            style: textTheme.bodyText1,
-                          ),
-                        ),
-                        GestureDetector(
-                          child: Icon(Icons.arrow_forward),
-                          onTap: () => _carouselController.nextPage(),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 20),
-                    Expanded(
-                      child: CarouselSlider(
-                        options: CarouselOptions(
-                          height: 570,
-                          viewportFraction: 1.07,
-                          initialPage: _carouselIndexController.index,
-                          onPageChanged:
-                              (int index, CarouselPageChangedReason reason) {
-                            _carouselIndexController.changeIndex(index);
-                          },
-                        ),
-                        carouselController: _carouselController,
-                        items: [0, 1].map((i) {
-                          return Builder(
-                            builder: (BuildContext context) {
-                              return Container(
-                                margin: EdgeInsets.symmetric(
-                                  horizontal: 30,
-                                ),
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 20,
-                                  horizontal: 20,
-                                ),
-                                decoration: BoxDecoration(
-                                  // color: Colors.white10,
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: _carouselItems[i],
-                              );
-                            },
-                          );
-                        }).toList(),
                       ),
+                      GestureDetector(
+                        child: Icon(Icons.arrow_back),
+                        onTap: () => _carouselController.previousPage(),
+                      ),
+                      GetBuilder<CarouselIndexController>(
+                        tag: 'blog',
+                        builder: (_) => Text(
+                          ' ${_.index + 1} / 2 ',
+                          style: textTheme.bodyText1,
+                        ),
+                      ),
+                      GestureDetector(
+                        child: Icon(Icons.arrow_forward),
+                        onTap: () => _carouselController.nextPage(),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                  Expanded(
+                    child: CarouselSlider(
+                      options: CarouselOptions(
+                        height: 570,
+                        viewportFraction: 1.07,
+                        initialPage: _carouselIndexController.index,
+                        onPageChanged:
+                            (int index, CarouselPageChangedReason reason) {
+                          _carouselIndexController.changeIndex(index);
+                        },
+                      ),
+                      carouselController: _carouselController,
+                      items: [0, 1].map((i) {
+                        return Builder(
+                          builder: (BuildContext context) {
+                            return Container(
+                              margin: EdgeInsets.symmetric(
+                                horizontal: 30,
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                vertical: 20,
+                                horizontal: 20,
+                              ),
+                              decoration: BoxDecoration(
+                                // color: Colors.white10,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: _carouselItems[i],
+                            );
+                          },
+                        );
+                      }).toList(),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -256,7 +254,7 @@ class BlogPage extends StatelessWidget {
                 icon: Icon(Icons.launch),
                 label: Text(
                   title != 'State Management' ? '최근 게시글' : 'GetX 게시글',
-                  style: TextStyle(
+                  style: textTheme.bodyText2!.copyWith(
                     color: Colors.lightBlue,
                     fontWeight: FontWeight.bold,
                   ),
@@ -270,7 +268,7 @@ class BlogPage extends StatelessWidget {
                 icon: Icon(Icons.launch),
                 label: Text(
                   title != 'State Management' ? '전체 게시글' : 'Provider 게시글',
-                  style: TextStyle(
+                  style: textTheme.bodyText2!.copyWith(
                     color: Colors.lightBlue,
                     fontWeight: FontWeight.bold,
                   ),

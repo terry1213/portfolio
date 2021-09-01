@@ -12,7 +12,8 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Align(
+      alignment: Alignment.topCenter,
       child: SingleChildScrollView(
         child: Container(
           height: 820,
@@ -20,69 +21,66 @@ class AboutPage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Container(
               width: 1360,
-              child: Padding(
-                padding: EdgeInsets.all(30),
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 5,
-                      child: PhotoSection(),
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 5,
+                    child: PhotoSection(),
+                  ),
+                  VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
+                  Expanded(
+                    flex: 4,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 15),
+                        Expanded(
+                          flex: 20,
+                          child: AboutSection(),
+                        ),
+                        HorizontalDashedDivider(space: 40),
+                        Expanded(
+                          flex: 10,
+                          child: EducationSection(),
+                        ),
+                        HorizontalDashedDivider(space: 40),
+                        Expanded(
+                          flex: 15,
+                          child: CareerSection(),
+                        ),
+                        HorizontalDashedDivider(space: 40),
+                        Expanded(
+                          flex: 1,
+                          child: Container(),
+                        ),
+                      ],
                     ),
-                    VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
-                    Expanded(
-                      flex: 4,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(height: 15),
-                          Expanded(
-                            flex: 20,
-                            child: AboutSection(),
-                          ),
-                          HorizontalDashedDivider(space: 40),
-                          Expanded(
-                            flex: 10,
-                            child: EducationSection(),
-                          ),
-                          HorizontalDashedDivider(space: 40),
-                          Expanded(
-                            flex: 15,
-                            child: CareerSection(),
-                          ),
-                          HorizontalDashedDivider(space: 40),
-                          Expanded(
-                            flex: 1,
-                            child: Container(),
-                          ),
-                        ],
-                      ),
+                  ),
+                  VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
+                  Expanded(
+                    flex: 4,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 15),
+                        Expanded(
+                          flex: 11,
+                          child: ProjectSection(),
+                        ),
+                        HorizontalDashedDivider(space: 40),
+                        Expanded(
+                          flex: 12,
+                          child: CertificateSection(),
+                        ),
+                        HorizontalDashedDivider(space: 40),
+                        Expanded(
+                          flex: 19,
+                          child: Container(),
+                        ),
+                      ],
                     ),
-                    VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
-                    Expanded(
-                      flex: 4,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(height: 15),
-                          Expanded(
-                            flex: 11,
-                            child: ProjectSection(),
-                          ),
-                          HorizontalDashedDivider(space: 40),
-                          Expanded(
-                            flex: 12,
-                            child: CertificateSection(),
-                          ),
-                          HorizontalDashedDivider(space: 40),
-                          Expanded(
-                            flex: 19,
-                            child: Container(),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),

@@ -19,7 +19,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future<double> _width = Future<double>.value(1000);
-    return Center(
+    return Align(
+      alignment: Alignment.topCenter,
       child: SingleChildScrollView(
         child: Container(
           height: 820,
