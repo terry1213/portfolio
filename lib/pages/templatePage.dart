@@ -8,12 +8,7 @@ import 'package:portfolio/pages/skillPage.dart';
 
 import 'homePage.dart';
 
-class TemplatePage extends StatefulWidget {
-  @override
-  _TemplatePageState createState() => _TemplatePageState();
-}
-
-class _TemplatePageState extends State<TemplatePage> {
+class TemplatePage extends StatelessWidget {
   final PageController _pageController = PageController();
   final List<Widget> pages = const <Widget>[
     HomePage(),
@@ -38,42 +33,54 @@ class _TemplatePageState extends State<TemplatePage> {
                 ),
                 TextButton(
                   child: Text('Home'),
-                  style: ButtonStyle(fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),),
+                  style: ButtonStyle(
+                    fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
+                  ),
                   onPressed: () => _pageController.animateToPage(0,
                       duration: Duration(milliseconds: 700),
                       curve: Curves.easeInOut),
                 ),
                 TextButton(
                   child: Text('About'),
-                  style: ButtonStyle(fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),),
+                  style: ButtonStyle(
+                    fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
+                  ),
                   onPressed: () => _pageController.animateToPage(1,
                       duration: Duration(milliseconds: 700),
                       curve: Curves.easeInOut),
                 ),
                 TextButton(
                   child: Text('Skill'),
-                  style: ButtonStyle(fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),),
+                  style: ButtonStyle(
+                    fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
+                  ),
                   onPressed: () => _pageController.animateToPage(2,
                       duration: Duration(milliseconds: 700),
                       curve: Curves.easeInOut),
                 ),
                 TextButton(
                   child: Text('Career'),
-                  style: ButtonStyle(fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),),
+                  style: ButtonStyle(
+                    fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
+                  ),
                   onPressed: () => _pageController.animateToPage(3,
                       duration: Duration(milliseconds: 700),
                       curve: Curves.easeInOut),
                 ),
                 TextButton(
                   child: Text('Project'),
-                  style: ButtonStyle(fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),),
+                  style: ButtonStyle(
+                    fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
+                  ),
                   onPressed: () => _pageController.animateToPage(4,
                       duration: Duration(milliseconds: 700),
                       curve: Curves.easeInOut),
                 ),
                 TextButton(
                   child: Text('Blog'),
-                  style: ButtonStyle(fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),),
+                  style: ButtonStyle(
+                    fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
+                  ),
                   onPressed: () => _pageController.animateToPage(5,
                       duration: Duration(milliseconds: 700),
                       curve: Curves.easeInOut),
