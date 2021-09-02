@@ -111,7 +111,7 @@ class BlogPage extends StatelessWidget {
                     'Blog',
                     style: textTheme.headline2!,
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 20),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -139,7 +139,6 @@ class BlogPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
                   Expanded(
                     child: CarouselSlider(
                       options: CarouselOptions(
@@ -160,7 +159,7 @@ class BlogPage extends StatelessWidget {
                                 horizontal: 30,
                               ),
                               padding: EdgeInsets.symmetric(
-                                vertical: 20,
+                                vertical: 10,
                                 horizontal: 20,
                               ),
                               decoration: BoxDecoration(
