@@ -24,7 +24,7 @@ class ProjectPage extends StatelessWidget {
                     'Side&Toy Project',
                     style: textTheme.headline2!,
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 20),
                   Expanded(
                     child: Container(),
                   ),

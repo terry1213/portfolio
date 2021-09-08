@@ -24,7 +24,7 @@ class CareerPage extends StatelessWidget {
                     'Career',
                     style: textTheme.headline2!,
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 20),
                   Expanded(
                     child: Container(),
                   ),
