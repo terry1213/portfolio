@@ -272,7 +272,7 @@ class AboutPage extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('2021.02-           '),
+            Text('2021.02-2021.08'),
             SizedBox(width: 5),
             Flexible(
               child: Text('소프트웨어팩토리 Flutter 개발자'),
