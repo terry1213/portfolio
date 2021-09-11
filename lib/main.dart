@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           headline2: GoogleFonts.nanumPenScript(fontSize: 60),
           headline3: GoogleFonts.nanumPenScript(fontSize: 48),
           headline4: GoogleFonts.nanumPenScript(fontSize: 34),
-          headline5: GoogleFonts.nanumPenScript(fontSize: 24),
+          headline5: GoogleFonts.notoSans(fontSize: 24),
           headline6: GoogleFonts.castoro(fontSize: 20),
           bodyText1: GoogleFonts.notoSans(fontSize: 20),
           bodyText2: GoogleFonts.notoSans(fontSize: 15, height: 2),
