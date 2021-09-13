@@ -236,7 +236,7 @@ class BlogPage extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               title,
-              style: textTheme.bodyText1!.copyWith(
+              style: textTheme.headline5!.copyWith(
                 color: Colors.lightBlue,
                 fontWeight: FontWeight.bold,
               ),

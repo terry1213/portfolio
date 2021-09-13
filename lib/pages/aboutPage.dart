@@ -168,7 +168,7 @@ class AboutPage extends StatelessWidget {
       children: [
         Text(
           '임연우 / Yeonwoo Lim',
-          style: textTheme.bodyText1!
+          style: textTheme.headline5!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         Text('1996.12.13 / 경기도 구리시'),
@@ -224,7 +224,7 @@ class AboutPage extends StatelessWidget {
       children: [
         Text(
           'Education',
-          style: textTheme.bodyText1!
+          style: textTheme.headline5!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 30),
@@ -255,7 +255,7 @@ class AboutPage extends StatelessWidget {
       children: [
         Text(
           'Career',
-          style: textTheme.bodyText1!
+          style: textTheme.headline5!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 30),
@@ -290,7 +290,7 @@ class AboutPage extends StatelessWidget {
       children: [
         Text(
           'Project',
-          style: textTheme.bodyText1!
+          style: textTheme.headline5!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 30),
@@ -325,7 +325,7 @@ class AboutPage extends StatelessWidget {
       children: [
         Text(
           'Certificate',
-          style: textTheme.bodyText1!
+          style: textTheme.headline5!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 30),

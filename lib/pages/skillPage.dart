@@ -159,7 +159,7 @@ class SkillPage extends StatelessWidget {
                                   children: [
                                     Text(
                                       'JavaScript',
-                                      style: textTheme.bodyText1!.copyWith(
+                                      style: textTheme.headline5!.copyWith(
                                           color: Colors.lightBlue,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -180,7 +180,7 @@ class SkillPage extends StatelessWidget {
                                   children: [
                                     Text(
                                       'Github',
-                                      style: textTheme.bodyText1!.copyWith(
+                                      style: textTheme.headline5!.copyWith(
                                           color: Colors.lightBlue,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -209,7 +209,7 @@ class SkillPage extends StatelessWidget {
                             children: [
                               Text(
                                 'Flutter',
-                                style: textTheme.bodyText1!.copyWith(
+                                style: textTheme.headline5!.copyWith(
                                     color: Colors.lightBlue,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -231,7 +231,7 @@ class SkillPage extends StatelessWidget {
                             children: [
                               Text(
                                 'Firebase',
-                                style: textTheme.bodyText1!.copyWith(
+                                style: textTheme.headline5!.copyWith(
                                     color: Colors.lightBlue,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -253,7 +253,7 @@ class SkillPage extends StatelessWidget {
                             children: [
                               Text(
                                 'Swift',
-                                style: textTheme.bodyText1!.copyWith(
+                                style: textTheme.headline5!.copyWith(
                                     color: Colors.lightBlue,
                                     fontWeight: FontWeight.bold),
                               ),
