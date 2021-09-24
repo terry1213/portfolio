@@ -53,7 +53,7 @@ class CareerPage extends StatelessWidget {
     ),
     _Career(
       company: '소프트웨어 팩토리',
-      period: '2020.12-2021.08',
+      period: '2021.02-2021.08',
       position: 'Flutter 개발자',
       apps: [
         _App(
