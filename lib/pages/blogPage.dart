@@ -9,7 +9,7 @@ class BlogPage extends StatelessWidget {
     'Widget of the Week tag':
         'https://terry1213.github.io/tags/#widgetoftheweek',
     'Widget of the Week last':
-        'https://terry1213.github.io/flutter/flutter-widget-of-the-week-table/',
+        'https://terry1213.github.io/flutter/flutter-widget-of-the-week-sliverappbar/',
     'Flutter/Dart Document tag': 'https://terry1213.github.io/tags/#document',
     'Flutter/Dart Document last':
         'https://terry1213.github.io/flutter/flutter-document-hot-reload/',
