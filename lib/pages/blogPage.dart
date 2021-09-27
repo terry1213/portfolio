@@ -25,7 +25,7 @@ class BlogPage extends StatelessWidget {
     'Algorithm last': 'https://terry1213.github.io/backjoon/9455/',
     'Error tag': 'https://terry1213.github.io/tags/#error',
     'Error last':
-        'https://terry1213.github.io/flutter/flutter-android-license-status-unknown/',
+        'https://terry1213.github.io/flutter/flutter-failed-to-start-the-dart-cli-isolate-null/',
   };
   static TextTheme textTheme = Get.textTheme;
 
