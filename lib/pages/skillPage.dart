@@ -216,7 +216,7 @@ class SkillPage extends StatelessWidget {
                               SizedBox(height: 10),
                               Text(
                                 '3개의 어플(HEM 체험단, Spotale: 스팟테일, BLOC)에 대하여 유지 보수 및 기능 추가 작업들을 경험했습니다. '
-                                '또한 Nepes 회사의 사내 어플(3.3.7 life)을 혼자서 개발했습니다.\n'
+                                '또한 네페스 회사의 사내 어플(3.3.7 life)을 시작부터 런칭까지 혼자서 개발했습니다.\n'
                                 'Getx, Provider, Bloc를 통한 상태 관리에 능숙하며, Flutter 2.0에 대한 이해도 마쳤습니다. '
                                 '또한 빠르게 변화하는 Flutter에 대처하기 위해서, 공식 문서와 공식 유튜브를 통해 꾸준히 공부하고 있습니다.',
                               ),
