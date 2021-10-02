@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 
 class CustomDrawer extends StatelessWidget {
   final pageController;
+  static TextTheme textTheme = Get.textTheme;
 
-  const CustomDrawer({
+  CustomDrawer({
     Key? key,
     required this.pageController,
   }) : super(key: key);
@@ -11,57 +14,101 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        children: [
-          TextButton(
-            child: Text('Home'),
-            style: ButtonStyle(
-              fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
-            ),
-            onPressed: () => pageController.animateToPage(0,
-                duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
+      child: Container(
+        color: Get.theme.scaffoldBackgroundColor,
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(height: 20),
+              Center(
+                child: Text(
+                  'Portfolio',
+                  style: textTheme.headline6!
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
+              ),
+              SizedBox(height: 30),
+              InkWell(
+                child: Text(
+                  'Home',
+                  style: textTheme.headline6!
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
+                onTap: () => pageController.animateToPage(0,
+                    duration: Duration(milliseconds: 700),
+                    curve: Curves.easeInOut),
+              ),
+              HorizontalDashedDivider(
+                space: 25,
+              ),
+              InkWell(
+                child: Text(
+                  'About',
+                  style: textTheme.headline6!
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
+                onTap: () => pageController.animateToPage(1,
+                    duration: Duration(milliseconds: 700),
+                    curve: Curves.easeInOut),
+              ),
+              HorizontalDashedDivider(
+                space: 25,
+              ),
+              InkWell(
+                child: Text(
+                  'Skill',
+                  style: textTheme.headline6!
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
+                onTap: () => pageController.animateToPage(2,
+                    duration: Duration(milliseconds: 700),
+                    curve: Curves.easeInOut),
+              ),
+              HorizontalDashedDivider(
+                space: 25,
+              ),
+              InkWell(
+                child: Text(
+                  'Career',
+                  style: textTheme.headline6!
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
+                onTap: () => pageController.animateToPage(3,
+                    duration: Duration(milliseconds: 700),
+                    curve: Curves.easeInOut),
+              ),
+              HorizontalDashedDivider(
+                space: 25,
+              ),
+              InkWell(
+                child: Text(
+                  'Project',
+                  style: textTheme.headline6!
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
+                onTap: () => pageController.animateToPage(4,
+                    duration: Duration(milliseconds: 700),
+                    curve: Curves.easeInOut),
+              ),
+              HorizontalDashedDivider(
+                space: 25,
+              ),
+              InkWell(
+                child: Text(
+                  'Blog',
+                  style: textTheme.headline6!
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
+                onTap: () => pageController.animateToPage(5,
+                    duration: Duration(milliseconds: 700),
+                    curve: Curves.easeInOut),
+              ),
+            ],
           ),
-          TextButton(
-            child: Text('About'),
-            style: ButtonStyle(
-              fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
-            ),
-            onPressed: () => pageController.animateToPage(1,
-                duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
-          ),
-          TextButton(
-            child: Text('Skill'),
-            style: ButtonStyle(
-              fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
-            ),
-            onPressed: () => pageController.animateToPage(2,
-                duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
-          ),
-          TextButton(
-            child: Text('Career'),
-            style: ButtonStyle(
-              fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
-            ),
-            onPressed: () => pageController.animateToPage(3,
-                duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
-          ),
-          TextButton(
-            child: Text('Project'),
-            style: ButtonStyle(
-              fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
-            ),
-            onPressed: () => pageController.animateToPage(4,
-                duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
-          ),
-          TextButton(
-            child: Text('Blog'),
-            style: ButtonStyle(
-              fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
-            ),
-            onPressed: () => pageController.animateToPage(5,
-                duration: Duration(milliseconds: 700), curve: Curves.easeInOut),
-          ),
-        ],
+        ),
       ),
     );
   }
