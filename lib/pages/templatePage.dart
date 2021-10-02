@@ -5,6 +5,9 @@ import 'package:portfolio/pages/blogPage.dart';
 import 'package:portfolio/pages/careerPage.dart';
 import 'package:portfolio/pages/projectPage.dart';
 import 'package:portfolio/pages/skillPage.dart';
+import 'package:portfolio/utils/responsive.dart';
+import 'package:portfolio/widgets/customAppBar.dart';
+import 'package:portfolio/widgets/customDrawer.dart';
 
 import 'homePage.dart';
 
@@ -23,81 +26,23 @@ class TemplatePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        child: Center(
-          child: Container(
-            child: Row(
-              children: [
-                Expanded(
-                  child: Container(),
-                ),
-                TextButton(
-                  child: Text('Home'),
-                  style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
-                  ),
-                  onPressed: () => _pageController.animateToPage(0,
-                      duration: Duration(milliseconds: 700),
-                      curve: Curves.easeInOut),
-                ),
-                TextButton(
-                  child: Text('About'),
-                  style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
-                  ),
-                  onPressed: () => _pageController.animateToPage(1,
-                      duration: Duration(milliseconds: 700),
-                      curve: Curves.easeInOut),
-                ),
-                TextButton(
-                  child: Text('Skill'),
-                  style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
-                  ),
-                  onPressed: () => _pageController.animateToPage(2,
-                      duration: Duration(milliseconds: 700),
-                      curve: Curves.easeInOut),
-                ),
-                TextButton(
-                  child: Text('Career'),
-                  style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
-                  ),
-                  onPressed: () => _pageController.animateToPage(3,
-                      duration: Duration(milliseconds: 700),
-                      curve: Curves.easeInOut),
-                ),
-                TextButton(
-                  child: Text('Project'),
-                  style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
-                  ),
-                  onPressed: () => _pageController.animateToPage(4,
-                      duration: Duration(milliseconds: 700),
-                      curve: Curves.easeInOut),
-                ),
-                TextButton(
-                  child: Text('Blog'),
-                  style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
-                  ),
-                  onPressed: () => _pageController.animateToPage(5,
-                      duration: Duration(milliseconds: 700),
-                      curve: Curves.easeInOut),
-                ),
-              ],
+      appBar: ResponsiveWidget.isSmallScreen(context)
+          ? AppBar(
+              actions: [],
+              centerTitle: true,
+              elevation: 0,
+            )
+          : CustomAppBar(
+              pageController: _pageController,
             ),
-            color: Color(0xFFF242424),
-            width: 1360,
-          ),
-        ),
-        preferredSize: Size.fromHeight(90),
-      ),
       body: PageView(
         controller: _pageController,
         scrollDirection: Axis.horizontal,
         physics: NeverScrollableScrollPhysics(),
         children: pages,
+      ),
+      drawer: CustomDrawer(
+        pageController: _pageController,
       ),
     );
   }
