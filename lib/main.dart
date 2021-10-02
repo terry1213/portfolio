@@ -23,6 +23,10 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
           color: Color(0xFFF242424),
         ),
+        bottomAppBarTheme: BottomAppBarTheme(
+          color: Colors.white24,
+        ),
+        bottomAppBarColor: Colors.white24,
         dividerColor: Colors.white24,
         iconTheme: IconThemeData(
           color: Colors.white,
@@ -34,7 +38,7 @@ class MyApp extends StatelessWidget {
           headline3: GoogleFonts.nanumPenScript(fontSize: 48),
           headline4: GoogleFonts.nanumPenScript(fontSize: 34),
           headline5: GoogleFonts.notoSans(fontSize: 24),
-          headline6: GoogleFonts.castoro(fontSize: 20),
+          headline6: GoogleFonts.notoSans(fontSize: 20),
           bodyText1: GoogleFonts.notoSans(fontSize: 20),
           bodyText2: GoogleFonts.notoSans(fontSize: 15, height: 2),
         ).apply(displayColor: Colors.white, bodyColor: Colors.white),
