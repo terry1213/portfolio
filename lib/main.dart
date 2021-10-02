@@ -20,6 +20,9 @@ class MyApp extends StatelessWidget {
       title: '임연우 Flutter Developer',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          color: Color(0xFFF242424),
+        ),
         dividerColor: Colors.white24,
         iconTheme: IconThemeData(
           color: Colors.white,
