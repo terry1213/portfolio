@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class ProjectPage extends StatelessWidget {
-  static TextTheme textTheme = Get.textTheme;
-
   const ProjectPage();
 
   @override
@@ -22,7 +19,7 @@ class ProjectPage extends StatelessWidget {
                 children: [
                   Text(
                     'Side&Toy Project',
-                    style: textTheme.headline2!,
+                    style: Theme.of(context).textTheme.headline2!,
                   ),
                   SizedBox(height: 20),
                   Expanded(

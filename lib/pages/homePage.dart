@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -12,7 +11,6 @@ class HomePage extends StatelessWidget {
     'Blog': 'https://terry1213.github.io/categories/',
     'Github': 'https://github.com/terry1213',
   };
-  static TextTheme textTheme = Get.textTheme;
 
   const HomePage();
 
@@ -62,12 +60,14 @@ class HomePage extends StatelessWidget {
                           RichText(
                             text: TextSpan(
                               text: '안녕하세요,\n',
-                              style: textTheme.headline2,
+                              style: Theme.of(context).textTheme.headline2,
                               children: [
                                 TextSpan(text: 'Flutter 개발자 '),
                                 TextSpan(
                                     text: '임연우',
-                                    style: textTheme.headline1!
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline1!
                                         .copyWith(color: Colors.lightBlue)),
                                 TextSpan(text: '입니다.'),
                               ],
@@ -75,7 +75,9 @@ class HomePage extends StatelessWidget {
                           ),
                           SizedBox(height: 300),
                           Text('Contact me',
-                              style: textTheme.bodyText2!
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText2!
                                   .copyWith(fontWeight: FontWeight.bold)),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,35 +86,30 @@ class HomePage extends StatelessWidget {
                                 onPressed: () => _launchURL('Email'),
                                 icon: Icon(LineIcons.envelopeSquare),
                                 tooltip: 'Email',
-                                splashRadius: 15,
                                 iconSize: 30,
                               ),
                               IconButton(
                                 onPressed: () => _launchURL('Phone'),
                                 icon: Icon(LineIcons.phoneSquare),
                                 tooltip: 'Phone',
-                                splashRadius: 15,
                                 iconSize: 30,
                               ),
                               IconButton(
                                 onPressed: () => _launchURL('LinkedIn'),
                                 icon: Icon(LineIcons.linkedin),
                                 tooltip: 'LinkedIn',
-                                splashRadius: 15,
                                 iconSize: 30,
                               ),
                               IconButton(
                                 onPressed: () => _launchURL('Blog'),
                                 icon: Icon(LineIcons.blogger),
                                 tooltip: 'Blog',
-                                splashRadius: 15,
                                 iconSize: 30,
                               ),
                               IconButton(
                                 onPressed: () => _launchURL('Github'),
                                 icon: Icon(LineIcons.githubSquare),
                                 tooltip: 'Github',
-                                splashRadius: 15,
                                 iconSize: 30,
                               ),
                             ],

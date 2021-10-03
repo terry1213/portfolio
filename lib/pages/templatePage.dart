@@ -1,5 +1,5 @@
+import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:portfolio/pages/aboutPage.dart';
 import 'package:portfolio/pages/blogPage.dart';
 import 'package:portfolio/pages/careerPage.dart';
@@ -21,16 +21,28 @@ class TemplatePage extends StatelessWidget {
     ProjectPage(),
     BlogPage(),
   ];
-  static TextTheme textTheme = Get.textTheme;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(
-              actions: [],
+              actions: [
+                IconButton(
+                  icon: Icon(Icons.brightness_6),
+                  onPressed: () {
+                    EasyDynamicTheme.of(context).changeTheme();
+                  },
+                ),
+              ],
               centerTitle: true,
               elevation: 0,
+              leading: IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+                tooltip: 'Menu',
+              ),
             )
           : CustomAppBar(
               pageController: _pageController,
@@ -44,6 +56,7 @@ class TemplatePage extends StatelessWidget {
       drawer: CustomDrawer(
         pageController: _pageController,
       ),
+      key: _scaffoldKey,
     );
   }
 }

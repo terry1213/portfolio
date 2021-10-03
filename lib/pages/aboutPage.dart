@@ -1,13 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 import 'package:portfolio/widgets/verticalDashedDivider.dart';
 
 class AboutPage extends StatelessWidget {
-  static TextTheme textTheme = Get.textTheme;
-
   const AboutPage();
 
   @override
@@ -25,7 +22,7 @@ class AboutPage extends StatelessWidget {
                 children: [
                   Expanded(
                     flex: 5,
-                    child: PhotoSection(),
+                    child: PhotoSection(context),
                   ),
                   VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
                   Expanded(
@@ -36,17 +33,17 @@ class AboutPage extends StatelessWidget {
                         SizedBox(height: 15),
                         Expanded(
                           flex: 20,
-                          child: AboutSection(),
+                          child: AboutSection(context),
                         ),
                         HorizontalDashedDivider(space: 40),
                         Expanded(
                           flex: 10,
-                          child: EducationSection(),
+                          child: EducationSection(context),
                         ),
                         HorizontalDashedDivider(space: 40),
                         Expanded(
                           flex: 15,
-                          child: CareerSection(),
+                          child: CareerSection(context),
                         ),
                         HorizontalDashedDivider(space: 40),
                         Expanded(
@@ -65,12 +62,12 @@ class AboutPage extends StatelessWidget {
                         SizedBox(height: 15),
                         Expanded(
                           flex: 11,
-                          child: ProjectSection(),
+                          child: ProjectSection(context),
                         ),
                         HorizontalDashedDivider(space: 40),
                         Expanded(
                           flex: 12,
-                          child: CertificateSection(),
+                          child: CertificateSection(context),
                         ),
                         HorizontalDashedDivider(space: 40),
                         Expanded(
@@ -89,13 +86,13 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget PhotoSection() {
+  Widget PhotoSection(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'About',
-          style: textTheme.headline2!,
+          style: Theme.of(context).textTheme.headline2!,
         ),
         SizedBox(height: 20),
         Row(
@@ -121,13 +118,17 @@ class AboutPage extends StatelessWidget {
                         animatedTexts: [
                           WavyAnimatedText(
                             '기록',
-                            textStyle: textTheme.headline3!
+                            textStyle: Theme.of(context)
+                                .textTheme
+                                .headline3!
                                 .copyWith(color: Colors.lightBlue),
                             speed: Duration(milliseconds: 600),
                           ),
                           WavyAnimatedText(
                             '성장',
-                            textStyle: textTheme.headline3!
+                            textStyle: Theme.of(context)
+                                .textTheme
+                                .headline3!
                                 .copyWith(color: Colors.lightBlue),
                             speed: Duration(milliseconds: 600),
                           ),
@@ -136,17 +137,19 @@ class AboutPage extends StatelessWidget {
                         pause: Duration(milliseconds: 3000),
                       ),
                     ),
-                    Text('하는', style: textTheme.headline3),
+                    Text('하는', style: Theme.of(context).textTheme.headline3),
                   ],
                 ),
                 RichText(
                   text: TextSpan(
                     text: '개발자\n',
-                    style: textTheme.headline3,
+                    style: Theme.of(context).textTheme.headline3,
                     children: [
                       TextSpan(
                         text: '임연우',
-                        style: textTheme.headline2!
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline2!
                             .copyWith(color: Colors.lightBlue),
                       ),
                       TextSpan(text: '입니다.'),
@@ -161,14 +164,16 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget AboutSection() {
+  Widget AboutSection(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           '임연우 / Yeonwoo Lim',
-          style: textTheme.headline5!
+          style: Theme.of(context)
+              .textTheme
+              .headline5!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         Text('1996.12.13 / 경기도 구리시'),
@@ -217,14 +222,16 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget EducationSection() {
+  Widget EducationSection(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Education',
-          style: textTheme.headline5!
+          style: Theme.of(context)
+              .textTheme
+              .headline5!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 30),
@@ -248,14 +255,16 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget CareerSection() {
+  Widget CareerSection(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Career',
-          style: textTheme.headline5!
+          style: Theme.of(context)
+              .textTheme
+              .headline5!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 30),
@@ -283,14 +292,16 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget ProjectSection() {
+  Widget ProjectSection(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Project',
-          style: textTheme.headline5!
+          style: Theme.of(context)
+              .textTheme
+              .headline5!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 30),
@@ -318,14 +329,16 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget CertificateSection() {
+  Widget CertificateSection(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Certificate',
-          style: textTheme.headline5!
+          style: Theme.of(context)
+              .textTheme
+              .headline5!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 30),

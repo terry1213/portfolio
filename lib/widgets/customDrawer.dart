@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 
 class CustomDrawer extends StatelessWidget {
   final pageController;
-  static TextTheme textTheme = Get.textTheme;
 
   CustomDrawer({
     Key? key,
@@ -15,7 +13,7 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Get.theme.scaffoldBackgroundColor,
+        color: Theme.of(context).scaffoldBackgroundColor,
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
@@ -26,7 +24,9 @@ class CustomDrawer extends StatelessWidget {
               Center(
                 child: Text(
                   'Portfolio',
-                  style: textTheme.headline6!
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline6!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
               ),
@@ -34,7 +34,9 @@ class CustomDrawer extends StatelessWidget {
               InkWell(
                 child: Text(
                   'Home',
-                  style: textTheme.headline6!
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline6!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
                 onTap: () => pageController.animateToPage(0,
@@ -47,7 +49,9 @@ class CustomDrawer extends StatelessWidget {
               InkWell(
                 child: Text(
                   'About',
-                  style: textTheme.headline6!
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline6!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
                 onTap: () => pageController.animateToPage(1,
@@ -60,7 +64,9 @@ class CustomDrawer extends StatelessWidget {
               InkWell(
                 child: Text(
                   'Skill',
-                  style: textTheme.headline6!
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline6!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
                 onTap: () => pageController.animateToPage(2,
@@ -73,7 +79,9 @@ class CustomDrawer extends StatelessWidget {
               InkWell(
                 child: Text(
                   'Career',
-                  style: textTheme.headline6!
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline6!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
                 onTap: () => pageController.animateToPage(3,
@@ -86,7 +94,9 @@ class CustomDrawer extends StatelessWidget {
               InkWell(
                 child: Text(
                   'Project',
-                  style: textTheme.headline6!
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline6!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
                 onTap: () => pageController.animateToPage(4,
@@ -99,7 +109,9 @@ class CustomDrawer extends StatelessWidget {
               InkWell(
                 child: Text(
                   'Blog',
-                  style: textTheme.headline6!
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline6!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
                 onTap: () => pageController.animateToPage(5,

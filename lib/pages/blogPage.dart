@@ -27,7 +27,6 @@ class BlogPage extends StatelessWidget {
     'Error last':
         'https://terry1213.github.io/flutter/flutter-failed-to-start-the-dart-cli-isolate-null/',
   };
-  static TextTheme textTheme = Get.textTheme;
 
   const BlogPage();
 
@@ -39,6 +38,7 @@ class BlogPage extends StatelessWidget {
     List<Widget> _carouselItems = [
       CarouselItem(
         CardSection(
+          context,
           title: 'Widget of the Week',
           body:
               'Flutter 공식 유튜브 채널에서는 일주일마다 특정 위젯에 대해서 설명해주는 \'Widget of the Week\' 영상 시리즈를 제공하고 있습니다.\n'
@@ -48,6 +48,7 @@ class BlogPage extends StatelessWidget {
           urlKey2: 'Widget of the Week tag',
         ),
         CardSection(
+          context,
           title: 'Flutter/Dart Document',
           body:
               'Flutter와 Dart는 공식 문서를 다양한 부분에 대하여 상세하게 제공합니다. 특히나 Flutter와 Dart는 정보를 얻을 수 있는 곳이 적기 때문에 공식 문서가 매우 중요하다고 생각합니다.\n'
@@ -57,6 +58,7 @@ class BlogPage extends StatelessWidget {
           urlKey2: 'Flutter/Dart Document tag',
         ),
         CardSection(
+          context,
           title: 'Decoding Flutter',
           body:
               'Flutter 공식 유튜브 채널에서는 개발자들이 헷갈려하는 개념이나 궁금해하는 점들에 대해서 설명해주는 영상 시리즈를 제공하고 있습니다.\n'
@@ -68,6 +70,7 @@ class BlogPage extends StatelessWidget {
       ),
       CarouselItem(
         CardSection(
+          context,
           title: 'State Management',
           body:
               'Flutter에서 다양한 방법으로 상태 관리를 할 수 있습니다. 그 중 \'GetX\', \'Provider\', \'bloc\'을 실무에서 사용해 봤으며, '
@@ -77,6 +80,7 @@ class BlogPage extends StatelessWidget {
           urlKey2: 'State Management provider',
         ),
         CardSection(
+          context,
           title: 'Algorithm',
           body:
               '알고리즘적 사고 향상을 위해 \'백준\'과 \'프로그래머스\'에서 50개 이상의 다양한 프로그래밍 문제를 풀어봤습니다. 풀어본 문제들 중 일부에 대해서 접근 방식과 풀이 과정을 정리해서 올리고 있습니다.',
@@ -85,6 +89,7 @@ class BlogPage extends StatelessWidget {
           urlKey2: 'Algorithm tag',
         ),
         CardSection(
+          context,
           title: 'Error',
           body:
               '개발자로서 에러가 발생했을 때 해결하기에만 급급하지 말아야겠다고 다짐했습니다. 해결법만 외워서는 발전이 없기 때문입니다. \n'
@@ -109,7 +114,7 @@ class BlogPage extends StatelessWidget {
                 children: [
                   Text(
                     'Blog',
-                    style: textTheme.headline2!,
+                    style: Theme.of(context).textTheme.headline2!,
                   ),
                   SizedBox(height: 20),
                   Row(
@@ -130,7 +135,7 @@ class BlogPage extends StatelessWidget {
                         tag: 'blog',
                         builder: (_) => Text(
                           ' ${_.index + 1} / 2 ',
-                          style: textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                       ),
                       GestureDetector(
@@ -201,7 +206,8 @@ class BlogPage extends StatelessWidget {
     );
   }
 
-  Widget CardSection({
+  Widget CardSection(
+    BuildContext context, {
     required String title,
     required String body,
     required String image,
@@ -236,10 +242,10 @@ class BlogPage extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               title,
-              style: textTheme.headline5!.copyWith(
-                color: Colors.lightBlue,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.headline5!.copyWith(
+                    color: Colors.lightBlue,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             SizedBox(height: 10),
             Expanded(
@@ -253,10 +259,10 @@ class BlogPage extends StatelessWidget {
                 icon: Icon(Icons.launch),
                 label: Text(
                   title != 'State Management' ? '최근 게시글' : 'GetX 게시글',
-                  style: textTheme.bodyText2!.copyWith(
-                    color: Colors.lightBlue,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                        color: Colors.lightBlue,
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
               ),
             ),
@@ -267,10 +273,10 @@ class BlogPage extends StatelessWidget {
                 icon: Icon(Icons.launch),
                 label: Text(
                   title != 'State Management' ? '전체 게시글' : 'Provider 게시글',
-                  style: textTheme.bodyText2!.copyWith(
-                    color: Colors.lightBlue,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                        color: Colors.lightBlue,
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
               ),
             ),

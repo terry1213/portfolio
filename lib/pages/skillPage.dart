@@ -1,6 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 import 'package:portfolio/widgets/verticalDashedDivider.dart';
 
@@ -15,7 +14,6 @@ class SkillPage extends StatelessWidget {
     'HTML/CSS',
     'C/C++',
   ];
-  static TextTheme textTheme = Get.textTheme;
 
   static List<BarChartGroupData> rawBarGroups = [
     makeGroupData(0, 80),
@@ -63,7 +61,7 @@ class SkillPage extends StatelessWidget {
                             children: [
                               Text(
                                 'Skill',
-                                style: textTheme.headline2!,
+                                style: Theme.of(context).textTheme.headline2!,
                               ),
                               Card(
                                 elevation: 0,
@@ -86,14 +84,19 @@ class SkillPage extends StatelessWidget {
                                                   skills[group.x.toInt()];
                                               return BarTooltipItem(
                                                 skill + '\n',
-                                                textTheme.bodyText2!.copyWith(
-                                                    fontWeight:
-                                                        FontWeight.bold),
+                                                Theme.of(context)
+                                                    .textTheme
+                                                    .bodyText2!
+                                                    .copyWith(
+                                                        fontWeight:
+                                                            FontWeight.bold),
                                                 children: <TextSpan>[
                                                   TextSpan(
                                                     text:
                                                         (rod.y - 3).toString(),
-                                                    style: textTheme.bodyText2!
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .bodyText2!
                                                         .copyWith(
                                                             color:
                                                                 Colors.yellow,
@@ -111,7 +114,9 @@ class SkillPage extends StatelessWidget {
                                           bottomTitles: SideTitles(
                                             showTitles: true,
                                             getTextStyles: (value) =>
-                                                textTheme.bodyText2!,
+                                                Theme.of(context)
+                                                    .textTheme
+                                                    .bodyText2!,
                                             margin: 20,
                                             getTitles: (double value) =>
                                                 skills[value.toInt()],
@@ -119,7 +124,9 @@ class SkillPage extends StatelessWidget {
                                           leftTitles: SideTitles(
                                             showTitles: true,
                                             getTextStyles: (value) =>
-                                                textTheme.bodyText2!,
+                                                Theme.of(context)
+                                                    .textTheme
+                                                    .bodyText2!,
                                             margin: 32,
                                             reservedSize: 14,
                                             getTitles: (value) {
@@ -159,9 +166,12 @@ class SkillPage extends StatelessWidget {
                                   children: [
                                     Text(
                                       'JavaScript',
-                                      style: textTheme.headline5!.copyWith(
-                                          color: Colors.lightBlue,
-                                          fontWeight: FontWeight.bold),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline5!
+                                          .copyWith(
+                                              color: Colors.lightBlue,
+                                              fontWeight: FontWeight.bold),
                                     ),
                                     SizedBox(height: 10),
                                     Text(
@@ -180,9 +190,12 @@ class SkillPage extends StatelessWidget {
                                   children: [
                                     Text(
                                       'Github',
-                                      style: textTheme.headline5!.copyWith(
-                                          color: Colors.lightBlue,
-                                          fontWeight: FontWeight.bold),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline5!
+                                          .copyWith(
+                                              color: Colors.lightBlue,
+                                              fontWeight: FontWeight.bold),
                                     ),
                                     SizedBox(height: 10),
                                     Text(
@@ -209,9 +222,12 @@ class SkillPage extends StatelessWidget {
                             children: [
                               Text(
                                 'Flutter',
-                                style: textTheme.headline5!.copyWith(
-                                    color: Colors.lightBlue,
-                                    fontWeight: FontWeight.bold),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline5!
+                                    .copyWith(
+                                        color: Colors.lightBlue,
+                                        fontWeight: FontWeight.bold),
                               ),
                               SizedBox(height: 10),
                               Text(
@@ -231,9 +247,12 @@ class SkillPage extends StatelessWidget {
                             children: [
                               Text(
                                 'Firebase',
-                                style: textTheme.headline5!.copyWith(
-                                    color: Colors.lightBlue,
-                                    fontWeight: FontWeight.bold),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline5!
+                                    .copyWith(
+                                        color: Colors.lightBlue,
+                                        fontWeight: FontWeight.bold),
                               ),
                               SizedBox(height: 10),
                               Text(
@@ -253,9 +272,12 @@ class SkillPage extends StatelessWidget {
                             children: [
                               Text(
                                 'Swift',
-                                style: textTheme.headline5!.copyWith(
-                                    color: Colors.lightBlue,
-                                    fontWeight: FontWeight.bold),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline5!
+                                    .copyWith(
+                                        color: Colors.lightBlue,
+                                        fontWeight: FontWeight.bold),
                               ),
                               SizedBox(height: 10),
                               Text(

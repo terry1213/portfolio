@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:timelines/timelines.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CareerPage extends StatelessWidget {
-  static TextTheme textTheme = Get.textTheme;
-
   static List<_Career> careers = [
     _Career(
       company: '홀잡펠 이펙티브 마이크로브스',
@@ -151,7 +148,7 @@ class CareerPage extends StatelessWidget {
                 children: [
                   Text(
                     'Career',
-                    style: textTheme.headline2!,
+                    style: Theme.of(context).textTheme.headline2!,
                   ),
                   SizedBox(height: 20),
                   FixedTimeline.tileBuilder(
@@ -180,27 +177,36 @@ class CareerPage extends StatelessWidget {
                                 children: [
                                   Text(
                                     careers[index].company,
-                                    style: textTheme.headline5!.copyWith(
-                                      color: Colors.lightBlue,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline5!
+                                        .copyWith(
+                                          color: Colors.lightBlue,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                   SizedBox(width: 10),
                                   Text(
                                     careers[index].period,
-                                    style: textTheme.bodyText2!.copyWith(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyText2!
+                                        .copyWith(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                 ],
                               ),
                               Text(
                                 careers[index].position,
-                                style: textTheme.bodyText2!.copyWith(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText2!
+                                    .copyWith(
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -208,7 +214,7 @@ class CareerPage extends StatelessWidget {
                                   careers[index].apps.length,
                                   (index2) {
                                     return _AppSection(
-                                        careers[index].apps[index2]);
+                                        careers[index].apps[index2], context);
                                   },
                                 ),
                               ),
@@ -237,7 +243,7 @@ class CareerPage extends StatelessWidget {
     );
   }
 
-  Widget _AppSection(_App app) {
+  Widget _AppSection(_App app, BuildContext context) {
     return Padding(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -246,9 +252,9 @@ class CareerPage extends StatelessWidget {
             children: [
               Text(
                 app.name,
-                style: textTheme.bodyText1!.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
               SizedBox(width: 5),
               app.appStoreLink == ''
@@ -278,9 +284,9 @@ class CareerPage extends StatelessWidget {
           Padding(
             child: Text(
               app.detail,
-              style: textTheme.bodyText2!.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
           ),
@@ -302,7 +308,7 @@ class CareerPage extends StatelessWidget {
                           SizedBox(width: 5.0),
                           Text(
                             app.works[index].main,
-                            style: textTheme.bodyText2,
+                            style: Theme.of(context).textTheme.bodyText2,
                           ),
                         ],
                       ),
