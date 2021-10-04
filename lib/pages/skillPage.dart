@@ -67,7 +67,7 @@ class SkillPage extends StatelessWidget {
                                 elevation: 0,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(4)),
-                                color: Colors.white10,
+                                color: Theme.of(context).bottomAppBarColor,
                                 child: Padding(
                                   padding: EdgeInsets.all(20),
                                   child: Container(
@@ -77,7 +77,7 @@ class SkillPage extends StatelessWidget {
                                         maxY: 100,
                                         barTouchData: BarTouchData(
                                           touchTooltipData: BarTouchTooltipData(
-                                            tooltipBgColor: Colors.grey,
+                                            tooltipBgColor: Colors.transparent,
                                             getTooltipItem: (group, groupIndex,
                                                 rod, rodIndex) {
                                               String skill =
@@ -98,8 +98,7 @@ class SkillPage extends StatelessWidget {
                                                         .textTheme
                                                         .bodyText2!
                                                         .copyWith(
-                                                            color:
-                                                                Colors.yellow,
+                                                            color: Colors.green,
                                                             fontWeight:
                                                                 FontWeight
                                                                     .bold),
