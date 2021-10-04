@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 
 class CustomDrawer extends StatelessWidget {
-  final pageController;
+  final PageController pageController;
 
   CustomDrawer({
     Key? key,
@@ -42,9 +42,7 @@ class CustomDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                onTap: () => pageController.animateToPage(0,
-                    duration: Duration(milliseconds: 700),
-                    curve: Curves.easeInOut),
+                onTap: () => pageController.jumpToPage(0),
               ),
               HorizontalDashedDivider(
                 space: 25,
@@ -57,9 +55,7 @@ class CustomDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                onTap: () => pageController.animateToPage(1,
-                    duration: Duration(milliseconds: 700),
-                    curve: Curves.easeInOut),
+                onTap: () => pageController.jumpToPage(1),
               ),
               HorizontalDashedDivider(
                 space: 25,
@@ -72,9 +68,7 @@ class CustomDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                onTap: () => pageController.animateToPage(2,
-                    duration: Duration(milliseconds: 700),
-                    curve: Curves.easeInOut),
+                onTap: () => pageController..jumpToPage(2),
               ),
               HorizontalDashedDivider(
                 space: 25,
@@ -87,9 +81,7 @@ class CustomDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                onTap: () => pageController.animateToPage(3,
-                    duration: Duration(milliseconds: 700),
-                    curve: Curves.easeInOut),
+                onTap: () => pageController.jumpToPage(3),
               ),
               HorizontalDashedDivider(
                 space: 25,
@@ -102,9 +94,7 @@ class CustomDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                onTap: () => pageController.animateToPage(4,
-                    duration: Duration(milliseconds: 700),
-                    curve: Curves.easeInOut),
+                onTap: () => pageController..jumpToPage(4),
               ),
               HorizontalDashedDivider(
                 space: 25,
@@ -117,9 +107,7 @@ class CustomDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                onTap: () => pageController.animateToPage(5,
-                    duration: Duration(milliseconds: 700),
-                    curve: Curves.easeInOut),
+                onTap: () => pageController..jumpToPage(5),
               ),
             ],
           ),

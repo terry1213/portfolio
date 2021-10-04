@@ -2,7 +2,7 @@ import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
-  final pageController;
+  final PageController pageController;
 
   const CustomAppBar({
     Key? key,
@@ -40,9 +40,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
-                onPressed: () => pageController.animateToPage(0,
-                    duration: Duration(milliseconds: 700),
-                    curve: Curves.easeInOut),
+                onPressed: () => pageController..jumpToPage(0),
               ),
               TextButton(
                 child: Text(
@@ -55,9 +53,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
-                onPressed: () => pageController.animateToPage(1,
-                    duration: Duration(milliseconds: 700),
-                    curve: Curves.easeInOut),
+                onPressed: () => pageController..jumpToPage(1),
               ),
               TextButton(
                 child: Text(
@@ -70,9 +66,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
-                onPressed: () => pageController.animateToPage(2,
-                    duration: Duration(milliseconds: 700),
-                    curve: Curves.easeInOut),
+                onPressed: () => pageController..jumpToPage(2),
               ),
               TextButton(
                 child: Text(
@@ -85,9 +79,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
-                onPressed: () => pageController.animateToPage(3,
-                    duration: Duration(milliseconds: 700),
-                    curve: Curves.easeInOut),
+                onPressed: () => pageController..jumpToPage(3),
               ),
               TextButton(
                 child: Text(
@@ -100,9 +92,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
-                onPressed: () => pageController.animateToPage(4,
-                    duration: Duration(milliseconds: 700),
-                    curve: Curves.easeInOut),
+                onPressed: () => pageController.jumpToPage(4),
               ),
               TextButton(
                 child: Text(
@@ -115,9 +105,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
-                onPressed: () => pageController.animateToPage(5,
-                    duration: Duration(milliseconds: 700),
-                    curve: Curves.easeInOut),
+                onPressed: () => pageController.jumpToPage(5),
               ),
               Expanded(
                 child: Container(),
