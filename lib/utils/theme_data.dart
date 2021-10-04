@@ -1,65 +1,71 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-var lightThemeData = ThemeData(
+ThemeData lightThemeData = ThemeData(
   appBarTheme: AppBarTheme(
-    color: Color(0xFFFFFFFFF),
+    color: Colors.blueGrey[900],
+    foregroundColor: Colors.white,
     iconTheme: IconThemeData(
-      color: Colors.black,
+      color: Colors.white,
     ),
   ),
-  bottomAppBarColor: Colors.black12,
+  bottomAppBarColor: Colors.blueGrey[900],
   brightness: Brightness.light,
-  dividerColor: Colors.black26,
+  cardColor: Colors.blueGrey[50],
+  dividerColor: Colors.blueGrey[400],
   highlightColor: Colors.transparent,
   hoverColor: Colors.transparent,
   iconTheme: IconThemeData(
-    color: Colors.black,
+    color: Colors.blueGrey,
   ),
-  scaffoldBackgroundColor: Color(0xFFFFFFFFF),
+  scaffoldBackgroundColor: Colors.white,
   splashColor: Colors.transparent,
   textTheme: textThemeLight,
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(
-      foregroundColor: MaterialStateProperty.all(Colors.black),
+      foregroundColor: MaterialStateProperty.all(Colors.blueGrey),
       overlayColor: MaterialStateProperty.all(Colors.transparent),
-      textStyle: MaterialStateProperty.all(
-          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+      textStyle: MaterialStateProperty.all(TextStyle(
+          color: Colors.blueGrey, fontSize: 15, fontWeight: FontWeight.bold)),
       visualDensity: VisualDensity.compact,
     ),
   ),
 );
 
-var darkThemeData = ThemeData(
+ThemeData darkThemeData = ThemeData(
   appBarTheme: AppBarTheme(
     color: Color(0xFFF242424),
+    foregroundColor: Colors.white,
     iconTheme: IconThemeData(
       color: Colors.white,
     ),
   ),
-  bottomAppBarColor: Colors.white10,
+  bottomAppBarColor: Color(0xFFF242424),
   brightness: Brightness.dark,
+  cardColor: Colors.white12,
   dividerColor: Colors.white24,
   highlightColor: Colors.transparent,
   hoverColor: Colors.transparent,
   iconTheme: IconThemeData(
-    color: Colors.white,
+    color: Colors.blueGrey[200],
   ),
   scaffoldBackgroundColor: Color(0xFFF242424),
   splashColor: Colors.transparent,
   textTheme: textThemeDark,
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(
-      foregroundColor: MaterialStateProperty.all(Colors.white),
+      foregroundColor: MaterialStateProperty.all(Colors.blueGrey[200]),
       overlayColor: MaterialStateProperty.all(Colors.transparent),
-      textStyle: MaterialStateProperty.all(
-          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+      textStyle: MaterialStateProperty.all(TextStyle(
+          color: Colors.blueGrey[200],
+          fontSize: 15,
+          fontWeight: FontWeight.bold)),
       visualDensity: VisualDensity.compact,
     ),
   ),
 );
 
-var textThemeLight = TextTheme(
+TextTheme textThemeLight = TextTheme(
   headline1: GoogleFonts.nanumPenScript(fontSize: 96, color: Colors.black),
   headline2: GoogleFonts.nanumPenScript(fontSize: 60, color: Colors.black),
   headline3: GoogleFonts.nanumPenScript(fontSize: 48, color: Colors.black),
@@ -70,7 +76,7 @@ var textThemeLight = TextTheme(
   bodyText2: GoogleFonts.notoSans(fontSize: 15, height: 2, color: Colors.black),
 );
 
-var textThemeDark = TextTheme(
+TextTheme textThemeDark = TextTheme(
   headline1: GoogleFonts.nanumPenScript(fontSize: 96, color: Colors.white),
   headline2: GoogleFonts.nanumPenScript(fontSize: 60, color: Colors.white),
   headline3: GoogleFonts.nanumPenScript(fontSize: 48, color: Colors.white),

@@ -9,158 +9,142 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.topCenter,
-      child: SingleChildScrollView(
-        child: Container(
-          height: 820,
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Container(
-              width: 1360,
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 5,
-                    child: PhotoSection(context),
-                  ),
-                  VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
-                  Expanded(
-                    flex: 4,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 15),
-                        Expanded(
-                          flex: 20,
-                          child: AboutSection(context),
-                        ),
-                        HorizontalDashedDivider(space: 40),
-                        Expanded(
-                          flex: 10,
-                          child: EducationSection(context),
-                        ),
-                        HorizontalDashedDivider(space: 40),
-                        Expanded(
-                          flex: 15,
-                          child: CareerSection(context),
-                        ),
-                        HorizontalDashedDivider(space: 40),
-                        Expanded(
-                          flex: 1,
-                          child: Container(),
-                        ),
-                      ],
-                    ),
-                  ),
-                  VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
-                  Expanded(
-                    flex: 4,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 15),
-                        Expanded(
-                          flex: 11,
-                          child: ProjectSection(context),
-                        ),
-                        HorizontalDashedDivider(space: 40),
-                        Expanded(
-                          flex: 12,
-                          child: CertificateSection(context),
-                        ),
-                        HorizontalDashedDivider(space: 40),
-                        Expanded(
-                          flex: 19,
-                          child: Container(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+    return Container(
+      height: 820,
+      width: 1360,
+      child: Row(
+        children: [
+          Expanded(
+            flex: 5,
+            child: PhotoSection(context),
+          ),
+          VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
+          Expanded(
+            flex: 4,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 15),
+                Expanded(
+                  flex: 20,
+                  child: AboutSection(context),
+                ),
+                HorizontalDashedDivider(space: 40),
+                Expanded(
+                  flex: 10,
+                  child: EducationSection(context),
+                ),
+                HorizontalDashedDivider(space: 40),
+                Expanded(
+                  flex: 15,
+                  child: CareerSection(context),
+                ),
+                HorizontalDashedDivider(space: 40),
+                Expanded(
+                  flex: 1,
+                  child: Container(),
+                ),
+              ],
             ),
           ),
-        ),
+          VerticalDashedDivider(indent: 30, endIndent: 30, space: 60),
+          Expanded(
+            flex: 4,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 15),
+                Expanded(
+                  flex: 11,
+                  child: ProjectSection(context),
+                ),
+                HorizontalDashedDivider(space: 40),
+                Expanded(
+                  flex: 12,
+                  child: CertificateSection(context),
+                ),
+                HorizontalDashedDivider(space: 40),
+                Expanded(
+                  flex: 19,
+                  child: Container(),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
 
   Widget PhotoSection(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'About',
-          style: Theme.of(context).textTheme.headline2!,
-        ),
-        SizedBox(height: 20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            ClipOval(
-              child: Image.asset(
-                'assets/profile2.jpg',
-                height: 200,
-                width: 200,
-              ),
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 20),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          ClipOval(
+            child: Image.asset(
+              'assets/profile2.jpg',
+              height: 200,
+              width: 200,
             ),
-            SizedBox(width: 30),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      alignment: Alignment.center,
-                      width: 60,
-                      child: AnimatedTextKit(
-                        animatedTexts: [
-                          WavyAnimatedText(
-                            '기록',
-                            textStyle: Theme.of(context)
-                                .textTheme
-                                .headline3!
-                                .copyWith(color: Colors.lightBlue),
-                            speed: Duration(milliseconds: 600),
-                          ),
-                          WavyAnimatedText(
-                            '성장',
-                            textStyle: Theme.of(context)
-                                .textTheme
-                                .headline3!
-                                .copyWith(color: Colors.lightBlue),
-                            speed: Duration(milliseconds: 600),
-                          ),
-                        ],
-                        repeatForever: true,
-                        pause: Duration(milliseconds: 3000),
-                      ),
+          ),
+          SizedBox(width: 30),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    width: 60,
+                    child: AnimatedTextKit(
+                      animatedTexts: [
+                        WavyAnimatedText(
+                          '기록',
+                          textStyle: Theme.of(context)
+                              .textTheme
+                              .headline3!
+                              .copyWith(color: Colors.lightBlue),
+                          speed: Duration(milliseconds: 600),
+                        ),
+                        WavyAnimatedText(
+                          '성장',
+                          textStyle: Theme.of(context)
+                              .textTheme
+                              .headline3!
+                              .copyWith(color: Colors.lightBlue),
+                          speed: Duration(milliseconds: 600),
+                        ),
+                      ],
+                      repeatForever: true,
+                      pause: Duration(milliseconds: 3000),
                     ),
-                    Text('하는', style: Theme.of(context).textTheme.headline3),
+                  ),
+                  Text('하는', style: Theme.of(context).textTheme.headline3),
+                ],
+              ),
+              RichText(
+                text: TextSpan(
+                  text: '개발자\n',
+                  style: Theme.of(context).textTheme.headline3,
+                  children: [
+                    TextSpan(
+                      text: '임연우',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline2!
+                          .copyWith(color: Colors.lightBlue),
+                    ),
+                    TextSpan(text: '입니다.'),
                   ],
                 ),
-                RichText(
-                  text: TextSpan(
-                    text: '개발자\n',
-                    style: Theme.of(context).textTheme.headline3,
-                    children: [
-                      TextSpan(
-                        text: '임연우',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline2!
-                            .copyWith(color: Colors.lightBlue),
-                      ),
-                      TextSpan(text: '입니다.'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ],
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 

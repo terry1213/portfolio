@@ -8,6 +8,7 @@ import 'package:portfolio/pages/skillPage.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/widgets/customAppBar.dart';
 import 'package:portfolio/widgets/customDrawer.dart';
+import 'package:portfolio/widgets/footer.dart';
 
 import 'homePage.dart';
 
@@ -47,11 +48,29 @@ class TemplatePage extends StatelessWidget {
           : CustomAppBar(
               pageController: _pageController,
             ),
-      body: PageView(
-        controller: _pageController,
-        scrollDirection: Axis.horizontal,
-        physics: NeverScrollableScrollPhysics(),
-        children: pages,
+      body: Align(
+        alignment: Alignment.topCenter,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  height: 820,
+                  width: 1360,
+                  child: PageView(
+                    controller: _pageController,
+                    scrollDirection: Axis.horizontal,
+                    physics: NeverScrollableScrollPhysics(),
+                    children: pages,
+                  ),
+                ),
+                Footer(),
+              ],
+            ),
+          ),
+        ),
       ),
       drawer: CustomDrawer(
         pageController: _pageController,

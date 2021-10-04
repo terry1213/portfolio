@@ -1,3 +1,4 @@
+import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
@@ -10,16 +11,32 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return PreferredSize(
-      child: Center(
-        child: Container(
+      child: Container(
+        child: Padding(
+          padding: EdgeInsets.all(20),
           child: Row(
             children: [
-              Expanded(
-                child: Container(),
+              Text(
+                'Yeonwoo Lim',
+                style: TextStyle(
+                  color: Colors.blueGrey[100],
+                  fontSize: 20,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 3,
+                ),
               ),
+              SizedBox(width: 50),
               TextButton(
-                child: Text('Home'),
+                child: Text(
+                  'Home',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2!
+                      .copyWith(color: Colors.white),
+                ),
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
@@ -28,7 +45,13 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                     curve: Curves.easeInOut),
               ),
               TextButton(
-                child: Text('About'),
+                child: Text(
+                  'About',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2!
+                      .copyWith(color: Colors.white),
+                ),
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
@@ -37,7 +60,13 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                     curve: Curves.easeInOut),
               ),
               TextButton(
-                child: Text('Skill'),
+                child: Text(
+                  'Skill',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2!
+                      .copyWith(color: Colors.white),
+                ),
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
@@ -46,7 +75,13 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                     curve: Curves.easeInOut),
               ),
               TextButton(
-                child: Text('Career'),
+                child: Text(
+                  'Career',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2!
+                      .copyWith(color: Colors.white),
+                ),
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
@@ -55,7 +90,13 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                     curve: Curves.easeInOut),
               ),
               TextButton(
-                child: Text('Project'),
+                child: Text(
+                  'Project',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2!
+                      .copyWith(color: Colors.white),
+                ),
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
@@ -64,7 +105,13 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                     curve: Curves.easeInOut),
               ),
               TextButton(
-                child: Text('Blog'),
+                child: Text(
+                  'Blog',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2!
+                      .copyWith(color: Colors.white),
+                ),
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
@@ -72,13 +119,16 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                     duration: Duration(milliseconds: 700),
                     curve: Curves.easeInOut),
               ),
+              Expanded(
+                child: Container(),
+              ),
             ],
           ),
-          color: Theme.of(context).scaffoldBackgroundColor,
-          width: 1360,
         ),
+        color: Theme.of(context).bottomAppBarColor,
+        width: 1360,
       ),
-      preferredSize: Size.fromHeight(90),
+      preferredSize: Size(screenSize.width, 90),
     );
   }
 

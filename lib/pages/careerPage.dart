@@ -135,110 +135,95 @@ class CareerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.topCenter,
-      child: SingleChildScrollView(
-        child: Container(
-          height: 820,
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Container(
-              width: 1360,
-              child: ListView(
-                children: [
-                  Text(
-                    'Career',
-                    style: Theme.of(context).textTheme.headline2!,
-                  ),
-                  SizedBox(height: 20),
-                  FixedTimeline.tileBuilder(
-                    theme: TimelineThemeData(
-                      nodePosition: 0,
-                      color: Color(0xff989898),
-                      indicatorTheme: IndicatorThemeData(
-                        position: 0,
-                        size: 30.0,
-                      ),
-                      connectorTheme: ConnectorThemeData(
-                        thickness: 4,
-                      ),
-                    ),
-                    builder: TimelineTileBuilder.connected(
-                      connectionDirection: ConnectionDirection.before,
-                      itemCount: careers.length + 1,
-                      contentsBuilder: (_, index) {
-                        if (index == careers.length) return null;
-                        return Padding(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Row(
-                                children: [
-                                  Text(
-                                    careers[index].company,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline5!
-                                        .copyWith(
-                                          color: Colors.lightBlue,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                  ),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    careers[index].period,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyText2!
-                                        .copyWith(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                careers[index].position,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyText2!
-                                    .copyWith(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: List.generate(
-                                  careers[index].apps.length,
-                                  (index2) {
-                                    return _AppSection(
-                                        careers[index].apps[index2], context);
-                                  },
-                                ),
-                              ),
-                            ],
+    return Container(
+      height: 820,
+      width: 1360,
+      child: ListView(
+        children: [
+          FixedTimeline.tileBuilder(
+            theme: TimelineThemeData(
+              nodePosition: 0,
+              color: Theme.of(context).dividerColor,
+              indicatorTheme: IndicatorThemeData(
+                position: 0,
+                size: 30.0,
+              ),
+              connectorTheme: ConnectorThemeData(
+                thickness: 4,
+              ),
+            ),
+            builder: TimelineTileBuilder.connected(
+              connectionDirection: ConnectionDirection.before,
+              itemCount: careers.length + 1,
+              contentsBuilder: (_, index) {
+                if (index == careers.length) return null;
+                return Padding(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            careers[index].company,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline5!
+                                .copyWith(
+                              color: Colors.lightBlue,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                          padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        );
-                      },
-                      indicatorBuilder: (_, index) {
-                        return OutlinedDotIndicator(
-                          borderWidth: 4,
-                        );
-                      },
-                      connectorBuilder: (_, index, ___) => SolidLineConnector(
-                        thickness: 4,
+                          SizedBox(width: 10),
+                          Text(
+                            careers[index].period,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText2!
+                                .copyWith(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
+                      Text(
+                        careers[index].position,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText2!
+                            .copyWith(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: List.generate(
+                          careers[index].apps.length,
+                              (index2) {
+                            return _AppSection(
+                                careers[index].apps[index2], context);
+                          },
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-                shrinkWrap: true,
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                );
+              },
+              indicatorBuilder: (_, index) {
+                return OutlinedDotIndicator(
+                  borderWidth: 4,
+                );
+              },
+              connectorBuilder: (_, index, ___) => SolidLineConnector(
+                thickness: 4,
               ),
             ),
           ),
-        ),
+        ],
+        shrinkWrap: true,
       ),
     );
   }

@@ -13,7 +13,7 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Theme.of(context).scaffoldBackgroundColor,
+        color: Theme.of(context).bottomAppBarColor,
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
@@ -23,21 +23,24 @@ class CustomDrawer extends StatelessWidget {
               SizedBox(height: 20),
               Center(
                 child: Text(
-                  'Portfolio',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline6!
-                      .copyWith(fontWeight: FontWeight.bold),
+                  'Yeonwoo Lim',
+                  style: TextStyle(
+                    color: Colors.blueGrey[100],
+                    fontSize: 20,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 3,
+                  ),
                 ),
               ),
               SizedBox(height: 30),
               InkWell(
                 child: Text(
                   'Home',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline6!
-                      .copyWith(fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headline6!.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
                 onTap: () => pageController.animateToPage(0,
                     duration: Duration(milliseconds: 700),
@@ -49,10 +52,10 @@ class CustomDrawer extends StatelessWidget {
               InkWell(
                 child: Text(
                   'About',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline6!
-                      .copyWith(fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headline6!.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
                 onTap: () => pageController.animateToPage(1,
                     duration: Duration(milliseconds: 700),
@@ -64,10 +67,10 @@ class CustomDrawer extends StatelessWidget {
               InkWell(
                 child: Text(
                   'Skill',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline6!
-                      .copyWith(fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headline6!.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
                 onTap: () => pageController.animateToPage(2,
                     duration: Duration(milliseconds: 700),
@@ -79,10 +82,10 @@ class CustomDrawer extends StatelessWidget {
               InkWell(
                 child: Text(
                   'Career',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline6!
-                      .copyWith(fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headline6!.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
                 onTap: () => pageController.animateToPage(3,
                     duration: Duration(milliseconds: 700),
@@ -94,10 +97,10 @@ class CustomDrawer extends StatelessWidget {
               InkWell(
                 child: Text(
                   'Project',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline6!
-                      .copyWith(fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headline6!.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
                 onTap: () => pageController.animateToPage(4,
                     duration: Duration(milliseconds: 700),
@@ -109,10 +112,10 @@ class CustomDrawer extends StatelessWidget {
               InkWell(
                 child: Text(
                   'Blog',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline6!
-                      .copyWith(fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headline6!.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
                 onTap: () => pageController.animateToPage(5,
                     duration: Duration(milliseconds: 700),
