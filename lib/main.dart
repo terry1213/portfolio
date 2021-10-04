@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       darkTheme: darkThemeData,
       theme: lightThemeData,
-      themeMode: EasyDynamicTheme.of(context).themeMode!,
+      themeMode: ThemeMode.dark,
       home: InteractiveViewer(
         child: TemplatePage(),
         scaleEnabled: getPlatformType() == PlatformType.desktop ? false : true,
