@@ -18,6 +18,7 @@ ThemeData lightThemeData = ThemeData(
   iconTheme: IconThemeData(
     color: Colors.blueGrey,
   ),
+  primarySwatch: Colors.blueGrey,
   scaffoldBackgroundColor: Colors.white,
   splashColor: Colors.transparent,
   textTheme: textThemeLight,
@@ -49,6 +50,7 @@ ThemeData darkThemeData = ThemeData(
   iconTheme: IconThemeData(
     color: Colors.blueGrey[200],
   ),
+  primarySwatch: Colors.blueGrey,
   scaffoldBackgroundColor: Color(0xFFF242424),
   splashColor: Colors.transparent,
   textTheme: textThemeDark,
@@ -66,23 +68,89 @@ ThemeData darkThemeData = ThemeData(
 );
 
 TextTheme textThemeLight = TextTheme(
-  headline1: GoogleFonts.nanumPenScript(fontSize: 96, color: Colors.black),
-  headline2: GoogleFonts.nanumPenScript(fontSize: 60, color: Colors.black),
-  headline3: GoogleFonts.nanumPenScript(fontSize: 48, color: Colors.black),
-  headline4: GoogleFonts.nanumPenScript(fontSize: 34, color: Colors.black),
-  headline5: GoogleFonts.notoSans(fontSize: 24, color: Colors.black),
-  headline6: GoogleFonts.notoSans(fontSize: 20, color: Colors.black),
-  bodyText1: GoogleFonts.notoSans(fontSize: 20, color: Colors.black),
-  bodyText2: GoogleFonts.notoSans(fontSize: 15, height: 2, color: Colors.black),
+  headline1: GoogleFonts.nanumPenScript(
+      fontSize: 96,
+      color: Colors.black,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  headline2: GoogleFonts.nanumPenScript(
+      fontSize: 60,
+      color: Colors.black,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  headline3: GoogleFonts.nanumPenScript(
+      fontSize: 48,
+      color: Colors.black,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  headline4: GoogleFonts.notoSans(
+      fontSize: 34,
+      color: Colors.black,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  headline5: GoogleFonts.notoSans(
+      fontSize: 24,
+      color: Colors.black,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  headline6: GoogleFonts.notoSans(
+      fontSize: 20,
+      color: Colors.black,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  bodyText1: GoogleFonts.notoSans(
+      fontSize: 20,
+      color: Colors.black,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  bodyText2: GoogleFonts.notoSans(
+      fontSize: 16,
+      height: 2,
+      color: Colors.black,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
 );
 
 TextTheme textThemeDark = TextTheme(
-  headline1: GoogleFonts.nanumPenScript(fontSize: 96, color: Colors.white),
-  headline2: GoogleFonts.nanumPenScript(fontSize: 60, color: Colors.white),
-  headline3: GoogleFonts.nanumPenScript(fontSize: 48, color: Colors.white),
-  headline4: GoogleFonts.nanumPenScript(fontSize: 34, color: Colors.white),
-  headline5: GoogleFonts.notoSans(fontSize: 24, color: Colors.white),
-  headline6: GoogleFonts.notoSans(fontSize: 20, color: Colors.white),
-  bodyText1: GoogleFonts.notoSans(fontSize: 20, color: Colors.white),
-  bodyText2: GoogleFonts.notoSans(fontSize: 15, height: 2, color: Colors.white),
+  headline1: GoogleFonts.nanumPenScript(
+      fontSize: 96,
+      color: Colors.white,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  headline2: GoogleFonts.nanumPenScript(
+      fontSize: 60,
+      color: Colors.white,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  headline3: GoogleFonts.nanumPenScript(
+      fontSize: 48,
+      color: Colors.white,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  headline4: GoogleFonts.notoSans(
+      fontSize: 34,
+      color: Colors.white,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  headline5: GoogleFonts.notoSans(
+      fontSize: 24,
+      color: Colors.white,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  headline6: GoogleFonts.notoSans(
+      fontSize: 20,
+      color: Colors.white,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  bodyText1: GoogleFonts.notoSans(
+      fontSize: 20,
+      color: Colors.white,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
+  bodyText2: GoogleFonts.notoSans(
+      fontSize: 16,
+      height: 2,
+      color: Colors.white,
+      decorationColor: Colors.white.withOpacity(0),
+      decoration: TextDecoration.underline),
 );
