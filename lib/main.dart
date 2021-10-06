@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/pages/templatePage.dart';
 import 'package:portfolio/utils/theme_data.dart';
-import 'package:universal_html/html.dart' as html;
 import 'package:url_strategy/url_strategy.dart';
 
 import 'controller/carouselIndexController.dart';
@@ -22,26 +21,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       darkTheme: darkThemeData,
       theme: lightThemeData,
-      themeMode: ThemeMode.dark,
-      home: InteractiveViewer(
-        child: TemplatePage(),
-        scaleEnabled: getPlatformType() == PlatformType.desktop ? false : true,
-      ),
+      themeMode: EasyDynamicTheme.of(context).themeMode!,
+      home: TemplatePage(),
     );
-  }
-
-  PlatformType getPlatformType() {
-    String userAgent = html.window.navigator.userAgent.toString().toLowerCase();
-    // smartphone
-    if (userAgent.contains("iphone")) return PlatformType.apple;
-    if (userAgent.contains("android")) return PlatformType.android;
-
-    // tablet
-    if (userAgent.contains("ipad")) return PlatformType.apple;
-    if (html.window.navigator.platform!.toLowerCase().contains("macintel") &&
-        html.window.navigator.maxTouchPoints! > 0) return PlatformType.apple;
-
-    return PlatformType.desktop;
   }
 }
 
