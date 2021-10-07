@@ -13,7 +13,6 @@ import 'package:portfolio/widgets/footer.dart';
 import 'homePage.dart';
 
 class TemplatePage extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final List<GlobalKey> globalKeys = [
     GlobalKey(),
     GlobalKey(),
@@ -31,18 +30,12 @@ class TemplatePage extends StatelessWidget {
               actions: [
                 IconButton(
                   icon: Icon(Icons.brightness_6),
-                  onPressed: () {
-                    EasyDynamicTheme.of(context).changeTheme();
-                  },
+                  onPressed: () => EasyDynamicTheme.of(context).changeTheme(
+                      dark: Theme.of(context).brightness != Brightness.dark),
                 ),
               ],
               centerTitle: true,
               elevation: 0,
-              leading: IconButton(
-                icon: Icon(Icons.menu),
-                onPressed: () => _scaffoldKey.currentState!.openDrawer(),
-                tooltip: 'Menu',
-              ),
             )
           : CustomAppBar(
               globalKeys: globalKeys,
@@ -76,7 +69,6 @@ class TemplatePage extends StatelessWidget {
       drawer: CustomDrawer(
         globalKeys: globalKeys,
       ),
-      key: _scaffoldKey,
     );
   }
 }

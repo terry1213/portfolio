@@ -124,9 +124,8 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
               IconButton(
                 icon: Icon(Icons.brightness_6),
                 color: Colors.white,
-                onPressed: () {
-                  EasyDynamicTheme.of(context).changeTheme();
-                },
+                onPressed: () => EasyDynamicTheme.of(context).changeTheme(
+                    dark: Theme.of(context).brightness != Brightness.dark),
               ),
             ],
           ),
