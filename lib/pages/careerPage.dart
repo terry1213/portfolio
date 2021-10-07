@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:portfolio/utils/responsive.dart';
 import 'package:timelines/timelines.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CareerPage extends StatelessWidget {
   static List<_Career> careers = [
     _Career(
-      company: '홀잡펠 이펙티브 마이크로브스',
+      company: 'HEM Pharma',
       period: '2020.12-2021.02',
       position: 'Flutter 개발자 (인턴)',
       apps: [
@@ -131,18 +132,32 @@ class CareerPage extends StatelessWidget {
   ];
   static Map<String, dynamic> data = {};
 
-  const CareerPage();
+  const CareerPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 820,
-      width: 1360,
-      child: ListView(
+    var screenSize = MediaQuery.of(context).size;
+    double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
+        ? screenSize.width / 7
+        : ResponsiveWidget.isMediumScreen(context)
+            ? screenSize.width / 10
+            : screenSize.width / 13;
+    return Padding(
+      padding:
+          EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 70),
+      child: Column(
         children: [
+          Text(
+            'Career',
+            style: Theme.of(context)
+                .textTheme
+                .headline4!
+                .copyWith(fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 50),
           FixedTimeline.tileBuilder(
             theme: TimelineThemeData(
-              nodePosition: 0,
+              nodePosition: ResponsiveWidget.isSmallScreen(context) ? 0.0 : 0.5,
               color: Theme.of(context).dividerColor,
               indicatorTheme: IndicatorThemeData(
                 position: 0,
@@ -153,6 +168,9 @@ class CareerPage extends StatelessWidget {
               ),
             ),
             builder: TimelineTileBuilder.connected(
+              contentsAlign: ResponsiveWidget.isSmallScreen(context)
+                  ? ContentsAlign.basic
+                  : ContentsAlign.alternating,
               connectionDirection: ConnectionDirection.before,
               itemCount: careers.length + 1,
               contentsBuilder: (_, index) {
@@ -162,54 +180,80 @@ class CareerPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            careers[index].company,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline5!
-                                .copyWith(
-                              color: Colors.lightBlue,
-                              fontWeight: FontWeight.bold,
+                      ResponsiveWidget.isLargeScreen(context)
+                          ? Row(
+                              children: [
+                                Text(
+                                  careers[index].company,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline5!
+                                      .copyWith(
+                                        color: Colors.lightBlue,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                                SizedBox(width: 10),
+                                Text(
+                                  careers[index].period,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyText2!
+                                      .copyWith(
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            )
+                          : Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  careers[index].company,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline5!
+                                      .copyWith(
+                                        color: Colors.lightBlue,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                                Text(
+                                  careers[index].period,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyText2!
+                                      .copyWith(
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
                             ),
-                          ),
-                          SizedBox(width: 10),
-                          Text(
-                            careers[index].period,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyText2!
-                                .copyWith(
+                      Text(
+                        careers[index].position,
+                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
                               color: Colors.grey,
                               fontWeight: FontWeight.bold,
                             ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        careers[index].position,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText2!
-                            .copyWith(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.bold,
-                        ),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: List.generate(
                           careers[index].apps.length,
-                              (index2) {
+                          (index2) {
                             return _AppSection(
-                                careers[index].apps[index2], context);
+                              careers[index].apps[index2],
+                              context,
+                            );
                           },
                         ),
                       ),
                     ],
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  padding: EdgeInsets.symmetric(horizontal: 15.0),
                 );
               },
               indicatorBuilder: (_, index) {
@@ -223,7 +267,6 @@ class CareerPage extends StatelessWidget {
             ),
           ),
         ],
-        shrinkWrap: true,
       ),
     );
   }
@@ -269,9 +312,7 @@ class CareerPage extends StatelessWidget {
           Padding(
             child: Text(
               app.detail,
-              style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+              style: Theme.of(context).textTheme.bodyText2,
             ),
             padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
           ),
@@ -285,37 +326,24 @@ class CareerPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Icon(
-                            Icons.circle,
-                            size: 15,
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 5, vertical: 10),
+                            child: Icon(
+                              Icons.circle,
+                              size: 15,
+                            ),
                           ),
-                          SizedBox(width: 5.0),
-                          Text(
-                            app.works[index].main,
-                            style: Theme.of(context).textTheme.bodyText2,
+                          Flexible(
+                            child: Text(
+                              app.works[index].main,
+                              style: Theme.of(context).textTheme.bodyText2,
+                            ),
                           ),
                         ],
                       ),
-                      // Padding(
-                      //   child: Column(
-                      //     crossAxisAlignment: CrossAxisAlignment.start,
-                      //     children: List.generate(
-                      //       app.works[index].detail.length,
-                      //       (index2) {
-                      //         return Padding(
-                      //           child: Text(
-                      //             app.works[index].detail[index2],
-                      //             style: textTheme.bodyText2,
-                      //           ),
-                      //           padding: EdgeInsets.symmetric(vertical: 5.0),
-                      //         );
-                      //       },
-                      //     ),
-                      //   ),
-                      //   padding: EdgeInsets.symmetric(
-                      //       horizontal: 30.0, vertical: 5.0),
-                      // ),
                     ],
                   );
                 },

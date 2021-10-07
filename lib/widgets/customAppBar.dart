@@ -2,20 +2,19 @@ import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
-  final PageController pageController;
+  final List<GlobalKey> globalKeys;
 
   const CustomAppBar({
     Key? key,
-    required this.pageController,
+    required this.globalKeys,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
     return PreferredSize(
       child: Container(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             children: [
               Text(
@@ -40,7 +39,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
-                onPressed: () => pageController..jumpToPage(0),
+                onPressed: () => Scrollable.ensureVisible(
+                    globalKeys[0].currentContext!,
+                    duration: Duration(seconds: 1)),
               ),
               TextButton(
                 child: Text(
@@ -53,7 +54,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
-                onPressed: () => pageController..jumpToPage(1),
+                onPressed: () => Scrollable.ensureVisible(
+                    globalKeys[1].currentContext!,
+                    duration: Duration(seconds: 1)),
               ),
               TextButton(
                 child: Text(
@@ -66,7 +69,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
-                onPressed: () => pageController..jumpToPage(2),
+                onPressed: () => Scrollable.ensureVisible(
+                    globalKeys[2].currentContext!,
+                    duration: Duration(seconds: 1)),
               ),
               TextButton(
                 child: Text(
@@ -79,7 +84,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
-                onPressed: () => pageController..jumpToPage(3),
+                onPressed: () => Scrollable.ensureVisible(
+                    globalKeys[3].currentContext!,
+                    duration: Duration(seconds: 1)),
               ),
               TextButton(
                 child: Text(
@@ -92,7 +99,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
-                onPressed: () => pageController.jumpToPage(4),
+                onPressed: () => Scrollable.ensureVisible(
+                    globalKeys[4].currentContext!,
+                    duration: Duration(seconds: 1)),
               ),
               TextButton(
                 child: Text(
@@ -105,21 +114,29 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(Size.fromWidth(80)),
                 ),
-                onPressed: () => pageController.jumpToPage(5),
+                onPressed: () => Scrollable.ensureVisible(
+                    globalKeys[5].currentContext!,
+                    duration: Duration(seconds: 1)),
               ),
               Expanded(
                 child: Container(),
+              ),
+              IconButton(
+                icon: Icon(Icons.brightness_6),
+                color: Colors.white,
+                onPressed: () {
+                  EasyDynamicTheme.of(context).changeTheme();
+                },
               ),
             ],
           ),
         ),
         color: Theme.of(context).bottomAppBarColor,
-        width: 1360,
       ),
-      preferredSize: Size(screenSize.width, 90),
+      preferredSize: Size.fromHeight(80),
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(90);
+  Size get preferredSize => Size.fromHeight(80);
 }

@@ -1,21 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ProjectPage extends StatelessWidget {
-  const ProjectPage();
+  const ProjectPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 820,
-      width: 1360,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Container(),
-          ),
-        ],
-      ),
-    );
+    return Container();
   }
 }

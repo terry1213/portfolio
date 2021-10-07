@@ -13,16 +13,15 @@ import 'package:portfolio/widgets/footer.dart';
 import 'homePage.dart';
 
 class TemplatePage extends StatelessWidget {
-  final PageController _pageController = PageController();
-  final List<Widget> pages = const <Widget>[
-    HomePage(),
-    AboutPage(),
-    SkillPage(),
-    CareerPage(),
-    ProjectPage(),
-    BlogPage(),
-  ];
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final List<GlobalKey> globalKeys = [
+    GlobalKey(),
+    GlobalKey(),
+    GlobalKey(),
+    GlobalKey(),
+    GlobalKey(),
+    GlobalKey(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -46,34 +45,36 @@ class TemplatePage extends StatelessWidget {
               ),
             )
           : CustomAppBar(
-              pageController: _pageController,
+              globalKeys: globalKeys,
             ),
-      body: Align(
-        alignment: Alignment.topCenter,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  height: 820,
-                  width: 1360,
-                  child: PageView(
-                    controller: _pageController,
-                    scrollDirection: Axis.horizontal,
-                    physics: NeverScrollableScrollPhysics(),
-                    children: pages,
-                  ),
-                ),
-                Footer(),
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            HomePage(
+              key: globalKeys[0],
             ),
-          ),
+            AboutPage(
+              key: globalKeys[1],
+            ),
+            SkillPage(
+              key: globalKeys[2],
+            ),
+            CareerPage(
+              key: globalKeys[3],
+            ),
+            ProjectPage(
+              key: globalKeys[4],
+            ),
+            BlogPage(
+              key: globalKeys[5],
+            ),
+            Footer(),
+          ],
         ),
       ),
       drawer: CustomDrawer(
-        pageController: _pageController,
+        globalKeys: globalKeys,
       ),
       key: _scaffoldKey,
     );

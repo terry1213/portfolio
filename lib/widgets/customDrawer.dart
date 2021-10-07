@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 
 class CustomDrawer extends StatelessWidget {
-  final PageController pageController;
+  final List<GlobalKey> globalKeys;
 
   CustomDrawer({
     Key? key,
-    required this.pageController,
+    required this.globalKeys,
   }) : super(key: key);
 
   @override
@@ -42,7 +42,9 @@ class CustomDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                onTap: () => pageController.jumpToPage(0),
+                onTap: () => Scrollable.ensureVisible(
+                    globalKeys[0].currentContext!,
+                    duration: Duration(seconds: 1)),
               ),
               HorizontalDashedDivider(
                 space: 25,
@@ -55,7 +57,9 @@ class CustomDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                onTap: () => pageController.jumpToPage(1),
+                onTap: () => Scrollable.ensureVisible(
+                    globalKeys[1].currentContext!,
+                    duration: Duration(seconds: 1)),
               ),
               HorizontalDashedDivider(
                 space: 25,
@@ -68,7 +72,9 @@ class CustomDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                onTap: () => pageController..jumpToPage(2),
+                onTap: () => Scrollable.ensureVisible(
+                    globalKeys[2].currentContext!,
+                    duration: Duration(seconds: 1)),
               ),
               HorizontalDashedDivider(
                 space: 25,
@@ -81,7 +87,9 @@ class CustomDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                onTap: () => pageController.jumpToPage(3),
+                onTap: () => Scrollable.ensureVisible(
+                    globalKeys[3].currentContext!,
+                    duration: Duration(seconds: 1)),
               ),
               HorizontalDashedDivider(
                 space: 25,
@@ -94,7 +102,9 @@ class CustomDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                onTap: () => pageController..jumpToPage(4),
+                onTap: () => Scrollable.ensureVisible(
+                    globalKeys[4].currentContext!,
+                    duration: Duration(seconds: 1)),
               ),
               HorizontalDashedDivider(
                 space: 25,
@@ -107,7 +117,9 @@ class CustomDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                onTap: () => pageController..jumpToPage(5),
+                onTap: () => Scrollable.ensureVisible(
+                    globalKeys[5].currentContext!,
+                    duration: Duration(seconds: 1)),
               ),
             ],
           ),
