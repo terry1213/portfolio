@@ -20,6 +20,7 @@ ThemeData lightThemeData = ThemeData(
   ),
   primarySwatch: Colors.blueGrey,
   scaffoldBackgroundColor: Colors.white,
+  selectedRowColor: Colors.blueGrey,
   splashColor: Colors.transparent,
   textTheme: textThemeLight,
   textButtonTheme: TextButtonThemeData(
@@ -31,6 +32,7 @@ ThemeData lightThemeData = ThemeData(
       visualDensity: VisualDensity.compact,
     ),
   ),
+  unselectedWidgetColor: Colors.blueGrey[200],
 );
 
 ThemeData darkThemeData = ThemeData(
@@ -52,6 +54,7 @@ ThemeData darkThemeData = ThemeData(
   ),
   primarySwatch: Colors.blueGrey,
   scaffoldBackgroundColor: Color(0xFFF242424),
+  selectedRowColor: Colors.blueGrey[400],
   splashColor: Colors.transparent,
   textTheme: textThemeDark,
   textButtonTheme: TextButtonThemeData(
@@ -65,6 +68,7 @@ ThemeData darkThemeData = ThemeData(
       visualDensity: VisualDensity.compact,
     ),
   ),
+  unselectedWidgetColor: Colors.blueGrey[800],
 );
 
 TextTheme textThemeLight = TextTheme(
