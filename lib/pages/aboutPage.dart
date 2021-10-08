@@ -1,11 +1,20 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 import 'package:portfolio/widgets/verticalDashedDivider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatelessWidget {
+  static const Map<String, String> _urls = {
+    'Email': 'mailto:1213terry@naver.com',
+    'Phone': 'sms:01047888356',
+    'LinkedIn':
+        'https://www.linkedin.com/in/%EC%97%B0%EC%9A%B0-%EC%9E%84-89291320b/',
+    'Blog': 'https://terry1213.github.io/categories/',
+    'Github': 'https://github.com/terry1213',
+  };
+
   const AboutPage({Key? key}) : super(key: key);
 
   @override
@@ -113,78 +122,6 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  // Widget PhotoSection(BuildContext context) {
-  //   return Row(
-  //     crossAxisAlignment: CrossAxisAlignment.start,
-  //     mainAxisAlignment: MainAxisAlignment.center,
-  //     mainAxisSize: MainAxisSize.min,
-  //     children: [
-  //       ClipOval(
-  //         child: Image.asset(
-  //           'assets/profile2.jpg',
-  //           height: 200,
-  //           width: 200,
-  //         ),
-  //       ),
-  //       SizedBox(width: 20),
-  //       Column(
-  //         crossAxisAlignment: CrossAxisAlignment.start,
-  //         mainAxisAlignment: MainAxisAlignment.start,
-  //         mainAxisSize: MainAxisSize.min,
-  //         children: [
-  //           Row(
-  //             children: [
-  //               Container(
-  //                 alignment: Alignment.center,
-  //                 width: 60,
-  //                 child: AnimatedTextKit(
-  //                   animatedTexts: [
-  //                     WavyAnimatedText(
-  //                       '기록',
-  //                       textStyle: Theme.of(context)
-  //                           .textTheme
-  //                           .headline3!
-  //                           .copyWith(color: Colors.lightBlue),
-  //                       speed: Duration(milliseconds: 600),
-  //                     ),
-  //                     WavyAnimatedText(
-  //                       '성장',
-  //                       textStyle: Theme.of(context)
-  //                           .textTheme
-  //                           .headline3!
-  //                           .copyWith(color: Colors.lightBlue),
-  //                       speed: Duration(milliseconds: 600),
-  //                     ),
-  //                   ],
-  //                   repeatForever: true,
-  //                   pause: Duration(milliseconds: 3000),
-  //                 ),
-  //               ),
-  //               Text('하는', style: Theme.of(context).textTheme.headline3),
-  //             ],
-  //           ),
-  //           RichText(
-  //             text: TextSpan(
-  //               text: '개발자\n',
-  //               style: Theme.of(context).textTheme.headline3,
-  //               children: [
-  //                 TextSpan(
-  //                   text: '임연우',
-  //                   style: Theme.of(context)
-  //                       .textTheme
-  //                       .headline2!
-  //                       .copyWith(color: Colors.lightBlue),
-  //                 ),
-  //                 TextSpan(text: '입니다.'),
-  //               ],
-  //             ),
-  //           ),
-  //         ],
-  //       ),
-  //     ],
-  //   );
-  // }
-
   Widget AboutSection(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -200,57 +137,70 @@ class AboutPage extends StatelessWidget {
         ),
         Text('1996.12.13 / 경기도 구리시'),
         SizedBox(height: 30),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 5),
-              child: Icon(LineIcons.phone, size: 23),
-            ),
-            SizedBox(width: 5),
-            Flexible(
-              child: Text('010-4788-8356'),
-            ),
-          ],
+        InkWell(
+          onTap: () => _launchURL('Phone'),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child: Icon(LineIcons.phone, size: 23),
+              ),
+              SizedBox(width: 5),
+              Flexible(
+                child: Text('010-4788-8356'),
+              ),
+            ],
+          ),
         ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 5),
-              child: Icon(LineIcons.envelope, size: 23),
-            ),
-            SizedBox(width: 5),
-            Flexible(
-              child: Text('1213terry@naver.com'),
-            ),
-          ],
+        InkWell(
+          onTap: () => _launchURL('Email'),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child: Icon(LineIcons.envelope, size: 23),
+              ),
+              SizedBox(width: 5),
+              Flexible(
+                child: Text('1213terry@naver.com'),
+              ),
+            ],
+          ),
         ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 5),
-              child: Icon(LineIcons.github, size: 23),
-            ),
-            SizedBox(width: 5),
-            Flexible(
-              child: Text('https://github.com/terry1213'),
-            ),
-          ],
+        InkWell(
+          onTap: () => _launchURL('Github'),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child: Icon(LineIcons.github, size: 23),
+              ),
+              SizedBox(width: 5),
+              Flexible(
+                child: Text('https://github.com/terry1213'),
+              ),
+            ],
+          ),
         ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 5),
-              child: Icon(LineIcons.bloggerB, size: 23),
-            ),
-            SizedBox(width: 5),
-            Flexible(
-              child: Text('https://terry1213.github.io/categories/'),
-            ),
-          ],
+        InkWell(
+          onTap: () => _launchURL('Blog'),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child: Icon(LineIcons.bloggerB, size: 23),
+              ),
+              SizedBox(width: 5),
+              Flexible(
+                child: Text('https://terry1213.github.io/categories/'),
+              ),
+            ],
+          ),
         ),
       ],
     );
@@ -417,4 +367,8 @@ class AboutPage extends StatelessWidget {
       ],
     );
   }
+
+  void _launchURL(String key) async => await canLaunch(_urls[key] ?? '')
+      ? await launch(_urls[key] ?? '')
+      : throw 'Could not launch $_urls';
 }
