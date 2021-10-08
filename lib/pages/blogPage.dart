@@ -33,7 +33,7 @@ class BlogPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CarouselController _carouselController = CarouselController();
+    var screenSize = MediaQuery.of(context).size;
     final CarouselIndexController _carouselIndexController =
         Get.find<CarouselIndexController>(tag: 'blog');
     List<Widget> _cardScetions = [
@@ -97,7 +97,6 @@ class BlogPage extends StatelessWidget {
         urlKey2: 'Error tag',
       ),
     ];
-    var screenSize = MediaQuery.of(context).size;
     double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
         ? screenSize.width / 7
         : ResponsiveWidget.isMediumScreen(context)
@@ -119,6 +118,8 @@ class BlogPage extends StatelessWidget {
               _cardScetions[5],
             ),
           ];
+    List<int> carouselIndexes =
+        [0, 1, 2, 3, 4, 5].sublist(0, screenSize.width < 1050 ? 6 : 3);
     return Padding(
       padding:
           EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 70),
@@ -135,26 +136,35 @@ class BlogPage extends StatelessWidget {
           Text('배운 것을 잊어버리지 않기 위해 기록하기 시작했습니다.'),
           Text('주로 Flutter에 대한 글을 작성하지만 그외에 다양한 내용도 다루고 있습니다.'),
           Text('일주일에 2회씩 일년째 꾸준히 기록하고 있으며, 현재까지 약 100개의 게시글을 작성했습니다.'),
-          SizedBox(height: 50),
-          // Row(
-          //   children: [
-          //     GestureDetector(
-          //       child: Icon(Icons.arrow_back),
-          //       onTap: () => _carouselController.previousPage(),
-          //     ),
-          //     GetBuilder<CarouselIndexController>(
-          //       tag: 'blog',
-          //       builder: (_) => Text(
-          //         ' ${_.index + 1} / 2 ',
-          //         style: Theme.of(context).textTheme.bodyText1,
-          //       ),
-          //     ),
-          //     GestureDetector(
-          //       child: Icon(Icons.arrow_forward),
-          //       onTap: () => _carouselController.nextPage(),
-          //     ),
-          //   ],
-          // ),
+          SizedBox(height: 40),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: carouselIndexes.map((i) {
+              return IconButton(
+                constraints: BoxConstraints(),
+                padding: EdgeInsets.zero,
+                icon: GetBuilder<CarouselIndexController>(
+                  tag: 'blog',
+                  builder: (_) {
+                    var currentIndex = screenSize.width >= 1050 &&
+                            _carouselIndexController.currentIndex > 2
+                        ? _carouselIndexController.currentIndex % 3
+                        : _carouselIndexController.currentIndex;
+                    return Icon(
+                      Icons.circle,
+                      color: currentIndex == i
+                          ? Theme.of(context).selectedRowColor
+                          : Theme.of(context).unselectedWidgetColor,
+                      size: 18,
+                    );
+                  },
+                ),
+                onPressed: () => _carouselIndexController.carouselController
+                    .animateToPage(i),
+              );
+            }).toList(),
+          ),
+          SizedBox(height: 10),
           Container(
             width: screenSize.width < 1050
                 ? 500
@@ -163,24 +173,16 @@ class BlogPage extends StatelessWidget {
                     : 1300 * 6 / 7),
             child: CarouselSlider(
               options: CarouselOptions(
-                autoPlay: true,
-                autoPlayInterval: Duration(seconds: 10),
                 aspectRatio: 16 / 11,
                 height: 630,
-                initialPage: _carouselIndexController.index,
+                initialPage: _carouselIndexController.currentIndex,
                 onPageChanged: (int index, CarouselPageChangedReason reason) {
-                  _carouselIndexController.changeIndex(index);
+                  _carouselIndexController.changeCurrentIndex(index);
                 },
                 viewportFraction: screenSize.width < 600 ? 1.25 : 1,
               ),
-              carouselController: _carouselController,
-              items: (screenSize.width < 1050
-                      ? [0, 1, 2, 3, 4, 5]
-                      : [
-                          0,
-                          1,
-                        ])
-                  .map((i) {
+              carouselController: _carouselIndexController.carouselController,
+              items: carouselIndexes.map((i) {
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(

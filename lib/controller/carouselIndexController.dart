@@ -1,12 +1,14 @@
+import 'package:carousel_slider/carousel_controller.dart';
 import 'package:get/get.dart';
 
 class CarouselIndexController extends GetxController {
-  int index;
+  final CarouselController carouselController = CarouselController();
+  int currentIndex;
 
-  CarouselIndexController({required this.index});
+  CarouselIndexController({required this.currentIndex});
 
-  changeIndex(int nextIndex) {
-    index = nextIndex;
+  changeCurrentIndex(int nextIndex) {
+    currentIndex = nextIndex;
     update();
   }
 }
