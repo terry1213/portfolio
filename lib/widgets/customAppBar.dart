@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
           child: Row(
             children: [
               Text(
-                'Yeonwoo Lim',
+                '<Yeonwoo Lim/>',
                 style: TextStyle(
                   color: Colors.blueGrey[100],
                   fontSize: 20,

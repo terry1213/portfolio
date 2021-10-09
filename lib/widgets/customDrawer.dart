@@ -23,7 +23,7 @@ class CustomDrawer extends StatelessWidget {
               SizedBox(height: 20),
               Center(
                 child: Text(
-                  'Yeonwoo Lim',
+                  '<Yeonwoo Lim/>',
                   style: TextStyle(
                     color: Colors.blueGrey[100],
                     fontSize: 20,
