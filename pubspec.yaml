@@ -16,7 +16,6 @@ dependencies:
   easy_dynamic_theme: ^2.2.0
   fl_chart: ^0.36.2
   get: ^4.3.8
-  google_fonts: ^2.1.0
   line_icons: ^2.0.1
   timelines: ^0.1.0
   universal_html: ^2.0.8
@@ -32,3 +31,15 @@ flutter:
   assets:
     - assets/
     - assets/blog/
+  fonts:
+    - family: NanumPenScript
+      fonts:
+        - asset: assets/google_fonts/NanumPenScript-Regular.ttf
+    - family: NotoSansKR
+      fonts:
+        - asset: assets/google_fonts/NotoSansKR-Black.otf
+        - asset: assets/google_fonts/NotoSansKR-Bold.otf
+        - asset: assets/google_fonts/NotoSansKR-Light.otf
+        - asset: assets/google_fonts/NotoSansKR-Medium.otf
+        - asset: assets/google_fonts/NotoSansKR-Regular.otf
+        - asset: assets/google_fonts/NotoSansKR-Thin.otf

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 ThemeData lightThemeData = ThemeData(
   appBarTheme: AppBarTheme(
@@ -72,89 +71,121 @@ ThemeData darkThemeData = ThemeData(
 );
 
 TextTheme textThemeLight = TextTheme(
-  headline1: GoogleFonts.nanumPenScript(
-      fontSize: 96,
-      color: Colors.black,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  headline2: GoogleFonts.nanumPenScript(
-      fontSize: 60,
-      color: Colors.black,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  headline3: GoogleFonts.nanumPenScript(
-      fontSize: 48,
-      color: Colors.black,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  headline4: GoogleFonts.notoSans(
-      fontSize: 34,
-      color: Colors.black,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  headline5: GoogleFonts.notoSans(
-      fontSize: 24,
-      color: Colors.black,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  headline6: GoogleFonts.notoSans(
-      fontSize: 20,
-      color: Colors.black,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  bodyText1: GoogleFonts.notoSans(
-      fontSize: 20,
-      color: Colors.black,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  bodyText2: GoogleFonts.notoSans(
-      fontSize: 16,
-      height: 2,
-      color: Colors.black,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
+  headline1: TextStyle(
+    fontFamily: 'NanumPenScript',
+    fontSize: 96,
+    color: Colors.black,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  headline2: TextStyle(
+    fontFamily: 'NanumPenScript',
+    fontSize: 60,
+    color: Colors.black,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  headline3: TextStyle(
+    fontFamily: 'NanumPenScript',
+    fontSize: 48,
+    color: Colors.black,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  headline4: TextStyle(
+    fontFamily: 'NotoSansKR',
+    fontSize: 34,
+    color: Colors.black,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  headline5: TextStyle(
+    fontFamily: 'NotoSansKR',
+    fontSize: 24,
+    color: Colors.black,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  headline6: TextStyle(
+    fontFamily: 'NotoSansKR',
+    fontSize: 20,
+    color: Colors.black,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  bodyText1: TextStyle(
+    fontFamily: 'NotoSansKR',
+    fontSize: 20,
+    color: Colors.black,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  bodyText2: TextStyle(
+    fontFamily: 'NotoSansKR',
+    fontSize: 16,
+    height: 2,
+    color: Colors.black,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
 );
 
 TextTheme textThemeDark = TextTheme(
-  headline1: GoogleFonts.nanumPenScript(
-      fontSize: 96,
-      color: Colors.white,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  headline2: GoogleFonts.nanumPenScript(
-      fontSize: 60,
-      color: Colors.white,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  headline3: GoogleFonts.nanumPenScript(
-      fontSize: 48,
-      color: Colors.white,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  headline4: GoogleFonts.notoSans(
-      fontSize: 34,
-      color: Colors.white,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  headline5: GoogleFonts.notoSans(
-      fontSize: 24,
-      color: Colors.white,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  headline6: GoogleFonts.notoSans(
-      fontSize: 20,
-      color: Colors.white,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  bodyText1: GoogleFonts.notoSans(
-      fontSize: 20,
-      color: Colors.white,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
-  bodyText2: GoogleFonts.notoSans(
-      fontSize: 16,
-      height: 2,
-      color: Colors.white,
-      decorationColor: Colors.white.withOpacity(0),
-      decoration: TextDecoration.underline),
+  headline1: TextStyle(
+    fontFamily: 'NanumPenScript',
+    fontSize: 96,
+    color: Colors.white,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  headline2: TextStyle(
+    fontFamily: 'NanumPenScript',
+    fontSize: 60,
+    color: Colors.white,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  headline3: TextStyle(
+    fontFamily: 'NanumPenScript',
+    fontSize: 48,
+    color: Colors.white,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  headline4: TextStyle(
+    fontFamily: 'NotoSansKR',
+    fontSize: 34,
+    color: Colors.white,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  headline5: TextStyle(
+    fontFamily: 'NotoSansKR',
+    fontSize: 24,
+    color: Colors.white,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  headline6: TextStyle(
+    fontFamily: 'NotoSansKR',
+    fontSize: 20,
+    color: Colors.white,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  bodyText1: TextStyle(
+    fontFamily: 'NotoSansKR',
+    fontSize: 20,
+    color: Colors.white,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
+  bodyText2: TextStyle(
+    fontFamily: 'NotoSansKR',
+    fontSize: 16,
+    height: 2,
+    color: Colors.white,
+    decorationColor: Colors.white.withOpacity(0),
+    decoration: TextDecoration.underline,
+  ),
 );
