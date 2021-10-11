@@ -31,6 +31,7 @@ flutter:
   assets:
     - assets/
     - assets/blog/
+    - assets/google_fonts/
   fonts:
     - family: NanumPenScript
       fonts:
