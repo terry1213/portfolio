@@ -14,6 +14,39 @@ class AboutPage extends StatelessWidget {
     'Blog': 'https://terry1213.github.io/categories/',
     'Github': 'https://github.com/terry1213',
   };
+  static List<_Contact> contacts = [
+    _Contact(
+        urlKey: 'Phone', iconData: LineIcons.phone, detail: '010-4788-8356'),
+    _Contact(
+        urlKey: 'Email',
+        iconData: LineIcons.envelope,
+        detail: '1213terry@naver.com'),
+    _Contact(
+        urlKey: 'Github',
+        iconData: LineIcons.github,
+        detail: 'https://github.com/terry1213'),
+    _Contact(
+        urlKey: 'Blog',
+        iconData: LineIcons.bloggerB,
+        detail: 'https://terry1213.github.io/categories/'),
+  ];
+  static List<_Event> educations = [
+    _Event(period: '2012.02-2015.02', detail: '새음 기독 대안학교'),
+    _Event(period: '2015.02-2021.02', detail: '한동대학교 컴퓨터공학'),
+  ];
+  static List<_Event> careers = [
+    _Event(period: '2020.12-2021.02', detail: 'HEM Pharma / Flutter 개발자'),
+    _Event(period: '2021.02-2021.08', detail: '소프트웨어팩토리 / Flutter 개발자'),
+  ];
+  static List<_Event> projects = [
+    _Event(period: '2020.07', detail: '음악 공유 어플 \'아지트\' 개발(Swift)'),
+    _Event(period: '2020.11', detail: '영어 복습 어플 \'오답노트\' 개발(Flutter)'),
+  ];
+  static List<_Event> certificates = [
+    _Event(period: '2020.05', detail: '토익 875점'),
+    _Event(period: '2020.06', detail: '정보처리기사(필기)'),
+    _Event(period: '2020.08', detail: '코더스하이 iOS 어플리케이션 캠프 최우수상'),
+  ];
 
   const AboutPage({Key? key}) : super(key: key);
 
@@ -50,15 +83,15 @@ class AboutPage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     HorizontalDashedDivider(space: 60),
-                    AboutSection(context),
+                    aboutSection(context, contacts),
                     HorizontalDashedDivider(space: 60),
-                    EducationSection(context),
+                    eventsSection(context, 'Education', educations),
                     HorizontalDashedDivider(space: 60),
-                    CareerSection(context),
+                    eventsSection(context, 'Career', careers),
                     HorizontalDashedDivider(space: 60),
-                    ProjectSection(context),
+                    eventsSection(context, 'Project', projects),
                     HorizontalDashedDivider(space: 60),
-                    CertificateSection(context),
+                    eventsSection(context, 'Certificate', certificates),
                     HorizontalDashedDivider(space: 60),
                   ],
                 )
@@ -80,11 +113,11 @@ class AboutPage extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             HorizontalDashedDivider(space: 80),
-                            AboutSection(context),
+                            aboutSection(context, contacts),
                             HorizontalDashedDivider(space: 80),
-                            EducationSection(context),
+                            eventsSection(context, 'Education', educations),
                             HorizontalDashedDivider(space: 80),
-                            CareerSection(context),
+                            eventsSection(context, 'Career', careers),
                             HorizontalDashedDivider(space: 80),
                           ],
                         ),
@@ -99,11 +132,11 @@ class AboutPage extends StatelessWidget {
                             HorizontalDashedDivider(
                               space: 80,
                             ),
-                            ProjectSection(context),
+                            eventsSection(context, 'Project', projects),
                             HorizontalDashedDivider(
                               space: 80,
                             ),
-                            CertificateSection(context),
+                            eventsSection(context, 'Certificate', certificates),
                             HorizontalDashedDivider(
                               space: 80,
                             ),
@@ -122,253 +155,93 @@ class AboutPage extends StatelessWidget {
     );
   }
 
-  Widget AboutSection(BuildContext context) {
+  Widget aboutSection(BuildContext context, List<_Contact> contacts) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(
-          '임연우 / Yeonwoo Lim',
-          style: Theme.of(context)
-              .textTheme
-              .headline5!
-              .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
-        ),
-        Text('1996.12.13 / 경기도 구리시'),
-        SizedBox(height: 30),
-        InkWell(
-          onTap: () => _launchURL('Phone'),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 5),
-                child: Icon(LineIcons.phone, size: 23),
-              ),
-              SizedBox(width: 5),
-              Flexible(
-                child: Text('010-4788-8356'),
-              ),
-            ],
-          ),
-        ),
-        InkWell(
-          onTap: () => _launchURL('Email'),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 5),
-                child: Icon(LineIcons.envelope, size: 23),
-              ),
-              SizedBox(width: 5),
-              Flexible(
-                child: Text('1213terry@naver.com'),
-              ),
-            ],
-          ),
-        ),
-        InkWell(
-          onTap: () => _launchURL('Github'),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 5),
-                child: Icon(LineIcons.github, size: 23),
-              ),
-              SizedBox(width: 5),
-              Flexible(
-                child: Text('https://github.com/terry1213'),
-              ),
-            ],
-          ),
-        ),
-        InkWell(
-          onTap: () => _launchURL('Blog'),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 5),
-                child: Icon(LineIcons.bloggerB, size: 23),
-              ),
-              SizedBox(width: 5),
-              Flexible(
-                child: Text('https://terry1213.github.io/categories/'),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget EducationSection(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          'Education',
-          style: Theme.of(context)
-              .textTheme
-              .headline5!
-              .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 30),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('2012.02-2015.02'),
-            SizedBox(width: 10),
-            Flexible(
-              child: Text('새음 기독 대안학교'),
+            Text(
+              '임연우 / Yeonwoo Lim',
+              style: Theme.of(context).textTheme.headline5!.copyWith(
+                  color: Colors.lightBlue, fontWeight: FontWeight.bold),
             ),
-          ],
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('2015.02-2021.02'),
-            SizedBox(width: 10),
-            Flexible(
-              child: Text('한동대학교 컴퓨터공학'),
-            ),
-          ],
-        ),
-      ],
+            Text('1996.12.13 / 경기도 구리시'),
+            SizedBox(height: 30),
+          ] +
+          contacts
+              .map((contact) => InkWell(
+                    onTap: () => _launchURL(contact.urlKey),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 5),
+                          child: Icon(contact.iconData, size: 23),
+                        ),
+                        SizedBox(width: 5),
+                        Flexible(
+                          child: Text(contact.detail),
+                        ),
+                      ],
+                    ),
+                  ))
+              .toList(),
     );
   }
 
-  Widget CareerSection(BuildContext context) {
+  Widget eventsSection(
+      BuildContext context, String title, List<_Event> abouts) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(
-          'Career',
-          style: Theme.of(context)
-              .textTheme
-              .headline5!
-              .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 30),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('2020.12-2021.02'),
-            SizedBox(width: 10),
-            Flexible(
-              child: Text('HEM Pharma / Flutter 개발자'),
-            )
-          ],
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('2021.02-2021.08'),
-            SizedBox(width: 10),
-            Flexible(
-              child: Text('소프트웨어팩토리 / Flutter 개발자'),
-            )
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget ProjectSection(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          'Project',
-          style: Theme.of(context)
-              .textTheme
-              .headline5!
-              .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 30),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('2020.07'),
-            SizedBox(width: 10),
-            Flexible(
-              child: Text('음악 공유 어플 \'아지트\' 개발(Swift)'),
-            )
-          ],
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('2020.11'),
-            SizedBox(width: 10),
-            Flexible(
-              child: Text('영어 복습 어플 \'오답노트\' 개발(Flutter)'),
-            )
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget CertificateSection(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          'Certificate',
-          style: Theme.of(context)
-              .textTheme
-              .headline5!
-              .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 30),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('2020.05'),
-            SizedBox(width: 10),
-            Flexible(
-              child: Text('토익 875점'),
-            )
-          ],
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('2020.06'),
-            SizedBox(width: 10),
-            Flexible(
-              child: Text('정보처리기사(필기)'),
-            )
-          ],
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('2020.08'),
-            SizedBox(width: 10),
-            Flexible(
-              child: Text('코더스하이 iOS 어플리케이션 캠프 최우수상'),
-            )
-          ],
-        ),
-      ],
+            Text(
+              title,
+              style: Theme.of(context).textTheme.headline5!.copyWith(
+                  color: Colors.lightBlue, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 30),
+          ] +
+          abouts
+              .map((about) => Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(about.period),
+                      SizedBox(width: 10),
+                      Flexible(
+                        child: Text(about.detail),
+                      ),
+                    ],
+                  ))
+              .toList(),
     );
   }
 
   void _launchURL(String key) async => await canLaunch(_urls[key] ?? '')
       ? await launch(_urls[key] ?? '')
       : throw 'Could not launch $_urls';
+}
+
+class _Event {
+  final String period;
+  final String detail;
+
+  const _Event({
+    required this.period,
+    required this.detail,
+  });
+}
+
+class _Contact {
+  final String urlKey;
+  final IconData iconData;
+  final String detail;
+
+  const _Contact({
+    required this.urlKey,
+    required this.iconData,
+    required this.detail,
+  });
 }
