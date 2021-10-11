@@ -37,9 +37,9 @@ flutter:
         - asset: assets/google_fonts/NanumPenScript-Regular.ttf
     - family: NotoSansKR
       fonts:
-        - asset: assets/google_fonts/NotoSansKR-Black.otf
-        - asset: assets/google_fonts/NotoSansKR-Bold.otf
-        - asset: assets/google_fonts/NotoSansKR-Light.otf
-        - asset: assets/google_fonts/NotoSansKR-Medium.otf
-        - asset: assets/google_fonts/NotoSansKR-Regular.otf
         - asset: assets/google_fonts/NotoSansKR-Thin.otf
+        - asset: assets/google_fonts/NotoSansKR-Light.otf
+        - asset: assets/google_fonts/NotoSansKR-Regular.otf
+        - asset: assets/google_fonts/NotoSansKR-Medium.otf
+        - asset: assets/google_fonts/NotoSansKR-Bold.otf
+        - asset: assets/google_fonts/NotoSansKR-Black.otf
