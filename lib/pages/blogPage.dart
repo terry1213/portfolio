@@ -251,10 +251,6 @@ class BlogPage extends StatelessWidget {
                 ),
                 child: ImageWithAnimatedOpacity(
                   image: AssetImage(image),
-                  placeholder: SizedBox(
-                    height: double.infinity,
-                    width: double.infinity,
-                  ),
                   fit: BoxFit.fill,
                 ),
               ),

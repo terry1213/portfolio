@@ -85,7 +85,13 @@ class HomePage extends StatelessWidget {
                 ),
                 Align(
                   alignment: Alignment.bottomRight,
-                  child: Image.asset('assets/profile.png', width: 400),
+                  child: Container(
+                    width: 400,
+                    height: 400 * 2048 / 1536,
+                    child: ImageWithAnimatedOpacity(
+                      image: AssetImage('assets/profile.png'),
+                    ),
+                  ),
                 ),
                 Text('Contact me',
                     style: Theme.of(context).textTheme.bodyText2!.copyWith(
@@ -189,10 +195,6 @@ class HomePage extends StatelessWidget {
                       height: profileImageWidth * 2048 / 1536,
                       child: ImageWithAnimatedOpacity(
                         image: AssetImage('assets/profile.png'),
-                        placeholder: SizedBox(
-                          width: profileImageWidth,
-                          height: profileImageWidth * 2048 / 1536,
-                        ),
                       ),
                     ),
                   ],

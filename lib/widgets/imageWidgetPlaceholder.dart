@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 
 class ImageWithAnimatedOpacity extends StatelessWidget {
   final ImageProvider image;
-  final Widget placeholder;
   final BoxFit? fit;
 
   const ImageWithAnimatedOpacity({
     Key? key,
     required this.image,
-    required this.placeholder,
     this.fit,
   }) : super(key: key);
 
