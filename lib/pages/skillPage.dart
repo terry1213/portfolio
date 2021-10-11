@@ -5,7 +5,7 @@ import 'package:portfolio/widgets/horizontalDashedDivider.dart';
 import 'package:portfolio/widgets/verticalDashedDivider.dart';
 
 class SkillPage extends StatelessWidget {
-  static const List<String> skills = [
+  static const List<String> skillsOfChart = [
     'Flutter',
     'Firebase',
     'Swift',
@@ -14,6 +14,41 @@ class SkillPage extends StatelessWidget {
     'HTML/CSS',
     'C/C++',
   ];
+  static Map<String, _Skill> skills = {
+    'JavaScript': _Skill(
+      name: 'JavaScript',
+      detail: '캡스톤 디자인으로 \'코딩 자동 채점 웹 서비스\'와 토이 프로젝트로 \'잃어버린 물건을 찾아주는 웹 서비스\'를 '
+          '개발한 경험이 있습니다.\nJavaScript의 문법과 사용 방법들을 알고 있으며, jquery를 통한 클라이언트 사이드 '
+          '구현을 해봤고, ajax를 통해 서버와 통신해본 경험이 있습니다.',
+    ),
+    'Github': _Skill(
+      name: 'Github',
+      detail: '경험한 모든 프로젝트에서 Github을 통해 소스 코드 관리 및 협업을 진행했습니다. '
+          '또한 개인 블로그와 포트폴리오 사이트 또한 Github을 통해 관리하고 있습니다.',
+    ),
+    'Flutter': _Skill(
+      name: 'Flutter',
+      detail:
+          '3개의 어플(HEM 체험단, Spotale: 스팟테일, 함성: 함께 성경 읽기)에 대하여 유지 보수 및 기능 추가 작업들을 경험했습니다. '
+          '또한 네페스 회사의 사내 어플(3.3.7 life)을 시작부터 런칭까지 혼자서 개발했습니다.\n'
+          'Getx, Provider, Bloc를 통한 상태 관리에 능숙하며, Flutter 2.0에 대한 이해도 마쳤습니다. '
+          '또한 빠르게 변화하는 Flutter에 대처하기 위해, 공식 문서와 공식 유튜브를 통해 꾸준히 공부하고 있습니다.',
+    ),
+    'Firebase': _Skill(
+      name: 'Firebase',
+      detail: '모든 어플리케이션 개발에서 Firebase를 사용했습니다. 따라서 Firebase의 Authentication, '
+          'Cloud Firestore, Cloud Storage, Cloud Messaging을 능숙하고 자유롭게 사용할 수 있습니다. '
+          '또한 보다 복잡한 Cloud Function, Dynamic Links의 경우에는 상대적으로 적게 사용해봤습니다. '
+          '이 부분들에 대해선 기본적인 기능을 어려움 없이 다룰 수 있는 정도의 수준입니다.',
+    ),
+    'Swift': _Skill(
+      name: 'Swift',
+      detail: '코더스하이 iOS 개발자 캠프 과정(40일)을 수료했습니다. 또한 캠프에서 토이 프로젝트로 음악 공유 어플리케이션 '
+          '\'아지트\'를 개발했고, 아이디어와 완성도를 인정 받아 최우수상을 수상했습니다.\nView와 ViewController를 '
+          '통한 화면 전환 및 제어를 할 수 있으며, Storyboard를 활용할 수 있습니다. 또한 Youtube, '
+          '소셜 로그인(Naver, Kakao, Google) 등의 외부 API를 사용해봤습니다.',
+    ),
+  };
 
   const SkillPage({Key? key}) : super(key: key);
 
@@ -94,7 +129,8 @@ class SkillPage extends StatelessWidget {
                               .copyWith(
                                   color: Theme.of(context).iconTheme.color),
                           margin: 20,
-                          getTitles: (double value) => skills[value.toInt()],
+                          getTitles: (double value) =>
+                              skillsOfChart[value.toInt()],
                         ),
                         leftTitles: SideTitles(
                           showTitles: true,
@@ -144,15 +180,15 @@ class SkillPage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     HorizontalDashedDivider(space: 60),
-                    FlutterSection(context),
+                    skillSection(context, skills['Flutter']!),
                     HorizontalDashedDivider(space: 60),
-                    FirebaseSection(context),
+                    skillSection(context, skills['Firebase']!),
                     HorizontalDashedDivider(space: 60),
-                    SwiftSection(context),
+                    skillSection(context, skills['Swift']!),
                     HorizontalDashedDivider(space: 60),
-                    JavaScriptSection(context),
+                    skillSection(context, skills['JavaScript']!),
                     HorizontalDashedDivider(space: 60),
-                    GithubSection(context),
+                    skillSection(context, skills['Github']!),
                     HorizontalDashedDivider(space: 60),
                   ],
                 )
@@ -174,9 +210,9 @@ class SkillPage extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             HorizontalDashedDivider(space: 80),
-                            FlutterSection(context),
+                            skillSection(context, skills['Flutter']!),
                             HorizontalDashedDivider(space: 80),
-                            FirebaseSection(context),
+                            skillSection(context, skills['Firebase']!),
                             HorizontalDashedDivider(space: 80),
                           ],
                         ),
@@ -189,11 +225,11 @@ class SkillPage extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             HorizontalDashedDivider(space: 80),
-                            SwiftSection(context),
+                            skillSection(context, skills['Swift']!),
                             HorizontalDashedDivider(space: 80),
-                            JavaScriptSection(context),
+                            skillSection(context, skills['JavaScript']!),
                             HorizontalDashedDivider(space: 80),
-                            GithubSection(context),
+                            skillSection(context, skills['Github']!),
                             HorizontalDashedDivider(space: 80),
                           ],
                         ),
@@ -222,120 +258,32 @@ class SkillPage extends StatelessWidget {
     ]);
   }
 
-  JavaScriptSection(BuildContext context) {
+  skillSection(BuildContext context, _Skill skill) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          'JavaScript',
+          skill.name,
           style: Theme.of(context)
               .textTheme
               .headline5!
               .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 30),
-        Text(
-          '캡스톤 디자인으로 \'코딩 자동 채점 웹 서비스\'와 토이 프로젝트로 \'잃어버린 물건을 찾아주는 웹 서비스\'를 '
-          '개발한 경험이 있습니다.\nJavaScript의 문법과 사용 방법들을 알고 있으며, jquery를 통한 클라이언트 사이드 '
-          '구현을 해봤고, ajax를 통해 서버와 통신해본 경험이 있습니다.',
-        ),
+        Text(skill.detail),
       ],
     );
   }
+}
 
-  GithubSection(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          'Github',
-          style: Theme.of(context)
-              .textTheme
-              .headline5!
-              .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 30),
-        Text(
-          '경험한 모든 프로젝트에서 Github을 통해 소스 코드 관리 및 협업을 진행했습니다. '
-          '또한 개인 블로그와 포트폴리오 사이트 또한 Github을 통해 관리하고 있습니다.',
-        ),
-      ],
-    );
-  }
+class _Skill {
+  final String name;
+  final String detail;
 
-  FlutterSection(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          'Flutter',
-          style: Theme.of(context)
-              .textTheme
-              .headline5!
-              .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 30),
-        Text(
-          '3개의 어플(HEM 체험단, Spotale: 스팟테일, 함성: 함께 성경 읽기)에 대하여 유지 보수 및 기능 추가 작업들을 경험했습니다. '
-          '또한 네페스 회사의 사내 어플(3.3.7 life)을 시작부터 런칭까지 혼자서 개발했습니다.\n'
-          'Getx, Provider, Bloc를 통한 상태 관리에 능숙하며, Flutter 2.0에 대한 이해도 마쳤습니다. '
-          '또한 빠르게 변화하는 Flutter에 대처하기 위해, 공식 문서와 공식 유튜브를 통해 꾸준히 공부하고 있습니다.',
-        ),
-      ],
-    );
-  }
-
-  FirebaseSection(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          'Firebase',
-          style: Theme.of(context)
-              .textTheme
-              .headline5!
-              .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 30),
-        Text(
-          '모든 어플리케이션 개발에서 Firebase를 사용했습니다. 따라서 Firebase의 Authentication, '
-          'Cloud Firestore, Cloud Storage, Cloud Messaging을 능숙하고 자유롭게 사용할 수 있습니다. '
-          '또한 보다 복잡한 Cloud Function, Dynamic Links의 경우에는 상대적으로 적게 사용해봤습니다. '
-          '이 부분들에 대해선 기본적인 기능을 어려움 없이 다룰 수 있는 정도의 수준입니다.',
-        ),
-      ],
-    );
-  }
-
-  SwiftSection(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          'Swift',
-          style: Theme.of(context)
-              .textTheme
-              .headline5!
-              .copyWith(color: Colors.lightBlue, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 30),
-        Text(
-          '코더스하이 iOS 개발자 캠프 과정(40일)을 수료했습니다. 또한 캠프에서 토이 프로젝트로 음악 공유 어플리케이션 '
-          '\'아지트\'를 개발했고, 아이디어와 완성도를 인정 받아 최우수상을 수상했습니다.\nView와 ViewController를 '
-          '통한 화면 전환 및 제어를 할 수 있으며, Storyboard를 활용할 수 있습니다. 또한 Youtube, '
-          '소셜 로그인(Naver, Kakao, Google) 등의 외부 API를 사용해봤습니다.',
-        ),
-      ],
-    );
-  }
+  const _Skill({
+    required this.name,
+    required this.detail,
+  });
 }
