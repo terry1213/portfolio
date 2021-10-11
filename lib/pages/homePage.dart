@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/utils/responsive.dart';
+import 'package:portfolio/widgets/imageWidgetPlaceholder.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,7 +19,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    Future<double> _width = Future<double>.value(1000);
+    Future<double> _width = Future.delayed(Duration(milliseconds: 500))
+        .then((value) => Future<double>.value(1000));
     List<IconButton> iconButtons = [
       IconButton(
         onPressed: () => _launchURL('Email'),
@@ -182,10 +184,17 @@ class HomePage extends StatelessWidget {
                               ),
                       ],
                     ),
-                    Image.asset(
-                      'assets/profile.png',
+                    Container(
                       width: profileImageWidth,
-                    )
+                      height: profileImageWidth * 2048 / 1536,
+                      child: ImageWithAnimatedOpacity(
+                        image: AssetImage('assets/profile.png'),
+                        placeholder: SizedBox(
+                          width: profileImageWidth,
+                          height: profileImageWidth * 2048 / 1536,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ],

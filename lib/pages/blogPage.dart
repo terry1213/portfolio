@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controller/carouselIndexController.dart';
 import 'package:portfolio/utils/responsive.dart';
+import 'package:portfolio/widgets/imageWidgetPlaceholder.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlogPage extends StatelessWidget {
@@ -248,8 +249,12 @@ class BlogPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(4)),
                 ),
-                child: Image.asset(
-                  image,
+                child: ImageWithAnimatedOpacity(
+                  image: AssetImage(image),
+                  placeholder: SizedBox(
+                    height: double.infinity,
+                    width: double.infinity,
+                  ),
                   fit: BoxFit.fill,
                 ),
               ),
