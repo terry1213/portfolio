@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/utils/responsive.dart';
+import 'package:portfolio/utils/url.dart';
 import 'package:portfolio/widgets/imageWidgetPlaceholder.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
-  static const Map<String, String> _urls = {
-    'Email': 'mailto:1213terry@naver.com',
-    'Phone': 'sms:01047888356',
-    'LinkedIn':
-        'https://www.linkedin.com/in/%EC%97%B0%EC%9A%B0-%EC%9E%84-89291320b/',
-    'Blog': 'https://terry1213.github.io/categories/',
-    'Github': 'https://github.com/terry1213',
-  };
-
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -23,31 +15,31 @@ class HomePage extends StatelessWidget {
         .then((value) => Future<double>.value(1000));
     List<IconButton> iconButtons = [
       IconButton(
-        onPressed: () => _launchURL('Email'),
+        onPressed: () => launchUrlByKey(UrlKey.EMAIL),
         icon: Icon(LineIcons.envelopeSquare),
         tooltip: 'Email',
         iconSize: 30,
       ),
       IconButton(
-        onPressed: () => _launchURL('Phone'),
+        onPressed: () => launchUrlByKey(UrlKey.PHONE),
         icon: Icon(LineIcons.phoneSquare),
         tooltip: 'Phone',
         iconSize: 30,
       ),
       IconButton(
-        onPressed: () => _launchURL('LinkedIn'),
+        onPressed: () => launchUrlByKey(UrlKey.LINKEDIN),
         icon: Icon(LineIcons.linkedin),
         tooltip: 'LinkedIn',
         iconSize: 30,
       ),
       IconButton(
-        onPressed: () => _launchURL('Blog'),
+        onPressed: () => launchUrlByKey(UrlKey.BLOG),
         icon: Icon(LineIcons.blogger),
         tooltip: 'Blog',
         iconSize: 30,
       ),
       IconButton(
-        onPressed: () => _launchURL('Github'),
+        onPressed: () => launchUrlByKey(UrlKey.GITHUB),
         icon: Icon(LineIcons.githubSquare),
         tooltip: 'Github',
         iconSize: 30,
@@ -203,8 +195,4 @@ class HomePage extends StatelessWidget {
             ),
     );
   }
-
-  void _launchURL(String key) async => await canLaunch(_urls[key] ?? '')
-      ? await launch(_urls[key] ?? '')
-      : throw 'Could not launch $_urls';
 }
