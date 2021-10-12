@@ -27,6 +27,7 @@ class ProjectPage extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
+          const Text('-준비중입니다.-'),
         ],
       ),
     );
