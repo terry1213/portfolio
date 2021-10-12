@@ -6,8 +6,8 @@ class ProjectPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-    double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
+    final Size screenSize = MediaQuery.of(context).size;
+    final double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
         ? screenSize.width / 7
         : ResponsiveWidget.isMediumScreen(context)
             ? screenSize.width / 10
@@ -16,7 +16,7 @@ class ProjectPage extends StatelessWidget {
       padding:
           EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 70),
       child: Column(
-        children: [
+        children: <Widget>[
           Text(
             'Project',
             style: Theme.of(context)
@@ -24,7 +24,7 @@ class ProjectPage extends StatelessWidget {
                 .headline4!
                 .copyWith(fontWeight: FontWeight.bold),
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
         ],

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/widgets/horizontalDashedDivider.dart';
+import 'package:portfolio/widgets/horizontal_dashed_divider.dart';
 
 class CustomDrawer extends StatelessWidget {
-  final List<GlobalKey> globalKeys;
-
-  CustomDrawer({
+  const CustomDrawer({
     Key? key,
     required this.globalKeys,
   }) : super(key: key);
+
+  final List<GlobalKey> globalKeys;
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +16,11 @@ class CustomDrawer extends StatelessWidget {
       child: Container(
         color: Theme.of(context).bottomAppBarColor,
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(height: 20),
+            children: <Widget>[
+              const SizedBox(height: 20),
               Center(
                 child: Text(
                   '<Yeonwoo Lim/>',
@@ -34,7 +33,7 @@ class CustomDrawer extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               InkWell(
                 child: Text(
                   'Home',
@@ -44,12 +43,14 @@ class CustomDrawer extends StatelessWidget {
                       ),
                 ),
                 onTap: () {
-                  Scrollable.ensureVisible(globalKeys[0].currentContext!,
-                      duration: Duration(seconds: 1));
+                  Scrollable.ensureVisible(
+                    globalKeys[0].currentContext!,
+                    duration: const Duration(seconds: 1),
+                  );
                   Get.back();
                 },
               ),
-              HorizontalDashedDivider(
+              const HorizontalDashedDivider(
                 space: 25,
               ),
               InkWell(
@@ -61,12 +62,14 @@ class CustomDrawer extends StatelessWidget {
                       ),
                 ),
                 onTap: () {
-                  Scrollable.ensureVisible(globalKeys[1].currentContext!,
-                      duration: Duration(seconds: 1));
+                  Scrollable.ensureVisible(
+                    globalKeys[1].currentContext!,
+                    duration: const Duration(seconds: 1),
+                  );
                   Get.back();
                 },
               ),
-              HorizontalDashedDivider(
+              const HorizontalDashedDivider(
                 space: 25,
               ),
               InkWell(
@@ -78,12 +81,14 @@ class CustomDrawer extends StatelessWidget {
                       ),
                 ),
                 onTap: () {
-                  Scrollable.ensureVisible(globalKeys[2].currentContext!,
-                      duration: Duration(seconds: 1));
+                  Scrollable.ensureVisible(
+                    globalKeys[2].currentContext!,
+                    duration: const Duration(seconds: 1),
+                  );
                   Get.back();
                 },
               ),
-              HorizontalDashedDivider(
+              const HorizontalDashedDivider(
                 space: 25,
               ),
               InkWell(
@@ -95,12 +100,14 @@ class CustomDrawer extends StatelessWidget {
                       ),
                 ),
                 onTap: () {
-                  Scrollable.ensureVisible(globalKeys[3].currentContext!,
-                      duration: Duration(seconds: 1));
+                  Scrollable.ensureVisible(
+                    globalKeys[3].currentContext!,
+                    duration: const Duration(seconds: 1),
+                  );
                   Get.back();
                 },
               ),
-              HorizontalDashedDivider(
+              const HorizontalDashedDivider(
                 space: 25,
               ),
               InkWell(
@@ -112,12 +119,14 @@ class CustomDrawer extends StatelessWidget {
                       ),
                 ),
                 onTap: () {
-                  Scrollable.ensureVisible(globalKeys[4].currentContext!,
-                      duration: Duration(seconds: 1));
+                  Scrollable.ensureVisible(
+                    globalKeys[4].currentContext!,
+                    duration: const Duration(seconds: 1),
+                  );
                   Get.back();
                 },
               ),
-              HorizontalDashedDivider(
+              const HorizontalDashedDivider(
                 space: 25,
               ),
               InkWell(
@@ -129,8 +138,10 @@ class CustomDrawer extends StatelessWidget {
                       ),
                 ),
                 onTap: () {
-                  Scrollable.ensureVisible(globalKeys[5].currentContext!,
-                      duration: Duration(seconds: 1));
+                  Scrollable.ensureVisible(
+                    globalKeys[5].currentContext!,
+                    duration: const Duration(seconds: 1),
+                  );
                   Get.back();
                 },
               ),

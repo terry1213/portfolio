@@ -1,28 +1,27 @@
-
 import 'package:flutter/material.dart';
 
 class VerticalDashedDivider extends StatelessWidget {
+  const VerticalDashedDivider({
+    Key? key,
+    this.space,
+    this.length,
+    this.thickness,
+    this.color,
+    this.indent,
+    this.endIndent,
+  })  : assert(space == null || space >= 0.0),
+        assert(length == null || length >= 0.0),
+        assert(thickness == null || thickness >= 0.0),
+        assert(indent == null || indent >= 0.0),
+        assert(endIndent == null || endIndent >= 0.0),
+        super(key: key);
+
   final double? space;
   final double? length;
   final double? thickness;
   final Color? color;
   final double? indent;
   final double? endIndent;
-
-  const VerticalDashedDivider(
-      {Key? key,
-        this.space,
-        this.length,
-        this.thickness,
-        this.color,
-        this.indent,
-        this.endIndent})
-      : assert(space == null || space >= 0.0),
-        assert(length == null || length >= 0.0),
-        assert(thickness == null || thickness >= 0.0),
-        assert(indent == null || indent >= 0.0),
-        assert(endIndent == null || endIndent >= 0.0),
-        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,16 +36,18 @@ class VerticalDashedDivider extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.only(top: indent, bottom: endIndent),
-      child: Container(
+      child: SizedBox(
         width: space,
         child: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
-            final boxHeight = constraints.constrainHeight();
-            final dashThickness = thickness;
-            final dashLength = length;
-            final dashCount = (boxHeight / (2 * dashLength)).floor();
+            final double boxHeight = constraints.constrainHeight();
+            final double dashThickness = thickness;
+            final double dashLength = length;
+            final int dashCount = (boxHeight / (2 * dashLength)).floor();
             return Flex(
-              children: List.generate(dashCount, (_) {
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              direction: Axis.vertical,
+              children: List<Widget>.generate(dashCount, (_) {
                 return SizedBox(
                   width: dashThickness,
                   height: dashLength,
@@ -55,8 +56,6 @@ class VerticalDashedDivider extends StatelessWidget {
                   ),
                 );
               }),
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              direction: Axis.vertical,
             );
           },
         ),

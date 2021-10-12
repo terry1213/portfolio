@@ -1,19 +1,19 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/aboutPage.dart';
-import 'package:portfolio/pages/blogPage.dart';
-import 'package:portfolio/pages/careerPage.dart';
-import 'package:portfolio/pages/projectPage.dart';
-import 'package:portfolio/pages/skillPage.dart';
+import 'package:portfolio/pages/about_page.dart';
+import 'package:portfolio/pages/blog_page.dart';
+import 'package:portfolio/pages/career_page.dart';
+import 'package:portfolio/pages/project_page.dart';
+import 'package:portfolio/pages/skill_page.dart';
 import 'package:portfolio/utils/responsive.dart';
-import 'package:portfolio/widgets/customAppBar.dart';
-import 'package:portfolio/widgets/customDrawer.dart';
+import 'package:portfolio/widgets/custom_app_bar.dart';
+import 'package:portfolio/widgets/custom_drawer.dart';
 import 'package:portfolio/widgets/footer.dart';
 
-import 'homePage.dart';
+import 'home_page.dart';
 
 class TemplatePage extends StatelessWidget {
-  final List<GlobalKey> globalKeys = [
+  final List<GlobalKey> globalKeys = <GlobalKey>[
     GlobalKey(),
     GlobalKey(),
     GlobalKey(),
@@ -27,11 +27,12 @@ class TemplatePage extends StatelessWidget {
     return Scaffold(
       appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(
-              actions: [
+              actions: <Widget>[
                 IconButton(
-                  icon: Icon(Icons.brightness_6),
+                  icon: const Icon(Icons.brightness_6),
                   onPressed: () => EasyDynamicTheme.of(context).changeTheme(
-                      dark: Theme.of(context).brightness != Brightness.dark),
+                    dark: Theme.of(context).brightness != Brightness.dark,
+                  ),
                 ),
               ],
               centerTitle: true,
@@ -43,7 +44,7 @@ class TemplatePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: [
+          children: <Widget>[
             HomePage(
               key: globalKeys[0],
             ),
@@ -62,7 +63,7 @@ class TemplatePage extends StatelessWidget {
             BlogPage(
               key: globalKeys[5],
             ),
-            Footer(),
+            const Footer(),
           ],
         ),
       ),

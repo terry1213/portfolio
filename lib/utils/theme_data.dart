@@ -4,7 +4,7 @@ ThemeData lightThemeData = ThemeData(
   appBarTheme: AppBarTheme(
     color: Colors.blueGrey[900],
     foregroundColor: Colors.white,
-    iconTheme: IconThemeData(
+    iconTheme: const IconThemeData(
       color: Colors.white,
     ),
   ),
@@ -14,7 +14,7 @@ ThemeData lightThemeData = ThemeData(
   dividerColor: Colors.blueGrey[400],
   highlightColor: Colors.transparent,
   hoverColor: Colors.transparent,
-  iconTheme: IconThemeData(
+  iconTheme: const IconThemeData(
     color: Colors.blueGrey,
   ),
   primarySwatch: Colors.blueGrey,
@@ -26,8 +26,13 @@ ThemeData lightThemeData = ThemeData(
     style: ButtonStyle(
       foregroundColor: MaterialStateProperty.all(Colors.blueGrey),
       overlayColor: MaterialStateProperty.all(Colors.transparent),
-      textStyle: MaterialStateProperty.all(TextStyle(
-          color: Colors.blueGrey, fontSize: 15, fontWeight: FontWeight.bold)),
+      textStyle: MaterialStateProperty.all(
+        const TextStyle(
+          color: Colors.blueGrey,
+          fontSize: 15,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       visualDensity: VisualDensity.compact,
     ),
   ),
@@ -35,14 +40,14 @@ ThemeData lightThemeData = ThemeData(
 );
 
 ThemeData darkThemeData = ThemeData(
-  appBarTheme: AppBarTheme(
-    color: Color(0xFFF242424),
+  appBarTheme: const AppBarTheme(
+    color: Color(0xFF242424),
     foregroundColor: Colors.white,
     iconTheme: IconThemeData(
       color: Colors.white,
     ),
   ),
-  bottomAppBarColor: Color(0xFFF242424),
+  bottomAppBarColor: const Color(0xFF242424),
   brightness: Brightness.dark,
   cardColor: Colors.white12,
   dividerColor: Colors.white24,
@@ -52,7 +57,7 @@ ThemeData darkThemeData = ThemeData(
     color: Colors.blueGrey[200],
   ),
   primarySwatch: Colors.blueGrey,
-  scaffoldBackgroundColor: Color(0xFFF242424),
+  scaffoldBackgroundColor: const Color(0xFF242424),
   selectedRowColor: Colors.blueGrey[400],
   splashColor: Colors.transparent,
   textTheme: textThemeDark,
@@ -60,10 +65,13 @@ ThemeData darkThemeData = ThemeData(
     style: ButtonStyle(
       foregroundColor: MaterialStateProperty.all(Colors.blueGrey[200]),
       overlayColor: MaterialStateProperty.all(Colors.transparent),
-      textStyle: MaterialStateProperty.all(TextStyle(
+      textStyle: MaterialStateProperty.all(
+        TextStyle(
           color: Colors.blueGrey[200],
           fontSize: 15,
-          fontWeight: FontWeight.bold)),
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       visualDensity: VisualDensity.compact,
     ),
   ),
