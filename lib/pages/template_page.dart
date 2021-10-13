@@ -45,24 +45,30 @@ class TemplatePage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            HomePage(
+            Container(
               key: globalKeys[0],
             ),
-            AboutPage(
+            const HomePage(),
+            Container(
               key: globalKeys[1],
             ),
-            SkillPage(
+            const AboutPage(),
+            Container(
               key: globalKeys[2],
             ),
-            CareerPage(
+            const SkillPage(),
+            Container(
               key: globalKeys[3],
             ),
-            ProjectPage(
+            const CareerPage(),
+            Container(
               key: globalKeys[4],
             ),
-            BlogPage(
+            const ProjectPage(),
+            Container(
               key: globalKeys[5],
             ),
+            const BlogPage(),
             const Footer(),
           ],
         ),
