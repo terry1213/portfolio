@@ -32,6 +32,7 @@ flutter:
   assets:
     - assets/
     - assets/blog/
+    - assets/project/
     - fonts/
   fonts:
     - family: NanumPenScript
