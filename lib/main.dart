@@ -10,6 +10,7 @@ import 'controller/carousel_index_controller.dart';
 void main() {
   setPathUrlStrategy();
   Get.put(CarouselIndexController(currentIndex: 0), tag: 'blog');
+  Get.put(CarouselIndexController(currentIndex: 0), tag: 'project');
   runApp(EasyDynamicThemeWidget(child: MyApp()));
 }
 
