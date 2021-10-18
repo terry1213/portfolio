@@ -74,7 +74,7 @@ class AppSection extends StatelessWidget {
                           const Padding(
                             padding: EdgeInsets.symmetric(
                               horizontal: 5,
-                              vertical: 10,
+                              vertical: 12,
                             ),
                             child: Icon(
                               Icons.circle,
