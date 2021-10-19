@@ -53,6 +53,10 @@ class AboutPage extends StatelessWidget {
       period: '2021.02-2021.08',
       detail: '소프트웨어팩토리 / Flutter 개발자',
     ),
+    EventModel(
+      period: '2021.11-                ',
+      detail: '자이냅스 / Flutter 개발자',
+    ),
   ];
   static const List<EventModel> projects = <EventModel>[
     EventModel(
@@ -82,9 +86,9 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
-    final double containerHeight = 1010 + (800 - screenSize.width) / 3 > 820
-        ? 1010 + (800 - screenSize.width) / 3
-        : 820;
+    final double containerHeight = 1070 + (800 - screenSize.width) / 3 > 840
+        ? 1070 + (800 - screenSize.width) / 3
+        : 840;
     final double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
         ? screenSize.width / 7
         : ResponsiveWidget.isMediumScreen(context)
