@@ -67,6 +67,10 @@ class AboutPage extends StatelessWidget {
       period: '2020.11',
       detail: "영어 복습 어플 '오답노트' 개발(Flutter)",
     ),
+    EventModel(
+      period: '2021.09',
+      detail: '개인 포트폴리오 사이트 개발(Flutter Web)',
+    ),
   ];
   static const List<EventModel> certificates = <EventModel>[
     EventModel(
