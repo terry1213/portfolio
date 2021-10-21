@@ -27,9 +27,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-enum PlatformType {
-  apple,
-  android,
-  desktop,
-}
