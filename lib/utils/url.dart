@@ -67,7 +67,7 @@ const Map<UrlKey, String> _urls = <UrlKey, String>{
   UrlKey.decodingFlutterTag:
       'https://terry1213.github.io/tags/#decodingflutter',
   UrlKey.decodingFlutterLast:
-      'https://terry1213.github.io/flutter/flutter-decoding-flutter-renderobjects/',
+      'https://terry1213.github.io/flutter/flutter-decoding-flutter-rendering/',
   UrlKey.stateManagementGetx:
       'https://terry1213.github.io/flutter/flutter-getx/',
   UrlKey.stateManagementProvider:
