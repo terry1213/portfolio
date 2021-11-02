@@ -138,6 +138,12 @@ class CareerPage extends StatelessWidget {
         ),
       ],
     ),
+    CareerModel(
+      company: '자이냅스',
+      period: '2021.11-현재',
+      position: 'Flutter 개발자',
+      apps: <AppModel>[],
+    ),
   ];
 
   @override
