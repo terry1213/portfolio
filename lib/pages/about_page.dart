@@ -54,7 +54,7 @@ class AboutPage extends StatelessWidget {
       detail: '소프트웨어팩토리 / Flutter 개발자',
     ),
     EventModel(
-      period: '2021.11-                ',
+      period: '2021.11-현재        ',
       detail: '자이냅스 / Flutter 개발자',
     ),
   ];
