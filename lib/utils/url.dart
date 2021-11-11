@@ -6,7 +6,6 @@ enum UrlKey {
   email,
   github,
   linkedin,
-  phone,
   // AppStore
   hemA,
   spotaleA,
@@ -39,7 +38,6 @@ const Map<UrlKey, String> _urls = <UrlKey, String>{
   UrlKey.github: 'https://github.com/terry1213',
   UrlKey.linkedin:
       'https://www.linkedin.com/in/%EC%97%B0%EC%9A%B0-%EC%9E%84-89291320b/',
-  UrlKey.phone: 'sms:01047888356',
   // AppStore
   UrlKey.hemA:
       'https://apps.apple.com/kr/app/hem-%EC%B2%B4%ED%97%98%EB%8B%A8/id1475463852',

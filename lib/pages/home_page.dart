@@ -15,12 +15,6 @@ class HomePage extends StatelessWidget {
       iconSize: 30,
     ),
     IconButton(
-      onPressed: () => launchUrlByKey(UrlKey.phone),
-      icon: const Icon(LineIcons.phoneSquare),
-      tooltip: 'Phone',
-      iconSize: 30,
-    ),
-    IconButton(
       onPressed: () => launchUrlByKey(UrlKey.linkedin),
       icon: const Icon(LineIcons.linkedin),
       tooltip: 'LinkedIn',
@@ -181,11 +175,11 @@ class HomePage extends StatelessWidget {
                             children: <Widget>[
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: iconButtons.sublist(0, 3),
+                                children: iconButtons.sublist(0, 2),
                               ),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: iconButtons.sublist(3, 5),
+                                children: iconButtons.sublist(2, 4),
                               ),
                             ],
                           ),

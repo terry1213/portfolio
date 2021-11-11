@@ -14,11 +14,6 @@ class AboutPage extends StatelessWidget {
 
   static const List<ContactModel> contacts = <ContactModel>[
     ContactModel(
-      urlKey: UrlKey.phone,
-      iconData: LineIcons.phone,
-      detail: '010-4788-8356',
-    ),
-    ContactModel(
       urlKey: UrlKey.email,
       iconData: LineIcons.envelope,
       detail: '1213terry@naver.com',
