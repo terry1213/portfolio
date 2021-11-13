@@ -151,7 +151,6 @@ class BlogPage extends StatelessWidget {
                     : 1300 * 6 / 7),
             child: CarouselSlider(
               options: CarouselOptions(
-                aspectRatio: 16 / 11,
                 height: 630,
                 initialPage: _carouselIndexController.currentIndex,
                 onPageChanged: (int index, CarouselPageChangedReason reason) {
@@ -161,23 +160,19 @@ class BlogPage extends StatelessWidget {
               ),
               carouselController: _carouselIndexController.carouselController,
               items: carouselIndexes.map((int i) {
-                return Builder(
-                  builder: (BuildContext context) {
-                    return Container(
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 30,
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 10,
-                        horizontal: 20,
-                      ),
-                      decoration: BoxDecoration(
-                        // color: Colors.white10,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: _carouselItems[i],
-                    );
-                  },
+                return Container(
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 30,
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 20,
+                  ),
+                  decoration: BoxDecoration(
+                    // color: Colors.white10,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: _carouselItems[i],
                 );
               }).toList(),
             ),

@@ -40,13 +40,15 @@ class PostSection extends StatelessWidget {
             Text(
               post.title,
               style: Theme.of(context).textTheme.headline5!.copyWith(
-                color: Colors.lightBlue,
-                fontWeight: FontWeight.bold,
-              ),
+                    color: Colors.lightBlue,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             const SizedBox(height: 10),
             Expanded(
-              child: Text(post.body),
+              child: SingleChildScrollView(
+                child: Text(post.body),
+              ),
             ),
             Align(
               alignment: Alignment.centerRight,
