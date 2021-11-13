@@ -7,7 +7,6 @@ import 'package:portfolio/utils/url.dart';
 import 'package:portfolio/widgets/about_section.dart';
 import 'package:portfolio/widgets/events_section.dart';
 import 'package:portfolio/widgets/horizontal_dashed_divider.dart';
-import 'package:portfolio/widgets/vertical_dashed_divider.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({Key? key}) : super(key: key);
@@ -85,9 +84,6 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
-    final double containerHeight = 1070 + (800 - screenSize.width) / 3 > 840
-        ? 1070 + (800 - screenSize.width) / 3
-        : 840;
     final double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
         ? screenSize.width / 7
         : ResponsiveWidget.isMediumScreen(context)
@@ -141,13 +137,12 @@ class AboutPage extends StatelessWidget {
               ],
             )
           else
-            SizedBox(
-              height: containerHeight,
+            IntrinsicHeight(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  const VerticalDashedDivider(),
+                  const VerticalDivider(),
                   const SizedBox(
                     width: 30,
                   ),
@@ -174,7 +169,13 @@ class AboutPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const VerticalDashedDivider(space: 60),
+                  const SizedBox(
+                    width: 30,
+                  ),
+                  const VerticalDivider(),
+                  const SizedBox(
+                    width: 30,
+                  ),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -203,7 +204,7 @@ class AboutPage extends StatelessWidget {
                   const SizedBox(
                     width: 30,
                   ),
-                  const VerticalDashedDivider(),
+                  const VerticalDivider(),
                 ],
               ),
             ),

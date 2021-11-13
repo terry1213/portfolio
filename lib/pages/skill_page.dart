@@ -4,7 +4,6 @@ import 'package:portfolio/models/skill_model.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/widgets/horizontal_dashed_divider.dart';
 import 'package:portfolio/widgets/skill_section.dart';
-import 'package:portfolio/widgets/vertical_dashed_divider.dart';
 
 class SkillPage extends StatelessWidget {
   const SkillPage({Key? key}) : super(key: key);
@@ -71,13 +70,6 @@ class SkillPage extends StatelessWidget {
         : (ResponsiveWidget.isMediumScreen(context)
             ? screenSize.width * 4 / (7 - ((1200 - screenSize.width) / 400))
             : 800 * 4 / 6);
-    final double containerHeight = ResponsiveWidget.isMediumScreen(context)
-        ? (1300 + (800 - screenSize.width) / 2 > 850
-            ? 1300 + (800 - screenSize.width) / 2
-            : 850)
-        : (1110 + (1200 - screenSize.width) / 5 > 970
-            ? 1110 + (1200 - screenSize.width) / 5
-            : 970);
     return Padding(
       padding:
           EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 70),
@@ -207,13 +199,12 @@ class SkillPage extends StatelessWidget {
               ],
             )
           else
-            SizedBox(
-              height: containerHeight,
+            IntrinsicHeight(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  const VerticalDashedDivider(),
+                  const VerticalDivider(),
                   const SizedBox(
                     width: 30,
                   ),
@@ -234,7 +225,13 @@ class SkillPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const VerticalDashedDivider(space: 60),
+                  const SizedBox(
+                    width: 30,
+                  ),
+                  const VerticalDivider(),
+                  const SizedBox(
+                    width: 30,
+                  ),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -259,7 +256,7 @@ class SkillPage extends StatelessWidget {
                   const SizedBox(
                     width: 30,
                   ),
-                  const VerticalDashedDivider(),
+                  const VerticalDivider(),
                 ],
               ),
             ),
