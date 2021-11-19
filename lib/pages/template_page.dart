@@ -13,17 +13,19 @@ import 'package:portfolio/widgets/footer.dart';
 import 'home_page.dart';
 
 class TemplatePage extends StatelessWidget {
-  final List<GlobalKey> globalKeys = <GlobalKey>[
-    GlobalKey(),
-    GlobalKey(),
-    GlobalKey(),
-    GlobalKey(),
-    GlobalKey(),
-    GlobalKey(),
-  ];
+  const TemplatePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final List<GlobalKey> globalKeys = <GlobalKey>[
+      GlobalKey(),
+      GlobalKey(),
+      GlobalKey(),
+      GlobalKey(),
+      GlobalKey(),
+      GlobalKey(),
+    ];
+
     return Scaffold(
       appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(

@@ -15,6 +15,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
       darkTheme: darkThemeData,
       theme: lightThemeData,
       themeMode: EasyDynamicTheme.of(context).themeMode!,
-      home: TemplatePage(),
+      home: const TemplatePage(),
     );
   }
 }
