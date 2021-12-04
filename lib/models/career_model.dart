@@ -1,4 +1,4 @@
-import 'app_model.dart';
+import 'package:portfolio/models/app_model.dart';
 
 class CareerModel {
   const CareerModel({

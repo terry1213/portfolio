@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/pages/about_page.dart';
 import 'package:portfolio/pages/blog_page.dart';
 import 'package:portfolio/pages/career_page.dart';
+import 'package:portfolio/pages/home_page.dart';
 import 'package:portfolio/pages/project_page.dart';
 import 'package:portfolio/pages/skill_page.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/widgets/custom_app_bar.dart';
 import 'package:portfolio/widgets/custom_drawer.dart';
 import 'package:portfolio/widgets/footer.dart';
-
-import 'home_page.dart';
 
 class TemplatePage extends StatelessWidget {
   const TemplatePage({Key? key}) : super(key: key);

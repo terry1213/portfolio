@@ -1,17 +1,16 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/controller/carousel_index_controller.dart';
 import 'package:portfolio/pages/template_page.dart';
 import 'package:portfolio/utils/theme_data.dart';
 import 'package:url_strategy/url_strategy.dart';
-
-import 'controller/carousel_index_controller.dart';
 
 void main() {
   setPathUrlStrategy();
   Get.put(CarouselIndexController(currentIndex: 0), tag: 'blog');
   Get.put(CarouselIndexController(currentIndex: 0), tag: 'project');
-  runApp(EasyDynamicThemeWidget(child: MyApp()));
+  runApp(EasyDynamicThemeWidget(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
