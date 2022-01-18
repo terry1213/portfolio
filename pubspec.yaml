@@ -12,14 +12,14 @@ dependencies:
     sdk: flutter
   animated_text_kit: ^4.2.1
   carousel_slider: ^4.0.0
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.4
   easy_dynamic_theme: ^2.2.0
-  fl_chart: ^0.36.2
-  get: ^4.3.8
+  fl_chart: ^0.41.0
+  get: ^4.6.1
   line_icons: ^2.0.1
   timelines: ^0.1.0
   universal_html: ^2.0.8
-  url_launcher: ^6.0.7
+  url_launcher: ^6.0.18
   url_strategy: ^0.2.0
 
 dev_dependencies:
