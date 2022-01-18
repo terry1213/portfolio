@@ -122,7 +122,7 @@ class SkillPage extends StatelessWidget {
                         show: true,
                         bottomTitles: SideTitles(
                           showTitles: true,
-                          getTextStyles: (double value) =>
+                          getTextStyles: (BuildContext context, double value) =>
                               Theme.of(context).textTheme.bodyText2!.copyWith(
                                     color: Theme.of(context).iconTheme.color,
                                   ),
@@ -132,7 +132,7 @@ class SkillPage extends StatelessWidget {
                         ),
                         leftTitles: SideTitles(
                           showTitles: true,
-                          getTextStyles: (double value) =>
+                          getTextStyles: (BuildContext context, double value) =>
                               Theme.of(context).textTheme.bodyText2!.copyWith(
                                     color: Theme.of(context).iconTheme.color,
                                   ),
