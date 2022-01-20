@@ -10,21 +10,24 @@ import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/widgets/custom_app_bar.dart';
 import 'package:portfolio/widgets/custom_drawer.dart';
 import 'package:portfolio/widgets/footer.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class TemplatePage extends StatelessWidget {
   const TemplatePage({Key? key}) : super(key: key);
 
+  final List<Widget> pages = const <Widget>[
+    HomePage(),
+    AboutPage(),
+    SkillPage(),
+    CareerPage(),
+    ProjectPage(),
+    BlogPage(),
+    Footer(),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    final List<GlobalKey> globalKeys = <GlobalKey>[
-      GlobalKey(),
-      GlobalKey(),
-      GlobalKey(),
-      GlobalKey(),
-      GlobalKey(),
-      GlobalKey(),
-    ];
-
+    final ItemScrollController itemScrollController = ItemScrollController();
     return Scaffold(
       appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(
@@ -39,44 +42,13 @@ class TemplatePage extends StatelessWidget {
               centerTitle: true,
               elevation: 0,
             )
-          : CustomAppBar(
-              globalKeys: globalKeys,
-            ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Container(
-              key: globalKeys[0],
-            ),
-            const HomePage(),
-            Container(
-              key: globalKeys[1],
-            ),
-            const AboutPage(),
-            Container(
-              key: globalKeys[2],
-            ),
-            const SkillPage(),
-            Container(
-              key: globalKeys[3],
-            ),
-            const CareerPage(),
-            Container(
-              key: globalKeys[4],
-            ),
-            const ProjectPage(),
-            Container(
-              key: globalKeys[5],
-            ),
-            const BlogPage(),
-            const Footer(),
-          ],
-        ),
+          : CustomAppBar(itemScrollController),
+      body: ScrollablePositionedList.builder(
+        itemScrollController: itemScrollController,
+        itemCount: pages.length,
+        itemBuilder: (context, index) => pages[index],
       ),
-      drawer: CustomDrawer(
-        globalKeys: globalKeys,
-      ),
+      drawer: CustomDrawer(itemScrollController),
     );
   }
 }

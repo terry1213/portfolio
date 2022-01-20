@@ -1,13 +1,11 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
-  const CustomAppBar({
-    Key? key,
-    required this.globalKeys,
-  }) : super(key: key);
+  const CustomAppBar(this.itemScrollController, {Key? key}) : super(key: key);
 
-  final List<GlobalKey> globalKeys;
+  final ItemScrollController itemScrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +33,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                   fixedSize:
                       MaterialStateProperty.all(const Size.fromWidth(80)),
                 ),
-                onPressed: () => Scrollable.ensureVisible(
-                  globalKeys[0].currentContext!,
-                  duration: const Duration(seconds: 1),
+                onPressed: () => itemScrollController.scrollTo(
+                  index: 0,
+                  duration: const Duration(milliseconds: 500),
                 ),
                 child: Text(
                   'Home',
@@ -49,13 +47,12 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
               ),
               TextButton(
                 style: ButtonStyle(
-                  fixedSize: MaterialStateProperty.all(
-                    const Size.fromWidth(80),
-                  ),
+                  fixedSize:
+                      MaterialStateProperty.all(const Size.fromWidth(80)),
                 ),
-                onPressed: () => Scrollable.ensureVisible(
-                  globalKeys[1].currentContext!,
-                  duration: const Duration(seconds: 1),
+                onPressed: () => itemScrollController.scrollTo(
+                  index: 1,
+                  duration: const Duration(milliseconds: 500),
                 ),
                 child: Text(
                   'About',
@@ -70,9 +67,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                   fixedSize:
                       MaterialStateProperty.all(const Size.fromWidth(80)),
                 ),
-                onPressed: () => Scrollable.ensureVisible(
-                  globalKeys[2].currentContext!,
-                  duration: const Duration(seconds: 1),
+                onPressed: () => itemScrollController.scrollTo(
+                  index: 2,
+                  duration: const Duration(milliseconds: 500),
                 ),
                 child: Text(
                   'Skill',
@@ -87,9 +84,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                   fixedSize:
                       MaterialStateProperty.all(const Size.fromWidth(80)),
                 ),
-                onPressed: () => Scrollable.ensureVisible(
-                  globalKeys[3].currentContext!,
-                  duration: const Duration(seconds: 1),
+                onPressed: () => itemScrollController.scrollTo(
+                  index: 3,
+                  duration: const Duration(milliseconds: 500),
                 ),
                 child: Text(
                   'Career',
@@ -104,9 +101,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                   fixedSize:
                       MaterialStateProperty.all(const Size.fromWidth(80)),
                 ),
-                onPressed: () => Scrollable.ensureVisible(
-                  globalKeys[4].currentContext!,
-                  duration: const Duration(seconds: 1),
+                onPressed: () => itemScrollController.scrollTo(
+                  index: 4,
+                  duration: const Duration(milliseconds: 500),
                 ),
                 child: Text(
                   'Project',
@@ -121,9 +118,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                   fixedSize:
                       MaterialStateProperty.all(const Size.fromWidth(80)),
                 ),
-                onPressed: () => Scrollable.ensureVisible(
-                  globalKeys[5].currentContext!,
-                  duration: const Duration(seconds: 1),
+                onPressed: () => itemScrollController.scrollTo(
+                  index: 5,
+                  duration: const Duration(milliseconds: 500),
                 ),
                 child: Text(
                   'Blog',
