@@ -4,9 +4,9 @@ import 'package:portfolio/models/contact_model.dart';
 import 'package:portfolio/models/event_model.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/utils/url.dart';
-import 'package:portfolio/widgets/about_section.dart';
-import 'package:portfolio/widgets/events_section.dart';
-import 'package:portfolio/widgets/horizontal_dashed_divider.dart';
+import 'package:portfolio/modules/about_module/local_widgets/about_section.dart';
+import 'package:portfolio/modules/about_module/local_widgets/events_section.dart';
+import 'package:portfolio/global_widgets/horizontal_dashed_divider.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({Key? key}) : super(key: key);

@@ -5,8 +5,8 @@ import 'package:portfolio/controller/carousel_index_controller.dart';
 import 'package:portfolio/models/post_model.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/utils/url.dart';
-import 'package:portfolio/widgets/double_post_section.dart';
-import 'package:portfolio/widgets/post_section.dart';
+import 'package:portfolio/modules/blog_module/local_widgets/double_post_section.dart';
+import 'package:portfolio/modules/blog_module/local_widgets/post_section.dart';
 
 class BlogPage extends StatelessWidget {
   const BlogPage({Key? key}) : super(key: key);

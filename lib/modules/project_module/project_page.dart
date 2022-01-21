@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controller/carousel_index_controller.dart';
 import 'package:portfolio/utils/responsive.dart';
-import 'package:portfolio/widgets/project_section.dart';
+import 'package:portfolio/modules/project_module/local_widgets/project_section.dart';
 
 class ProjectPage extends StatelessWidget {
   const ProjectPage({Key? key}) : super(key: key);

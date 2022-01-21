@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/models/post_model.dart';
-import 'package:portfolio/widgets/post_section.dart';
+import 'package:portfolio/modules/blog_module/local_widgets/post_section.dart';
 
 class DoublePostSection extends StatelessWidget {
   const DoublePostSection({
