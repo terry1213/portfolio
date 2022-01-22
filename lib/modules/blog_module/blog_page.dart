@@ -8,7 +8,7 @@ import 'package:portfolio/modules/blog_module/local_widgets/post_section.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/utils/url.dart';
 
-class BlogPage extends StatelessWidget {
+class BlogPage extends GetView<BlogController> {
   const BlogPage({Key? key}) : super(key: key);
 
   static const List<PostModel> posts = <PostModel>[
@@ -72,7 +72,6 @@ class BlogPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final CarouselController carouselController = CarouselController();
     final Size screenSize = MediaQuery.of(context).size;
-    final BlogController _controller = Get.find<BlogController>();
     final double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
         ? screenSize.width / 7
         : ResponsiveWidget.isMediumScreen(context)
@@ -122,12 +121,11 @@ class BlogPage extends StatelessWidget {
                 constraints: const BoxConstraints(),
                 padding: EdgeInsets.zero,
                 icon: GetBuilder<BlogController>(
-                  tag: 'blog',
                   builder: (_) {
                     final int currentIndex =
-                        screenSize.width >= 1050 && _controller.currentIndex > 2
-                            ? _controller.currentIndex % 3
-                            : _controller.currentIndex;
+                        screenSize.width >= 1050 && controller.currentIndex > 2
+                            ? controller.currentIndex % 3
+                            : controller.currentIndex;
                     return Icon(
                       Icons.circle,
                       color: currentIndex == i
@@ -151,9 +149,9 @@ class BlogPage extends StatelessWidget {
             child: CarouselSlider(
               options: CarouselOptions(
                 height: 630,
-                initialPage: _controller.currentIndex,
+                initialPage: controller.currentIndex,
                 onPageChanged: (int index, CarouselPageChangedReason reason) {
-                  _controller.changeCurrentIndex(index);
+                  controller.changeCurrentIndex(index);
                 },
                 viewportFraction: screenSize.width < 600 ? 1.25 : 1,
               ),
@@ -168,7 +166,6 @@ class BlogPage extends StatelessWidget {
                     horizontal: 20,
                   ),
                   decoration: BoxDecoration(
-                    // color: Colors.white10,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: _carouselItems[i],

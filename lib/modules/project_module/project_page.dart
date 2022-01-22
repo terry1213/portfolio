@@ -5,7 +5,7 @@ import 'package:portfolio/modules/project_module/local_widgets/project_section.d
 import 'package:portfolio/modules/project_module/project_controller.dart';
 import 'package:portfolio/utils/responsive.dart';
 
-class ProjectPage extends StatelessWidget {
+class ProjectPage extends GetView<ProjectController> {
   const ProjectPage({Key? key}) : super(key: key);
 
   static const List<ProjectModel> projects = [
@@ -43,7 +43,6 @@ class ProjectPage extends StatelessWidget {
         : ResponsiveWidget.isMediumScreen(context)
             ? screenSize.width / 10
             : screenSize.width / 13;
-    final ProjectController _controller = Get.find<ProjectController>();
     final List<int> carouselIndexes =
         Iterable<int>.generate(projects.length).toList();
     return Padding(
@@ -68,12 +67,11 @@ class ProjectPage extends StatelessWidget {
                 constraints: const BoxConstraints(),
                 padding: EdgeInsets.zero,
                 icon: GetBuilder<ProjectController>(
-                  tag: 'project',
                   builder: (_) {
                     final int currentIndex =
-                        screenSize.width >= 1050 && _controller.currentIndex > 2
-                            ? _controller.currentIndex % 3
-                            : _controller.currentIndex;
+                        screenSize.width >= 1050 && controller.currentIndex > 2
+                            ? controller.currentIndex % 3
+                            : controller.currentIndex;
                     return Icon(
                       Icons.circle,
                       color: currentIndex == i
@@ -90,9 +88,9 @@ class ProjectPage extends StatelessWidget {
           const SizedBox(height: 20),
           CarouselSlider(
             options: CarouselOptions(
-              initialPage: _controller.currentIndex,
+              initialPage: controller.currentIndex,
               onPageChanged: (int index, CarouselPageChangedReason reason) {
-                _controller.changeCurrentIndex(index);
+                controller.changeCurrentIndex(index);
               },
               viewportFraction: 1,
               aspectRatio: screenSize.width < 1050
