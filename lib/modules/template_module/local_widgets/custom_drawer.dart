@@ -4,7 +4,8 @@ import 'package:portfolio/global_widgets/horizontal_dashed_divider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class CustomDrawer extends StatelessWidget {
-  const CustomDrawer(this.itemScrollController, {
+  const CustomDrawer(
+    this.itemScrollController, {
     Key? key,
   }) : super(key: key);
 

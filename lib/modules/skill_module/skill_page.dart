@@ -1,9 +1,9 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/models/skill_model.dart';
-import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/global_widgets/horizontal_dashed_divider.dart';
+import 'package:portfolio/models/skill_model.dart';
 import 'package:portfolio/modules/skill_module/local_widgets/skill_section.dart';
+import 'package:portfolio/utils/responsive.dart';
 
 class SkillPage extends StatelessWidget {
   const SkillPage({Key? key}) : super(key: key);

@@ -6,10 +6,10 @@ import 'package:portfolio/modules/career_module/career_page.dart';
 import 'package:portfolio/modules/home_module/home_page.dart';
 import 'package:portfolio/modules/project_module/project_page.dart';
 import 'package:portfolio/modules/skill_module/skill_page.dart';
-import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/modules/template_module/local_widgets/custom_app_bar.dart';
 import 'package:portfolio/modules/template_module/local_widgets/custom_drawer.dart';
 import 'package:portfolio/modules/template_module/local_widgets/footer.dart';
+import 'package:portfolio/utils/responsive.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class TemplatePage extends StatelessWidget {
