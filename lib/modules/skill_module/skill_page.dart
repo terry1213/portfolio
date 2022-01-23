@@ -136,8 +136,8 @@ class SkillPage extends StatelessWidget {
                               Theme.of(context).textTheme.bodyText2!.copyWith(
                                     color: Theme.of(context).iconTheme.color,
                                   ),
-                          margin: 32,
-                          reservedSize: 14,
+                          margin: 20,
+                          reservedSize: 30,
                           getTitles: (double value) {
                             if (value == 0) {
                               return '0';
@@ -150,6 +150,8 @@ class SkillPage extends StatelessWidget {
                             }
                           },
                         ),
+                        topTitles: SideTitles(showTitles: false),
+                        rightTitles: SideTitles(showTitles: false),
                       ),
                       borderData: FlBorderData(
                         show: false,
