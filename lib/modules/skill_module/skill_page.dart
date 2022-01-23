@@ -1,9 +1,9 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/global_widgets/horizontal_dashed_divider.dart';
 import 'package:portfolio/models/skill_model.dart';
+import 'package:portfolio/modules/skill_module/local_widgets/skill_section.dart';
 import 'package:portfolio/utils/responsive.dart';
-import 'package:portfolio/widgets/horizontal_dashed_divider.dart';
-import 'package:portfolio/widgets/skill_section.dart';
 
 class SkillPage extends StatelessWidget {
   const SkillPage({Key? key}) : super(key: key);
@@ -136,8 +136,8 @@ class SkillPage extends StatelessWidget {
                               Theme.of(context).textTheme.bodyText2!.copyWith(
                                     color: Theme.of(context).iconTheme.color,
                                   ),
-                          margin: 32,
-                          reservedSize: 14,
+                          margin: 20,
+                          reservedSize: 30,
                           getTitles: (double value) {
                             if (value == 0) {
                               return '0';
@@ -150,6 +150,8 @@ class SkillPage extends StatelessWidget {
                             }
                           },
                         ),
+                        topTitles: SideTitles(showTitles: false),
+                        rightTitles: SideTitles(showTitles: false),
                       ),
                       borderData: FlBorderData(
                         show: false,

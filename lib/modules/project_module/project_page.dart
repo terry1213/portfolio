@@ -1,11 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/controller/carousel_index_controller.dart';
+import 'package:portfolio/modules/project_module/local_widgets/project_section.dart';
+import 'package:portfolio/modules/project_module/project_controller.dart';
 import 'package:portfolio/utils/responsive.dart';
-import 'package:portfolio/widgets/project_section.dart';
 
-class ProjectPage extends StatelessWidget {
+class ProjectPage extends GetView<ProjectController> {
   const ProjectPage({Key? key}) : super(key: key);
 
   static const List<ProjectModel> projects = [
@@ -36,14 +36,13 @@ class ProjectPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final CarouselController carouselController = CarouselController();
     final Size screenSize = MediaQuery.of(context).size;
     final double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
         ? screenSize.width / 7
         : ResponsiveWidget.isMediumScreen(context)
             ? screenSize.width / 10
             : screenSize.width / 13;
-    final CarouselIndexController _carouselIndexController =
-        Get.find<CarouselIndexController>(tag: 'project');
     final List<int> carouselIndexes =
         Iterable<int>.generate(projects.length).toList();
     return Padding(
@@ -67,13 +66,12 @@ class ProjectPage extends StatelessWidget {
               return IconButton(
                 constraints: const BoxConstraints(),
                 padding: EdgeInsets.zero,
-                icon: GetBuilder<CarouselIndexController>(
-                  tag: 'project',
+                icon: GetBuilder<ProjectController>(
                   builder: (_) {
-                    final int currentIndex = screenSize.width >= 1050 &&
-                            _carouselIndexController.currentIndex > 2
-                        ? _carouselIndexController.currentIndex % 3
-                        : _carouselIndexController.currentIndex;
+                    final int currentIndex =
+                        screenSize.width >= 1050 && controller.currentIndex > 2
+                            ? controller.currentIndex % 3
+                            : controller.currentIndex;
                     return Icon(
                       Icons.circle,
                       color: currentIndex == i
@@ -83,24 +81,23 @@ class ProjectPage extends StatelessWidget {
                     );
                   },
                 ),
-                onPressed: () => _carouselIndexController.carouselController
-                    .animateToPage(i),
+                onPressed: () => carouselController.animateToPage(i),
               );
             }).toList(),
           ),
           const SizedBox(height: 20),
           CarouselSlider(
             options: CarouselOptions(
-              initialPage: _carouselIndexController.currentIndex,
+              initialPage: controller.currentIndex,
               onPageChanged: (int index, CarouselPageChangedReason reason) {
-                _carouselIndexController.changeCurrentIndex(index);
+                controller.changeCurrentIndex(index);
               },
               viewportFraction: 1,
               aspectRatio: screenSize.width < 1050
                   ? 16 / 18 * (screenSize.width / 1050)
                   : (screenSize.width < 1300 ? 16 / 10 : 16 / 8),
             ),
-            carouselController: _carouselIndexController.carouselController,
+            carouselController: carouselController,
             items: projects
                 .map(
                   (ProjectModel project) => Builder(

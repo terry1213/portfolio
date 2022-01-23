@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/widgets/horizontal_dashed_divider.dart';
+import 'package:portfolio/global_widgets/horizontal_dashed_divider.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({
+  const CustomDrawer(
+    this.itemScrollController, {
     Key? key,
-    required this.globalKeys,
   }) : super(key: key);
 
-  final List<GlobalKey> globalKeys;
+  final ItemScrollController itemScrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +44,9 @@ class CustomDrawer extends StatelessWidget {
                       ),
                 ),
                 onTap: () {
-                  Scrollable.ensureVisible(
-                    globalKeys[0].currentContext!,
-                    duration: const Duration(seconds: 1),
+                  itemScrollController.scrollTo(
+                    index: 0,
+                    duration: const Duration(milliseconds: 500),
                   );
                   Get.back();
                 },
@@ -62,9 +63,9 @@ class CustomDrawer extends StatelessWidget {
                       ),
                 ),
                 onTap: () {
-                  Scrollable.ensureVisible(
-                    globalKeys[1].currentContext!,
-                    duration: const Duration(seconds: 1),
+                  itemScrollController.scrollTo(
+                    index: 1,
+                    duration: const Duration(milliseconds: 500),
                   );
                   Get.back();
                 },
@@ -81,9 +82,9 @@ class CustomDrawer extends StatelessWidget {
                       ),
                 ),
                 onTap: () {
-                  Scrollable.ensureVisible(
-                    globalKeys[2].currentContext!,
-                    duration: const Duration(seconds: 1),
+                  itemScrollController.scrollTo(
+                    index: 2,
+                    duration: const Duration(milliseconds: 500),
                   );
                   Get.back();
                 },
@@ -100,9 +101,9 @@ class CustomDrawer extends StatelessWidget {
                       ),
                 ),
                 onTap: () {
-                  Scrollable.ensureVisible(
-                    globalKeys[3].currentContext!,
-                    duration: const Duration(seconds: 1),
+                  itemScrollController.scrollTo(
+                    index: 3,
+                    duration: const Duration(milliseconds: 500),
                   );
                   Get.back();
                 },
@@ -119,9 +120,9 @@ class CustomDrawer extends StatelessWidget {
                       ),
                 ),
                 onTap: () {
-                  Scrollable.ensureVisible(
-                    globalKeys[4].currentContext!,
-                    duration: const Duration(seconds: 1),
+                  itemScrollController.scrollTo(
+                    index: 4,
+                    duration: const Duration(milliseconds: 500),
                   );
                   Get.back();
                 },
@@ -138,9 +139,9 @@ class CustomDrawer extends StatelessWidget {
                       ),
                 ),
                 onTap: () {
-                  Scrollable.ensureVisible(
-                    globalKeys[5].currentContext!,
-                    duration: const Duration(seconds: 1),
+                  itemScrollController.scrollTo(
+                    index: 5,
+                    duration: const Duration(milliseconds: 500),
                   );
                   Get.back();
                 },

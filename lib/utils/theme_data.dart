@@ -50,7 +50,7 @@ ThemeData darkThemeData = ThemeData(
   bottomAppBarColor: const Color(0xFF242424),
   brightness: Brightness.dark,
   cardColor: Colors.white12,
-  dividerColor: Colors.white24,
+  dividerColor: Colors.grey[700],
   highlightColor: Colors.transparent,
   hoverColor: Colors.transparent,
   iconTheme: IconThemeData(

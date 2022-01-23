@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/models/app_model.dart';
 import 'package:portfolio/models/career_model.dart';
 import 'package:portfolio/models/work_model.dart';
+import 'package:portfolio/modules/career_module/local_widgets/app_section.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/utils/url.dart';
-import 'package:portfolio/widgets/app_section.dart';
 import 'package:timelines/timelines.dart';
 
 class CareerPage extends StatelessWidget {
