@@ -49,6 +49,7 @@ class TemplatePage extends StatelessWidget {
         itemBuilder: (context, index) => pages[index],
       ),
       drawer: CustomDrawer(itemScrollController),
+      drawerEdgeDragWidth: 0.0,
     );
   }
 }
