@@ -75,7 +75,7 @@ const Map<UrlKey, String> _urls = <UrlKey, String>{
   UrlKey.algorithmLast: 'https://terry1213.github.io/backjoon/9455/',
   UrlKey.errorTag: 'https://terry1213.github.io/tags/#error',
   UrlKey.errorLast:
-      'https://terry1213.github.io/flutter/flutter-execution-failed-for-task-app-mergedexdebug/',
+      'https://terry1213.github.io/ios/ios-invalid-app-store-icon/',
 };
 
 Future<void> launchUrlByKey(UrlKey key) async =>
