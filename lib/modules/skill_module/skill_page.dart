@@ -109,7 +109,7 @@ class SkillPage extends StatelessWidget {
                             int rodIndex,
                           ) {
                             return BarTooltipItem(
-                              (rod.y - 3).toString(),
+                              rod.y.toString(),
                               Theme.of(context)
                                   .textTheme
                                   .bodyText2!
