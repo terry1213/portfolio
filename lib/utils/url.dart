@@ -11,11 +11,13 @@ enum UrlKey {
   spotaleA,
   life337A,
   hamsungA,
+  biblelyA,
   // Google PlayStore
   hemG,
   spotaleG,
   life337G,
   hamsungG,
+  biblelyG,
   // Blog
   widgetOfTheWeekTag,
   widgetOfTheWeekLast,
@@ -46,6 +48,8 @@ const Map<UrlKey, String> _urls = <UrlKey, String>{
   UrlKey.life337A: 'https://apps.apple.com/kr/app/3-3-7-life/id1572404447',
   UrlKey.hamsungA:
       'https://apps.apple.com/kr/app/%ED%95%A8%EC%84%B1-%ED%95%A8%EA%BB%98-%EC%84%B1%EA%B2%BD-%EC%9D%BD%EA%B8%B0/id1552812826',
+  UrlKey.biblelyA:
+      'https://apps.apple.com/us/app/%EB%B0%94%EC%9D%B4%EB%B8%94%EB%A6%AC/id1610243562',
   // Google PlayStore
   UrlKey.hemG:
       'https://play.google.com/store/apps/details?id=com.swfact.hemomg',
@@ -55,6 +59,8 @@ const Map<UrlKey, String> _urls = <UrlKey, String>{
       'https://play.google.com/store/apps/details?id=com.swfact.life337',
   UrlKey.hamsungG:
       'https://play.google.com/store/apps/details?id=com.swfact.church',
+  UrlKey.biblelyG:
+      'https://play.google.com/store/apps/details?id=com.voiselah.biblely',
   UrlKey.widgetOfTheWeekTag:
       'https://terry1213.github.io/tags/#widgetoftheweek',
   UrlKey.widgetOfTheWeekLast:

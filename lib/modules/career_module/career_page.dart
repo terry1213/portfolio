@@ -142,7 +142,20 @@ class CareerPage extends StatelessWidget {
       company: '자이냅스',
       period: '2021.11-현재',
       position: 'Flutter 개발자',
-      apps: <AppModel>[],
+      apps: <AppModel>[
+        AppModel(
+          name: '바이블리',
+          detail: 'AI 딥러닝 기술로 만들어낸 매일 듣는 성경 플랫폼 어플',
+          works: <WorkModel>[
+            WorkModel(
+              main: '프론트엔드 개발',
+              detail: <String>[],
+            ),
+          ],
+          appStoreLink: UrlKey.biblelyA,
+          googlePlayStoreLink: UrlKey.biblelyG,
+        ),
+      ],
     ),
   ];
 
