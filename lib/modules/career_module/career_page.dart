@@ -106,7 +106,7 @@ class CareerPage extends StatelessWidget {
               detail: <String>[],
             ),
             WorkModel(
-              main: '1인 개발로 어플의 모든 기능 혼자서 개발',
+              main: '1인 개발로 어플의 모든 기능을 혼자서 개발',
               detail: <String>[
                 '1인 개발로 진행했기 때문에 어플의 모든 기능을 혼자서 구현했습니다.',
               ],
@@ -145,10 +145,18 @@ class CareerPage extends StatelessWidget {
       apps: <AppModel>[
         AppModel(
           name: '바이블리',
-          detail: 'AI 딥러닝 기술로 만들어낸 매일 듣는 성경 플랫폼 어플',
+          detail: 'AI 딥러닝 기술을 활용한 오디오 성경 어플',
           works: <WorkModel>[
             WorkModel(
-              main: '프론트엔드 개발',
+              main: '어플 개발 시작부터 런칭까지 진행',
+              detail: <String>[],
+            ),
+            WorkModel(
+              main: '프론트엔드 파트 전담',
+              detail: <String>[],
+            ),
+            WorkModel(
+              main: '오디오 서비스에 필요한 다양한 기능 구현',
               detail: <String>[],
             ),
           ],
