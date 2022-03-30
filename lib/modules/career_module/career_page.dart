@@ -23,38 +23,15 @@ class CareerPage extends StatelessWidget {
           works: <WorkModel>[
             WorkModel(
               main: '불필요한 코드 및 중복된 코드를 줄이는 최적화 작업',
-              detail: <String>[
-                '어플의 상단 바(앱바)나 알림창(다이얼로그) 등을 사용할 때마다 매번 같은 설정으로 사용하고 있었습니다.'
-                    ' 해당 부분을 theme으로 지정하여 코드를 간소화했습니다. 이외에 중복되지만 theme으로 지정할 수 없는'
-                    ' 부분에 대해선 별도의 클래스을 선언하고 필요할 때마다 부르는 형식으로 수정했습니다.',
-                '또한 사용되지 않는 함수, 변수, 패키지들을 찾아서 삭제하는 작업을 했습니다.',
-              ],
             ),
             WorkModel(
               main: 'firebase cloud function을 사용하여 어플 관리자 페이지에 새로운 기능 추가 및 수정',
-              detail: <String>[
-                '관리자가 엑셀 파일을 업로드했을 때 firebase cloud function을 통해 자동으로 데이터가'
-                    ' 처리되도록 구현했습니다. 검사 키트 번호 등록이나 검사 결과 등록 등 다양한 목적을 위해 엑셀 파일을 업로드하게'
-                    ' 되는데 각 경우에 맞춰 자동으로 적합한 처리가 진행됩니다.',
-                'firebase cloud function를 통한 파일 읽기 및 데이터 처리 시에 발생할 수 있는 에러 및'
-                    ' 다양한 알림을 적절한 로그를 통해 관리자에게 알려주는 기능을 구현했습니다.',
-              ],
             ),
             WorkModel(
               main: '모든 외부 패키지 최신 버전으로 업데이트, Xcode 12로의 migration',
-              detail: <String>[
-                '2018년에 개발한 어플이기 때문에 사용된 외부 패키지가 모두 옛날 버전이었습니다. 따라서 모든 외부'
-                    ' 패키지를 최신 버전으로 업데이트하고, 지원이 끊긴 패키지는 대체 패키지를 찾아서 수정했습니다.',
-                'Xcode 12로 넘어가면서 호환성, 설정 등 여러 문제가 발생했습니다. 이를 해결하고 Xcode'
-                    ' 12로의 migration을 완료했습니다.',
-              ],
             ),
             WorkModel(
               main: 'dartdoc을 활용한 인수인계서 작성',
-              detail: <String>[
-                '회사 내에 flutter 무경험 개발자들과 나중의 신규 개발자들을 위해 인수인계서를 작성했습니다.'
-                    ' dartdoc 패키지를 활용했고 dart에서 제공하는 공식 문서화 가이드에 맞춰서 진행했습니다.',
-              ],
             ),
           ],
           appStoreLink: UrlKey.hemA,
@@ -75,22 +52,13 @@ class CareerPage extends StatelessWidget {
           works: <WorkModel>[
             WorkModel(
               main: '데이터를 엑셀 파일로 자동 정리하고 해당 파일을 공유하는 기능 구현',
-              detail: <String>[
-                '방문 기록 데이터가 자동을 정리되어 엑셀 파일로 생성되고, 해당 파일을 간편하게 공유할 수 있습니다.',
-                '엑셀 파일은 방문자별, 장소별, 날짜별 등 다양한 기준으로 생성할 수 있도록 구현했습니다.',
-              ],
             ),
             WorkModel(
               main: 'Flutter 2.0 null safety로 마이그레이션 작업',
-              detail: <String>[
-                'Flutter 2.0이 발표되어 모든 외부 패키지를 최신 버전으로 업데이트했습니다. 일부 지원 자체가'
-                    ' 끝났거나 아직 Flutter 2.0이 지원되지 않은 패키지는 대체 패키지를 찾아서 수정했습니다.',
-              ],
             ),
             WorkModel(
               main: '에러 해결 및 안정화 등 유지보수',
-              detail: <String>[],
-            ),
+            )
           ],
           appStoreLink: UrlKey.spotaleA,
           googlePlayStoreLink: UrlKey.spotaleG,
@@ -103,21 +71,15 @@ class CareerPage extends StatelessWidget {
           works: <WorkModel>[
             WorkModel(
               main: '어플 개발 시작부터 런칭까지 진행',
-              detail: <String>[],
             ),
             WorkModel(
               main: '1인 개발로 어플의 모든 기능을 혼자서 개발',
-              detail: <String>[
-                '1인 개발로 진행했기 때문에 어플의 모든 기능을 혼자서 구현했습니다.',
-              ],
             ),
             WorkModel(
               main: 'Figma를 활용하여 디자이너와 협업',
-              detail: <String>[],
             ),
             WorkModel(
               main: '잠재적 사용자인 네패스 직원 약 100명 대상으로 베타 테스트 진행',
-              detail: <String>[],
             ),
           ],
           appStoreLink: UrlKey.life337A,
@@ -130,7 +92,6 @@ class CareerPage extends StatelessWidget {
           works: <WorkModel>[
             WorkModel(
               main: '에러 해결 및 안정화 등 유지보수',
-              detail: <String>[],
             ),
           ],
           appStoreLink: UrlKey.hamsungA,
@@ -149,15 +110,12 @@ class CareerPage extends StatelessWidget {
           works: <WorkModel>[
             WorkModel(
               main: '어플 개발 시작부터 런칭까지 진행',
-              detail: <String>[],
             ),
             WorkModel(
               main: '프론트엔드 파트 전담',
-              detail: <String>[],
             ),
             WorkModel(
               main: '오디오 서비스에 필요한 다양한 기능 구현',
-              detail: <String>[],
             ),
           ],
           appStoreLink: UrlKey.biblelyA,
