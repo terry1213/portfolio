@@ -72,10 +72,6 @@ class AboutPage extends StatelessWidget {
       detail: '토익 875점',
     ),
     EventModel(
-      period: '2020.06',
-      detail: '정보처리기사(필기)',
-    ),
-    EventModel(
       period: '2020.08',
       detail: '코더스하이 iOS 어플리케이션 캠프 최우수상',
     ),
