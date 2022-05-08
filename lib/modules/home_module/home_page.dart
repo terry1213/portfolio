@@ -1,36 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/global_widgets/image_with_animated_opacity.dart';
+import 'package:portfolio/models/contact_model.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/utils/url.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  static List<IconButton> iconButtons = <IconButton>[
-    IconButton(
-      onPressed: () => launchUrlByKey(UrlKey.email),
-      icon: const Icon(LineIcons.envelopeSquare),
-      tooltip: 'Email',
-      iconSize: 30,
+  static const List<ContactModel> contacts = <ContactModel>[
+    ContactModel(
+      urlKey: UrlKey.email,
+      iconData: LineIcons.envelope,
+      detail: 'Email',
     ),
-    IconButton(
-      onPressed: () => launchUrlByKey(UrlKey.linkedin),
-      icon: const Icon(LineIcons.linkedin),
-      tooltip: 'LinkedIn',
-      iconSize: 30,
+    ContactModel(
+      urlKey: UrlKey.linkedin,
+      iconData: LineIcons.linkedin,
+      detail: 'LinkedIn',
     ),
-    IconButton(
-      onPressed: () => launchUrlByKey(UrlKey.blog),
-      icon: const Icon(LineIcons.blogger),
-      tooltip: 'Blog',
-      iconSize: 30,
+    ContactModel(
+      urlKey: UrlKey.blog,
+      iconData: LineIcons.blogger,
+      detail: 'Blog',
     ),
-    IconButton(
-      onPressed: () => launchUrlByKey(UrlKey.github),
-      icon: const Icon(LineIcons.githubSquare),
-      tooltip: 'Github',
-      iconSize: 30,
+    ContactModel(
+      urlKey: UrlKey.github,
+      iconData: LineIcons.githubSquare,
+      detail: 'Github',
     ),
   ];
 
@@ -47,6 +44,15 @@ class HomePage extends StatelessWidget {
         : (600 > 420 - 1200 + screenSize.width
             ? 420 - 1200 + screenSize.width
             : 600);
+    List<IconButton> iconButtons = contacts
+        .map((contact) => IconButton(
+              onPressed: contact.openUrl,
+              icon: Icon(contact.iconData),
+              tooltip: contact.detail,
+              iconSize: 30,
+            ))
+        .toList();
+
     return Padding(
       padding:
           EdgeInsets.symmetric(horizontal: screenSize.width / 15, vertical: 70),

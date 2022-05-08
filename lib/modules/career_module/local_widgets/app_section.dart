@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/models/app_model.dart';
-import 'package:portfolio/utils/url.dart';
 
 class AppSection extends StatelessWidget {
   const AppSection({Key? key, required this.app}) : super(key: key);
@@ -31,7 +30,7 @@ class AppSection extends StatelessWidget {
                 constraints: const BoxConstraints(),
                 icon: const Icon(LineIcons.apple),
                 iconSize: 30,
-                onPressed: () => launchUrlByKey(app.appStoreLink),
+                onPressed: app.openAppStoreUrl,
                 padding: EdgeInsets.zero,
                 splashRadius: 15,
                 tooltip: '앱스토어',
@@ -40,7 +39,7 @@ class AppSection extends StatelessWidget {
                 constraints: const BoxConstraints(),
                 icon: const Icon(LineIcons.android),
                 iconSize: 30,
-                onPressed: () => launchUrlByKey(app.googlePlayStoreLink),
+                onPressed: app.openGooglePlayStoreUrl,
                 padding: EdgeInsets.zero,
                 splashRadius: 15,
                 tooltip: '구글 플레이 스토어',

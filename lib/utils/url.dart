@@ -1,5 +1,3 @@
-import 'package:url_launcher/url_launcher.dart';
-
 enum UrlKey {
   // Contact
   blog,
@@ -33,7 +31,7 @@ enum UrlKey {
   errorLast,
 }
 
-const Map<UrlKey, String> _urls = <UrlKey, String>{
+const Map<UrlKey, String> urls = <UrlKey, String>{
   // Contact
   UrlKey.blog: 'https://terry1213.github.io/categories/',
   UrlKey.email: 'mailto:1213terry@naver.com',
@@ -83,8 +81,3 @@ const Map<UrlKey, String> _urls = <UrlKey, String>{
   UrlKey.errorLast:
       'https://terry1213.github.io/ios/ios-invalid-app-store-icon/',
 };
-
-Future<void> launchUrlByKey(UrlKey key) async =>
-    await canLaunch(_urls[key] ?? '')
-        ? await launch(_urls[key] ?? '')
-        : throw 'Could not launch $_urls';
