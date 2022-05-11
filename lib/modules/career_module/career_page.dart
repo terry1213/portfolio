@@ -10,7 +10,7 @@ import 'package:timelines/timelines.dart';
 class CareerPage extends StatelessWidget {
   const CareerPage({Key? key}) : super(key: key);
 
-  static const List<CareerModel> careers = <CareerModel>[
+  final List<CareerModel> _careers = const <CareerModel>[
     CareerModel(
       company: 'HEM Pharma',
       period: '2020.12-2021.02',
@@ -163,9 +163,9 @@ class CareerPage extends StatelessWidget {
                   ? ContentsAlign.basic
                   : ContentsAlign.alternating,
               connectionDirection: ConnectionDirection.before,
-              itemCount: careers.length + 1,
+              itemCount: _careers.length + 1,
               contentsBuilder: (_, int index) {
-                if (index == careers.length) return null;
+                if (index == _careers.length) return null;
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: Column(
@@ -176,7 +176,7 @@ class CareerPage extends StatelessWidget {
                         Row(
                           children: <Widget>[
                             Text(
-                              careers[index].company,
+                              _careers[index].company,
                               style: Theme.of(context)
                                   .textTheme
                                   .headline5!
@@ -187,7 +187,7 @@ class CareerPage extends StatelessWidget {
                             ),
                             const SizedBox(width: 10),
                             Text(
-                              careers[index].period,
+                              _careers[index].period,
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyText2!
@@ -204,7 +204,7 @@ class CareerPage extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                             Text(
-                              careers[index].company,
+                              _careers[index].company,
                               style: Theme.of(context)
                                   .textTheme
                                   .headline5!
@@ -214,7 +214,7 @@ class CareerPage extends StatelessWidget {
                                   ),
                             ),
                             Text(
-                              careers[index].period,
+                              _careers[index].period,
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyText2!
@@ -226,7 +226,7 @@ class CareerPage extends StatelessWidget {
                           ],
                         ),
                       Text(
-                        careers[index].position,
+                        _careers[index].position,
                         style: Theme.of(context).textTheme.bodyText2!.copyWith(
                               color: Colors.grey,
                               fontWeight: FontWeight.bold,
@@ -235,10 +235,10 @@ class CareerPage extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: List<AppSection>.generate(
-                          careers[index].apps.length,
+                          _careers[index].apps.length,
                           (int index2) {
                             return AppSection(
-                              app: careers[index].apps[index2],
+                              app: _careers[index].apps[index2],
                             );
                           },
                         ),

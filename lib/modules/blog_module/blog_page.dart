@@ -11,7 +11,7 @@ import 'package:portfolio/utils/url.dart';
 class BlogPage extends GetView<BlogController> {
   const BlogPage({Key? key}) : super(key: key);
 
-  static const List<PostModel> posts = <PostModel>[
+  final List<PostModel> _posts = const <PostModel>[
     PostModel(
       title: 'Widget of the Week',
       body: "Flutter 공식 유튜브 채널에서는 일주일마다 특정 위젯에 대해서 설명해주는 'Widget of the Week'"
@@ -78,23 +78,23 @@ class BlogPage extends GetView<BlogController> {
             ? screenSize.width / 10
             : screenSize.width / 13;
     final List<Widget> _carouselItems = screenSize.width < 1050
-        ? posts
+        ? _posts
             .map(
               (PostModel post) => PostSection(
                 post: post,
               ),
             )
             .toList()
-        : Iterable<int>.generate(((posts.length) / 2).floor())
+        : Iterable<int>.generate(((_posts.length) / 2).floor())
             .toList()
             .map(
               (int i) => DoublePostSection(
-                post1: posts[2 * i],
-                post2: posts[2 * i + 1],
+                post1: _posts[2 * i],
+                post2: _posts[2 * i + 1],
               ),
             )
             .toList();
-    final List<int> carouselIndexes = Iterable<int>.generate(posts.length)
+    final List<int> carouselIndexes = Iterable<int>.generate(_posts.length)
         .toList()
         .sublist(0, screenSize.width < 1050 ? 6 : 3);
     return Padding(

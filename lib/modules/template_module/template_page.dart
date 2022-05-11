@@ -15,7 +15,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 class TemplatePage extends StatelessWidget {
   const TemplatePage({Key? key}) : super(key: key);
 
-  final List<Widget> pages = const <Widget>[
+  final List<Widget> _pages = const <Widget>[
     HomePage(),
     AboutPage(),
     SkillPage(),
@@ -45,8 +45,8 @@ class TemplatePage extends StatelessWidget {
           : CustomAppBar(itemScrollController),
       body: ScrollablePositionedList.builder(
         itemScrollController: itemScrollController,
-        itemCount: pages.length,
-        itemBuilder: (context, index) => pages[index],
+        itemCount: _pages.length,
+        itemBuilder: (context, index) => _pages[index],
       ),
       drawer: CustomDrawer(itemScrollController),
       drawerEdgeDragWidth: 0.0,

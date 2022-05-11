@@ -11,7 +11,7 @@ import 'package:portfolio/utils/url.dart';
 class AboutPage extends StatelessWidget {
   const AboutPage({Key? key}) : super(key: key);
 
-  static const List<ContactModel> contacts = <ContactModel>[
+  final List<ContactModel> _contacts = const <ContactModel>[
     ContactModel(
       urlKey: UrlKey.email,
       iconData: LineIcons.envelope,
@@ -28,7 +28,7 @@ class AboutPage extends StatelessWidget {
       detail: 'https://terry1213.github.io/categories/',
     ),
   ];
-  static const List<EventModel> educations = <EventModel>[
+  final List<EventModel> _educations = const <EventModel>[
     EventModel(
       period: '2012.02-2015.02',
       detail: '새음 기독 대안학교',
@@ -38,7 +38,7 @@ class AboutPage extends StatelessWidget {
       detail: '한동대학교 컴퓨터공학',
     ),
   ];
-  static const List<EventModel> careers = <EventModel>[
+  final List<EventModel> _careers = const <EventModel>[
     EventModel(
       period: '2020.12-2021.02',
       detail: 'HEM Pharma / Flutter 개발자',
@@ -52,7 +52,7 @@ class AboutPage extends StatelessWidget {
       detail: '자이냅스 / Flutter 개발자',
     ),
   ];
-  static const List<EventModel> projects = <EventModel>[
+  final List<EventModel> _projects = const <EventModel>[
     EventModel(
       period: '2020.07',
       detail: "음악 공유 어플 '아지트' 개발(Swift)",
@@ -66,7 +66,7 @@ class AboutPage extends StatelessWidget {
       detail: '개인 포트폴리오 사이트 개발(Flutter Web)',
     ),
   ];
-  static const List<EventModel> certificates = <EventModel>[
+  final List<EventModel> _certificates = const <EventModel>[
     EventModel(
       period: '2020.05',
       detail: '토익 875점',
@@ -104,32 +104,32 @@ class AboutPage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
-              children: const <Widget>[
-                HorizontalDashedDivider(space: 60),
+              children: <Widget>[
+                const HorizontalDashedDivider(space: 60),
                 AboutSection(
-                  contacts: contacts,
+                  contacts: _contacts,
                 ),
-                HorizontalDashedDivider(space: 60),
+                const HorizontalDashedDivider(space: 60),
                 EventsSection(
                   title: 'Education',
-                  events: educations,
+                  events: _educations,
                 ),
-                HorizontalDashedDivider(space: 60),
+                const HorizontalDashedDivider(space: 60),
                 EventsSection(
                   title: 'Career',
-                  events: careers,
+                  events: _careers,
                 ),
-                HorizontalDashedDivider(space: 60),
+                const HorizontalDashedDivider(space: 60),
                 EventsSection(
                   title: 'Project',
-                  events: projects,
+                  events: _projects,
                 ),
-                HorizontalDashedDivider(space: 60),
+                const HorizontalDashedDivider(space: 60),
                 EventsSection(
                   title: 'Certificate',
-                  events: certificates,
+                  events: _certificates,
                 ),
-                HorizontalDashedDivider(space: 60),
+                const HorizontalDashedDivider(space: 60),
               ],
             )
           else
@@ -146,22 +146,22 @@ class AboutPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
-                      children: const <Widget>[
-                        HorizontalDashedDivider(space: 80),
+                      children: <Widget>[
+                        const HorizontalDashedDivider(space: 80),
                         AboutSection(
-                          contacts: contacts,
+                          contacts: _contacts,
                         ),
-                        HorizontalDashedDivider(space: 80),
+                        const HorizontalDashedDivider(space: 80),
                         EventsSection(
                           title: 'Education',
-                          events: educations,
+                          events: _educations,
                         ),
-                        HorizontalDashedDivider(space: 80),
+                        const HorizontalDashedDivider(space: 80),
                         EventsSection(
                           title: 'Career',
-                          events: careers,
+                          events: _careers,
                         ),
-                        HorizontalDashedDivider(space: 80),
+                        const HorizontalDashedDivider(space: 80),
                       ],
                     ),
                   ),
@@ -176,22 +176,22 @@ class AboutPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
-                      children: const <Widget>[
-                        HorizontalDashedDivider(
+                      children: <Widget>[
+                        const HorizontalDashedDivider(
                           space: 80,
                         ),
                         EventsSection(
                           title: 'Project',
-                          events: projects,
+                          events: _projects,
                         ),
-                        HorizontalDashedDivider(
+                        const HorizontalDashedDivider(
                           space: 80,
                         ),
                         EventsSection(
                           title: 'Certificate',
-                          events: certificates,
+                          events: _certificates,
                         ),
-                        HorizontalDashedDivider(
+                        const HorizontalDashedDivider(
                           space: 80,
                         ),
                       ],

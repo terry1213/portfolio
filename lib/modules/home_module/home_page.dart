@@ -8,7 +8,7 @@ import 'package:portfolio/utils/url.dart';
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  static const List<ContactModel> contacts = <ContactModel>[
+  final List<ContactModel> _contacts = const <ContactModel>[
     ContactModel(
       urlKey: UrlKey.email,
       iconData: LineIcons.envelope,
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
         : (600 > 420 - 1200 + screenSize.width
             ? 420 - 1200 + screenSize.width
             : 600);
-    List<IconButton> iconButtons = contacts
+    List<IconButton> iconButtons = _contacts
         .map((contact) => IconButton(
               onPressed: contact.openUrl,
               icon: Icon(contact.iconData),

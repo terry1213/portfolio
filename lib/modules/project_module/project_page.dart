@@ -8,7 +8,7 @@ import 'package:portfolio/utils/responsive.dart';
 class ProjectPage extends GetView<ProjectController> {
   const ProjectPage({Key? key}) : super(key: key);
 
-  static const List<ProjectModel> projects = [
+  final List<ProjectModel> _projects = const <ProjectModel>[
     ProjectModel(
       title: '아지트(Ajite)',
       images: <String>[
@@ -44,7 +44,7 @@ class ProjectPage extends GetView<ProjectController> {
             ? screenSize.width / 10
             : screenSize.width / 13;
     final List<int> carouselIndexes =
-        Iterable<int>.generate(projects.length).toList();
+        Iterable<int>.generate(_projects.length).toList();
     return Padding(
       padding:
           EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 70),
@@ -98,7 +98,7 @@ class ProjectPage extends GetView<ProjectController> {
                   : (screenSize.width < 1300 ? 16 / 10 : 16 / 8),
             ),
             carouselController: carouselController,
-            items: projects
+            items: _projects
                 .map(
                   (ProjectModel project) => Builder(
                     builder: (BuildContext context) {
