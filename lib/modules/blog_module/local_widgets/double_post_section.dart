@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/models/post_model.dart';
+import 'package:portfolio/models/blog_post.dart';
 import 'package:portfolio/modules/blog_module/local_widgets/post_section.dart';
 
 class DoublePostSection extends StatelessWidget {
@@ -9,8 +9,8 @@ class DoublePostSection extends StatelessWidget {
     required this.post2,
   }) : super(key: key);
 
-  final PostModel post1;
-  final PostModel post2;
+  final BlogPost post1;
+  final BlogPost post2;
 
   @override
   Widget build(BuildContext context) {

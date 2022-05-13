@@ -1,9 +1,8 @@
-import 'package:portfolio/models/work_model.dart';
 import 'package:portfolio/utils/url.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class AppModel {
-  const AppModel({
+class App {
+  const App({
     required this.name,
     required this.detail,
     required this.works,
@@ -13,7 +12,7 @@ class AppModel {
 
   final String name;
   final String detail;
-  final List<WorkModel> works;
+  final List<String> works;
   final UrlKey appStoreLink;
   final UrlKey googlePlayStoreLink;
 

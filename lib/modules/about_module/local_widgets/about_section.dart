@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/models/contact_model.dart';
+import 'package:portfolio/models/contact.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({Key? key, required this.contacts}) : super(key: key);
 
-  final List<ContactModel> contacts;
+  final List<Contact> contacts;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class AboutSection extends StatelessWidget {
           ] +
           contacts
               .map(
-                (ContactModel contact) => InkWell(
+                (Contact contact) => InkWell(
                   onTap: contact.openUrl,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,

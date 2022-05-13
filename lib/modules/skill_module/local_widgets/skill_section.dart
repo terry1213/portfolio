@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/models/skill_model.dart';
+import 'package:portfolio/models/skill.dart';
 
 class SkillSection extends StatelessWidget {
   const SkillSection({Key? key, required this.skill}) : super(key: key);
 
-  final SkillModel skill;
+  final Skill skill;
 
   @override
   Widget build(BuildContext context) {

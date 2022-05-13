@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/global_widgets/horizontal_dashed_divider.dart';
-import 'package:portfolio/models/contact_model.dart';
-import 'package:portfolio/models/event_model.dart';
+import 'package:portfolio/models/contact.dart';
+import 'package:portfolio/models/event.dart';
 import 'package:portfolio/modules/about_module/local_widgets/about_section.dart';
 import 'package:portfolio/modules/about_module/local_widgets/events_section.dart';
 import 'package:portfolio/utils/responsive.dart';
@@ -11,67 +11,67 @@ import 'package:portfolio/utils/url.dart';
 class AboutPage extends StatelessWidget {
   const AboutPage({Key? key}) : super(key: key);
 
-  final List<ContactModel> _contacts = const <ContactModel>[
-    ContactModel(
+  final List<Contact> _contacts = const <Contact>[
+    Contact(
       urlKey: UrlKey.email,
       iconData: LineIcons.envelope,
       detail: '1213terry@naver.com',
     ),
-    ContactModel(
+    Contact(
       urlKey: UrlKey.github,
       iconData: LineIcons.github,
       detail: 'https://github.com/terry1213',
     ),
-    ContactModel(
+    Contact(
       urlKey: UrlKey.blog,
       iconData: LineIcons.bloggerB,
       detail: 'https://terry1213.github.io/categories/',
     ),
   ];
-  final List<EventModel> _educations = const <EventModel>[
-    EventModel(
+  final List<Event> _educations = const <Event>[
+    Event(
       period: '2012.02-2015.02',
       detail: '새음 기독 대안학교',
     ),
-    EventModel(
+    Event(
       period: '2015.02-2021.02',
       detail: '한동대학교 컴퓨터공학',
     ),
   ];
-  final List<EventModel> _careers = const <EventModel>[
-    EventModel(
+  final List<Event> _careers = const <Event>[
+    Event(
       period: '2020.12-2021.02',
       detail: 'HEM Pharma / Flutter 개발자',
     ),
-    EventModel(
+    Event(
       period: '2021.02-2021.08',
       detail: '소프트웨어팩토리 / Flutter 개발자',
     ),
-    EventModel(
+    Event(
       period: '2021.11-현재        ',
       detail: '자이냅스 / Flutter 개발자',
     ),
   ];
-  final List<EventModel> _projects = const <EventModel>[
-    EventModel(
+  final List<Event> _projects = const <Event>[
+    Event(
       period: '2020.07',
       detail: "음악 공유 어플 '아지트' 개발(Swift)",
     ),
-    EventModel(
+    Event(
       period: '2020.11',
       detail: "영어 복습 어플 '오답노트' 개발(Flutter)",
     ),
-    EventModel(
+    Event(
       period: '2021.09',
       detail: '개인 포트폴리오 사이트 개발(Flutter Web)',
     ),
   ];
-  final List<EventModel> _certificates = const <EventModel>[
-    EventModel(
+  final List<Event> _certificates = const <Event>[
+    Event(
       period: '2020.05',
       detail: '토익 875점',
     ),
-    EventModel(
+    Event(
       period: '2020.08',
       detail: '코더스하이 iOS 어플리케이션 캠프 최우수상',
     ),

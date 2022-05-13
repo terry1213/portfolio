@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/utils/url.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ContactModel {
-  const ContactModel({
+class Contact {
+  const Contact({
     required this.urlKey,
     required this.iconData,
     required this.detail,

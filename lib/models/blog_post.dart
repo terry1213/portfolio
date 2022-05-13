@@ -1,17 +1,17 @@
 import 'package:portfolio/utils/url.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class PostModel {
-  const PostModel({
+class BlogPost {
+  const BlogPost({
     required this.title,
-    required this.body,
+    required this.detail,
     required this.image,
     required this.urlKey1,
     required this.urlKey2,
   });
 
   final String title;
-  final String body;
+  final String detail;
   final String image;
   final UrlKey urlKey1;
   final UrlKey urlKey2;

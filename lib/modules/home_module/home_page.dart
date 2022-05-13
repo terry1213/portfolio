@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/global_widgets/image_with_animated_opacity.dart';
-import 'package:portfolio/models/contact_model.dart';
+import 'package:portfolio/models/contact.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/utils/url.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  final List<ContactModel> _contacts = const <ContactModel>[
-    ContactModel(
+  final List<Contact> _contacts = const <Contact>[
+    Contact(
       urlKey: UrlKey.email,
       iconData: LineIcons.envelope,
       detail: 'Email',
     ),
-    ContactModel(
+    Contact(
       urlKey: UrlKey.linkedin,
       iconData: LineIcons.linkedin,
       detail: 'LinkedIn',
     ),
-    ContactModel(
+    Contact(
       urlKey: UrlKey.blog,
       iconData: LineIcons.blogger,
       detail: 'Blog',
     ),
-    ContactModel(
+    Contact(
       urlKey: UrlKey.github,
       iconData: LineIcons.githubSquare,
       detail: 'Github',

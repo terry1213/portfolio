@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/models/post_model.dart';
+import 'package:portfolio/models/blog_post.dart';
 
 import '../../../global_widgets/image_with_animated_opacity.dart';
 
@@ -9,7 +9,7 @@ class PostSection extends StatelessWidget {
     required this.post,
   }) : super(key: key);
 
-  final PostModel post;
+  final BlogPost post;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class PostSection extends StatelessWidget {
             const SizedBox(height: 10),
             Expanded(
               child: SingleChildScrollView(
-                child: Text(post.body),
+                child: Text(post.detail),
               ),
             ),
             Align(

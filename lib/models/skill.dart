@@ -1,5 +1,5 @@
-class SkillModel {
-  const SkillModel({
+class Skill {
+  const Skill({
     required this.name,
     required this.detail,
   });

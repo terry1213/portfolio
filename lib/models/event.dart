@@ -1,5 +1,5 @@
-class EventModel {
-  const EventModel({
+class Event {
+  const Event({
     required this.period,
     required this.detail,
   });

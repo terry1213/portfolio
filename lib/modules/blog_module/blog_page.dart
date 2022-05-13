@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/models/post_model.dart';
+import 'package:portfolio/models/blog_post.dart';
 import 'package:portfolio/modules/blog_module/blog_controller.dart';
 import 'package:portfolio/modules/blog_module/local_widgets/double_post_section.dart';
 import 'package:portfolio/modules/blog_module/local_widgets/post_section.dart';
@@ -11,19 +11,19 @@ import 'package:portfolio/utils/url.dart';
 class BlogPage extends GetView<BlogController> {
   const BlogPage({Key? key}) : super(key: key);
 
-  final List<PostModel> _posts = const <PostModel>[
-    PostModel(
+  final List<BlogPost> _blogPosts = const <BlogPost>[
+    BlogPost(
       title: 'Widget of the Week',
-      body: "Flutter 공식 유튜브 채널에서는 일주일마다 특정 위젯에 대해서 설명해주는 'Widget of the Week'"
+      detail: "Flutter 공식 유튜브 채널에서는 일주일마다 특정 위젯에 대해서 설명해주는 'Widget of the Week'"
           " 영상 시리즈를 제공하고 있습니다.\n 'Widget of the Week' 영상의 내용을 정리할 뿐만 아니라, 각"
           ' 위젯에 대한 공식 문서도 참고하여 위젯의 사용법과 여러 설명들 또한 기록하고 있습니다.',
       image: 'assets/blog/widget_of_the_week.png',
       urlKey1: UrlKey.widgetOfTheWeekLast,
       urlKey2: UrlKey.widgetOfTheWeekTag,
     ),
-    PostModel(
+    BlogPost(
       title: 'Flutter/Dart Document',
-      body: 'Flutter와 Dart는 공식 문서를 다양한 부분에 대하여 상세하게 제공합니다. 특히나'
+      detail: 'Flutter와 Dart는 공식 문서를 다양한 부분에 대하여 상세하게 제공합니다. 특히나'
           ' Flutter와 Dart는 정보를 얻을 수 있는 곳이 적기 때문에 공식 문서가 매우 중요하다고 생각합니다.\n'
           '그래서 궁금한 부분이 있다면 주로 공식 문서를 찾아서 공부하고, 읽은 문서의 내용을 한국어로 정리하여 업로드하고'
           ' 있습니다.',
@@ -31,35 +31,35 @@ class BlogPage extends GetView<BlogController> {
       urlKey1: UrlKey.flutterDartDocumentLast,
       urlKey2: UrlKey.flutterDartDocumentTag,
     ),
-    PostModel(
+    BlogPost(
       title: 'Decoding Flutter',
-      body: 'Flutter 공식 유튜브 채널에서는 개발자들이 헷갈려하는 개념이나 궁금해하는 점들에 대해서 설명해주는 영상 시리즈를'
+      detail: 'Flutter 공식 유튜브 채널에서는 개발자들이 헷갈려하는 개념이나 궁금해하는 점들에 대해서 설명해주는 영상 시리즈를'
           ' 제공하고 있습니다.\n영상 주제 자체가 개념을 잘 세울 수 있게 해주는 주제이고, 일반 사용자 입장에서는 잘 알 수'
           ' 없는 내부 로직까지 설명해주기 때문에 모든 영상을 정리하고 있습니다.',
       image: 'assets/blog/decoding_flutter.jpeg',
       urlKey1: UrlKey.decodingFlutterLast,
       urlKey2: UrlKey.decodingFlutterTag,
     ),
-    PostModel(
+    BlogPost(
       title: 'State Management',
-      body: "Flutter에서 다양한 방법으로 상태 관리를 할 수 있습니다. 그 중 'GetX', 'Provider',"
+      detail: "Flutter에서 다양한 방법으로 상태 관리를 할 수 있습니다. 그 중 'GetX', 'Provider',"
           " 'bloc'을 실무에서 사용해 봤으며, 'GetX', 'Provider'는 직접 사용법과 설명을 블로그에"
           ' 정리했습니다.',
       image: 'assets/blog/state_management.png',
       urlKey1: UrlKey.stateManagementGetx,
       urlKey2: UrlKey.stateManagementProvider,
     ),
-    PostModel(
+    BlogPost(
       title: 'Algorithm',
-      body: "알고리즘적 사고 향상을 위해 '백준'과 '프로그래머스'에서 50개 이상의 다양한 프로그래밍 문제를 풀어봤습니다. 풀어본"
+      detail: "알고리즘적 사고 향상을 위해 '백준'과 '프로그래머스'에서 50개 이상의 다양한 프로그래밍 문제를 풀어봤습니다. 풀어본"
           ' 문제들 중 일부에 대해서 접근 방식과 풀이 과정을 정리해서 올리고 있습니다.',
       image: 'assets/blog/algorithm.png',
       urlKey1: UrlKey.algorithmLast,
       urlKey2: UrlKey.algorithmTag,
     ),
-    PostModel(
+    BlogPost(
       title: 'Error',
-      body: '개발자로서 에러가 발생했을 때 해결하기에만 급급하지 말아야겠다고 다짐했습니다. 해결법만 외워서는 발전이 없기'
+      detail: '개발자로서 에러가 발생했을 때 해결하기에만 급급하지 말아야겠다고 다짐했습니다. 해결법만 외워서는 발전이 없기'
           ' 때문입니다. \n그래서 복잡한 에러를 마주칠 때마다 해당 에러가 발생하게 된 원인을 함께 공부하고 이를 블로그에'
           ' 기록하고 있습니다.',
       image: 'assets/blog/error.png',
@@ -78,23 +78,23 @@ class BlogPage extends GetView<BlogController> {
             ? screenSize.width / 10
             : screenSize.width / 13;
     final List<Widget> _carouselItems = screenSize.width < 1050
-        ? _posts
+        ? _blogPosts
             .map(
-              (PostModel post) => PostSection(
+              (BlogPost post) => PostSection(
                 post: post,
               ),
             )
             .toList()
-        : Iterable<int>.generate(((_posts.length) / 2).floor())
+        : Iterable<int>.generate(((_blogPosts.length) / 2).floor())
             .toList()
             .map(
               (int i) => DoublePostSection(
-                post1: _posts[2 * i],
-                post2: _posts[2 * i + 1],
+                post1: _blogPosts[2 * i],
+                post2: _blogPosts[2 * i + 1],
               ),
             )
             .toList();
-    final List<int> carouselIndexes = Iterable<int>.generate(_posts.length)
+    final List<int> carouselIndexes = Iterable<int>.generate(_blogPosts.length)
         .toList()
         .sublist(0, screenSize.width < 1050 ? 6 : 3);
     return Padding(

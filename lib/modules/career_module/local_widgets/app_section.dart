@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:portfolio/models/app_model.dart';
+import 'package:portfolio/models/app.dart';
 
 class AppSection extends StatelessWidget {
   const AppSection({Key? key, required this.app}) : super(key: key);
 
-  final AppModel app;
+  final App app;
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +82,7 @@ class AppSection extends StatelessWidget {
                           ),
                           Flexible(
                             child: Text(
-                              app.works[index].main,
+                              app.works[index],
                               style: Theme.of(context).textTheme.bodyText2,
                             ),
                           ),

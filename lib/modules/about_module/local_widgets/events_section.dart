@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/models/event_model.dart';
+import 'package:portfolio/models/event.dart';
 
 class EventsSection extends StatelessWidget {
   const EventsSection({Key? key, required this.title, required this.events})
       : super(key: key);
 
   final String title;
-  final List<EventModel> events;
+  final List<Event> events;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class EventsSection extends StatelessWidget {
           ] +
           events
               .map(
-                (EventModel about) => Row(
+                (Event about) => Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(about.period),

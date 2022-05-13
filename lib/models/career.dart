@@ -1,7 +1,7 @@
-import 'package:portfolio/models/app_model.dart';
+import 'package:portfolio/models/app.dart';
 
-class CareerModel {
-  const CareerModel({
+class Career {
+  const Career({
     required this.company,
     required this.period,
     required this.position,
@@ -11,5 +11,5 @@ class CareerModel {
   final String company;
   final String period;
   final String position;
-  final List<AppModel> apps;
+  final List<App> apps;
 }
