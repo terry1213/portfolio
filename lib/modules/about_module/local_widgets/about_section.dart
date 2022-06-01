@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/models/contact_model.dart';
-import 'package:portfolio/utils/url.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({Key? key, required this.contacts}) : super(key: key);
@@ -27,7 +26,7 @@ class AboutSection extends StatelessWidget {
           contacts
               .map(
                 (ContactModel contact) => InkWell(
-                  onTap: () => launchUrlByKey(contact.urlKey),
+                  onTap: contact.openUrl,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[

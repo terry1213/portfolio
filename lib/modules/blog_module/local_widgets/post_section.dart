@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/models/post_model.dart';
-import 'package:portfolio/utils/url.dart';
 
 import '../../../global_widgets/image_with_animated_opacity.dart';
 
@@ -53,7 +52,7 @@ class PostSection extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: TextButton.icon(
-                onPressed: () => launchUrlByKey(post.urlKey1),
+                onPressed: post.openFirstUrl,
                 icon: const Icon(Icons.launch),
                 label: Text(
                   post.title != 'State Management' ? '최근 게시글' : 'GetX 게시글',
@@ -63,7 +62,7 @@ class PostSection extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: TextButton.icon(
-                onPressed: () => launchUrlByKey(post.urlKey2),
+                onPressed: post.openSecondUrl,
                 icon: const Icon(Icons.launch),
                 label: Text(
                   post.title != 'State Management' ? '전체 게시글' : 'Provider 게시글',
