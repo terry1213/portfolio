@@ -1,5 +1,5 @@
 import 'package:portfolio/utils/url.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class App {
   const App({
@@ -17,12 +17,12 @@ class App {
   final UrlKey googlePlayStoreLink;
 
   Future<void> openAppStoreUrl() async =>
-      await canLaunch(urls[appStoreLink] ?? '')
-          ? await launch(urls[appStoreLink] ?? '')
+      await canLaunchUrlString(urls[appStoreLink]!)
+          ? await launchUrlString(urls[appStoreLink] ?? '')
           : throw 'Could not launch ${urls[appStoreLink]}';
 
   Future<void> openGooglePlayStoreUrl() async =>
-      await canLaunch(urls[googlePlayStoreLink] ?? '')
-          ? await launch(urls[googlePlayStoreLink] ?? '')
+      await canLaunchUrlString(urls[googlePlayStoreLink]!)
+          ? await launchUrlString(urls[googlePlayStoreLink]!)
           : throw 'Could not launch ${urls[googlePlayStoreLink]}';
 }

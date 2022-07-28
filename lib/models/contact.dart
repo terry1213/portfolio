@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/url.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class Contact {
   const Contact({
@@ -13,7 +13,7 @@ class Contact {
   final IconData iconData;
   final String detail;
 
-  Future<void> openUrl() async => await canLaunch(urls[urlKey] ?? '')
-      ? await launch(urls[urlKey] ?? '')
+  Future<void> openUrl() async => await canLaunchUrlString(urls[urlKey] ?? '')
+      ? await launchUrlString(urls[urlKey] ?? '')
       : throw 'Could not launch ${urls[urlKey]}';
 }

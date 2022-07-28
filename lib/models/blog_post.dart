@@ -1,5 +1,5 @@
 import 'package:portfolio/utils/url.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class BlogPost {
   const BlogPost({
@@ -16,11 +16,11 @@ class BlogPost {
   final UrlKey urlKey1;
   final UrlKey urlKey2;
 
-  Future<void> openFirstUrl() async => await canLaunch(urls[urlKey1] ?? '')
-      ? await launch(urls[urlKey1] ?? '')
+  Future<void> openFirstUrl() async => await canLaunchUrlString(urls[urlKey1]!)
+      ? await launchUrlString(urls[urlKey1]!)
       : throw 'Could not launch ${urls[urlKey1]}';
 
-  Future<void> openSecondUrl() async => await canLaunch(urls[urlKey2] ?? '')
-      ? await launch(urls[urlKey2] ?? '')
+  Future<void> openSecondUrl() async => await canLaunchUrlString(urls[urlKey2]!)
+      ? await launchUrlString(urls[urlKey2]!)
       : throw 'Could not launch ${urls[urlKey2]}';
 }
