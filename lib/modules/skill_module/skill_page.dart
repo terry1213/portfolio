@@ -109,7 +109,7 @@ class SkillPage extends StatelessWidget {
                             int rodIndex,
                           ) {
                             return BarTooltipItem(
-                              rod.y.toString(),
+                              rod.toY.toString(),
                               Theme.of(context)
                                   .textTheme
                                   .bodyText2!
@@ -120,38 +120,49 @@ class SkillPage extends StatelessWidget {
                       ),
                       titlesData: FlTitlesData(
                         show: true,
-                        bottomTitles: SideTitles(
-                          showTitles: true,
-                          getTextStyles: (BuildContext context, double value) =>
-                              Theme.of(context).textTheme.bodyText2!.copyWith(
-                                    color: Theme.of(context).iconTheme.color,
-                                  ),
-                          margin: 20,
-                          getTitles: (double value) =>
+                        bottomTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: true,
+                            reservedSize: 30,
+                            getTitlesWidget: (double value, _) => Text(
                               skillsOfChart[value.toInt()],
-                        ),
-                        leftTitles: SideTitles(
-                          showTitles: true,
-                          getTextStyles: (BuildContext context, double value) =>
-                              Theme.of(context).textTheme.bodyText2!.copyWith(
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText2
+                                  ?.copyWith(
                                     color: Theme.of(context).iconTheme.color,
                                   ),
-                          margin: 20,
-                          reservedSize: 30,
-                          getTitles: (double value) {
-                            if (value == 0) {
-                              return '0';
-                            } else if (value == 50) {
-                              return '50';
-                            } else if (value == 100) {
-                              return '100';
-                            } else {
-                              return '';
-                            }
-                          },
+                            ),
+                          ),
                         ),
-                        topTitles: SideTitles(showTitles: false),
-                        rightTitles: SideTitles(showTitles: false),
+                        leftTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: true,
+                            reservedSize: 30,
+                            getTitlesWidget: (double value, _) {
+                              if (value == 0 || value == 50 || value == 100) {
+                                return Text(
+                                  value.toString(),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyText2
+                                      ?.copyWith(
+                                        color:
+                                            Theme.of(context).iconTheme.color,
+                                      ),
+                                );
+                              } else {
+                                return const Text('');
+                              }
+                            },
+                          ),
+                        ),
+                        topTitles: AxisTitles(
+                          sideTitles: SideTitles(showTitles: false),
+                        ),
+                        rightTitles: AxisTitles(
+                          sideTitles: SideTitles(showTitles: false),
+                        ),
                       ),
                       borderData: FlBorderData(
                         show: false,
@@ -276,10 +287,8 @@ class SkillPage extends StatelessWidget {
       x: x,
       barRods: <BarChartRodData>[
         BarChartRodData(
-          y: y,
-          colors: <Color>[
-            Theme.of(context).dividerColor,
-          ],
+          toY: y,
+          color: Theme.of(context).dividerColor,
           width: 30,
           borderRadius: const BorderRadius.all(Radius.circular(8)),
         ),

@@ -2,7 +2,7 @@ name: portfolio
 description: A new Flutter project.
 
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -10,17 +10,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  animated_text_kit: ^4.2.1
-  carousel_slider: ^4.0.0
-  cupertino_icons: ^1.0.4
+  animated_text_kit: ^4.2.2
+  carousel_slider: ^4.1.1
+  cupertino_icons: ^1.0.5
   easy_dynamic_theme: ^2.2.0
-  fl_chart: ^0.41.0
-  get: ^4.6.1
+  fl_chart: ^0.55.0
+  get: ^4.6.5
   line_icons: ^2.0.1
-  scrollable_positioned_list: ^0.2.3
+  scrollable_positioned_list: ^0.3.2
   timelines: ^0.1.0
-  universal_html: ^2.0.8
-  url_launcher: ^6.0.18
+  url_launcher: ^6.1.5
   url_strategy: ^0.2.0
 
 dev_dependencies:
