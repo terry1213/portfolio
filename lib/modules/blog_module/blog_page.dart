@@ -33,7 +33,8 @@ class BlogPage extends GetView<BlogController> {
     ),
     BlogPost(
       title: 'Decoding Flutter',
-      detail: 'Flutter 공식 유튜브 채널에서는 개발자들이 헷갈려하는 개념이나 궁금해하는 점들에 대해서 설명해주는 영상 시리즈를'
+      detail:
+          'Flutter 공식 유튜브 채널에서는 개발자들이 헷갈려하는 개념이나 궁금해하는 점들에 대해서 설명해주는 영상 시리즈를'
           ' 제공하고 있습니다.\n영상 주제 자체가 개념을 잘 세울 수 있게 해주는 주제이고, 일반 사용자 입장에서는 잘 알 수'
           ' 없는 내부 로직까지 설명해주기 때문에 모든 영상을 정리하고 있습니다.',
       image: 'assets/blog/decoding_flutter.jpeg',
@@ -51,7 +52,8 @@ class BlogPage extends GetView<BlogController> {
     ),
     BlogPost(
       title: 'Algorithm',
-      detail: "알고리즘적 사고 향상을 위해 '백준'과 '프로그래머스'에서 50개 이상의 다양한 프로그래밍 문제를 풀어봤습니다. 풀어본"
+      detail:
+          "알고리즘적 사고 향상을 위해 '백준'과 '프로그래머스'에서 50개 이상의 다양한 프로그래밍 문제를 풀어봤습니다. 풀어본"
           ' 문제들 중 일부에 대해서 접근 방식과 풀이 과정을 정리해서 올리고 있습니다.',
       image: 'assets/blog/algorithm.png',
       urlKey1: UrlKey.algorithmLast,
