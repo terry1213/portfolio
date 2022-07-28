@@ -22,7 +22,7 @@ class App {
           : throw 'Could not launch ${urls[appStoreLink]}';
 
   Future<void> openGooglePlayStoreUrl() async =>
-      await canLaunch(urls[appStoreLink] ?? '')
-          ? await launch(urls[appStoreLink] ?? '')
-          : throw 'Could not launch ${urls[appStoreLink]}';
+      await canLaunch(urls[googlePlayStoreLink] ?? '')
+          ? await launch(urls[googlePlayStoreLink] ?? '')
+          : throw 'Could not launch ${urls[googlePlayStoreLink]}';
 }
