@@ -113,9 +113,8 @@ class BlogPage extends GetView<BlogController> {
           ),
           const SizedBox(height: 50),
           const Text('배운 것을 잊어버리지 않기 위해 기록하기 시작했습니다.'),
-          const Text('주로 Flutter에 대한 글을 작성하지만 그외에 다양한 내용도 다루고 있습니다.'),
-          const Text(
-              '일주일에 1~2회씩 일년 넘게 꾸준히 기록하고 있으며, 현재까지 약 130개의 게시글을 작성했습니다.'),
+          const Text('주로 Flutter에 대한 글을 작성하지만 그 외에 다양한 내용도 다루고 있습니다.'),
+          const Text('현재까지 약 130개의 게시글을 작성했습니다.'),
           const SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
