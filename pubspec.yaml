@@ -14,10 +14,10 @@ dependencies:
   carousel_slider: ^4.1.1
   cupertino_icons: ^1.0.5
   easy_dynamic_theme: ^2.2.0
-  fl_chart: ^0.55.0
+  fl_chart: ^0.55.1
   get: ^4.6.5
   line_icons: ^2.0.1
-  scrollable_positioned_list: ^0.3.2
+  scrollable_positioned_list: ^0.3.4
   timelines: ^0.1.0
   url_launcher: ^6.1.5
   url_strategy: ^0.2.0
@@ -25,7 +25,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.4
+  flutter_lints: ^2.0.1
 
 flutter:
   uses-material-design: true
