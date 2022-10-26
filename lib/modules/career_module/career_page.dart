@@ -25,8 +25,6 @@ class CareerPage extends StatelessWidget {
             '모든 외부 패키지 최신 버전으로 업데이트, Xcode 12로의 migration',
             'dartdoc을 활용한 인수인계서 작성',
           ],
-          appStoreLink: UrlKey.hemA,
-          googlePlayStoreLink: UrlKey.hemG,
         ),
       ],
     ),
@@ -59,8 +57,6 @@ class CareerPage extends StatelessWidget {
             'Figma를 활용하여 디자이너와 협업',
             '잠재적 사용자인 네패스 직원 약 100명 대상으로 베타 테스트 진행',
           ],
-          appStoreLink: UrlKey.life337A,
-          googlePlayStoreLink: UrlKey.life337G,
         ),
         App(
           name: '함성: 함께 성경 읽기',

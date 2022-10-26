@@ -6,15 +6,15 @@ class App {
     required this.name,
     required this.detail,
     required this.works,
-    required this.appStoreLink,
-    required this.googlePlayStoreLink,
+    this.appStoreLink,
+    this.googlePlayStoreLink,
   });
 
   final String name;
   final String detail;
   final List<String> works;
-  final UrlKey appStoreLink;
-  final UrlKey googlePlayStoreLink;
+  final UrlKey? appStoreLink;
+  final UrlKey? googlePlayStoreLink;
 
   Future<void> openAppStoreUrl() async =>
       await canLaunchUrlString(urls[appStoreLink]!)

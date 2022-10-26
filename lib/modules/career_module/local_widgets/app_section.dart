@@ -26,24 +26,28 @@ class AppSection extends StatelessWidget {
                     ),
               ),
               const SizedBox(width: 5),
-              IconButton(
-                constraints: const BoxConstraints(),
-                icon: const Icon(LineIcons.apple),
-                iconSize: 30,
-                onPressed: app.openAppStoreUrl,
-                padding: EdgeInsets.zero,
-                splashRadius: 15,
-                tooltip: '앱스토어',
-              ),
-              IconButton(
-                constraints: const BoxConstraints(),
-                icon: const Icon(LineIcons.android),
-                iconSize: 30,
-                onPressed: app.openGooglePlayStoreUrl,
-                padding: EdgeInsets.zero,
-                splashRadius: 15,
-                tooltip: '구글 플레이 스토어',
-              ),
+              app.appStoreLink == null
+                  ? const SizedBox()
+                  : IconButton(
+                      constraints: const BoxConstraints(),
+                      icon: const Icon(LineIcons.apple),
+                      iconSize: 30,
+                      onPressed: app.openAppStoreUrl,
+                      padding: EdgeInsets.zero,
+                      splashRadius: 15,
+                      tooltip: '앱스토어',
+                    ),
+              app.googlePlayStoreLink == null
+                  ? const SizedBox()
+                  : IconButton(
+                      constraints: const BoxConstraints(),
+                      icon: const Icon(LineIcons.android),
+                      iconSize: 30,
+                      onPressed: app.openGooglePlayStoreUrl,
+                      padding: EdgeInsets.zero,
+                      splashRadius: 15,
+                      tooltip: '구글 플레이 스토어',
+                    ),
             ],
           ),
           Padding(
