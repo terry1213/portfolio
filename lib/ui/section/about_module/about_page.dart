@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:portfolio/global_widgets/horizontal_dashed_divider.dart';
 import 'package:portfolio/models/contact.dart';
 import 'package:portfolio/models/event.dart';
-import 'package:portfolio/modules/about_module/local_widgets/about_section.dart';
-import 'package:portfolio/modules/about_module/local_widgets/events_section.dart';
+import 'package:portfolio/ui/component/horizontal_dashed_divider.dart';
+import 'package:portfolio/ui/section/about_module/local_widgets/about_section.dart';
+import 'package:portfolio/ui/section/about_module/local_widgets/events_section.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/utils/url.dart';
 

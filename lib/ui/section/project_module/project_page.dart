@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/modules/project_module/local_widgets/project_section.dart';
-import 'package:portfolio/modules/project_module/project_controller.dart';
+import 'package:portfolio/ui/section/project_module/local_widgets/project_section.dart';
+import 'package:portfolio/ui/section/project_module/project_controller.dart';
 import 'package:portfolio/utils/responsive.dart';
 
 class ProjectPage extends GetView<ProjectController> {

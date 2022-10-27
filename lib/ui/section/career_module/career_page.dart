@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/models/app.dart';
 import 'package:portfolio/models/career.dart';
-import 'package:portfolio/modules/career_module/local_widgets/app_section.dart';
+import 'package:portfolio/ui/section/career_module/local_widgets/app_section.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/utils/url.dart';
 import 'package:timelines/timelines.dart';

@@ -2,9 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/models/blog_post.dart';
-import 'package:portfolio/modules/blog_module/blog_controller.dart';
-import 'package:portfolio/modules/blog_module/local_widgets/double_post_section.dart';
-import 'package:portfolio/modules/blog_module/local_widgets/post_section.dart';
+import 'package:portfolio/ui/section/blog_module/blog_controller.dart';
+import 'package:portfolio/ui/section/blog_module/local_widgets/double_post_section.dart';
+import 'package:portfolio/ui/section/blog_module/local_widgets/post_section.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/utils/url.dart';
 

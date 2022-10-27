@@ -1,10 +1,10 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/modules/blog_module/blog_controller.dart';
-import 'package:portfolio/modules/project_module/project_controller.dart';
-import 'package:portfolio/modules/template_module/template_page.dart';
-import 'package:portfolio/utils/theme_data.dart';
+import 'package:portfolio/config/theme_data.dart';
+import 'package:portfolio/ui/section/blog_module/blog_controller.dart';
+import 'package:portfolio/ui/section/project_module/project_controller.dart';
+import 'package:portfolio/ui/section/template_module/template_page.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 void main() {
@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: '임연우 Flutter Developer',
       debugShowCheckedModeBanner: false,
-      darkTheme: darkThemeData,
-      theme: lightThemeData,
+      darkTheme: PortfolioThemes.darkThemeData,
+      theme: PortfolioThemes.lightThemeData,
       themeMode: EasyDynamicTheme.of(context).themeMode!,
       home: const TemplatePage(),
       initialBinding: BindingsBuilder(

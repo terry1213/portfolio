@@ -1,9 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/modules/project_module/project_page.dart';
+import 'package:portfolio/ui/section/project_module/project_page.dart';
 
-import '../../../global_widgets/horizontal_dashed_divider.dart';
-import '../../../global_widgets/image_with_animated_opacity.dart';
+import '../../../component/horizontal_dashed_divider.dart';
+import '../../../component/image_with_animated_opacity.dart';
 
 class ProjectSection extends StatelessWidget {
   const ProjectSection({

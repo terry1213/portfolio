@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/models/blog_post.dart';
 
-import '../../../global_widgets/image_with_animated_opacity.dart';
+import '../../../component/image_with_animated_opacity.dart';
 
 class PostSection extends StatelessWidget {
   const PostSection({

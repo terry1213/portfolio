@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/global_widgets/horizontal_dashed_divider.dart';
+import 'package:portfolio/ui/component/horizontal_dashed_divider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class CustomDrawer extends StatelessWidget {
