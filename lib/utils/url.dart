@@ -67,7 +67,7 @@ const Map<UrlKey, String> urls = <UrlKey, String>{
   UrlKey.flutterDartDocumentLast:
       'https://terry1213.github.io/flutter/flutter-document-hot-reload/',
   UrlKey.decodingFlutterTag:
-      'https://terry1213.github.io/tags/#decodingflutter',
+      'https://terry1213.github.io/flutter/flutter-decoding-flutter-adaptive-vs-responsive-vs/',
   UrlKey.decodingFlutterLast:
       'https://terry1213.github.io/flutter/flutter-decoding-flutter-viewinsets-viewpadding-padding/',
   UrlKey.stateManagementGetx:
