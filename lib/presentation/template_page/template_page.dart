@@ -5,6 +5,7 @@ import 'package:portfolio/presentation/career_page/career_page.dart';
 import 'package:portfolio/presentation/home_page/home_page.dart';
 import 'package:portfolio/presentation/project_page/project_page.dart';
 import 'package:portfolio/presentation/skill_page/skill_page.dart';
+import 'package:portfolio/routes.dart';
 import 'package:portfolio/ui/component/horizontal_dashed_divider.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';

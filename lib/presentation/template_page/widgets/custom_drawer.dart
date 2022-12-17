@@ -45,7 +45,7 @@ class CustomDrawer extends StatelessWidget {
                     index: 0,
                     duration: const Duration(milliseconds: 500),
                   );
-                  print('화면 팝');
+                  PortfolioNavigator.pop();
                 },
               ),
               const HorizontalDashedDivider(
@@ -64,7 +64,7 @@ class CustomDrawer extends StatelessWidget {
                     index: 1,
                     duration: const Duration(milliseconds: 500),
                   );
-                  print('화면 팝');
+                  PortfolioNavigator.pop();
                 },
               ),
               const HorizontalDashedDivider(
@@ -83,7 +83,7 @@ class CustomDrawer extends StatelessWidget {
                     index: 2,
                     duration: const Duration(milliseconds: 500),
                   );
-                  print('화면 팝');
+                  PortfolioNavigator.pop();
                 },
               ),
               const HorizontalDashedDivider(
@@ -102,7 +102,7 @@ class CustomDrawer extends StatelessWidget {
                     index: 3,
                     duration: const Duration(milliseconds: 500),
                   );
-                  print('화면 팝');
+                  PortfolioNavigator.pop();
                 },
               ),
               const HorizontalDashedDivider(
@@ -121,7 +121,7 @@ class CustomDrawer extends StatelessWidget {
                     index: 4,
                     duration: const Duration(milliseconds: 500),
                   );
-                  print('화면 팝');
+                  PortfolioNavigator.pop();
                 },
               ),
               const HorizontalDashedDivider(
@@ -140,7 +140,7 @@ class CustomDrawer extends StatelessWidget {
                     index: 5,
                     duration: const Duration(milliseconds: 500),
                   );
-                  print('화면 팝');
+                  PortfolioNavigator.pop();
                 },
               ),
             ],
