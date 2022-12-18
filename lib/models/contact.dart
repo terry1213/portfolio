@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/utils/url.dart';
+import 'package:portfolio/config/url.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class Contact {
