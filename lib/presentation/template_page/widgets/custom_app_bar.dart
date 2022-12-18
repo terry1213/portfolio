@@ -134,9 +134,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
               IconButton(
                 icon: const Icon(Icons.brightness_6),
                 color: Colors.white,
-                onPressed: () {
-                  print('다크 모드 변경');
-                },
+                onPressed: context.read<ThemeController>().toggleDarkMode,
               ),
             ],
           ),
