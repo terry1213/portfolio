@@ -1,7 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/component/horizontal_dashed_divider.dart';
 import 'package:portfolio/models/skill.dart';
-import 'package:portfolio/ui/component/horizontal_dashed_divider.dart';
 import 'package:portfolio/utils/responsive.dart';
 
 part 'widgets/skill_section.dart';

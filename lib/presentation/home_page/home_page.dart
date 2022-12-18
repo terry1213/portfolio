@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:portfolio/component/image_with_animated_opacity.dart';
 import 'package:portfolio/config/url.dart';
 import 'package:portfolio/models/contact.dart';
-import 'package:portfolio/ui/component/image_with_animated_opacity.dart';
 import 'package:portfolio/utils/responsive.dart';
 
 class HomePage extends StatelessWidget {

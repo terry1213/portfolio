@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:portfolio/component/horizontal_dashed_divider.dart';
 import 'package:portfolio/config/url.dart';
 import 'package:portfolio/models/contact.dart';
 import 'package:portfolio/models/event.dart';
-import 'package:portfolio/ui/component/horizontal_dashed_divider.dart';
 import 'package:portfolio/utils/responsive.dart';
 
 part 'widgets/about_section.dart';

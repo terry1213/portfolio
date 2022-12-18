@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/component/horizontal_dashed_divider.dart';
 import 'package:portfolio/core/controller/theme_controller.dart';
 import 'package:portfolio/presentation/about_page/about_page.dart';
 import 'package:portfolio/presentation/blog_page/blog_page.dart';
@@ -7,7 +8,6 @@ import 'package:portfolio/presentation/home_page/home_page.dart';
 import 'package:portfolio/presentation/project_page/project_page.dart';
 import 'package:portfolio/presentation/skill_page/skill_page.dart';
 import 'package:portfolio/routes.dart';
-import 'package:portfolio/ui/component/horizontal_dashed_divider.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';

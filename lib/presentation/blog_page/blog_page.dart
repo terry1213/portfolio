@@ -1,9 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/component/image_with_animated_opacity.dart';
 import 'package:portfolio/config/url.dart';
 import 'package:portfolio/models/blog_post.dart';
 import 'package:portfolio/presentation/blog_page/blog_page_controller.dart';
-import 'package:portfolio/ui/component/image_with_animated_opacity.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:provider/provider.dart';
 

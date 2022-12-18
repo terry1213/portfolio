@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/component/horizontal_dashed_divider.dart';
+import 'package:portfolio/component/image_with_animated_opacity.dart';
 import 'package:portfolio/presentation/project_page/project_page_controller.dart';
-import 'package:portfolio/ui/component/horizontal_dashed_divider.dart';
-import 'package:portfolio/ui/component/image_with_animated_opacity.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:provider/provider.dart';
 
