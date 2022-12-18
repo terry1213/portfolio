@@ -12,14 +12,14 @@ dependencies:
   flutter:
     sdk: flutter
   animated_text_kit: ^4.2.2
-  carousel_slider: ^4.1.1
+  carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.5
-  fl_chart: ^0.55.1
+  fl_chart: ^0.55.2
   line_icons: ^2.0.1
   provider: ^6.0.5
-  scrollable_positioned_list: ^0.3.4
+  scrollable_positioned_list: ^0.3.5
   timelines: ^0.1.0
-  url_launcher: ^6.1.5
+  url_launcher: ^6.1.7
   url_strategy: ^0.2.0
 
 dev_dependencies:
