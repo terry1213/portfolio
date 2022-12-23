@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/controller/theme_controller.dart';
 import 'package:portfolio/core/shared_preferences.dart';
-import 'package:portfolio/presentation/template_page/template_page.dart';
+import 'package:portfolio/presentation/home_page/home_page.dart';
 import 'package:portfolio/routes.dart';
 import 'package:provider/provider.dart';
 import 'package:url_strategy/url_strategy.dart';
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       initialRoute: PortfolioNavigator.initialRoute,
       onGenerateRoute: PortfolioNavigator.onGenerateRoute,
       theme: context.watch<ThemeController>().themeData,
-      home: const TemplatePage(),
+      home: const HomePage(),
     );
   }
 }

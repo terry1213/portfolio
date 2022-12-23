@@ -27,7 +27,7 @@ class _PostSection extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(4)),
                 ),
                 child: ImageWithAnimatedOpacity(
-                  image: AssetImage(post.image),
+                  image: NetworkImage(post.image),
                   fit: BoxFit.fill,
                 ),
               ),

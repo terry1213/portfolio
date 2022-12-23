@@ -6,7 +6,7 @@ class _ProjectSection extends StatelessWidget {
     required this.project,
   }) : super(key: key);
 
-  final ProjectModel project;
+  final Project project;
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,7 @@ class _ProjectImageSection extends StatelessWidget {
     required this.project,
   }) : super(key: key);
 
-  final ProjectModel project;
+  final Project project;
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +101,7 @@ class _ProjectImageSection extends StatelessWidget {
                     clipBehavior: Clip.hardEdge,
                     decoration: const BoxDecoration(),
                     child: ImageWithAnimatedOpacity(
-                      image: AssetImage(image),
+                      image: NetworkImage(image),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -120,7 +120,7 @@ class _ProjectExplainSection extends StatelessWidget {
     required this.project,
   }) : super(key: key);
 
-  final ProjectModel project;
+  final Project project;
 
   @override
   Widget build(BuildContext context) {
@@ -171,26 +171,6 @@ class _ProjectExplainSection extends StatelessWidget {
             ),
           ],
         ),
-        // Row(
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   children: <Widget>[
-        //     const Padding(
-        //       padding: EdgeInsets.symmetric(
-        //         horizontal: 5,
-        //         vertical: 12,
-        //       ),
-        //       child: Icon(
-        //         Icons.circle,
-        //         size: 15,
-        //       ),
-        //     ),
-        //     const Text('어플 소개:'),
-        //     const SizedBox(width: 10),
-        //     Expanded(
-        //       child: Text(project.link),
-        //     ),
-        //   ],
-        // ),
       ],
     );
   }
