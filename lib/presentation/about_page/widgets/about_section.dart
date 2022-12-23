@@ -1,9 +1,7 @@
 part of '../about_page.dart';
 
 class _AboutSection extends StatelessWidget {
-  const _AboutSection({Key? key, required this.contacts}) : super(key: key);
-
-  final List<Contact> contacts;
+  const _AboutSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,36 +10,65 @@ class _AboutSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-            Text(
-              '임연우 / Yeonwoo Lim',
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                    color: Colors.lightBlue,
-                    fontWeight: FontWeight.bold,
-                  ),
-            ),
-            const Text('1996.12.13 / 경기도 구리시'),
-            const SizedBox(height: 30),
-          ] +
-          contacts
-              .map(
-                (Contact contact) => InkWell(
-                  onTap: contact.openUrl,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 5),
-                        child: Icon(contact.iconData, size: 23),
-                      ),
-                      const SizedBox(width: 5),
-                      Flexible(
-                        child: Text(contact.detail),
-                      ),
-                    ],
-                  ),
-                ),
-              )
-              .toList(),
+        Text(
+          '임연우 / Yeonwoo Lim',
+          style: Theme.of(context).textTheme.headline5!.copyWith(
+                color: Colors.lightBlue,
+                fontWeight: FontWeight.bold,
+              ),
+        ),
+        const Text('1996.12.13 / 경기도 구리시'),
+        const SizedBox(height: 30),
+        InkWell(
+          onTap: () => launchUrlString('mailto:1213terry@naver.com'),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const <Widget>[
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child: Icon(LineIcons.envelope, size: 23),
+              ),
+              SizedBox(width: 5),
+              Flexible(
+                child: Text('1213terry@naver.com'),
+              ),
+            ],
+          ),
+        ),
+        InkWell(
+          onTap: () => launchUrlString('https://github.com/terry1213'),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const <Widget>[
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child: Icon(LineIcons.github, size: 23),
+              ),
+              SizedBox(width: 5),
+              Flexible(
+                child: Text('https://github.com/terry1213'),
+              ),
+            ],
+          ),
+        ),
+        InkWell(
+          onTap: () =>
+              launchUrlString('https://terry1213.github.io/categories/'),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const <Widget>[
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 5),
+                child: Icon(LineIcons.bloggerB, size: 23),
+              ),
+              SizedBox(width: 5),
+              Flexible(
+                child: Text('https://terry1213.github.io/categories/'),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
