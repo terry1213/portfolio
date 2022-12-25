@@ -8,7 +8,7 @@ class SkillGithubDataSource {
   final NetworkManager _networkManager = NetworkManager();
 
   final String _readAllSkillsUrl =
-      'https://gist.githubusercontent.com/terry1213/43658decb89487721c7f9437705f468d/raw/f3c6eef5d70d23f012aa4f5f8f1b771a03018e41/skills.json';
+      'https://gist.githubusercontent.com/terry1213/43658decb89487721c7f9437705f468d/raw/skills.json';
 
   Future<List<SkillModel>> readAllSkills() async {
     final Response response = await _networkManager.get(_readAllSkillsUrl);
