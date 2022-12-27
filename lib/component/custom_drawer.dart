@@ -37,6 +37,7 @@ class _CustomDrawer extends StatelessWidget {
                 ),
                 onTap: () {
                   PortfolioNavigator.pop();
+                  PortfolioNavigator.replaceWith(Routes.home);
                 },
               ),
               const HorizontalDashedDivider(
@@ -52,6 +53,7 @@ class _CustomDrawer extends StatelessWidget {
                 ),
                 onTap: () {
                   PortfolioNavigator.pop();
+                  PortfolioNavigator.replaceWith(Routes.about);
                 },
               ),
               const HorizontalDashedDivider(
@@ -67,6 +69,7 @@ class _CustomDrawer extends StatelessWidget {
                 ),
                 onTap: () {
                   PortfolioNavigator.pop();
+                  PortfolioNavigator.replaceWith(Routes.skill);
                 },
               ),
               const HorizontalDashedDivider(
@@ -82,6 +85,7 @@ class _CustomDrawer extends StatelessWidget {
                 ),
                 onTap: () {
                   PortfolioNavigator.pop();
+                  PortfolioNavigator.replaceWith(Routes.career);
                 },
               ),
               const HorizontalDashedDivider(
@@ -97,6 +101,7 @@ class _CustomDrawer extends StatelessWidget {
                 ),
                 onTap: () {
                   PortfolioNavigator.pop();
+                  PortfolioNavigator.replaceWith(Routes.project);
                 },
               ),
               const HorizontalDashedDivider(
@@ -112,6 +117,7 @@ class _CustomDrawer extends StatelessWidget {
                 ),
                 onTap: () {
                   PortfolioNavigator.pop();
+                  PortfolioNavigator.replaceWith(Routes.blog);
                 },
               ),
             ],
