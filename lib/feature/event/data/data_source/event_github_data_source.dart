@@ -1,14 +1,14 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:portfolio/config/constants.dart';
 import 'package:portfolio/core/network.dart';
 import 'package:portfolio/feature/event/data/model/event_model.dart';
 
 class EventGithubDataSource {
   final NetworkManager _networkManager = NetworkManager();
 
-  final String _readAllEventsUrl =
-      'https://gist.githubusercontent.com/terry1213/43658decb89487721c7f9437705f468d/raw/events.json';
+  final String _readAllEventsUrl = '${baseUrl}events.json';
 
   Future<List<EventModel>> readAllEvents() async {
     final Response response = await _networkManager.get(_readAllEventsUrl);
