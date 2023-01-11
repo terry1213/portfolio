@@ -1,14 +1,14 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:portfolio/config/constants.dart';
 import 'package:portfolio/core/network.dart';
 import 'package:portfolio/feature/blog_post/data/model/blog_post_model.dart';
 
 class BlogPostGithubDataSource {
   final NetworkManager _networkManager = NetworkManager();
 
-  final String _readAllBlogPostsUrl =
-      'https://gist.githubusercontent.com/terry1213/43658decb89487721c7f9437705f468d/raw/blog_posts.json';
+  final String _readAllBlogPostsUrl = '${baseUrl}blog_posts.json';
 
   Future<List<BlogPostModel>> readAllBlogPosts() async {
     final Response response = await _networkManager.get(_readAllBlogPostsUrl);
