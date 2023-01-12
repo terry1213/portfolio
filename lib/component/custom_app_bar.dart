@@ -57,20 +57,6 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                   fixedSize:
                       MaterialStateProperty.all(const Size.fromWidth(80)),
                 ),
-                onPressed: () => PortfolioNavigator.replaceWith(Routes.skill),
-                child: Text(
-                  'Skill',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2!
-                      .copyWith(color: Colors.white),
-                ),
-              ),
-              TextButton(
-                style: ButtonStyle(
-                  fixedSize:
-                      MaterialStateProperty.all(const Size.fromWidth(80)),
-                ),
                 onPressed: () => PortfolioNavigator.replaceWith(Routes.career),
                 child: Text(
                   'Career',
@@ -102,6 +88,20 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 onPressed: () => PortfolioNavigator.replaceWith(Routes.blog),
                 child: Text(
                   'Blog',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2!
+                      .copyWith(color: Colors.white),
+                ),
+              ),
+              TextButton(
+                style: ButtonStyle(
+                  fixedSize:
+                      MaterialStateProperty.all(const Size.fromWidth(70)),
+                ),
+                onPressed: () => PortfolioNavigator.replaceWith(Routes.skill),
+                child: Text(
+                  'Skill',
                   style: Theme.of(context)
                       .textTheme
                       .bodyText2!
