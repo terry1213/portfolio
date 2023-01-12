@@ -61,22 +61,6 @@ class _CustomDrawer extends StatelessWidget {
               ),
               InkWell(
                 child: Text(
-                  'Skill',
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-                onTap: () {
-                  PortfolioNavigator.pop();
-                  PortfolioNavigator.replaceWith(Routes.skill);
-                },
-              ),
-              const HorizontalDashedDivider(
-                space: 25,
-              ),
-              InkWell(
-                child: Text(
                   'Career',
                   style: Theme.of(context).textTheme.headline6!.copyWith(
                         color: Colors.white,
@@ -118,6 +102,22 @@ class _CustomDrawer extends StatelessWidget {
                 onTap: () {
                   PortfolioNavigator.pop();
                   PortfolioNavigator.replaceWith(Routes.blog);
+                },
+              ),
+              const HorizontalDashedDivider(
+                space: 25,
+              ),
+              InkWell(
+                child: Text(
+                  'Skill',
+                  style: Theme.of(context).textTheme.headline6!.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
+                onTap: () {
+                  PortfolioNavigator.pop();
+                  PortfolioNavigator.replaceWith(Routes.skill);
                 },
               ),
             ],
