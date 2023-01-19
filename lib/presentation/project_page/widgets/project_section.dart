@@ -99,7 +99,9 @@ class _ProjectImageSection extends StatelessWidget {
                   aspectRatio: 16 / 12,
                   child: Container(
                     clipBehavior: Clip.hardEdge,
-                    decoration: const BoxDecoration(),
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(4)),
+                    ),
                     child: ImageWithAnimatedOpacity(
                       image: NetworkImage(image),
                       fit: BoxFit.fill,
