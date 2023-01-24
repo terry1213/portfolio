@@ -14,7 +14,6 @@ class ProjectPageController extends ChangeNotifier {
   ProjectPageState projectPageState = ProjectPageState.initial();
 
   List<Project> get projects => projectPageState.projects;
-  int get carouselCurrentIndex => projectPageState.carouselCurrentIndex;
 
   Future<void> readAllProjects() async {
     projectPageState = projectPageState.whenLoading();
@@ -22,12 +21,6 @@ class ProjectPageController extends ChangeNotifier {
         await ReadAllProjectsUseCase(_projectRepository)
             .execute(const ReadAllProjectsParam());
     projectPageState = projectPageState.whenLoaded(projects: projects);
-    notifyListeners();
-  }
-
-  void changeCurrentIndex(int nextIndex) {
-    projectPageState =
-        projectPageState.whenCarouselMoved(carouselNextIndex: nextIndex);
     notifyListeners();
   }
 }
