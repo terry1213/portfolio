@@ -56,36 +56,6 @@ class ProjectPage extends StatelessWidget {
                   const SizedBox(
                     height: 50,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: carouselIndexes.map((int i) {
-                      return IconButton(
-                        constraints: const BoxConstraints(),
-                        padding: EdgeInsets.zero,
-                        icon: Consumer<ProjectPageController>(
-                          builder: (
-                            BuildContext context,
-                            ProjectPageController projectPageController,
-                            Widget? child,
-                          ) {
-                            final int currentIndex = screenSize.width >= 1050 &&
-                                    projectPageController.carouselCurrentIndex >
-                                        2
-                                ? projectPageController.carouselCurrentIndex % 3
-                                : projectPageController.carouselCurrentIndex;
-                            return Icon(
-                              Icons.circle,
-                              color: currentIndex == i
-                                  ? Theme.of(context).selectedRowColor
-                                  : Theme.of(context).unselectedWidgetColor,
-                              size: 18,
-                            );
-                          },
-                        ),
-                        onPressed: () => carouselController.animateToPage(i),
-                      );
-                    }).toList(),
-                  ),
                   const SizedBox(height: 20),
                   Consumer<ProjectPageController>(
                     builder: (
@@ -93,21 +63,8 @@ class ProjectPage extends StatelessWidget {
                       ProjectPageController projectPageController,
                       Widget? child,
                     ) {
-                      return CarouselSlider(
-                        options: CarouselOptions(
-                          initialPage:
-                              projectPageController.carouselCurrentIndex,
-                          onPageChanged:
-                              (int index, CarouselPageChangedReason reason) {
-                            projectPageController.changeCurrentIndex(index);
-                          },
-                          viewportFraction: 1,
-                          aspectRatio: screenSize.width < 1050
-                              ? 16 / 18 * (screenSize.width / 1050)
-                              : (screenSize.width < 1300 ? 16 / 10 : 16 / 8),
-                        ),
-                        carouselController: carouselController,
-                        items: projectPageController.projects
+                      return Column(
+                        children: projectPageController.projects
                             .map(
                               (Project project) => Builder(
                                 builder: (BuildContext context) {
