@@ -21,6 +21,7 @@ class AppSection extends StatelessWidget {
                 app.name,
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(
                       fontWeight: FontWeight.bold,
+                      color: Colors.lightBlue,
                     ),
               ),
               const SizedBox(width: 5),
@@ -64,33 +65,69 @@ class AppSection extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: List<Widget>.generate(
-                app.works.length,
+                app.sections.length,
                 (int index) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          const Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 5,
-                              vertical: 12,
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 25),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                            Text(
+                              app.sections[index].detail,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText2
+                                  ?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
-                            child: Icon(
-                              Icons.circle,
-                              size: 15,
+                            Padding(
+                              padding: const EdgeInsets.only(left: 3),
+                              child: Text(
+                                app.sections[index].period,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText2
+                                    ?.copyWith(
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                              ),
                             ),
+                          ] +
+                          List<Widget>.generate(
+                            app.sections[index].works.length,
+                            (int index2) {
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      const Padding(
+                                        padding:
+                                            EdgeInsets.fromLTRB(15, 15, 10, 0),
+                                        child: Icon(
+                                          Icons.circle,
+                                          size: 8,
+                                        ),
+                                      ),
+                                      Flexible(
+                                        child: Text(
+                                          app.sections[index].works[index2],
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyText2,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              );
+                            },
                           ),
-                          Flexible(
-                            child: Text(
-                              app.works[index],
-                              style: Theme.of(context).textTheme.bodyText2,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                    ),
                   );
                 },
               ),
