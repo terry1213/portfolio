@@ -1,17 +1,18 @@
+import 'package:portfolio/feature/career/domain/entity/section.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class App {
   const App({
     required this.name,
     required this.detail,
-    required this.works,
+    required this.sections,
     this.appStoreLink,
     this.googlePlayStoreLink,
   });
 
   final String name;
   final String detail;
-  final List<String> works;
+  final List<Section> sections;
   final String? appStoreLink;
   final String? googlePlayStoreLink;
 
