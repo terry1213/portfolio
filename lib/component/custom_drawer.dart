@@ -27,13 +27,17 @@ class _CustomDrawer extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              InkWell(
-                child: Text(
-                  'Home',
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
+              GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                child: SizedBox(
+                  width: double.maxFinite,
+                  child: Text(
+                    'Home',
+                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
                 ),
                 onTap: () {
                   PortfolioNavigator.pop();
@@ -43,13 +47,17 @@ class _CustomDrawer extends StatelessWidget {
               const HorizontalDashedDivider(
                 space: 25,
               ),
-              InkWell(
-                child: Text(
-                  'About',
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
+              GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                child: SizedBox(
+                  width: double.maxFinite,
+                  child: Text(
+                    'About',
+                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
                 ),
                 onTap: () {
                   PortfolioNavigator.pop();
@@ -59,13 +67,17 @@ class _CustomDrawer extends StatelessWidget {
               const HorizontalDashedDivider(
                 space: 25,
               ),
-              InkWell(
-                child: Text(
-                  'Career',
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
+              GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                child: SizedBox(
+                  width: double.maxFinite,
+                  child: Text(
+                    'Career',
+                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
                 ),
                 onTap: () {
                   PortfolioNavigator.pop();
@@ -75,13 +87,17 @@ class _CustomDrawer extends StatelessWidget {
               const HorizontalDashedDivider(
                 space: 25,
               ),
-              InkWell(
-                child: Text(
-                  'Project',
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
+              GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                child: SizedBox(
+                  width: double.maxFinite,
+                  child: Text(
+                    'Project',
+                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
                 ),
                 onTap: () {
                   PortfolioNavigator.pop();
@@ -91,13 +107,17 @@ class _CustomDrawer extends StatelessWidget {
               const HorizontalDashedDivider(
                 space: 25,
               ),
-              InkWell(
-                child: Text(
-                  'Blog',
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
+              GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                child: SizedBox(
+                  width: double.maxFinite,
+                  child: Text(
+                    'Blog',
+                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
                 ),
                 onTap: () {
                   PortfolioNavigator.pop();
@@ -107,13 +127,17 @@ class _CustomDrawer extends StatelessWidget {
               const HorizontalDashedDivider(
                 space: 25,
               ),
-              InkWell(
-                child: Text(
-                  'Skill',
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
+              GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                child: SizedBox(
+                  width: double.maxFinite,
+                  child: Text(
+                    'Skill',
+                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
                 ),
                 onTap: () {
                   PortfolioNavigator.pop();
