@@ -17,7 +17,7 @@ class CareerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     final double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
-        ? screenSize.width / 7
+        ? screenSize.width / 4
         : ResponsiveWidget.isMediumScreen(context)
             ? screenSize.width / 10
             : screenSize.width / 13;
@@ -51,8 +51,7 @@ class CareerPage extends StatelessWidget {
                   const SizedBox(height: 50),
                   FixedTimeline.tileBuilder(
                     theme: TimelineThemeData(
-                      nodePosition:
-                          ResponsiveWidget.isSmallScreen(context) ? 0.0 : 0.5,
+                      nodePosition: 0.0,
                       color: Theme.of(context).dividerColor,
                       indicatorTheme: const IndicatorThemeData(
                         position: 0,
@@ -63,9 +62,7 @@ class CareerPage extends StatelessWidget {
                       ),
                     ),
                     builder: TimelineTileBuilder.connected(
-                      contentsAlign: ResponsiveWidget.isSmallScreen(context)
-                          ? ContentsAlign.basic
-                          : ContentsAlign.alternating,
+                      contentsAlign: ContentsAlign.basic,
                       connectionDirection: ConnectionDirection.before,
                       itemCount: careerPageController.careers.length + 1,
                       contentsBuilder: (_, int index) {
