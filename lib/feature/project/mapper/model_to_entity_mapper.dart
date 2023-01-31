@@ -6,7 +6,6 @@ extension ProjectModelExt on ProjectModel {
         title: title,
         period: period,
         team: team,
-        role: role,
         detail: detail,
         function: function,
         techStack: techStack,

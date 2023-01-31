@@ -3,7 +3,6 @@ class Project {
     required this.title,
     required this.period,
     required this.team,
-    required this.role,
     required this.detail,
     required this.function,
     required this.techStack,
@@ -15,7 +14,6 @@ class Project {
   final String title;
   final String period;
   final String team;
-  final String role;
   final String detail;
   final String function;
   final String techStack;
