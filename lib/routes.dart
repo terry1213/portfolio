@@ -100,6 +100,9 @@ class PortfolioNavigator {
     }
   }
 
+  static bool compareWithCurrentRoute(BuildContext context, {required Routes route}) =>
+      ModalRoute.of(context)?.settings.name == _Paths._pathMap[route];
+
   static Future? push<T>(Routes route, {T? arguments}) =>
       state?.pushNamed(_Paths.of(route), arguments: arguments);
 
