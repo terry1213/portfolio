@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/component/horizontal_dashed_divider.dart';
 import 'package:portfolio/component/image_with_animated_opacity.dart';
@@ -16,10 +15,9 @@ class ProjectPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CarouselController carouselController = CarouselController();
     final Size screenSize = MediaQuery.of(context).size;
     final double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
-        ? screenSize.width / 7
+        ? (screenSize.width - 1000) / 2
         : ResponsiveWidget.isMediumScreen(context)
             ? screenSize.width / 10
             : screenSize.width / 13;
@@ -68,8 +66,11 @@ class ProjectPage extends StatelessWidget {
                             .map(
                               (Project project) => Builder(
                                 builder: (BuildContext context) {
-                                  return _ProjectSection(
-                                    project: project,
+                                  return Padding(
+                                    padding: const EdgeInsets.only(bottom: 40),
+                                    child: _ProjectSection(
+                                      project: project,
+                                    ),
                                   );
                                 },
                               ),
