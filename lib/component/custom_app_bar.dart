@@ -32,10 +32,13 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 onPressed: () => PortfolioNavigator.replaceWith(Routes.home),
                 child: Text(
                   'Home',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2!
-                      .copyWith(color: Colors.white),
+                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                          color: PortfolioNavigator.compareWithCurrentRoute(
+                        context,
+                        route: Routes.home,
+                      )
+                              ? Colors.white
+                              : Colors.grey),
                 ),
               ),
               TextButton(
@@ -46,10 +49,13 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 onPressed: () => PortfolioNavigator.replaceWith(Routes.about),
                 child: Text(
                   'About',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2!
-                      .copyWith(color: Colors.white),
+                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                          color: PortfolioNavigator.compareWithCurrentRoute(
+                        context,
+                        route: Routes.about,
+                      )
+                              ? Colors.white
+                              : Colors.grey),
                 ),
               ),
               TextButton(
@@ -60,10 +66,13 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 onPressed: () => PortfolioNavigator.replaceWith(Routes.career),
                 child: Text(
                   'Career',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2!
-                      .copyWith(color: Colors.white),
+                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                          color: PortfolioNavigator.compareWithCurrentRoute(
+                        context,
+                        route: Routes.career,
+                      )
+                              ? Colors.white
+                              : Colors.grey),
                 ),
               ),
               TextButton(
@@ -74,10 +83,13 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 onPressed: () => PortfolioNavigator.replaceWith(Routes.project),
                 child: Text(
                   'Project',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2!
-                      .copyWith(color: Colors.white),
+                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                          color: PortfolioNavigator.compareWithCurrentRoute(
+                        context,
+                        route: Routes.project,
+                      )
+                              ? Colors.white
+                              : Colors.grey),
                 ),
               ),
               TextButton(
@@ -88,26 +100,29 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 onPressed: () => PortfolioNavigator.replaceWith(Routes.blog),
                 child: Text(
                   'Blog',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2!
-                      .copyWith(color: Colors.white),
+                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                          color: PortfolioNavigator.compareWithCurrentRoute(
+                        context,
+                        route: Routes.blog,
+                      )
+                              ? Colors.white
+                              : Colors.grey),
                 ),
               ),
-              TextButton(
-                style: ButtonStyle(
-                  fixedSize:
-                      MaterialStateProperty.all(const Size.fromWidth(70)),
-                ),
-                onPressed: () => PortfolioNavigator.replaceWith(Routes.skill),
-                child: Text(
-                  'Skill',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2!
-                      .copyWith(color: Colors.white),
-                ),
-              ),
+              // TextButton(
+              //   style: ButtonStyle(
+              //     fixedSize:
+              //         MaterialStateProperty.all(const Size.fromWidth(70)),
+              //   ),
+              //   onPressed: () => PortfolioNavigator.replaceWith(Routes.skill),
+              //   child: Text(
+              //     'Skill',
+              //     style: Theme.of(context)
+              //         .textTheme
+              //         .bodyText2!
+              //         .copyWith(color: Colors.white),
+              //   ),
+              // ),
               Expanded(
                 child: Container(),
               ),

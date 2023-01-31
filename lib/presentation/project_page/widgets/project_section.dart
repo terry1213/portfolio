@@ -10,13 +10,12 @@ class _ProjectSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          vertical: 30.0,
-          horizontal: 60.0,
+          vertical: 40.0,
+          horizontal: 80.0,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

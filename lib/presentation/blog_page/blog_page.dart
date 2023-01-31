@@ -76,7 +76,8 @@ class BlogPage extends StatelessWidget {
                   const SizedBox(height: 50),
                   const Text('배운 것을 잊어버리지 않기 위해 기록하기 시작했습니다.'),
                   const Text('주로 Flutter에 대한 글을 작성하지만 그 외에 다양한 내용도 다루고 있습니다.'),
-                  const Text('현재까지 약 130개의 게시글을 작성했습니다.'),
+                  const Text(
+                      '현재까지 약 130개의 게시글을 작성했으며, 하루 평균 300회, 총 100,000회 이상의 방문자 수를 달성했습니다.'),
                   const SizedBox(height: 40),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
