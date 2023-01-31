@@ -1,26 +1,35 @@
 class ProjectModel {
   const ProjectModel({
     required this.title,
-    required this.images,
-    required this.link,
+    required this.period,
+    required this.team,
     required this.detail,
     required this.function,
     required this.techStack,
+    required this.git,
+    required this.link,
+    required this.image,
   });
 
   final String title;
-  final List<String> images;
-  final String link;
+  final String period;
+  final String team;
   final String detail;
   final String function;
   final String techStack;
+  final String git;
+  final String link;
+  final String image;
 
   factory ProjectModel.fromMap(Map map) => ProjectModel(
         title: map['title'],
-        images: map['images'].cast<String>(),
-        link: map['link'],
+        period: map['period'],
+        team: map['team'],
         detail: map['detail'],
         function: map['function'],
         techStack: map['techStack'],
+        git: map['git'],
+        link: map['link'],
+        image: map['image'],
       );
 }
