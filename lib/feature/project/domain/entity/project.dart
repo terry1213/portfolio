@@ -1,3 +1,5 @@
+import 'package:url_launcher/url_launcher_string.dart';
+
 class Project {
   const Project({
     required this.title,
@@ -20,4 +22,8 @@ class Project {
   final String git;
   final String link;
   final String image;
+
+  Future<void> openGitUrl() async => await launchUrlString(git);
+
+  Future<void> openLinkUrl() async => await launchUrlString(link);
 }

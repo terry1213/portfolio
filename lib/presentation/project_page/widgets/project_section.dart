@@ -151,7 +151,13 @@ class _ProjectExplainSection extends StatelessWidget {
               const Text('깃링크:'),
               const SizedBox(width: 10),
               Expanded(
-                child: Text(project.git),
+                child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: project.openGitUrl,
+                    child: Text(project.git),
+                  ),
+                ),
               ),
             ],
           ),
@@ -172,7 +178,13 @@ class _ProjectExplainSection extends StatelessWidget {
               const Text('주소:'),
               const SizedBox(width: 10),
               Expanded(
-                child: Text(project.link),
+                child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: project.openLinkUrl,
+                    child: Text(project.link),
+                  ),
+                ),
               ),
             ],
           ),
