@@ -4,7 +4,6 @@ import 'package:portfolio/presentation/blog_page/blog_page.dart';
 import 'package:portfolio/presentation/career_page/career_page.dart';
 import 'package:portfolio/presentation/home_page/home_page.dart';
 import 'package:portfolio/presentation/project_page/project_page.dart';
-import 'package:portfolio/presentation/skill_page/skill_page.dart';
 
 enum Routes {
   about,
@@ -82,14 +81,14 @@ class PortfolioNavigator {
                   Animation<double> secondaryAnimation) =>
               const ProjectPage(),
         );
-      case _Paths.skill:
-        return PageRouteBuilder(
-          settings: settings,
-          transitionDuration: Duration.zero,
-          pageBuilder: (BuildContext context, Animation<double> animation,
-                  Animation<double> secondaryAnimation) =>
-              const SkillPage(),
-        );
+      // case _Paths.skill:
+      //   return PageRouteBuilder(
+      //     settings: settings,
+      //     transitionDuration: Duration.zero,
+      //     pageBuilder: (BuildContext context, Animation<double> animation,
+      //             Animation<double> secondaryAnimation) =>
+      //         const SkillPage(),
+      //   );
       default:
         return PageRouteBuilder(
           settings: settings,
