@@ -19,7 +19,7 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     final double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
-        ? screenSize.width / 7
+        ? (screenSize.width - 1000) / 2
         : ResponsiveWidget.isMediumScreen(context)
             ? screenSize.width / 10
             : screenSize.width / 13;
