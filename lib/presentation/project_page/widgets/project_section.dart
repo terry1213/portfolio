@@ -10,12 +10,22 @@ class _ProjectSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
+        ? 80.0
+        : ResponsiveWidget.isMediumScreen(context)
+            ? 40.0
+            : 20.0;
+    final double verticalPadding = ResponsiveWidget.isLargeScreen(context)
+        ? 40.0
+        : ResponsiveWidget.isMediumScreen(context)
+            ? 20.0
+            : 10.0;
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 40.0,
-          horizontal: 80.0,
+        padding: EdgeInsets.symmetric(
+          vertical: verticalPadding,
+          horizontal: horizontalPadding,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
