@@ -33,7 +33,10 @@ class Template extends StatelessWidget {
             )
           : const _CustomAppBar(),
       body: SingleChildScrollView(
-        child: child,
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: child,
+        ),
       ),
       drawer: const _CustomDrawer(),
       drawerEdgeDragWidth: 0.0,

@@ -12,7 +12,6 @@ dependencies:
   flutter:
     sdk: flutter
   animated_text_kit: ^4.2.2
-  carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.5
   http: ^0.13.5
   line_icons: ^2.0.1

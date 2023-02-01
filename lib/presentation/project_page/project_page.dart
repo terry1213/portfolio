@@ -36,9 +36,6 @@ class ProjectPage extends StatelessWidget {
                     ProjectPageStateStatus.loading) {
               return const SizedBox();
             }
-            final List<int> carouselIndexes =
-                Iterable<int>.generate(projectPageController.projects.length)
-                    .toList();
             return Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: horizontalPadding, vertical: 70),
