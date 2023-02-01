@@ -14,7 +14,6 @@ class BlogPageController extends ChangeNotifier {
   BlogPageState blogPageState = BlogPageState.initial();
 
   List<BlogPost> get blogPosts => blogPageState.blogPosts;
-  int get carouselCurrentIndex => blogPageState.carouselCurrentIndex;
 
   Future<void> readAllBlogPosts() async {
     blogPageState = blogPageState.whenLoading();
@@ -22,12 +21,6 @@ class BlogPageController extends ChangeNotifier {
         await ReadAllBlogPostsUseCase(_blogPostRepository)
             .execute(const ReadAllBlogPostsParam());
     blogPageState = blogPageState.whenLoaded(blogPosts: blogPosts);
-    notifyListeners();
-  }
-
-  void changeCurrentIndex(int nextIndex) {
-    blogPageState =
-        blogPageState.whenCarouselMoved(carouselNextIndex: nextIndex);
     notifyListeners();
   }
 }

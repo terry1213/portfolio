@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/component/image_with_animated_opacity.dart';
 import 'package:portfolio/component/template.dart';
@@ -16,7 +15,6 @@ class BlogPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CarouselController carouselController = CarouselController();
     final Size screenSize = MediaQuery.of(context).size;
     final double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
         ? screenSize.width / 7
@@ -38,7 +36,7 @@ class BlogPage extends StatelessWidget {
                     BlogPageStateStatus.loading) {
               return const SizedBox();
             }
-            final List<Widget> _carouselItems = screenSize.width < 1050
+            final List<Widget> carouselItems = screenSize.width < 1050
                 ? blogPageController.blogPosts
                     .map(
                       (BlogPost post) => _PostSection(
@@ -56,10 +54,6 @@ class BlogPage extends StatelessWidget {
                       ),
                     )
                     .toList();
-            final List<int> carouselIndexes =
-                Iterable<int>.generate(blogPageController.blogPosts.length)
-                    .toList()
-                    .sublist(0, screenSize.width < 1050 ? 6 : 3);
 
             return Padding(
               padding: EdgeInsets.symmetric(
@@ -78,60 +72,34 @@ class BlogPage extends StatelessWidget {
                   const Text('주로 Flutter에 대한 글을 작성하지만 그 외에 다양한 내용도 다루고 있습니다.'),
                   const Text(
                       '현재까지 약 130개의 게시글을 작성했으며, 하루 평균 300회, 총 100,000회 이상의 방문자 수를 달성했습니다.'),
-                  const SizedBox(height: 40),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: carouselIndexes.map((int i) {
-                      final int currentIndex = screenSize.width >= 1050 &&
-                              blogPageController.carouselCurrentIndex > 2
-                          ? blogPageController.carouselCurrentIndex % 3
-                          : blogPageController.carouselCurrentIndex;
-                      return IconButton(
-                        constraints: const BoxConstraints(),
-                        padding: EdgeInsets.zero,
-                        icon: Icon(
-                          Icons.circle,
-                          color: currentIndex == i
-                              ? Theme.of(context).selectedRowColor
-                              : Theme.of(context).unselectedWidgetColor,
-                          size: 18,
-                        ),
-                        onPressed: () => carouselController.animateToPage(i),
-                      );
-                    }).toList(),
-                  ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   SizedBox(
                     width: screenSize.width < 1050
                         ? 500
                         : (screenSize.width < 1300
                             ? screenSize.width * 6 / 7
                             : 1300 * 6 / 7),
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        height: 630,
-                        initialPage: blogPageController.carouselCurrentIndex,
-                        onPageChanged:
-                            (int index, CarouselPageChangedReason reason) =>
-                                blogPageController.changeCurrentIndex(index),
-                        viewportFraction: screenSize.width < 600 ? 1.25 : 1,
+                    child: Column(
+                      children: List<Widget>.generate(
+                        carouselItems.length,
+                        (index) => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Container(
+                            height: 630,
+                            margin: const EdgeInsets.symmetric(
+                              horizontal: 30,
+                            ),
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 10,
+                              horizontal: 20,
+                            ),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: carouselItems[index],
+                          ),
+                        ),
                       ),
-                      carouselController: carouselController,
-                      items: carouselIndexes.map((int i) {
-                        return Container(
-                          margin: const EdgeInsets.symmetric(
-                            horizontal: 30,
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 10,
-                            horizontal: 20,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: _carouselItems[i],
-                        );
-                      }).toList(),
                     ),
                   ),
                 ],
