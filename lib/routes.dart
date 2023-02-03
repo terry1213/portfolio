@@ -11,7 +11,6 @@ enum Routes {
   career,
   home,
   project,
-  skill,
 }
 
 class _Paths {
@@ -20,7 +19,6 @@ class _Paths {
   static const String career = '/career';
   static const String home = '';
   static const String project = '/project';
-  static const String skill = '/skill';
 
   static const Map<Routes, String> _pathMap = {
     Routes.about: _Paths.about,
@@ -28,7 +26,6 @@ class _Paths {
     Routes.career: _Paths.career,
     Routes.home: _Paths.home,
     Routes.project: _Paths.project,
-    Routes.skill: _Paths.skill,
   };
 
   static String of(Routes route) => _pathMap[route] ?? home;
@@ -81,14 +78,6 @@ class PortfolioNavigator {
                   Animation<double> secondaryAnimation) =>
               const ProjectPage(),
         );
-      // case _Paths.skill:
-      //   return PageRouteBuilder(
-      //     settings: settings,
-      //     transitionDuration: Duration.zero,
-      //     pageBuilder: (BuildContext context, Animation<double> animation,
-      //             Animation<double> secondaryAnimation) =>
-      //         const SkillPage(),
-      //   );
       default:
         return PageRouteBuilder(
           settings: settings,

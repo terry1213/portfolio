@@ -109,20 +109,6 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                               : Colors.grey),
                 ),
               ),
-              // TextButton(
-              //   style: ButtonStyle(
-              //     fixedSize:
-              //         MaterialStateProperty.all(const Size.fromWidth(70)),
-              //   ),
-              //   onPressed: () => PortfolioNavigator.replaceWith(Routes.skill),
-              //   child: Text(
-              //     'Skill',
-              //     style: Theme.of(context)
-              //         .textTheme
-              //         .bodyText2!
-              //         .copyWith(color: Colors.white),
-              //   ),
-              // ),
               Expanded(
                 child: Container(),
               ),

@@ -124,26 +124,6 @@ class _CustomDrawer extends StatelessWidget {
                   PortfolioNavigator.replaceWith(Routes.blog);
                 },
               ),
-              // const HorizontalDashedDivider(
-              //   space: 25,
-              // ),
-              // GestureDetector(
-              //   behavior: HitTestBehavior.opaque,
-              //   child: SizedBox(
-              //     width: double.maxFinite,
-              //     child: Text(
-              //       'Skill',
-              //       style: Theme.of(context).textTheme.headline6!.copyWith(
-              //             color: Colors.white,
-              //             fontWeight: FontWeight.bold,
-              //           ),
-              //     ),
-              //   ),
-              //   onTap: () {
-              //     PortfolioNavigator.pop();
-              //     PortfolioNavigator.replaceWith(Routes.skill);
-              //   },
-              // ),
             ],
           ),
         ),
