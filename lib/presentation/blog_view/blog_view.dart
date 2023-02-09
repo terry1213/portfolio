@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/component/image_with_animated_opacity.dart';
 import 'package:portfolio/component/template.dart';
 import 'package:portfolio/feature/blog_post/domain/entity/blog_post.dart';
-import 'package:portfolio/presentation/blog_page/blog_page_controller.dart';
-import 'package:portfolio/presentation/blog_page/blog_page_state.dart';
+import 'package:portfolio/presentation/blog_view/blog_view_model.dart';
+import 'package:portfolio/presentation/blog_view/blog_view_state.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:provider/provider.dart';
 
 part 'widgets/double_post_section.dart';
 part 'widgets/post_section.dart';
 
-class BlogPage extends StatelessWidget {
-  const BlogPage({Key? key}) : super(key: key);
+class BlogView extends StatelessWidget {
+  const BlogView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,21 +23,21 @@ class BlogPage extends StatelessWidget {
             : screenSize.width / 13;
     return Template(
       child: ChangeNotifierProvider(
-        create: (context) => BlogPageController(),
-        child: Consumer<BlogPageController>(
+        create: (context) => BlogViewModel(),
+        child: Consumer<BlogViewModel>(
           builder: (
             BuildContext context,
-            BlogPageController blogPageController,
+            BlogViewModel blogViewModel,
             Widget? child,
           ) {
-            if (blogPageController.blogPageState.blogPageStateStatus ==
-                    BlogPageStateStatus.initial ||
-                blogPageController.blogPageState.blogPageStateStatus ==
-                    BlogPageStateStatus.loading) {
+            if (blogViewModel.blogViewState.blogViewStateStatus ==
+                    BlogViewStateStatus.initial ||
+                blogViewModel.blogViewState.blogViewStateStatus ==
+                    BlogViewStateStatus.loading) {
               return const SizedBox();
             }
             final List<Widget> carouselItems = screenSize.width < 1050
-                ? blogPageController.blogPosts
+                ? blogViewModel.blogPosts
                     .map(
                       (BlogPost post) => _PostSection(
                         post: post,
@@ -45,12 +45,12 @@ class BlogPage extends StatelessWidget {
                     )
                     .toList()
                 : Iterable<int>.generate(
-                        ((blogPageController.blogPosts.length) / 2).floor())
+                        ((blogViewModel.blogPosts.length) / 2).floor())
                     .toList()
                     .map(
                       (int i) => _DoublePostSection(
-                        post1: blogPageController.blogPosts[2 * i],
-                        post2: blogPageController.blogPosts[2 * i + 1],
+                        post1: blogViewModel.blogPosts[2 * i],
+                        post2: blogViewModel.blogPosts[2 * i + 1],
                       ),
                     )
                     .toList();

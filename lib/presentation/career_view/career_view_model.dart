@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/feature/career/data/repository/career_repository.dart';
 import 'package:portfolio/feature/career/domain/entity/career.dart';
 import 'package:portfolio/feature/career/domain/usecase/read_all_careers_usecase.dart';
-import 'package:portfolio/presentation/career_page/career_page_state.dart';
+import 'package:portfolio/presentation/career_view/career_view_state.dart';
 
-class CareerPageController extends ChangeNotifier {
-  CareerPageController() {
+class CareerViewModel extends ChangeNotifier {
+  CareerViewModel() {
     readAllCareer();
   }
 
   final CareerRepository _careerRepository = CareerRepository();
 
-  CareerPageState careerPageState = CareerPageState.initial();
+  CareerViewState careerViewState = CareerViewState.initial();
 
-  List<Career> get careers => careerPageState.careers;
+  List<Career> get careers => careerViewState.careers;
 
   Future<void> readAllCareer() async {
-    careerPageState = careerPageState.whenLoading();
+    careerViewState = careerViewState.whenLoading();
     final List<Career> careers = await ReadAllCareersUseCase(_careerRepository)
         .execute(const ReadAllCareersParam());
-    careerPageState = careerPageState.whenLoaded(careers: careers);
+    careerViewState = careerViewState.whenLoaded(careers: careers);
     notifyListeners();
   }
 }

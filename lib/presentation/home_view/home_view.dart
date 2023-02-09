@@ -5,8 +5,8 @@ import 'package:portfolio/component/template.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomeView extends StatelessWidget {
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

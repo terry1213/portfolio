@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/presentation/about_page/about_page.dart';
-import 'package:portfolio/presentation/blog_page/blog_page.dart';
-import 'package:portfolio/presentation/career_page/career_page.dart';
-import 'package:portfolio/presentation/home_page/home_page.dart';
-import 'package:portfolio/presentation/project_page/project_page.dart';
+import 'package:portfolio/presentation/about_view/about_view.dart';
+import 'package:portfolio/presentation/blog_view/blog_view.dart';
+import 'package:portfolio/presentation/career_view/career_view.dart';
+import 'package:portfolio/presentation/home_view/home_view.dart';
+import 'package:portfolio/presentation/project_view/project_view.dart';
 
 enum Routes {
   about,
@@ -44,7 +44,7 @@ class PortfolioNavigator {
           transitionDuration: Duration.zero,
           pageBuilder: (BuildContext context, Animation<double> animation,
                   Animation<double> secondaryAnimation) =>
-              const AboutPage(),
+              const AboutView(),
         );
       case _Paths.blog:
         return PageRouteBuilder(
@@ -52,7 +52,7 @@ class PortfolioNavigator {
           transitionDuration: Duration.zero,
           pageBuilder: (BuildContext context, Animation<double> animation,
                   Animation<double> secondaryAnimation) =>
-              const BlogPage(),
+              const BlogView(),
         );
       case _Paths.career:
         return PageRouteBuilder(
@@ -60,7 +60,7 @@ class PortfolioNavigator {
           transitionDuration: Duration.zero,
           pageBuilder: (BuildContext context, Animation<double> animation,
                   Animation<double> secondaryAnimation) =>
-              const CareerPage(),
+              const CareerView(),
         );
       case _Paths.home:
         return PageRouteBuilder(
@@ -68,7 +68,7 @@ class PortfolioNavigator {
           transitionDuration: Duration.zero,
           pageBuilder: (BuildContext context, Animation<double> animation,
                   Animation<double> secondaryAnimation) =>
-              const HomePage(),
+              const HomeView(),
         );
       case _Paths.project:
         return PageRouteBuilder(
@@ -76,7 +76,7 @@ class PortfolioNavigator {
           transitionDuration: Duration.zero,
           pageBuilder: (BuildContext context, Animation<double> animation,
                   Animation<double> secondaryAnimation) =>
-              const ProjectPage(),
+              const ProjectView(),
         );
       default:
         return PageRouteBuilder(
@@ -84,7 +84,7 @@ class PortfolioNavigator {
           transitionDuration: Duration.zero,
           pageBuilder: (BuildContext context, Animation<double> animation,
                   Animation<double> secondaryAnimation) =>
-              const HomePage(),
+              const HomeView(),
         );
     }
   }

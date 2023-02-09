@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/feature/project/data/repository/project_repository.dart';
 import 'package:portfolio/feature/project/domain/entity/project.dart';
 import 'package:portfolio/feature/project/domain/usecase/read_all_projects_usecase.dart';
-import 'package:portfolio/presentation/project_page/project_page_state.dart';
+import 'package:portfolio/presentation/project_view/project_view_state.dart';
 
-class ProjectPageController extends ChangeNotifier {
-  ProjectPageController() {
+class ProjectViewModel extends ChangeNotifier {
+  ProjectViewModel() {
     readAllProjects();
   }
 
   final ProjectRepository _projectRepository = ProjectRepository();
 
-  ProjectPageState projectPageState = ProjectPageState.initial();
+  ProjectViewState projectViewState = ProjectViewState.initial();
 
-  List<Project> get projects => projectPageState.projects;
+  List<Project> get projects => projectViewState.projects;
 
   Future<void> readAllProjects() async {
-    projectPageState = projectPageState.whenLoading();
+    projectViewState = projectViewState.whenLoading();
     final List<Project> projects =
         await ReadAllProjectsUseCase(_projectRepository)
             .execute(const ReadAllProjectsParam());
-    projectPageState = projectPageState.whenLoaded(projects: projects);
+    projectViewState = projectViewState.whenLoaded(projects: projects);
     notifyListeners();
   }
 }

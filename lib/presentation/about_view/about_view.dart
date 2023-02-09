@@ -3,8 +3,8 @@ import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/component/horizontal_dashed_divider.dart';
 import 'package:portfolio/component/template.dart';
 import 'package:portfolio/feature/event/domain/entity/event.dart';
-import 'package:portfolio/presentation/about_page/about_page_controller.dart';
-import 'package:portfolio/presentation/about_page/about_page_state.dart';
+import 'package:portfolio/presentation/about_view/about_view_model.dart';
+import 'package:portfolio/presentation/about_view/about_view_state.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -12,8 +12,8 @@ import 'package:url_launcher/url_launcher_string.dart';
 part 'widgets/about_section.dart';
 part 'widgets/events_section.dart';
 
-class AboutPage extends StatelessWidget {
-  const AboutPage({Key? key}) : super(key: key);
+class AboutView extends StatelessWidget {
+  const AboutView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,18 +24,18 @@ class AboutPage extends StatelessWidget {
             ? screenSize.width / 10
             : screenSize.width / 13;
     return Template(
-      child: ChangeNotifierProvider<AboutPageController>(
-        create: (_) => AboutPageController(),
-        child: Consumer<AboutPageController>(
+      child: ChangeNotifierProvider<AboutViewModel>(
+        create: (_) => AboutViewModel(),
+        child: Consumer<AboutViewModel>(
           builder: (
             BuildContext context,
-            AboutPageController aboutPageController,
+            AboutViewModel aboutViewModel,
             Widget? child,
           ) {
-            if (aboutPageController.aboutPageState.aboutPageStateStatus ==
-                    AboutPageStateStatus.loading ||
-                aboutPageController.aboutPageState.aboutPageStateStatus ==
-                    AboutPageStateStatus.initial) {
+            if (aboutViewModel.aboutViewState.aboutViewStateStatus ==
+                    AboutViewStateStatus.loading ||
+                aboutViewModel.aboutViewState.aboutViewStateStatus ==
+                    AboutViewStateStatus.initial) {
               return const SizedBox();
             }
             return Padding(
@@ -63,22 +63,22 @@ class AboutPage extends StatelessWidget {
                         const HorizontalDashedDivider(space: 60),
                         _EventsSection(
                           title: 'Education',
-                          events: aboutPageController.educations,
+                          events: aboutViewModel.educations,
                         ),
                         const HorizontalDashedDivider(space: 60),
                         _EventsSection(
                           title: 'Career',
-                          events: aboutPageController.careers,
+                          events: aboutViewModel.careers,
                         ),
                         const HorizontalDashedDivider(space: 60),
                         _EventsSection(
                           title: 'Project',
-                          events: aboutPageController.projects,
+                          events: aboutViewModel.projects,
                         ),
                         const HorizontalDashedDivider(space: 60),
                         _EventsSection(
                           title: 'Certificate',
-                          events: aboutPageController.certificates,
+                          events: aboutViewModel.certificates,
                         ),
                         const HorizontalDashedDivider(space: 60),
                       ],
@@ -103,12 +103,12 @@ class AboutPage extends StatelessWidget {
                                 const HorizontalDashedDivider(space: 80),
                                 _EventsSection(
                                   title: 'Education',
-                                  events: aboutPageController.educations,
+                                  events: aboutViewModel.educations,
                                 ),
                                 const HorizontalDashedDivider(space: 80),
                                 _EventsSection(
                                   title: 'Career',
-                                  events: aboutPageController.careers,
+                                  events: aboutViewModel.careers,
                                 ),
                                 const HorizontalDashedDivider(space: 80),
                               ],
@@ -131,14 +131,14 @@ class AboutPage extends StatelessWidget {
                                 ),
                                 _EventsSection(
                                   title: 'Project',
-                                  events: aboutPageController.projects,
+                                  events: aboutViewModel.projects,
                                 ),
                                 const HorizontalDashedDivider(
                                   space: 80,
                                 ),
                                 _EventsSection(
                                   title: 'Certificate',
-                                  events: aboutPageController.certificates,
+                                  events: aboutViewModel.certificates,
                                 ),
                                 const HorizontalDashedDivider(
                                   space: 80,

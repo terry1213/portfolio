@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/component/template.dart';
 import 'package:portfolio/feature/career/domain/entity/app.dart';
-import 'package:portfolio/presentation/career_page/career_page_controller.dart';
-import 'package:portfolio/presentation/career_page/career_page_state.dart';
+import 'package:portfolio/presentation/career_view/career_view_model.dart';
+import 'package:portfolio/presentation/career_view/career_view_state.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:provider/provider.dart';
 import 'package:timelines/timelines.dart';
 
 part 'widgets/app_section.dart';
 
-class CareerPage extends StatelessWidget {
-  const CareerPage({Key? key}) : super(key: key);
+class CareerView extends StatelessWidget {
+  const CareerView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +22,18 @@ class CareerPage extends StatelessWidget {
             ? screenSize.width / 10
             : screenSize.width / 13;
     return Template(
-      child: ChangeNotifierProvider<CareerPageController>(
-        create: (_) => CareerPageController(),
+      child: ChangeNotifierProvider<CareerViewModel>(
+        create: (_) => CareerViewModel(),
         child: Consumer(
           builder: (
             BuildContext context,
-            CareerPageController careerPageController,
+            CareerViewModel careerViewModel,
             Widget? child,
           ) {
-            if (careerPageController.careerPageState.careerPageStateStatus ==
-                    CareerPageStateStatus.initial ||
-                careerPageController.careerPageState.careerPageStateStatus ==
-                    CareerPageStateStatus.loading) {
+            if (careerViewModel.careerViewState.careerViewStateStatus ==
+                    CareerViewStateStatus.initial ||
+                careerViewModel.careerViewState.careerViewStateStatus ==
+                    CareerViewStateStatus.loading) {
               return const SizedBox();
             }
             return Padding(
@@ -64,9 +64,9 @@ class CareerPage extends StatelessWidget {
                     builder: TimelineTileBuilder.connected(
                       contentsAlign: ContentsAlign.basic,
                       connectionDirection: ConnectionDirection.before,
-                      itemCount: careerPageController.careers.length + 1,
+                      itemCount: careerViewModel.careers.length + 1,
                       contentsBuilder: (_, int index) {
-                        if (index == careerPageController.careers.length) {
+                        if (index == careerViewModel.careers.length) {
                           return null;
                         }
                         return Padding(
@@ -79,8 +79,7 @@ class CareerPage extends StatelessWidget {
                                 Row(
                                   children: <Widget>[
                                     Text(
-                                      careerPageController
-                                          .careers[index].company,
+                                      careerViewModel.careers[index].company,
                                       style: Theme.of(context)
                                           .textTheme
                                           .headline5!
@@ -91,8 +90,7 @@ class CareerPage extends StatelessWidget {
                                     ),
                                     const SizedBox(width: 10),
                                     Text(
-                                      careerPageController
-                                          .careers[index].period,
+                                      careerViewModel.careers[index].period,
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyText2!
@@ -109,8 +107,7 @@ class CareerPage extends StatelessWidget {
                                   mainAxisSize: MainAxisSize.min,
                                   children: <Widget>[
                                     Text(
-                                      careerPageController
-                                          .careers[index].company,
+                                      careerViewModel.careers[index].company,
                                       style: Theme.of(context)
                                           .textTheme
                                           .headline5!
@@ -120,8 +117,7 @@ class CareerPage extends StatelessWidget {
                                           ),
                                     ),
                                     Text(
-                                      careerPageController
-                                          .careers[index].period,
+                                      careerViewModel.careers[index].period,
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyText2!
@@ -133,7 +129,7 @@ class CareerPage extends StatelessWidget {
                                   ],
                                 ),
                               Text(
-                                careerPageController.careers[index].position,
+                                careerViewModel.careers[index].position,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyText2!
@@ -145,11 +141,10 @@ class CareerPage extends StatelessWidget {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: List<AppSection>.generate(
-                                  careerPageController
-                                      .careers[index].apps.length,
+                                  careerViewModel.careers[index].apps.length,
                                   (int index2) {
                                     return AppSection(
-                                      app: careerPageController
+                                      app: careerViewModel
                                           .careers[index].apps[index2],
                                     );
                                   },

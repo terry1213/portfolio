@@ -1,4 +1,4 @@
-part of '../career_page.dart';
+part of '../career_view.dart';
 
 class AppSection extends StatelessWidget {
   const AppSection({Key? key, required this.app}) : super(key: key);
