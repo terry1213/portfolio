@@ -1,4 +1,4 @@
-part of '../about_page.dart';
+part of '../about_view.dart';
 
 class _AboutSection extends StatelessWidget {
   const _AboutSection({Key? key}) : super(key: key);

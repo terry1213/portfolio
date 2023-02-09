@@ -1,4 +1,4 @@
-part of '../project_page.dart';
+part of '../project_view.dart';
 
 class _ProjectSection extends StatelessWidget {
   const _ProjectSection({

@@ -1,4 +1,4 @@
-part of '../blog_page.dart';
+part of '../blog_view.dart';
 
 class _PostSection extends StatelessWidget {
   const _PostSection({

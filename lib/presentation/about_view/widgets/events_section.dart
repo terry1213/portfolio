@@ -1,4 +1,4 @@
-part of '../about_page.dart';
+part of '../about_view.dart';
 
 class _EventsSection extends StatelessWidget {
   const _EventsSection({Key? key, required this.title, required this.events})
