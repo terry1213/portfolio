@@ -20,6 +20,7 @@ class BlogViewModel extends ChangeNotifier {
     final List<BlogPost> blogPosts =
         await ReadAllBlogPostsUseCase(_blogPostRepository)
             .execute(const ReadAllBlogPostsParam());
+    blogPosts.shuffle();
     blogViewState = blogViewState.whenLoaded(blogPosts: blogPosts);
     notifyListeners();
   }
