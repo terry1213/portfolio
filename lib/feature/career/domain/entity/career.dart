@@ -1,15 +1,17 @@
-import 'package:portfolio/feature/career/domain/entity/app.dart';
+import 'package:portfolio/feature/career/domain/entity/section.dart';
 
 class Career {
   const Career({
     required this.company,
     required this.period,
     required this.position,
-    required this.apps,
+    required this.detail,
+    required this.sections,
   });
 
   final String company;
   final String period;
   final String position;
-  final List<App> apps;
+  final String detail;
+  final List<Section> sections;
 }
