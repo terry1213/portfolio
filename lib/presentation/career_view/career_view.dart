@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
 import 'package:portfolio/component/template.dart';
-import 'package:portfolio/feature/career/domain/entity/app.dart';
 import 'package:portfolio/presentation/career_view/career_view_model.dart';
 import 'package:portfolio/presentation/career_view/career_view_state.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:provider/provider.dart';
 import 'package:timelines/timelines.dart';
-
-part 'widgets/app_section.dart';
 
 class CareerView extends StatelessWidget {
   const CareerView({Key? key}) : super(key: key);
@@ -138,16 +134,109 @@ class CareerView extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                     ),
                               ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: List<AppSection>.generate(
-                                  careerViewModel.careers[index].apps.length,
-                                  (int index2) {
-                                    return AppSection(
-                                      app: careerViewModel
-                                          .careers[index].apps[index2],
-                                    );
-                                  },
+                              Text(
+                                careerViewModel.careers[index].detail,
+                                style: Theme.of(context).textTheme.bodyText2,
+                              ),
+                              const SizedBox(height: 20),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 5),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: List<Widget>.generate(
+                                    careerViewModel
+                                        .careers[index].sections.length,
+                                    (int sectionIndex) {
+                                      return Padding(
+                                        padding:
+                                            const EdgeInsets.only(bottom: 25),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: <Widget>[
+                                                Text(
+                                                  careerViewModel
+                                                      .careers[index]
+                                                      .sections[sectionIndex]
+                                                      .detail,
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .bodyText2
+                                                      ?.copyWith(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 3),
+                                                  child: Text(
+                                                    careerViewModel
+                                                        .careers[index]
+                                                        .sections[sectionIndex]
+                                                        .period,
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .bodyText2
+                                                        ?.copyWith(
+                                                          color: Colors.grey,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ] +
+                                              List<Widget>.generate(
+                                                careerViewModel
+                                                    .careers[index]
+                                                    .sections[sectionIndex]
+                                                    .works
+                                                    .length,
+                                                (int workIndex) {
+                                                  return Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: <Widget>[
+                                                      Row(
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: <Widget>[
+                                                          const Padding(
+                                                            padding: EdgeInsets
+                                                                .fromLTRB(15,
+                                                                    15, 10, 0),
+                                                            child: Icon(
+                                                              Icons.circle,
+                                                              size: 8,
+                                                            ),
+                                                          ),
+                                                          Flexible(
+                                                            child: Text(
+                                                              careerViewModel
+                                                                  .careers[
+                                                                      index]
+                                                                  .sections[
+                                                                      sectionIndex]
+                                                                  .works[workIndex],
+                                                              style: Theme.of(
+                                                                      context)
+                                                                  .textTheme
+                                                                  .bodyText2,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
+                                        ),
+                                      );
+                                    },
+                                  ),
                                 ),
                               ),
                             ],
