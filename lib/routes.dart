@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/presentation/about_view/about_view.dart';
-import 'package:portfolio/presentation/blog_view/blog_view.dart';
-import 'package:portfolio/presentation/career_view/career_view.dart';
-import 'package:portfolio/presentation/home_view/home_view.dart';
-import 'package:portfolio/presentation/project_view/project_view.dart';
+import 'package:portfolio/view/about_view/about_view.dart';
+import 'package:portfolio/view/blog_view/blog_view.dart';
+import 'package:portfolio/view/career_view/career_view.dart';
+import 'package:portfolio/view/home_view/home_view.dart';
+import 'package:portfolio/view/project_view/project_view.dart';
 
 enum Routes {
   about,

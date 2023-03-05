@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/component/template.dart';
-import 'package:portfolio/presentation/career_view/career_view_model.dart';
-import 'package:portfolio/presentation/career_view/career_view_state.dart';
 import 'package:portfolio/utils/responsive.dart';
+import 'package:portfolio/view/career_view/career_view_model.dart';
+import 'package:portfolio/view/career_view/career_view_state.dart';
 import 'package:provider/provider.dart';
 import 'package:timelines/timelines.dart';
 

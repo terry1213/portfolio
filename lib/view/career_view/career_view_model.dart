@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/feature/career/data/repository/career_repository.dart';
 import 'package:portfolio/feature/career/domain/entity/career.dart';
 import 'package:portfolio/feature/career/domain/usecase/read_all_careers_usecase.dart';
-import 'package:portfolio/presentation/career_view/career_view_state.dart';
+import 'package:portfolio/view/career_view/career_view_state.dart';
 
 class CareerViewModel extends ChangeNotifier {
   CareerViewModel() {

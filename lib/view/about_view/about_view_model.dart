@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/feature/event/data/repository/event_repository.dart';
 import 'package:portfolio/feature/event/domain/entity/event.dart';
 import 'package:portfolio/feature/event/domain/usecase/read_all_events_usecase.dart';
-import 'package:portfolio/presentation/about_view/about_view_state.dart';
+import 'package:portfolio/view/about_view/about_view_state.dart';
 
 class AboutViewModel extends ChangeNotifier {
   AboutViewModel() {
