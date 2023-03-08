@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/feature/project/data/repository/project_repository.dart';
 import 'package:portfolio/feature/project/domain/entity/project.dart';
 import 'package:portfolio/feature/project/domain/usecase/read_all_projects_usecase.dart';
-import 'package:portfolio/view/project_view/project_view_state.dart';
+import 'package:portfolio/ui/view/project_view/project_view_state.dart';
 
 class ProjectViewModel extends ChangeNotifier {
   ProjectViewModel() {

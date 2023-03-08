@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:portfolio/component/image_with_animated_opacity.dart';
-import 'package:portfolio/component/template.dart';
+import 'package:portfolio/ui/component/image_with_animated_opacity.dart';
+import 'package:portfolio/ui/component/template.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 

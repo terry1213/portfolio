@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/feature/blog_post/data/repository/blog_post_repository.dart';
 import 'package:portfolio/feature/blog_post/domain/entity/blog_post.dart';
 import 'package:portfolio/feature/blog_post/domain/usecase/read_all_blog_posts_usecase.dart';
-import 'package:portfolio/view/blog_view/blog_view_state.dart';
+import 'package:portfolio/ui/view/blog_view/blog_view_state.dart';
 
 class BlogViewModel extends ChangeNotifier {
   BlogViewModel() {

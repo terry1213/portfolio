@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/component/horizontal_dashed_divider.dart';
 import 'package:portfolio/core/controller/theme_controller.dart';
 import 'package:portfolio/routes.dart';
+import 'package:portfolio/ui/component/horizontal_dashed_divider.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:provider/provider.dart';
 

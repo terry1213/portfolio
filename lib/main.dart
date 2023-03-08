@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/core/controller/theme_controller.dart';
 import 'package:portfolio/core/shared_preferences.dart';
 import 'package:portfolio/routes.dart';
-import 'package:portfolio/view/home_view/home_view.dart';
+import 'package:portfolio/ui/view/home_view/home_view.dart';
 import 'package:provider/provider.dart';
 import 'package:url_strategy/url_strategy.dart';
 
