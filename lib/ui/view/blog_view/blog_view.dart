@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/component/image_with_animated_opacity.dart';
-import 'package:portfolio/component/template.dart';
 import 'package:portfolio/feature/blog_post/domain/entity/blog_post.dart';
-import 'package:portfolio/presentation/blog_view/blog_view_model.dart';
-import 'package:portfolio/presentation/blog_view/blog_view_state.dart';
+import 'package:portfolio/ui/component/image_with_animated_opacity.dart';
+import 'package:portfolio/ui/component/template.dart';
+import 'package:portfolio/ui/view/blog_view/blog_view_model.dart';
+import 'package:portfolio/ui/view/blog_view/blog_view_state.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:provider/provider.dart';
 

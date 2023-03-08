@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/component/horizontal_dashed_divider.dart';
-import 'package:portfolio/component/image_with_animated_opacity.dart';
-import 'package:portfolio/component/template.dart';
 import 'package:portfolio/feature/project/domain/entity/project.dart';
-import 'package:portfolio/presentation/project_view/project_view_model.dart';
-import 'package:portfolio/presentation/project_view/project_view_state.dart';
+import 'package:portfolio/ui/component/horizontal_dashed_divider.dart';
+import 'package:portfolio/ui/component/image_with_animated_opacity.dart';
+import 'package:portfolio/ui/component/template.dart';
+import 'package:portfolio/ui/view/project_view/project_view_model.dart';
+import 'package:portfolio/ui/view/project_view/project_view_state.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:provider/provider.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/component/template.dart';
-import 'package:portfolio/presentation/career_view/career_view_model.dart';
-import 'package:portfolio/presentation/career_view/career_view_state.dart';
+import 'package:portfolio/ui/component/template.dart';
+import 'package:portfolio/ui/view/career_view/career_view_model.dart';
+import 'package:portfolio/ui/view/career_view/career_view_state.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:provider/provider.dart';
 import 'package:timelines/timelines.dart';
