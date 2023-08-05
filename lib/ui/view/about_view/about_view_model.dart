@@ -16,12 +16,15 @@ class AboutViewModel extends ChangeNotifier {
   List<Event> get educations => aboutViewState.events
       .where((event) => event.type == EventType.education)
       .toList();
+
   List<Event> get careers => aboutViewState.events
       .where((event) => event.type == EventType.career)
       .toList();
+
   List<Event> get projects => aboutViewState.events
       .where((event) => event.type == EventType.project)
       .toList();
+
   List<Event> get certificates => aboutViewState.events
       .where((event) => event.type == EventType.certificate)
       .toList();
