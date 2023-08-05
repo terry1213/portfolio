@@ -35,7 +35,7 @@ class _PostSection extends StatelessWidget {
             const SizedBox(height: 15),
             Text(
               post.title,
-              style: Theme.of(context).textTheme.headline5!.copyWith(
+              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                     color: Colors.lightBlue,
                     fontWeight: FontWeight.bold,
                   ),

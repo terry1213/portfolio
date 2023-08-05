@@ -1,6 +1,6 @@
 part of 'template.dart';
 
-class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
+class _CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const _CustomAppBar({Key? key}) : super(key: key);
 
   @override
@@ -8,7 +8,7 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     return PreferredSize(
       preferredSize: const Size.fromHeight(80),
       child: Container(
-        color: Theme.of(context).bottomAppBarColor,
+        color: Theme.of(context).bottomAppBarTheme.color,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
@@ -32,7 +32,7 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 onPressed: () => PortfolioNavigator.replaceWith(Routes.home),
                 child: Text(
                   'Home',
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: PortfolioNavigator.compareWithCurrentRoute(
                         context,
                         route: Routes.home,
@@ -49,7 +49,7 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 onPressed: () => PortfolioNavigator.replaceWith(Routes.about),
                 child: Text(
                   'About',
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: PortfolioNavigator.compareWithCurrentRoute(
                         context,
                         route: Routes.about,
@@ -66,7 +66,7 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 onPressed: () => PortfolioNavigator.replaceWith(Routes.career),
                 child: Text(
                   'Career',
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: PortfolioNavigator.compareWithCurrentRoute(
                         context,
                         route: Routes.career,
@@ -83,7 +83,7 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 onPressed: () => PortfolioNavigator.replaceWith(Routes.project),
                 child: Text(
                   'Project',
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: PortfolioNavigator.compareWithCurrentRoute(
                         context,
                         route: Routes.project,
@@ -100,7 +100,7 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 onPressed: () => PortfolioNavigator.replaceWith(Routes.blog),
                 child: Text(
                   'Blog',
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: PortfolioNavigator.compareWithCurrentRoute(
                         context,
                         route: Routes.blog,

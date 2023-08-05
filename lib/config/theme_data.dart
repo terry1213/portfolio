@@ -2,49 +2,49 @@ import 'package:flutter/material.dart';
 
 class PortfolioThemes {
   static const TextTheme textThemeLight = TextTheme(
-    headline1: TextStyle(
+    displayLarge: TextStyle(
       fontFamily: 'NanumPenScript',
       fontWeight: FontWeight.normal,
       fontSize: 96,
       color: Colors.black,
     ),
-    headline2: TextStyle(
+    displayMedium: TextStyle(
       fontFamily: 'NanumPenScript',
       fontWeight: FontWeight.normal,
       fontSize: 60,
       color: Colors.black,
     ),
-    headline3: TextStyle(
+    displaySmall: TextStyle(
       fontFamily: 'NanumPenScript',
       fontWeight: FontWeight.normal,
       fontSize: 48,
       color: Colors.black,
     ),
-    headline4: TextStyle(
+    headlineLarge: TextStyle(
       fontFamily: 'NotoSansKR',
       fontWeight: FontWeight.normal,
       fontSize: 34,
       color: Colors.black,
     ),
-    headline5: TextStyle(
+    headlineMedium: TextStyle(
       fontFamily: 'NotoSansKR',
       fontWeight: FontWeight.normal,
       fontSize: 24,
       color: Colors.black,
     ),
-    headline6: TextStyle(
+    headlineSmall: TextStyle(
       fontFamily: 'NotoSansKR',
       fontWeight: FontWeight.normal,
       fontSize: 20,
       color: Colors.black,
     ),
-    bodyText1: TextStyle(
+    bodyLarge: TextStyle(
       fontFamily: 'NotoSansKR',
       fontWeight: FontWeight.normal,
       fontSize: 20,
       color: Colors.black,
     ),
-    bodyText2: TextStyle(
+    bodyMedium: TextStyle(
       fontFamily: 'NotoSansKR',
       fontWeight: FontWeight.normal,
       fontSize: 16,
@@ -54,49 +54,49 @@ class PortfolioThemes {
   );
 
   static const TextTheme textThemeDark = TextTheme(
-    headline1: TextStyle(
+    displayLarge: TextStyle(
       fontFamily: 'NanumPenScript',
       fontWeight: FontWeight.normal,
       fontSize: 96,
       color: Colors.white,
     ),
-    headline2: TextStyle(
+    displayMedium: TextStyle(
       fontFamily: 'NanumPenScript',
       fontWeight: FontWeight.normal,
       fontSize: 60,
       color: Colors.white,
     ),
-    headline3: TextStyle(
+    displaySmall: TextStyle(
       fontFamily: 'NanumPenScript',
       fontWeight: FontWeight.normal,
       fontSize: 48,
       color: Colors.white,
     ),
-    headline4: TextStyle(
+    headlineLarge: TextStyle(
       fontFamily: 'NotoSansKR',
       fontWeight: FontWeight.normal,
       fontSize: 34,
       color: Colors.white,
     ),
-    headline5: TextStyle(
+    headlineMedium: TextStyle(
       fontFamily: 'NotoSansKR',
       fontWeight: FontWeight.normal,
       fontSize: 24,
       color: Colors.white,
     ),
-    headline6: TextStyle(
+    headlineSmall: TextStyle(
       fontFamily: 'NotoSansKR',
       fontWeight: FontWeight.normal,
       fontSize: 20,
       color: Colors.white,
     ),
-    bodyText1: TextStyle(
+    bodyLarge: TextStyle(
       fontFamily: 'NotoSansKR',
       fontWeight: FontWeight.normal,
       fontSize: 20,
       color: Colors.white,
     ),
-    bodyText2: TextStyle(
+    bodyMedium: TextStyle(
       fontFamily: 'NotoSansKR',
       fontWeight: FontWeight.normal,
       fontSize: 16,
@@ -113,7 +113,6 @@ class PortfolioThemes {
         color: Colors.white,
       ),
     ),
-    bottomAppBarColor: Colors.blueGrey[900],
     brightness: Brightness.light,
     cardColor: Colors.blueGrey[50],
     dividerColor: Colors.blueGrey[400],
@@ -124,7 +123,6 @@ class PortfolioThemes {
     ),
     primarySwatch: Colors.blueGrey,
     scaffoldBackgroundColor: Colors.white,
-    selectedRowColor: Colors.blueGrey,
     splashColor: Colors.transparent,
     textTheme: textThemeLight,
     textButtonTheme: TextButtonThemeData(
@@ -142,6 +140,9 @@ class PortfolioThemes {
       ),
     ),
     unselectedWidgetColor: Colors.blueGrey[200],
+    bottomAppBarTheme: BottomAppBarTheme(
+      color: Colors.blueGrey[900],
+    ),
   );
 
   static final ThemeData darkThemeData = ThemeData(
@@ -152,7 +153,6 @@ class PortfolioThemes {
         color: Colors.white,
       ),
     ),
-    bottomAppBarColor: const Color(0xFF242424),
     brightness: Brightness.dark,
     cardColor: Colors.white12,
     dividerColor: Colors.grey[700],
@@ -163,7 +163,6 @@ class PortfolioThemes {
     ),
     primarySwatch: Colors.blueGrey,
     scaffoldBackgroundColor: const Color(0xFF242424),
-    selectedRowColor: Colors.blueGrey[400],
     splashColor: Colors.transparent,
     textTheme: textThemeDark,
     textButtonTheme: TextButtonThemeData(
@@ -181,5 +180,8 @@ class PortfolioThemes {
       ),
     ),
     unselectedWidgetColor: Colors.blueGrey[800],
+    bottomAppBarTheme: const BottomAppBarTheme(
+      color: Color(0xFF242424),
+    ),
   );
 }

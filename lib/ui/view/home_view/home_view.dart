@@ -62,14 +62,14 @@ class HomeView extends StatelessWidget {
                   RichText(
                     text: TextSpan(
                       text: '안녕하세요,\n',
-                      style: Theme.of(context).textTheme.headline2,
+                      style: Theme.of(context).textTheme.displayMedium,
                       children: <TextSpan>[
                         const TextSpan(text: 'Flutter 개발자\n'),
                         TextSpan(
                           text: '임연우',
                           style: Theme.of(context)
                               .textTheme
-                              .headline1!
+                              .displayLarge!
                               .copyWith(color: Colors.lightBlue),
                         ),
                         const TextSpan(text: '입니다.'),
@@ -88,7 +88,7 @@ class HomeView extends StatelessWidget {
                   ),
                   Text(
                     'Contact me',
-                    style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: Theme.of(context).iconTheme.color,
                           fontWeight: FontWeight.bold,
                         ),
@@ -139,7 +139,7 @@ class HomeView extends StatelessWidget {
                           RichText(
                             text: TextSpan(
                               text: '안녕하세요,\n',
-                              style: Theme.of(context).textTheme.headline2,
+                              style: Theme.of(context).textTheme.displayMedium,
                               children: <TextSpan>[
                                 if (ResponsiveWidget.isLargeScreen(context))
                                   const TextSpan(text: 'Flutter 개발자 ')
@@ -149,7 +149,7 @@ class HomeView extends StatelessWidget {
                                   text: '임연우',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headline1!
+                                      .displayLarge!
                                       .copyWith(color: Colors.lightBlue),
                                 ),
                                 const TextSpan(text: '입니다.'),
@@ -163,11 +163,13 @@ class HomeView extends StatelessWidget {
                           ),
                           Text(
                             'Contact me',
-                            style:
-                                Theme.of(context).textTheme.bodyText2!.copyWith(
-                                      color: Theme.of(context).iconTheme.color,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  color: Theme.of(context).iconTheme.color,
+                                  fontWeight: FontWeight.bold,
+                                ),
                           ),
                           if (ResponsiveWidget.isLargeScreen(context))
                             Row(

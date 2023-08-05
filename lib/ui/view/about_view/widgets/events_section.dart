@@ -16,7 +16,7 @@ class _EventsSection extends StatelessWidget {
       children: <Widget>[
             Text(
               title,
-              style: Theme.of(context).textTheme.headline5!.copyWith(
+              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                     color: Colors.lightBlue,
                     fontWeight: FontWeight.bold,
                   ),
