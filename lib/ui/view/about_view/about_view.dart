@@ -47,7 +47,7 @@ class AboutView extends StatelessWidget {
                     'About',
                     style: Theme.of(context)
                         .textTheme
-                        .headlineMedium!
+                        .headlineLarge!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(

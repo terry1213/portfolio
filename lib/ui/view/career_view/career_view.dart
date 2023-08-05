@@ -41,7 +41,7 @@ class CareerView extends StatelessWidget {
                     'Career',
                     style: Theme.of(context)
                         .textTheme
-                        .headlineMedium!
+                        .headlineLarge!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 50),
