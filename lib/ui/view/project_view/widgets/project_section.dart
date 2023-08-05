@@ -32,14 +32,14 @@ class _ProjectSection extends StatelessWidget {
           children: <Widget>[
             Text(
               project.title,
-              style: Theme.of(context).textTheme.headline5!.copyWith(
+              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                     color: Colors.lightBlue,
                     fontWeight: FontWeight.bold,
                   ),
             ),
             Text(
               '${project.period} (${project.team})',
-              style: Theme.of(context).textTheme.bodyText2?.copyWith(
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: Colors.grey,
                     fontWeight: FontWeight.bold,
                   ),

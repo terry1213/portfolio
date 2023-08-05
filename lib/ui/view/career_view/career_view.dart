@@ -41,7 +41,7 @@ class CareerView extends StatelessWidget {
                     'Career',
                     style: Theme.of(context)
                         .textTheme
-                        .headline4!
+                        .headlineMedium!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 50),
@@ -78,7 +78,7 @@ class CareerView extends StatelessWidget {
                                       careerViewModel.careers[index].company,
                                       style: Theme.of(context)
                                           .textTheme
-                                          .headline5!
+                                          .headlineSmall!
                                           .copyWith(
                                             color: Colors.lightBlue,
                                             fontWeight: FontWeight.bold,
@@ -89,7 +89,7 @@ class CareerView extends StatelessWidget {
                                       careerViewModel.careers[index].period,
                                       style: Theme.of(context)
                                           .textTheme
-                                          .bodyText2!
+                                          .bodyMedium!
                                           .copyWith(
                                             color: Colors.grey,
                                             fontWeight: FontWeight.bold,
@@ -106,7 +106,7 @@ class CareerView extends StatelessWidget {
                                       careerViewModel.careers[index].company,
                                       style: Theme.of(context)
                                           .textTheme
-                                          .headline5!
+                                          .headlineSmall!
                                           .copyWith(
                                             color: Colors.lightBlue,
                                             fontWeight: FontWeight.bold,
@@ -116,7 +116,7 @@ class CareerView extends StatelessWidget {
                                       careerViewModel.careers[index].period,
                                       style: Theme.of(context)
                                           .textTheme
-                                          .bodyText2!
+                                          .bodyMedium!
                                           .copyWith(
                                             color: Colors.grey,
                                             fontWeight: FontWeight.bold,
@@ -128,7 +128,7 @@ class CareerView extends StatelessWidget {
                                 careerViewModel.careers[index].position,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .bodyText2!
+                                    .bodyMedium!
                                     .copyWith(
                                       color: Colors.grey,
                                       fontWeight: FontWeight.bold,
@@ -136,7 +136,7 @@ class CareerView extends StatelessWidget {
                               ),
                               Text(
                                 careerViewModel.careers[index].detail,
-                                style: Theme.of(context).textTheme.bodyText2,
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                               const SizedBox(height: 20),
                               Padding(
@@ -161,7 +161,7 @@ class CareerView extends StatelessWidget {
                                                       .detail,
                                                   style: Theme.of(context)
                                                       .textTheme
-                                                      .bodyText2
+                                                      .bodyMedium
                                                       ?.copyWith(
                                                         fontWeight:
                                                             FontWeight.bold,
@@ -178,7 +178,7 @@ class CareerView extends StatelessWidget {
                                                         .period,
                                                     style: Theme.of(context)
                                                         .textTheme
-                                                        .bodyText2
+                                                        .bodyMedium
                                                         ?.copyWith(
                                                           color: Colors.grey,
                                                           fontWeight:
@@ -224,7 +224,7 @@ class CareerView extends StatelessWidget {
                                                               style: Theme.of(
                                                                       context)
                                                                   .textTheme
-                                                                  .bodyText2,
+                                                                  .bodyMedium,
                                                             ),
                                                           ),
                                                         ],

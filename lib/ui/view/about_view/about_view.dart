@@ -47,7 +47,7 @@ class AboutView extends StatelessWidget {
                     'About',
                     style: Theme.of(context)
                         .textTheme
-                        .headline4!
+                        .headlineMedium!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
@@ -59,7 +59,7 @@ class AboutView extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         const HorizontalDashedDivider(space: 60),
-                        _AboutSection(),
+                        const _AboutSection(),
                         const HorizontalDashedDivider(space: 60),
                         _EventsSection(
                           title: 'Education',
@@ -99,7 +99,7 @@ class AboutView extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 const HorizontalDashedDivider(space: 80),
-                                _AboutSection(),
+                                const _AboutSection(),
                                 const HorizontalDashedDivider(space: 80),
                                 _EventsSection(
                                   title: 'Education',

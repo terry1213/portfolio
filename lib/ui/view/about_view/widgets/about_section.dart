@@ -12,7 +12,7 @@ class _AboutSection extends StatelessWidget {
       children: <Widget>[
         Text(
           '임연우 / Yeonwoo Lim',
-          style: Theme.of(context).textTheme.headline5!.copyWith(
+          style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                 color: Colors.lightBlue,
                 fontWeight: FontWeight.bold,
               ),
@@ -21,9 +21,9 @@ class _AboutSection extends StatelessWidget {
         const SizedBox(height: 30),
         InkWell(
           onTap: () => launchUrlString('mailto:1213terry@naver.com'),
-          child: Row(
+          child: const Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const <Widget>[
+            children: <Widget>[
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 5),
                 child: Icon(LineIcons.envelope, size: 23),
@@ -37,9 +37,9 @@ class _AboutSection extends StatelessWidget {
         ),
         InkWell(
           onTap: () => launchUrlString('https://github.com/terry1213'),
-          child: Row(
+          child: const Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const <Widget>[
+            children: <Widget>[
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 5),
                 child: Icon(LineIcons.github, size: 23),
@@ -54,9 +54,9 @@ class _AboutSection extends StatelessWidget {
         InkWell(
           onTap: () =>
               launchUrlString('https://terry1213.github.io/categories/'),
-          child: Row(
+          child: const Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const <Widget>[
+            children: <Widget>[
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 5),
                 child: Icon(LineIcons.bloggerB, size: 23),

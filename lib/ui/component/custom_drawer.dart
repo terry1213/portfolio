@@ -33,7 +33,7 @@ class _CustomDrawer extends StatelessWidget {
                   width: double.maxFinite,
                   child: Text(
                     'Home',
-                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
@@ -53,7 +53,7 @@ class _CustomDrawer extends StatelessWidget {
                   width: double.maxFinite,
                   child: Text(
                     'About',
-                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
@@ -73,7 +73,7 @@ class _CustomDrawer extends StatelessWidget {
                   width: double.maxFinite,
                   child: Text(
                     'Career',
-                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
@@ -93,7 +93,7 @@ class _CustomDrawer extends StatelessWidget {
                   width: double.maxFinite,
                   child: Text(
                     'Project',
-                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
@@ -113,7 +113,7 @@ class _CustomDrawer extends StatelessWidget {
                   width: double.maxFinite,
                   child: Text(
                     'Blog',
-                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
