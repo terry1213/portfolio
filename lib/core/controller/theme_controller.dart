@@ -13,6 +13,7 @@ class ThemeController extends ChangeNotifier {
       SharedPreferencesManager();
 
   ThemeData _themeData = PortfolioThemes.lightThemeData;
+
   ThemeData get themeData => _themeData;
 
   void _readThemeMode() {

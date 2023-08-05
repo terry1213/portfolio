@@ -64,7 +64,7 @@ class BlogView extends StatelessWidget {
                     'Blog',
                     style: Theme.of(context)
                         .textTheme
-                        .headlineMedium!
+                        .headlineLarge!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 50),

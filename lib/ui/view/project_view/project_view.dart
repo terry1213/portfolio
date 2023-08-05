@@ -45,7 +45,7 @@ class ProjectView extends StatelessWidget {
                     'Project',
                     style: Theme.of(context)
                         .textTheme
-                        .headlineMedium!
+                        .headlineLarge!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
