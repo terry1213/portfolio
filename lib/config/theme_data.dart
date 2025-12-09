@@ -107,7 +107,7 @@ class PortfolioThemes {
 
   static final ThemeData lightThemeData = ThemeData(
     appBarTheme: AppBarTheme(
-      color: Colors.blueGrey[900],
+      backgroundColor: Colors.blueGrey[900],
       foregroundColor: Colors.white,
       iconTheme: const IconThemeData(
         color: Colors.white,
@@ -127,9 +127,9 @@ class PortfolioThemes {
     textTheme: textThemeLight,
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all(Colors.blueGrey),
-        overlayColor: MaterialStateProperty.all(Colors.transparent),
-        textStyle: MaterialStateProperty.all(
+        foregroundColor: WidgetStateProperty.all(Colors.blueGrey),
+        overlayColor: WidgetStateProperty.all(Colors.transparent),
+        textStyle: WidgetStateProperty.all(
           const TextStyle(
             color: Colors.blueGrey,
             fontSize: 15,
@@ -140,14 +140,14 @@ class PortfolioThemes {
       ),
     ),
     unselectedWidgetColor: Colors.blueGrey[200],
-    bottomAppBarTheme: BottomAppBarTheme(
+    bottomAppBarTheme: BottomAppBarThemeData(
       color: Colors.blueGrey[900],
     ),
   );
 
   static final ThemeData darkThemeData = ThemeData(
     appBarTheme: const AppBarTheme(
-      color: Color(0xFF242424),
+      backgroundColor: Color(0xFF242424),
       foregroundColor: Colors.white,
       iconTheme: IconThemeData(
         color: Colors.white,
@@ -167,9 +167,9 @@ class PortfolioThemes {
     textTheme: textThemeDark,
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all(Colors.blueGrey[200]),
-        overlayColor: MaterialStateProperty.all(Colors.transparent),
-        textStyle: MaterialStateProperty.all(
+        foregroundColor: WidgetStateProperty.all(Colors.blueGrey[200]),
+        overlayColor: WidgetStateProperty.all(Colors.transparent),
+        textStyle: WidgetStateProperty.all(
           TextStyle(
             color: Colors.blueGrey[200],
             fontSize: 15,
@@ -180,7 +180,7 @@ class PortfolioThemes {
       ),
     ),
     unselectedWidgetColor: Colors.blueGrey[800],
-    bottomAppBarTheme: const BottomAppBarTheme(
+    bottomAppBarTheme: const BottomAppBarThemeData(
       color: Color(0xFF242424),
     ),
   );

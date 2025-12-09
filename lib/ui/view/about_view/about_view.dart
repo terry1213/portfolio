@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:portfolio/config/app_constants.dart';
 import 'package:portfolio/feature/event/domain/entity/event.dart';
 import 'package:portfolio/ui/component/horizontal_dashed_divider.dart';
 import 'package:portfolio/ui/component/template.dart';
 import 'package:portfolio/ui/view/about_view/about_view_model.dart';
-import 'package:portfolio/ui/view/about_view/about_view_state.dart';
 import 'package:portfolio/utils/responsive.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -19,10 +19,10 @@ class AboutView extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     final double horizontalPadding = ResponsiveWidget.isLargeScreen(context)
-        ? (screenSize.width - 1000) / 2
+        ? (screenSize.width - AppConstants.projectAboutPaddingBase) / 2
         : ResponsiveWidget.isMediumScreen(context)
-            ? screenSize.width / 10
-            : screenSize.width / 13;
+            ? screenSize.width / AppConstants.paddingRatioMedium
+            : screenSize.width / AppConstants.paddingRatioSmall;
     return Template(
       child: ChangeNotifierProvider<AboutViewModel>(
         create: (_) => AboutViewModel(),
@@ -32,15 +32,11 @@ class AboutView extends StatelessWidget {
             AboutViewModel aboutViewModel,
             Widget? child,
           ) {
-            if (aboutViewModel.aboutViewState.aboutViewStateStatus ==
-                    AboutViewStateStatus.loading ||
-                aboutViewModel.aboutViewState.aboutViewStateStatus ==
-                    AboutViewStateStatus.initial) {
-              return const SizedBox();
-            }
-            return Padding(
+            return aboutViewModel.state.maybeWhen(
+              loaded: (_) => Padding(
               padding: EdgeInsets.symmetric(
-                  horizontal: horizontalPadding, vertical: 70),
+                  horizontal: horizontalPadding,
+                  vertical: AppConstants.standardVerticalSpacing),
               child: Column(
                 children: <Widget>[
                   Text(
@@ -51,7 +47,7 @@ class AboutView extends StatelessWidget {
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
-                    height: 50,
+                    height: AppConstants.standardSectionSpacing,
                   ),
                   if (ResponsiveWidget.isSmallScreen(context))
                     Column(
@@ -155,6 +151,8 @@ class AboutView extends StatelessWidget {
                     ),
                 ],
               ),
+            ),
+              orElse: () => const SizedBox(),
             );
           },
         ),

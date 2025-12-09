@@ -1,41 +1,20 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:portfolio/core/error/failures.dart';
 import 'package:portfolio/feature/blog_post/domain/entity/blog_post.dart';
 
-enum BlogViewStateStatus {
-  initial,
-  loading,
-  loaded,
-}
+part 'blog_view_state.freezed.dart';
 
-class BlogViewState {
-  BlogViewState._({
-    required this.blogViewStateStatus,
-    required this.blogPosts,
-  });
+@freezed
+class BlogViewState with _$BlogViewState {
+  const factory BlogViewState.initial() = _Initial;
 
-  BlogViewState.initial()
-      : this._(
-          blogViewStateStatus: BlogViewStateStatus.initial,
-          blogPosts: [],
-        );
+  const factory BlogViewState.loading() = _Loading;
 
-  final BlogViewStateStatus blogViewStateStatus;
-  final List<BlogPost> blogPosts;
+  const factory BlogViewState.loaded({
+    required List<BlogPost> blogPosts,
+  }) = _Loaded;
 
-  BlogViewState whenLoading() => copyWith(
-        blogViewStateStatus: BlogViewStateStatus.loading,
-      );
-
-  BlogViewState whenLoaded({required List<BlogPost> blogPosts}) => copyWith(
-        blogViewStateStatus: BlogViewStateStatus.loaded,
-        blogPosts: blogPosts,
-      );
-
-  BlogViewState copyWith({
-    BlogViewStateStatus? blogViewStateStatus,
-    List<BlogPost>? blogPosts,
-  }) =>
-      BlogViewState._(
-        blogViewStateStatus: blogViewStateStatus ?? this.blogViewStateStatus,
-        blogPosts: blogPosts ?? this.blogPosts,
-      );
+  const factory BlogViewState.error({
+    required Failure failure,
+  }) = _Error;
 }

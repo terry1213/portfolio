@@ -24,91 +24,11 @@ class _CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
               const SizedBox(width: 50),
-              TextButton(
-                style: ButtonStyle(
-                  fixedSize:
-                      MaterialStateProperty.all(const Size.fromWidth(80)),
-                ),
-                onPressed: () => PortfolioNavigator.replaceWith(Routes.home),
-                child: Text(
-                  'Home',
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: PortfolioNavigator.compareWithCurrentRoute(
-                        context,
-                        route: Routes.home,
-                      )
-                              ? Colors.white
-                              : Colors.grey),
-                ),
-              ),
-              TextButton(
-                style: ButtonStyle(
-                  fixedSize:
-                      MaterialStateProperty.all(const Size.fromWidth(80)),
-                ),
-                onPressed: () => PortfolioNavigator.replaceWith(Routes.about),
-                child: Text(
-                  'About',
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: PortfolioNavigator.compareWithCurrentRoute(
-                        context,
-                        route: Routes.about,
-                      )
-                              ? Colors.white
-                              : Colors.grey),
-                ),
-              ),
-              TextButton(
-                style: ButtonStyle(
-                  fixedSize:
-                      MaterialStateProperty.all(const Size.fromWidth(80)),
-                ),
-                onPressed: () => PortfolioNavigator.replaceWith(Routes.career),
-                child: Text(
-                  'Career',
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: PortfolioNavigator.compareWithCurrentRoute(
-                        context,
-                        route: Routes.career,
-                      )
-                              ? Colors.white
-                              : Colors.grey),
-                ),
-              ),
-              TextButton(
-                style: ButtonStyle(
-                  fixedSize:
-                      MaterialStateProperty.all(const Size.fromWidth(80)),
-                ),
-                onPressed: () => PortfolioNavigator.replaceWith(Routes.project),
-                child: Text(
-                  'Project',
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: PortfolioNavigator.compareWithCurrentRoute(
-                        context,
-                        route: Routes.project,
-                      )
-                              ? Colors.white
-                              : Colors.grey),
-                ),
-              ),
-              TextButton(
-                style: ButtonStyle(
-                  fixedSize:
-                      MaterialStateProperty.all(const Size.fromWidth(80)),
-                ),
-                onPressed: () => PortfolioNavigator.replaceWith(Routes.blog),
-                child: Text(
-                  'Blog',
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: PortfolioNavigator.compareWithCurrentRoute(
-                        context,
-                        route: Routes.blog,
-                      )
-                              ? Colors.white
-                              : Colors.grey),
-                ),
-              ),
+              const NavButton(label: 'Home', route: Routes.home),
+              const NavButton(label: 'About', route: Routes.about),
+              const NavButton(label: 'Career', route: Routes.career),
+              const NavButton(label: 'Project', route: Routes.project),
+              const NavButton(label: 'Blog', route: Routes.blog),
               Expanded(
                 child: Container(),
               ),

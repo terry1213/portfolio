@@ -1,27 +1,19 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:portfolio/feature/career/data/model/section_model.dart';
 
-class CareerModel {
-  const CareerModel({
-    required this.company,
-    required this.period,
-    required this.position,
-    required this.detail,
-    required this.sections,
-  });
+part 'career_model.freezed.dart';
+part 'career_model.g.dart';
 
-  final String company;
-  final String period;
-  final String position;
-  final String detail;
-  final List<SectionModel> sections;
+@freezed
+class CareerModel with _$CareerModel {
+  const factory CareerModel({
+    required String company,
+    required String period,
+    required String position,
+    required String detail,
+    required List<SectionModel> sections,
+  }) = _CareerModel;
 
-  factory CareerModel.fromMap(Map map) => CareerModel(
-        company: map['company'],
-        period: map['period'],
-        position: map['position'],
-        detail: map['detail'],
-        sections: (map['sections'] as List)
-            .map((map) => SectionModel.fromMap(map))
-            .toList(),
-      );
+  factory CareerModel.fromJson(Map<String, dynamic> json) =>
+      _$CareerModelFromJson(json);
 }

@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:portfolio/core/controller/theme_controller.dart';
-import 'package:portfolio/core/shared_preferences.dart';
+import 'package:portfolio/core/di/service_locator.dart';
 import 'package:portfolio/routes.dart';
 import 'package:portfolio/ui/view/home_view/home_view.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   setUrlStrategy(PathUrlStrategy());
-  await SharedPreferencesManager().init();
+
+  await setupServiceLocator();
+
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider<ThemeController>(
-          create: (_) => ThemeController(),
+          create: (_) => getIt<ThemeController>(),
         ),
       ],
       child: const MyApp(),

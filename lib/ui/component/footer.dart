@@ -7,18 +7,20 @@ class _Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     return Container(
-      width: screenSize.width > 1360 ? screenSize.width : 1360,
-      padding: const EdgeInsets.all(20),
-      color: Theme.of(context).bottomAppBarColor,
+      width: screenSize.width > AppConstants.footerMinWidth
+          ? screenSize.width
+          : AppConstants.footerMinWidth,
+      padding: const EdgeInsets.all(AppConstants.smallVerticalSpacing),
+      color: Theme.of(context).bottomAppBarTheme.color,
       child: Column(
         children: <Widget>[
           const Divider(),
           const SizedBox(height: 10),
           Text(
-            'Copyright © 2021 | Yeonwoo Lim',
+            AppConstants.copyrightText,
             style: TextStyle(
               color: Colors.blueGrey[300],
-              fontSize: 14,
+              fontSize: AppConstants.standardFontSize,
             ),
           ),
         ],

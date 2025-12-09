@@ -1,42 +1,20 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:portfolio/core/error/failures.dart';
 import 'package:portfolio/feature/project/domain/entity/project.dart';
 
-enum ProjectViewStateStatus {
-  initial,
-  loading,
-  loaded,
-}
+part 'project_view_state.freezed.dart';
 
-class ProjectViewState {
-  ProjectViewState._({
-    required this.projectViewStateStatus,
-    required this.projects,
-  });
+@freezed
+class ProjectViewState with _$ProjectViewState {
+  const factory ProjectViewState.initial() = _Initial;
 
-  ProjectViewState.initial()
-      : this._(
-          projectViewStateStatus: ProjectViewStateStatus.initial,
-          projects: [],
-        );
+  const factory ProjectViewState.loading() = _Loading;
 
-  final ProjectViewStateStatus projectViewStateStatus;
-  final List<Project> projects;
+  const factory ProjectViewState.loaded({
+    required List<Project> projects,
+  }) = _Loaded;
 
-  ProjectViewState whenLoading() => copyWith(
-        projectViewStateStatus: ProjectViewStateStatus.loading,
-      );
-
-  ProjectViewState whenLoaded({required List<Project> projects}) => copyWith(
-        projectViewStateStatus: ProjectViewStateStatus.loaded,
-        projects: projects,
-      );
-
-  ProjectViewState copyWith({
-    ProjectViewStateStatus? projectViewStateStatus,
-    List<Project>? projects,
-  }) =>
-      ProjectViewState._(
-        projectViewStateStatus:
-            projectViewStateStatus ?? this.projectViewStateStatus,
-        projects: projects ?? this.projects,
-      );
+  const factory ProjectViewState.error({
+    required Failure failure,
+  }) = _Error;
 }

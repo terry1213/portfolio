@@ -1,42 +1,20 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:portfolio/core/error/failures.dart';
 import 'package:portfolio/feature/event/domain/entity/event.dart';
 
-enum AboutViewStateStatus {
-  initial,
-  loading,
-  loaded,
-}
+part 'about_view_state.freezed.dart';
 
-class AboutViewState {
-  const AboutViewState._({
-    required this.aboutViewStateStatus,
-    required this.events,
-  });
+@freezed
+class AboutViewState with _$AboutViewState {
+  const factory AboutViewState.initial() = _Initial;
 
-  AboutViewState.initial()
-      : this._(
-          aboutViewStateStatus: AboutViewStateStatus.initial,
-          events: [],
-        );
+  const factory AboutViewState.loading() = _Loading;
 
-  final AboutViewStateStatus aboutViewStateStatus;
-  final List<Event> events;
+  const factory AboutViewState.loaded({
+    required List<Event> events,
+  }) = _Loaded;
 
-  AboutViewState whenLoading() => copyWith(
-        aboutViewStateStatus: AboutViewStateStatus.loading,
-        events: [],
-      );
-
-  AboutViewState whenLoaded({required List<Event> events}) => copyWith(
-        aboutViewStateStatus: AboutViewStateStatus.loaded,
-        events: events,
-      );
-
-  AboutViewState copyWith({
-    AboutViewStateStatus? aboutViewStateStatus,
-    List<Event>? events,
-  }) =>
-      AboutViewState._(
-        aboutViewStateStatus: aboutViewStateStatus ?? this.aboutViewStateStatus,
-        events: events ?? this.events,
-      );
+  const factory AboutViewState.error({
+    required Failure failure,
+  }) = _Error;
 }

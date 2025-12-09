@@ -1,43 +1,20 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:portfolio/core/error/failures.dart';
 import 'package:portfolio/feature/career/domain/entity/career.dart';
 
-enum CareerViewStateStatus {
-  initial,
-  loading,
-  loaded,
-}
+part 'career_view_state.freezed.dart';
 
-class CareerViewState {
-  CareerViewState._({
-    required this.careerViewStateStatus,
-    required this.careers,
-  });
+@freezed
+class CareerViewState with _$CareerViewState {
+  const factory CareerViewState.initial() = _Initial;
 
-  CareerViewState.initial()
-      : this._(
-          careerViewStateStatus: CareerViewStateStatus.initial,
-          careers: [],
-        );
+  const factory CareerViewState.loading() = _Loading;
 
-  final CareerViewStateStatus careerViewStateStatus;
-  final List<Career> careers;
+  const factory CareerViewState.loaded({
+    required List<Career> careers,
+  }) = _Loaded;
 
-  CareerViewState whenLoading() => copyWith(
-        careerViewStateStatus: CareerViewStateStatus.loading,
-        careers: [],
-      );
-
-  CareerViewState whenLoaded({required List<Career> careers}) => copyWith(
-        careerViewStateStatus: CareerViewStateStatus.loaded,
-        careers: careers,
-      );
-
-  CareerViewState copyWith({
-    CareerViewStateStatus? careerViewStateStatus,
-    List<Career>? careers,
-  }) =>
-      CareerViewState._(
-        careerViewStateStatus:
-            careerViewStateStatus ?? this.careerViewStateStatus,
-        careers: careers ?? this.careers,
-      );
+  const factory CareerViewState.error({
+    required Failure failure,
+  }) = _Error;
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/app_constants.dart';
 
 class ImageWithAnimatedOpacity extends StatelessWidget {
   const ImageWithAnimatedOpacity({
@@ -27,7 +28,7 @@ class ImageWithAnimatedOpacity extends StatelessWidget {
         } else {
           return AnimatedOpacity(
             opacity: frame == null ? 0 : 1,
-            duration: const Duration(milliseconds: 500),
+            duration: AppConstants.fadeInDuration,
             curve: Curves.easeOut,
             child: child,
           );

@@ -1,17 +1,16 @@
-class SectionModel {
-  const SectionModel({
-    required this.period,
-    required this.detail,
-    required this.works,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  final String period;
-  final String detail;
-  final List<String> works;
+part 'section_model.freezed.dart';
+part 'section_model.g.dart';
 
-  factory SectionModel.fromMap(Map map) => SectionModel(
-        period: map['period'],
-        detail: map['detail'],
-        works: map['works'].cast<String>(),
-      );
+@freezed
+class SectionModel with _$SectionModel {
+  const factory SectionModel({
+    required String period,
+    required String detail,
+    required List<String> works,
+  }) = _SectionModel;
+
+  factory SectionModel.fromJson(Map<String, dynamic> json) =>
+      _$SectionModelFromJson(json);
 }

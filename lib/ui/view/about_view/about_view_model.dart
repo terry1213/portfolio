@@ -1,39 +1,76 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/feature/event/data/repository/event_repository.dart';
+import 'package:logger/logger.dart';
+import 'package:portfolio/core/di/service_locator.dart';
 import 'package:portfolio/feature/event/domain/entity/event.dart';
 import 'package:portfolio/feature/event/domain/usecase/read_all_events_usecase.dart';
 import 'package:portfolio/ui/view/about_view/about_view_state.dart';
 
 class AboutViewModel extends ChangeNotifier {
+  late final ReadAllEventsUseCase _readAllEventsUseCase;
+  late final Logger _logger;
+
   AboutViewModel() {
+    _readAllEventsUseCase = getIt<ReadAllEventsUseCase>();
+    _logger = getIt<Logger>();
     readAllEvent();
   }
 
-  final EventRepository _eventRepository = EventRepository();
+  AboutViewState _state = const AboutViewState.initial();
+  AboutViewState get state => _state;
 
-  AboutViewState aboutViewState = AboutViewState.initial();
+  /// Get education events from loaded state
+  List<Event> get educations => _state.maybeWhen(
+        loaded: (events) =>
+            events.where((event) => event.type == EventType.education).toList(),
+        orElse: () => [],
+      );
 
-  List<Event> get educations => aboutViewState.events
-      .where((event) => event.type == EventType.education)
-      .toList();
+  /// Get career events from loaded state
+  List<Event> get careers => _state.maybeWhen(
+        loaded: (events) =>
+            events.where((event) => event.type == EventType.career).toList(),
+        orElse: () => [],
+      );
 
-  List<Event> get careers => aboutViewState.events
-      .where((event) => event.type == EventType.career)
-      .toList();
+  /// Get project events from loaded state
+  List<Event> get projects => _state.maybeWhen(
+        loaded: (events) =>
+            events.where((event) => event.type == EventType.project).toList(),
+        orElse: () => [],
+      );
 
-  List<Event> get projects => aboutViewState.events
-      .where((event) => event.type == EventType.project)
-      .toList();
-
-  List<Event> get certificates => aboutViewState.events
-      .where((event) => event.type == EventType.certificate)
-      .toList();
+  /// Get certificate events from loaded state
+  List<Event> get certificates => _state.maybeWhen(
+        loaded: (events) => events
+            .where((event) => event.type == EventType.certificate)
+            .toList(),
+        orElse: () => [],
+      );
 
   Future<void> readAllEvent() async {
-    aboutViewState = aboutViewState.whenLoading();
-    final List<Event> events = await ReadAllEventsUseCase(_eventRepository)
-        .execute(const ReadAllEventsParams());
-    aboutViewState = aboutViewState.whenLoaded(events: events);
+    _state = const AboutViewState.loading();
+    notifyListeners();
+
+    _logger.d('Fetching events via ViewModel');
+
+    final result = await _readAllEventsUseCase.execute(
+      const ReadAllEventsParams(),
+    );
+
+    result.when(
+      success: (events) {
+        _logger.i('Successfully loaded ${events.length} events');
+        _state = AboutViewState.loaded(events: events);
+      },
+      failure: (failure) {
+        _logger.e('Failed to load events: $failure');
+        _state = AboutViewState.error(failure: failure);
+      },
+    );
+
     notifyListeners();
   }
+
+  /// Retry loading events after error
+  Future<void> retry() => readAllEvent();
 }

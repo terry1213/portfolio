@@ -1,35 +1,22 @@
-class ProjectModel {
-  const ProjectModel({
-    required this.title,
-    required this.period,
-    required this.team,
-    required this.detail,
-    required this.function,
-    required this.techStack,
-    required this.git,
-    required this.link,
-    required this.image,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  final String title;
-  final String period;
-  final String team;
-  final String detail;
-  final String function;
-  final String techStack;
-  final String git;
-  final String link;
-  final String image;
+part 'project_model.freezed.dart';
+part 'project_model.g.dart';
 
-  factory ProjectModel.fromMap(Map map) => ProjectModel(
-        title: map['title'],
-        period: map['period'],
-        team: map['team'],
-        detail: map['detail'],
-        function: map['function'],
-        techStack: map['techStack'],
-        git: map['git'],
-        link: map['link'],
-        image: map['image'],
-      );
+@freezed
+class ProjectModel with _$ProjectModel {
+  const factory ProjectModel({
+    required String title,
+    required String period,
+    required String team,
+    required String detail,
+    required String function,
+    required String techStack,
+    required String git,
+    required String link,
+    required String image,
+  }) = _ProjectModel;
+
+  factory ProjectModel.fromJson(Map<String, dynamic> json) =>
+      _$ProjectModelFromJson(json);
 }

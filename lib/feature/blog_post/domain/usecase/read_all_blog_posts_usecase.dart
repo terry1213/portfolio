@@ -1,3 +1,4 @@
+import 'package:portfolio/core/utils/result.dart';
 import 'package:portfolio/feature/blog_post/data/repository/blog_post_repository.dart';
 import 'package:portfolio/feature/blog_post/domain/entity/blog_post.dart';
 
@@ -6,7 +7,7 @@ class ReadAllBlogPostsUseCase {
 
   const ReadAllBlogPostsUseCase(this.blogPostRepository);
 
-  Future<List<BlogPost>> execute(
+  Future<Result<List<BlogPost>>> execute(
       ReadAllBlogPostsParam readAllBlogPostsParam) async {
     return await blogPostRepository.readAllBlogPosts();
   }

@@ -1,27 +1,23 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class Project {
-  const Project({
-    required this.title,
-    required this.period,
-    required this.team,
-    required this.detail,
-    required this.function,
-    required this.techStack,
-    required this.git,
-    required this.link,
-    required this.image,
-  });
+part 'project.freezed.dart';
 
-  final String title;
-  final String period;
-  final String team;
-  final String detail;
-  final String function;
-  final String techStack;
-  final String git;
-  final String link;
-  final String image;
+@freezed
+class Project with _$Project {
+  const Project._();
+
+  const factory Project({
+    required String title,
+    required String period,
+    required String team,
+    required String detail,
+    required String function,
+    required String techStack,
+    required String git,
+    required String link,
+    required String image,
+  }) = _Project;
 
   Future<void> openGitUrl() async => await launchUrlString(git);
 

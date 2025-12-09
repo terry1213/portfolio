@@ -1,17 +1,16 @@
-class EventModel {
-  const EventModel({
-    required this.type,
-    required this.period,
-    required this.detail,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  final String type;
-  final String period;
-  final String detail;
+part 'event_model.freezed.dart';
+part 'event_model.g.dart';
 
-  factory EventModel.fromMap(Map map) => EventModel(
-        type: map['type'],
-        period: map['period'],
-        detail: map['detail'],
-      );
+@freezed
+class EventModel with _$EventModel {
+  const factory EventModel({
+    required String type,
+    required String period,
+    required String detail,
+  }) = _EventModel;
+
+  factory EventModel.fromJson(Map<String, dynamic> json) =>
+      _$EventModelFromJson(json);
 }

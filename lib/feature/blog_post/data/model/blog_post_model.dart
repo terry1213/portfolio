@@ -1,29 +1,20 @@
-class BlogPostModel {
-  const BlogPostModel({
-    required this.title,
-    required this.detail,
-    required this.image,
-    required this.url1Text,
-    required this.url1,
-    required this.url2Text,
-    required this.url2,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  final String title;
-  final String detail;
-  final String image;
-  final String url1Text;
-  final String url1;
-  final String url2Text;
-  final String url2;
+part 'blog_post_model.freezed.dart';
+part 'blog_post_model.g.dart';
 
-  factory BlogPostModel.fromMap(Map map) => BlogPostModel(
-        title: map['title'],
-        detail: map['detail'],
-        image: map['image'],
-        url1Text: map['url1Text'],
-        url1: map['url1'],
-        url2Text: map['url2Text'],
-        url2: map['url2'],
-      );
+@freezed
+class BlogPostModel with _$BlogPostModel {
+  const factory BlogPostModel({
+    required String title,
+    required String detail,
+    required String image,
+    required String url1Text,
+    required String url1,
+    required String url2Text,
+    required String url2,
+  }) = _BlogPostModel;
+
+  factory BlogPostModel.fromJson(Map<String, dynamic> json) =>
+      _$BlogPostModelFromJson(json);
 }

@@ -37,8 +37,7 @@ class HomeView extends StatelessWidget {
         iconSize: 30,
       ),
       IconButton(
-        onPressed: () =>
-            launchUrlString('https://terry1213.github.io/categories/'),
+        onPressed: () => launchUrlString('https://terry1213.com/categories/'),
         icon: const Icon(LineIcons.blogger),
         tooltip: 'Blog',
         iconSize: 30,

@@ -1,11 +1,12 @@
-class Section {
-  const Section({
-    required this.period,
-    required this.detail,
-    required this.works,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  final String period;
-  final String detail;
-  final List<String> works;
+part 'section.freezed.dart';
+
+@freezed
+class Section with _$Section {
+  const factory Section({
+    required String period,
+    required String detail,
+    required List<String> works,
+  }) = _Section;
 }

@@ -1,3 +1,7 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'event.freezed.dart';
+
 enum EventType {
   education,
   career,
@@ -5,14 +9,11 @@ enum EventType {
   certificate,
 }
 
-class Event {
-  const Event({
-    required this.type,
-    required this.period,
-    required this.detail,
-  });
-
-  final EventType type;
-  final String period;
-  final String detail;
+@freezed
+class Event with _$Event {
+  const factory Event({
+    required EventType type,
+    required String period,
+    required String detail,
+  }) = _Event;
 }

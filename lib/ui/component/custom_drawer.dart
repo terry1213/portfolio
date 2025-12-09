@@ -7,7 +7,7 @@ class _CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Theme.of(context).bottomAppBarColor,
+        color: Theme.of(context).bottomAppBarTheme.color,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -27,103 +27,15 @@ class _CustomDrawer extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                child: SizedBox(
-                  width: double.maxFinite,
-                  child: Text(
-                    'Home',
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                ),
-                onTap: () {
-                  PortfolioNavigator.pop();
-                  PortfolioNavigator.replaceWith(Routes.home);
-                },
-              ),
-              const HorizontalDashedDivider(
-                space: 25,
-              ),
-              GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                child: SizedBox(
-                  width: double.maxFinite,
-                  child: Text(
-                    'About',
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                ),
-                onTap: () {
-                  PortfolioNavigator.pop();
-                  PortfolioNavigator.replaceWith(Routes.about);
-                },
-              ),
-              const HorizontalDashedDivider(
-                space: 25,
-              ),
-              GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                child: SizedBox(
-                  width: double.maxFinite,
-                  child: Text(
-                    'Career',
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                ),
-                onTap: () {
-                  PortfolioNavigator.pop();
-                  PortfolioNavigator.replaceWith(Routes.career);
-                },
-              ),
-              const HorizontalDashedDivider(
-                space: 25,
-              ),
-              GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                child: SizedBox(
-                  width: double.maxFinite,
-                  child: Text(
-                    'Project',
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                ),
-                onTap: () {
-                  PortfolioNavigator.pop();
-                  PortfolioNavigator.replaceWith(Routes.project);
-                },
-              ),
-              const HorizontalDashedDivider(
-                space: 25,
-              ),
-              GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                child: SizedBox(
-                  width: double.maxFinite,
-                  child: Text(
-                    'Blog',
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                ),
-                onTap: () {
-                  PortfolioNavigator.pop();
-                  PortfolioNavigator.replaceWith(Routes.blog);
-                },
-              ),
+              const DrawerMenuItem(label: 'Home', route: Routes.home),
+              const HorizontalDashedDivider(space: 25),
+              const DrawerMenuItem(label: 'About', route: Routes.about),
+              const HorizontalDashedDivider(space: 25),
+              const DrawerMenuItem(label: 'Career', route: Routes.career),
+              const HorizontalDashedDivider(space: 25),
+              const DrawerMenuItem(label: 'Project', route: Routes.project),
+              const HorizontalDashedDivider(space: 25),
+              const DrawerMenuItem(label: 'Blog', route: Routes.blog),
             ],
           ),
         ),

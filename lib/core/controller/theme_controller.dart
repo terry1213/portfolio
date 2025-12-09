@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/theme_data.dart';
-import 'package:portfolio/core/shared_preferences.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 const String darkMode = 'darkMode';
 
 class ThemeController extends ChangeNotifier {
-  ThemeController() {
+  final SharedPreferences _sharedPreferences;
+
+  ThemeController(this._sharedPreferences) {
     _readThemeMode();
   }
-
-  final SharedPreferencesManager _sharedPreferenceManager =
-      SharedPreferencesManager();
 
   ThemeData _themeData = PortfolioThemes.lightThemeData;
 
   ThemeData get themeData => _themeData;
 
   void _readThemeMode() {
-    bool? isDarkMode = _sharedPreferenceManager.getBool(darkMode);
+    bool? isDarkMode = _sharedPreferences.getBool(darkMode);
     _themeData = isDarkMode == true
         ? PortfolioThemes.darkThemeData
         : PortfolioThemes.lightThemeData;
@@ -33,7 +32,7 @@ class ThemeController extends ChangeNotifier {
   }
 
   void _writeThemeMode() {
-    _sharedPreferenceManager.setBool(
+    _sharedPreferences.setBool(
         darkMode, _themeData == PortfolioThemes.darkThemeData);
   }
 }
